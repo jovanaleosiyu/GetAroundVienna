@@ -1,10 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <!-- App Bar -->
+    <v-app-bar fixed dense dark flat elevate-on-scroll color="transparent">
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -14,47 +11,33 @@
           transition="scale-transition"
           width="40"
         />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
       </div>
-
+      <v-toolbar-title>Get Around - Vienna</v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn plain>Idee</v-btn>
+      <v-btn plain>Features</v-btn>
+      <v-btn plain>Über uns</v-btn>
+      <v-btn plain>Kontakt</v-btn>
+      <v-btn color="primary" elevation="2" rounded>
+        Zur App
       </v-btn>
     </v-app-bar>
-
+    <!-- Main -->
     <v-main>
-      <HelloWorld/>
+      <!-- Temporary start, placeholder for animation! -->
+      <div>
+        <v-img :aspect-ratio="16 / 9" src="/img/placeholder_start.jpg"></v-img>
+      </div>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
+  name: "App",
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
