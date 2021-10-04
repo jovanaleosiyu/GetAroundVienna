@@ -7,35 +7,35 @@
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="./assets/logo.svg"
           transition="scale-transition"
-          width="40"
+          width="35"
         />
       </div>
-      <v-toolbar-title>Get Around - Vienna</v-toolbar-title>
+      <!-- <v-toolbar-title>Get Around - Vienna</v-toolbar-title> -->
       <v-spacer></v-spacer>
       <v-btn plain>Idee</v-btn>
       <v-btn plain>Features</v-btn>
       <v-btn plain>Über uns</v-btn>
       <v-btn plain>Kontakt</v-btn>
-      <v-btn color="primary" elevation="2" rounded>
+      <v-btn elevation="2" rounded>
         Zur App
       </v-btn>
     </v-app-bar>
     <!-- Main -->
     <v-main>
-      <!-- Temporary start, placeholder for animation! -->
-      <div>
-        <v-img :aspect-ratio="16 / 9" src="/img/placeholder_start.jpg"></v-img>
-      </div>
+      <StartSection />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import StartSection from "./components/StartSection.vue";
 export default {
   name: "App",
-
+  components: {
+    StartSection
+  },
   data: () => ({
     //
   })
