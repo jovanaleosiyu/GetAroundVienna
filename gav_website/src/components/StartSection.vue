@@ -230,8 +230,18 @@
     /> -->
       <g id="bruecke">
         <path
+          id="bruecke-2"
+          data-name="bruecke"
           class="cls-7"
-          d="M.985 962.478h1921.381v49.672H.985zM122.962 1012.15H44.173v30.75h21.115l-13.366 309.613h63.29L101.846 1042.9h21.116v-30.75zM317.564 1012.15h-78.789v30.75h21.116l-13.366 309.613h63.29L296.449 1042.9h21.115v-30.75zM512.167 1012.15h-78.789v30.75h21.115l-13.365 309.613h63.29L491.052 1042.9h21.115v-30.75zM706.77 1012.15h-78.789v30.75h21.115l-13.365 309.613h63.289L685.655 1042.9h21.115v-30.75zM901.373 1012.15h-78.789v30.75h21.115l-13.366 309.613h63.29L880.258 1042.9h21.115v-30.75zM1095.976 1012.15h-78.79v30.75h21.116l-13.366 309.613h63.29L1074.86 1042.9h21.116v-30.75zM1879.178 1012.15h-78.789v30.75h21.115l-13.365 309.613h63.289l-13.365-309.613h21.115v-30.75zM1684.575 1012.15h-78.789v30.75h21.116l-13.366 309.613h63.29L1663.46 1042.9h21.115v-30.75zM1489.973 1012.15h-78.789v30.75h21.115l-13.366 309.613h63.29l-13.366-309.613h21.116v-30.75zM1295.37 1012.15h-78.789v30.75h21.115l-13.365 309.613h63.289l-13.365-309.613h21.115v-30.75z"
+          d="M-10 961.695v393.694h62.845v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h72.718V961.695Z"
+          transform="translate(2.821)"
+        />
+        <path
+          id="bruecke-3"
+          data-name="bruecke"
+          class="cls-7"
+          d="M629.201 961.695v393.694h62.845v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.189 42.557 107.189 95.054v242.443h72.717V961.695Z"
+          transform="translate(2.821)"
         />
       </g>
       <g id="zug">
@@ -325,12 +335,15 @@
         </g>
       </g>
     </svg>
-    <div class="start-text">
-      <div class="text-h1 text-uppercase">Get Around Vienna</div>
-      <div class="text-h3 font-weight-light">
+    <div class="start-text d-flex flex-column align-center pa-5">
+      <v-img class="mb-2" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
+      <div class="mb-1 text-lg-h1 text-md-h2 text-h3 text-uppercase text-center">
+        Get Around Vienna
+      </div>
+      <div class="mb-4 text-lg-h3 text-md-h4 text-h5 font-weight-light text-center">
         Leichter mit öffentlichen Verkehrmitteln durch Wien
       </div>
-      <v-btn elevation="2" rounded>Zur App</v-btn>
+      <v-btn elevation="2" rounded large>Zu der App</v-btn>
     </div>
   </div>
 </template>
@@ -343,6 +356,12 @@ export default {};
 .start-section svg {
   min-height: 100vh;
 }
+.start-section .start-text {
+  position: absolute;
+  top: 20vh;
+  width: 100%;
+}
+// SVG Farben
 .cls-3 {
   fill: #d3302f;
 }
