@@ -25,22 +25,72 @@
     <v-main>
       <!-- Start -->
       <StartSection />
-      <!-- Features -->
-      <section class="features">
+      <!-- Description -->
+      <section class="description">
         <v-row align="center" class="wrapper">
           <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-h2 white--text">
-              Die <span class="pink--text lighten-2">Get Around - Vienna</span> App erleichtert dir
-              den Transport quer durch Wien
+            <div class="w-75 pb-4 text-h2 grey--text text--lighten-3">
+              Die <span class="pink--text text--lighten-2">Get Around - Vienna</span> App
+              erleichtert dir den Transport quer durch Wien
             </div>
-            <div class="w-75 text-h5 grey--text lighten-4">
+            <div class="w-75 text-h5 grey--text">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
               invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
               accusam et justo duo dolores et ea rebum.
             </div>
           </v-col>
           <v-col cols="12" md="5">
-            <v-img class="mr-12" contain src="/img/phone-mockup.png"></v-img>
+            <v-img class="mr-16" contain src="/img/phone-mockup.png"></v-img>
+          </v-col>
+        </v-row>
+      </section>
+      <!-- Features -->
+      <section class="features">
+        <!-- Routes -->
+        <v-row align="center" class="wrapper">
+          <v-col cols="12" md="5">
+            <v-img class="ml-16" contain src="/img/street-map.svg"></v-img>
+          </v-col>
+          <v-col cols="12" md="7" class="d-flex flex-column align-center">
+            <div class="w-75 pb-4 text-h2">
+              Lasse dir die
+              <span class="light-blue--text text--lighten-2">Beste Route</span> von A zu B nach
+              deinen <span class="light-blue--text text--lighten-2">Kriterien</span> berechnen
+            </div>
+            <div class="w-75 text-h5 grey--text">
+              Ob schnell, mit wenigen Umstiegen oder einen Weg ohne bestimmte Verkehrsmittel die du
+              nicht magst.
+            </div>
+          </v-col>
+        </v-row>
+        <!-- Favourites -->
+        <v-row align="center" class="wrapper">
+          <v-col cols="12" md="7" class="d-flex flex-column align-center">
+            <div class="w-75 pb-4 text-h2">
+              Speichere <span class="yellow--text text--accent-4">Favoriten</span> um täglich Zeit
+              zu sparen
+            </div>
+            <div class="w-75 text-h5 grey--text">
+              Ob schnell, mit wenigen Umstiegen oder einen Weg ohne bestimmte Verkehrsmittel die du
+              nicht magst.
+            </div>
+          </v-col>
+          <v-col cols="12" md="5">
+            <v-img class="mr-16" contain src="/img/fav-star.svg"></v-img>
+          </v-col>
+        </v-row>
+        <!-- Planer -->
+        <v-row align="center" class="wrapper">
+          <v-col cols="12" md="5">
+            <v-img class="ml-16" contain src="/img/planer.svg"></v-img>
+          </v-col>
+          <v-col cols="12" md="7" class="d-flex flex-column align-center">
+            <div class="w-75 pb-4 text-h2">
+              Dein <span class="red--text">Persönlicher Planer</span> mit deinen eigenen Routinen
+            </div>
+            <div class="w-75 text-h5 grey--text">
+              Schickt dir rechtzeitig Benachrichtigungen, damit du nicht zu spät kommt
+            </div>
           </v-col>
         </v-row>
       </section>
@@ -62,10 +112,15 @@ export default {
 </script>
 
 <style lang="css">
-.features .wrapper {
+.description .wrapper {
   background-color: #3c3c3b;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  margin-bottom: 15vh;
+}
+.features .wrapper {
+  width: 100vw;
+  min-height: 90vh;
 }
 .w-75 {
   width: 75%;

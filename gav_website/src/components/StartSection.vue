@@ -337,10 +337,12 @@
     </svg>
     <div class="start-text d-flex flex-column align-center pa-5">
       <v-img class="mb-2" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
-      <div class="mb-1 text-lg-h1 text-md-h2 text-h3 text-uppercase text-center">
-        Get Around Vienna
+      <div
+        class="mb-1 text-lg-h1 text-md-h2 text-h3 text-uppercase text-center grey--text text--lighten-2"
+      >
+        Get Around - Vienna
       </div>
-      <div class="mb-4 text-lg-h3 text-md-h4 text-h5 font-weight-light text-center">
+      <div class="mb-4 text-lg-h3 text-md-h4 text-h5 text-center">
         Leichter mit öffentlichen Verkehrmitteln durch Wien
       </div>
       <v-btn elevation="2" rounded large>Zu der App</v-btn>
