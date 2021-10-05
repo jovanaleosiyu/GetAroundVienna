@@ -96,7 +96,7 @@
       </section>
       <!-- About -->
       <section class="about">
-        <v-row class="pa-16">
+        <v-row class="mx-auto mb-16">
           <!-- Profile 1 -->
           <v-col align="center">
             <v-card class="rounded-xl">
@@ -113,7 +113,7 @@
                   UI/UX Design, Frontend Development, Marketing
                   <!-- , Projektmanagement -->
                 </div>
-                <v-list-item class="align-self-end">
+                <v-list-item href="mailto:stevic.j02@htlwienwest.at" class="align-self-end">
                   <v-list-item-content class="text-caption">
                     stevic.j02@htlwienwest.at
                   </v-list-item-content>
@@ -145,9 +145,8 @@
                 </div>
                 <div class="text-caption">
                   Backend Development
-                  <!-- , Projektmanagement -->
                 </div>
-                <v-list-item class="align-self-end">
+                <v-list-item href="mailto:sun.s02@htlwienwest.at" class="align-self-end">
                   <v-list-item-content class="text-caption">
                     sun.s02@hltwienwest.at
                   </v-list-item-content>
@@ -178,12 +177,11 @@
                   Leopold Urteil
                 </div>
                 <div class="text-caption">
-                  Backend Development
-                  <!-- , Projektmanagement -->
+                  Frontend Development
                 </div>
-                <v-list-item class="align-self-end">
+                <v-list-item href="mailto:urteil.l00@htlwienwest.at" class="align-self-end">
                   <v-list-item-content class="text-caption">
-                    stevic.j02@htlwienwest.at
+                    urteil.l00@htlwienwest.at
                   </v-list-item-content>
                   <v-list-item-icon>
                     <v-icon color="indigo">
@@ -201,7 +199,50 @@
           </v-col>
         </v-row>
       </section>
+      <!-- Contact  -->
+      <section class="contact">
+        <div class="pa-16 wrapper">
+          <div class="text-h1 pb-8 red--text text--accent-2">
+            Interresse <span class="white--text">geweckt?</span><br />Fragen?
+          </div>
+          <div class="text-h5 pb-8 white--text">
+            Erreiche uns auf folgenden Social Media Profilen
+          </div>
+          <div>
+            <v-btn class="mr-4" rounded x-large>
+              Instagram
+              <v-icon right dark>
+                mdi-instagram
+              </v-icon>
+            </v-btn>
+            <v-btn rounded x-large>
+              Facebook
+              <v-icon right dark>
+                mdi-facebook
+              </v-icon>
+            </v-btn>
+          </div>
+        </div>
+      </section>
     </v-main>
+    <v-footer dark padless>
+      <v-card flat tile class="red accent-2 text-center w-100">
+        <v-card-text class="white--text">
+          Get Around - Vienna | Diplomarbeit an der
+          <a
+            class="text-decoration-none indigo--text text--accent-1"
+            href="https://www.htlwienwest.at/"
+            target="_blank"
+            >HTL Wien West</a
+          >
+          (Informationstechnologie) | 5BHITM 2021/22
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-text class="pa-2 text-right">
+          © 2021 - 2021 www.getaroundvienna.at - All Rights Reserved.
+        </v-card-text>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
@@ -219,21 +260,40 @@ export default {
 </script>
 
 <style lang="css">
+.w-75 {
+  width: 75%;
+}
+.w-100 {
+  width: 100%;
+}
 .description .wrapper {
   background-color: #3c3c3b;
   width: 100vw;
   min-height: 100vh;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
+  border-bottom-left-radius: 300px !important;
+  /* border-bottom-right-radius: 124px !important; */
 }
 .features .wrapper {
   width: 100vw;
-  min-height: 90vh;
+  min-height: 85vh;
 }
 .about .v-card {
   width: 400px;
   min-height: 550px;
 }
-.w-75 {
-  width: 75%;
+.about .row {
+  width: 85%;
+}
+.features .row {
+  width: 90%;
+  margin: auto;
+}
+.contact .wrapper {
+  background-color: #3c3c3b;
+  width: 100vw;
+  min-height: 80vh;
+  margin-top: 10vh;
+  border-top-right-radius: 300px !important;
 }
 </style>
