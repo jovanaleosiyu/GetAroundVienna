@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- App Bar -->
-    <v-app-bar fixed dense dark flat elevate-on-scroll color="transparent">
+    <v-app-bar fixed dense flat dark class="transparent">
       <div class="d-flex align-center">
         <v-img
           alt="Get Around Vienna Logo"
@@ -94,6 +94,113 @@
           </v-col>
         </v-row>
       </section>
+      <!-- About -->
+      <section class="about">
+        <v-row class="pa-16">
+          <!-- Profile 1 -->
+          <v-col align="center">
+            <v-card class="rounded-xl">
+              <v-card-text class="d-flex pt-12 px-8 flex-column align-start">
+                <v-avatar size="128">
+                  <v-img
+                    src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  ></v-img>
+                </v-avatar>
+                <div class="mt-5 pb-1 text-h3 indigo--text">
+                  Jovana Stevic
+                </div>
+                <div class="text-caption">
+                  UI/UX Design, Frontend Development, Marketing
+                  <!-- , Projektmanagement -->
+                </div>
+                <v-list-item class="align-self-end">
+                  <v-list-item-content class="text-caption">
+                    stevic.j02@htlwienwest.at
+                  </v-list-item-content>
+                  <v-list-item-icon>
+                    <v-icon color="indigo">
+                      mdi-email
+                    </v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+                <p class="text-justify">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum...
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <!-- Profile 2 -->
+          <v-col align="center">
+            <v-card class="rounded-xl">
+              <v-card-text class="d-flex pt-12 px-8 flex-column align-start">
+                <v-avatar size="128">
+                  <v-img
+                    src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  ></v-img>
+                </v-avatar>
+                <div class="mt-5 pb-1 text-h3 indigo--text">
+                  Si Yu Sun
+                </div>
+                <div class="text-caption">
+                  Backend Development
+                  <!-- , Projektmanagement -->
+                </div>
+                <v-list-item class="align-self-end">
+                  <v-list-item-content class="text-caption">
+                    sun.s02@hltwienwest.at
+                  </v-list-item-content>
+                  <v-list-item-icon>
+                    <v-icon color="indigo">
+                      mdi-email
+                    </v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+                <p class="text-justify">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum...
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <!-- Profile 3 -->
+          <v-col align="center">
+            <v-card class="rounded-xl">
+              <v-card-text class="d-flex pt-12 px-8 flex-column align-start">
+                <v-avatar size="128">
+                  <v-img
+                    src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  ></v-img>
+                </v-avatar>
+                <div class="mt-5 pb-1 text-h3 indigo--text">
+                  Leopold Urteil
+                </div>
+                <div class="text-caption">
+                  Backend Development
+                  <!-- , Projektmanagement -->
+                </div>
+                <v-list-item class="align-self-end">
+                  <v-list-item-content class="text-caption">
+                    stevic.j02@htlwienwest.at
+                  </v-list-item-content>
+                  <v-list-item-icon>
+                    <v-icon color="indigo">
+                      mdi-email
+                    </v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+                <p class="text-justify">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum...
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </section>
     </v-main>
   </v-app>
 </template>
@@ -121,6 +228,10 @@ export default {
 .features .wrapper {
   width: 100vw;
   min-height: 90vh;
+}
+.about .v-card {
+  width: 400px;
+  min-height: 550px;
 }
 .w-75 {
   width: 75%;
