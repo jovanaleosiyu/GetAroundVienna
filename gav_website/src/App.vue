@@ -2,7 +2,7 @@
   <v-app>
     <!-- App Bar -->
     <v-app-bar fixed dense flat dark class="transparent">
-      <div class="d-flex align-center">
+      <a href="#">
         <v-img
           alt="Get Around Vienna Logo"
           class="shrink mr-2"
@@ -11,12 +11,13 @@
           transition="fab-transition"
           width="35"
         />
-      </div>
+      </a>
       <!-- <v-toolbar-title>Get Around - Vienna</v-toolbar-title> -->
       <v-spacer></v-spacer>
-      <v-btn plain>Features</v-btn>
-      <v-btn plain>Über uns</v-btn>
-      <v-btn plain>Kontakt</v-btn>
+      <v-btn plain href="#description">Was</v-btn>
+      <v-btn plain href="#features">Features</v-btn>
+      <v-btn plain href="#about">Über uns</v-btn>
+      <v-btn plain href="#">Kontakt</v-btn>
       <v-btn elevation="2" rounded>
         Zu der App
       </v-btn>
@@ -26,10 +27,12 @@
       <!-- Start -->
       <StartSection />
       <!-- Description -->
-      <section class="description">
+      <section id="description">
         <v-row align="center" class="wrapper">
           <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-h2 grey--text text--lighten-3">
+            <div
+              class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4 pt-lg-0 pt-16 grey--text text--lighten-3"
+            >
               Die <span class="pink--text text--lighten-2">Get Around - Vienna</span> App
               erleichtert dir den Transport quer durch Wien
             </div>
@@ -39,20 +42,20 @@
               accusam et justo duo dolores et ea rebum.
             </div>
           </v-col>
-          <v-col cols="12" md="5">
+          <v-col cols="12" md="5" class="pa-md-0 pa-16">
             <v-img class="mr-16" contain src="/img/phone-mockup.png"></v-img>
           </v-col>
         </v-row>
       </section>
       <!-- Features -->
-      <section class="features">
+      <section id="features">
         <!-- Routes -->
         <v-row align="center" class="wrapper">
-          <v-col cols="12" md="5">
-            <v-img class="ml-16" contain src="/img/street-map.svg"></v-img>
+          <v-col class="pa-md-0 pa-16" cols="12" md="5">
+            <v-img class="ml-md-16" contain src="/img/street-map.svg"></v-img>
           </v-col>
           <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-h2">
+            <div class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4">
               Lasse dir die
               <span class="light-blue--text text--lighten-2">Beste Route</span> von A zu B nach
               deinen <span class="light-blue--text text--lighten-2">Kriterien</span> berechnen
@@ -65,8 +68,11 @@
         </v-row>
         <!-- Favourites -->
         <v-row align="center" class="wrapper">
+          <v-col class="pa-md-0 pa-16" order-md="2" cols="12" md="5">
+            <v-img class="mr-md-16" contain src="/img/fav-star.svg"></v-img>
+          </v-col>
           <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-h2">
+            <div class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4">
               Speichere <span class="yellow--text text--accent-4">Favoriten</span> um täglich Zeit
               zu sparen
             </div>
@@ -75,17 +81,14 @@
               nicht magst.
             </div>
           </v-col>
-          <v-col cols="12" md="5">
-            <v-img class="mr-16" contain src="/img/fav-star.svg"></v-img>
-          </v-col>
         </v-row>
         <!-- Planer -->
-        <v-row align="center" class="wrapper">
-          <v-col cols="12" md="5">
-            <v-img class="ml-16" contain src="/img/planer.svg"></v-img>
+        <v-row align="center" class="wrapper pb-md-0 pb-16">
+          <v-col class="pa-md-0 pa-16" cols="12" md="5">
+            <v-img class="ml-md-16" contain src="/img/planer.svg"></v-img>
           </v-col>
           <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-h2">
+            <div class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4">
               Dein <span class="red--text">Persönlicher Planer</span> mit deinen eigenen Routinen
             </div>
             <div class="w-75 text-h5 grey--text">
@@ -95,8 +98,8 @@
         </v-row>
       </section>
       <!-- About -->
-      <section class="about">
-        <v-row class="mx-auto mb-16">
+      <section id="about">
+        <v-row class="mx-auto mb-16 mt-md-0 mt-16">
           <!-- Profile 1 -->
           <v-col align="center">
             <v-card class="rounded-xl">
@@ -200,22 +203,22 @@
         </v-row>
       </section>
       <!-- Contact  -->
-      <section class="contact">
+      <section id="contact">
         <div class="pa-16 wrapper">
-          <div class="text-h1 pb-8 red--text text--accent-2">
+          <div class="text-md-h1 text-h3 pb-8 red--text text--accent-2">
             Interresse <span class="white--text">geweckt?</span><br />Fragen?
           </div>
-          <div class="text-h5 pb-8 white--text">
+          <div class="text-md-h5 pb-8 white--text">
             Erreiche uns auf folgenden Social Media Profilen
           </div>
           <div>
-            <v-btn class="mr-4" rounded x-large>
+            <v-btn class="mr-4 mb-sm-0 mb-4" rounded x-large>
               Instagram
               <v-icon right dark>
                 mdi-instagram
               </v-icon>
             </v-btn>
-            <v-btn rounded x-large>
+            <v-btn class="mb-sm-0 mb-4" rounded x-large>
               Facebook
               <v-icon right dark>
                 mdi-facebook
@@ -266,7 +269,7 @@ export default {
 .w-100 {
   width: 100%;
 }
-.description .wrapper {
+#description .wrapper {
   background-color: #3c3c3b;
   width: 100vw;
   min-height: 100vh;
@@ -274,22 +277,23 @@ export default {
   border-bottom-left-radius: 300px !important;
   /* border-bottom-right-radius: 124px !important; */
 }
-.features .wrapper {
+#features .wrapper {
   width: 100vw;
   min-height: 85vh;
 }
-.about .v-card {
-  width: 400px;
-  min-height: 550px;
-}
-.about .row {
-  width: 85%;
-}
-.features .row {
+#features .row {
   width: 90%;
   margin: auto;
 }
-.contact .wrapper {
+#about .v-card {
+  width: 400px;
+  min-height: 550px;
+}
+#about .row {
+  width: 85%;
+}
+
+#contact .wrapper {
   background-color: #3c3c3b;
   width: 100vw;
   min-height: 80vh;
