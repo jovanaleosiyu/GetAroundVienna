@@ -342,7 +342,7 @@
       >
         Get Around - Vienna
       </div>
-      <div class="mb-4 text-lg-h3 text-md-h4 text-h5 text-center grey--text text--lighten-2">
+      <div class="mb-4 text-lg-h3 text-md-h4 text-h5 text-center text--secondary">
         Leichter mit öffentlichen Verkehrmitteln durch Wien
       </div>
       <v-btn elevation="2" rounded large>Zu der App</v-btn>

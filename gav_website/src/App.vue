@@ -14,13 +14,35 @@
       </a>
       <!-- <v-toolbar-title>Get Around - Vienna</v-toolbar-title> -->
       <v-spacer></v-spacer>
-      <v-btn plain href="#description">Was</v-btn>
-      <v-btn plain href="#features">Features</v-btn>
-      <v-btn plain href="#about">Über uns</v-btn>
-      <v-btn plain href="#">Kontakt</v-btn>
-      <v-btn elevation="2" rounded>
-        Zu der App
-      </v-btn>
+      <!-- Desktop -->
+      <div class="d-md-block d-none">
+        <v-btn plain href="#description">Was</v-btn>
+        <v-btn plain href="#features">Features</v-btn>
+        <v-btn plain href="#about">Über uns</v-btn>
+        <v-btn plain href="#contact">Kontakt</v-btn>
+        <v-btn elevation="2" rounded>
+          Zu der App
+        </v-btn>
+      </div>
+      <!-- Mobile -->
+      <div class="d-md-none d-inline-flex">
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <div class="mobile-nav">
+          <v-list nav class="pa-12">
+            <v-list-item href="#description">Was</v-list-item>
+            <v-list-item href="#features">Features</v-list-item>
+            <v-list-item href="#about">Über uns</v-list-item>
+            <v-list-item href="#contact">Kontakt</v-list-item>
+          </v-list>
+          <!-- <v-btn plain href="#description">Was</v-btn>
+          <v-btn plain href="#features">Features</v-btn>
+          <v-btn plain href="#about">Über uns</v-btn>
+          <v-btn plain href="#">Kontakt</v-btn>
+          <v-btn elevation="2" rounded>
+            Zu der App
+          </v-btn> -->
+        </div>
+      </div>
     </v-app-bar>
     <!-- Main -->
     <v-main>
@@ -28,7 +50,7 @@
       <StartSection />
       <!-- Description -->
       <section id="description">
-        <v-row align="center" class="wrapper">
+        <v-row align="center" class="wrapper elevation-4">
           <v-col cols="12" md="7" class="d-flex flex-column align-center">
             <div
               class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4 pt-lg-0 pt-16 grey--text text--lighten-3"
@@ -42,7 +64,7 @@
               accusam et justo duo dolores et ea rebum.
             </div>
           </v-col>
-          <v-col cols="12" md="5" class="pa-md-0 pa-16">
+          <v-col cols="12" md="5" class="pa-md-0 pa-12">
             <v-img class="mr-16" contain src="/img/phone-mockup.png"></v-img>
           </v-col>
         </v-row>
@@ -99,7 +121,7 @@
       </section>
       <!-- About -->
       <section id="about">
-        <v-row class="mx-auto mb-16 mt-md-0 mt-16">
+        <v-row class="mx-auto grey lighten-5">
           <!-- Profile 1 -->
           <v-col align="center">
             <v-card class="rounded-xl">
@@ -204,7 +226,7 @@
       </section>
       <!-- Contact  -->
       <section id="contact">
-        <div class="pa-16 wrapper">
+        <div class="elevation-4 pa-16 d-flex flex-column justify-center wrapper">
           <div class="text-md-h1 text-h3 pb-8 red--text text--accent-2">
             Interresse <span class="white--text">geweckt?</span><br />Fragen?
           </div>
@@ -272,10 +294,8 @@ export default {
 #description .wrapper {
   background-color: #3c3c3b;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 105vh;
   margin-bottom: 10vh;
-  border-bottom-left-radius: 300px !important;
-  /* border-bottom-right-radius: 124px !important; */
 }
 #features .wrapper {
   width: 100vw;
@@ -290,14 +310,17 @@ export default {
   min-height: 550px;
 }
 #about .row {
-  width: 85%;
+  margin: 15vh 0 0 0;
+  padding: 12vh 0 20vh 0;
 }
-
 #contact .wrapper {
   background-color: #3c3c3b;
   width: 100vw;
-  min-height: 80vh;
-  margin-top: 10vh;
-  border-top-right-radius: 300px !important;
+  min-height: 95vh;
+}
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  width: 100vw;
 }
 </style>
