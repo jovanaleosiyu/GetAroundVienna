@@ -1,12 +1,14 @@
 <template>
   <div class="start-section">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1922.366 1352.513">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="45 330 1910 880">
       <defs>
         <linearGradient
-          id="linear-gradient"
-          x1="961.183"
-          y1="1352.513"
-          x2="961.183"
+          id="Unbenannter_Verlauf_5"
+          x1="1.203"
+          y1="1080.375"
+          x2="1.203"
+          y2="1081.375"
+          gradientTransform="matrix(2037.1379 0 0 -1433.256 -1472.138 1549584.716)"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stop-color="#f5aaa4" />
@@ -18,10 +20,12 @@
           <stop offset="1" stop-color="#e53835" />
         </linearGradient>
         <linearGradient
-          id="linear-gradient-2"
-          x1="961.183"
-          y1="1352.513"
-          x2="961.183"
+          id="Unbenannter_Verlauf_2"
+          x1="1.203"
+          y1="1080.375"
+          x2="1.203"
+          y2="1081.375"
+          gradientTransform="matrix(2037.136 0 0 -1433.256 -1472.136 1549584.716)"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stop-color="#e67373" />
@@ -32,11 +36,12 @@
           <stop offset="1" stop-color="#c72828" />
         </linearGradient>
         <linearGradient
-          id="linear-gradient-3"
-          x1="962.594"
-          y1="1352.513"
-          x2="962.594"
-          y2="131.94"
+          id="Unbenannter_Verlauf_3"
+          x1="1.203"
+          y1="1080.416"
+          x2="1.203"
+          y2="1081.416"
+          gradientTransform="matrix(2034.1489 0 0 -1293.4421 -1466.16 1398585.769)"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stop-color="#e67373" />
@@ -48,305 +53,531 @@
           <stop offset=".704" stop-color="#c72828" />
         </linearGradient>
         <linearGradient
-          id="linear-gradient-4"
-          x1="961.411"
-          y1="1352.513"
-          x2="961.411"
-          y2="542.215"
+          id="Unbenannter_Verlauf_4"
+          x1="1.203"
+          y1="1080.626"
+          x2="1.203"
+          y2="1081.626"
+          gradientTransform="matrix(2036.65 0 0 -858.674 -1471.168 929036.192)"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset=".006" stop-color="#f2969c" />
           <stop offset=".478" stop-color="#a41926" />
         </linearGradient>
+        <linearGradient
+          id="Unbenannter_Verlauf_6"
+          x1="1.207"
+          y1="1081.261"
+          x2="1.207"
+          y2="1080.261"
+          gradientTransform="matrix(1920 0 0 -1080 -1315 1168017.817)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#c72828" />
+          <stop offset=".356" stop-color="#a73a4a" />
+          <stop offset="1" stop-color="#2d4c77" />
+          <stop offset="1" stop-color="#3c76b9" />
+        </linearGradient>
       </defs>
-      <path id="background" style="fill:url(#linear-gradient)" d="M0 0h1922.366v1352.513H0z" />
+      <path
+        id="background"
+        d="M-39.718-302.817H1997.42V1130.44H-39.718Z"
+        transform="translate(40 302.817)"
+        style="fill:url(#Unbenannter_Verlauf_5)"
+      />
       <path
         id="back1"
-        style="fill:url(#linear-gradient-2)"
-        d="M1893.008 283.764V30.856h-175.68v293.007h-32.462V181.229h-40.505l-15.605-18.668h-89.425l-15.953 18.668h-37.703v238.283l-63.123 109.073v60.642l-35.08 7.638V228.321h-15.969v-87.467h-31.939v-19.33l-31.938 19.33v165.189l-15.97 24.403v223.31h-40.577V254.434h-152.507v138.71l-15.824 6.231v179.552h-47.388v-27.151l-80.005-68.584.147-12.875v-37.381H852.893v37.381H737.609l-67.184 81.459v79.17h-26.699V459.434l-22.122-21.324V293.768l-44.242-16.89v16.89h-44.243v76.429h-22.121v190.136l-38.752-6.71V144.089H337.999l-79.469 96.143-1.531 182.636h-20.358V118.971L157.761 0H0v1352.513H472.246v-.006h38.752v.006h1411.368V283.764h-29.358z"
+        d="M1966.307-2.112v-268.005h-186.168v310.5h-34.4v-151.15h-42.923l-16.534-19.784h-94.764l-16.906 19.782h-39.954V141.74l-66.891 115.585v64.258l-37.174 8.094V-60.865h-16.922v-92.689h-33.85v-20.484l-33.844 20.484V21.497l-16.923 25.86V284h-43V-33.193h-161.612v146.991l-16.77 6.6v190.275h-50.216v-28.772l-84.781-72.679.156-13.644v-39.612H864.094v39.617H741.927l-71.2 86.322v83.9h-28.288V184.046l-23.443-22.6V8.49l-46.883-17.9v17.9h-46.884v80.994h-23.442V290.97l-41.066-7.11v-433.985H318.46L234.247-48.243l-1.622 193.54h-21.574v-322.04l-83.589-126.074h-167.18V1130.44h500.44v-.006h41.066v.006h1495.63V-2.11Z"
+        transform="translate(40 302.817)"
+        style="fill:url(#Unbenannter_Verlauf_2)"
       />
       <g id="riesenrad">
         <g id="rad-wagon">
           <path
+            id="Pfad_1"
+            data-name="Pfad 1"
             class="cls-3"
-            d="M644.435 372.05v24.201h28.946V372.05Zm7.592 12.916h-4.834v-7.74h4.834Zm12.22 0H653.57v-7.74h10.677Zm6.376 0h-4.834v-7.74h4.834Z"
-            transform="translate(2.821)"
+            d="M626.18 90.445v25.65h30.674v-25.65Zm8.045 13.687h-5.123v-8.2h5.123Zm12.95 0H635.86v-8.2h11.315Zm6.757 0h-5.123v-8.2h5.123Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_2"
+            data-name="Pfad 2"
             class="cls-3"
-            d="M658.908 363.983h-.015c-5.844.224-11.4 2.938-16.772 7.236l3.56 1.84h26.44l3.559-1.84c-5.372-4.298-10.928-7.012-16.772-7.236Z"
-            transform="translate(2.821)"
-          />
-        </g>
-        <g id="rad-wagon-2" data-name="rad-wagon">
-          <path
-            class="cls-3"
-            d="M694.376 499.608v24.2h28.947v-24.2Zm7.593 12.916h-4.835v-7.741h4.835Zm12.22 0H703.51v-7.741h10.677Zm6.376 0h-4.835v-7.741h4.834Z"
-            transform="translate(2.821)"
-          />
-          <path
-            class="cls-3"
-            d="M708.85 491.541v-.001h-.015c-5.844.224-11.4 2.938-16.772 7.237l3.56 1.839h26.44l3.559-1.84c-5.373-4.298-10.928-7.011-16.772-7.235Z"
-            transform="translate(2.821)"
+            d="M641.517 81.896h-.016c-6.193.237-12.081 3.113-17.773 7.668l3.773 1.95h28.019l3.771-1.95c-5.693-4.55-11.584-7.43-17.774-7.668Z"
+            transform="translate(40 302.817)"
           />
         </g>
-        <g id="rad-wagon-3" data-name="rad-wagon">
+        <g id="rad-wagon-2">
           <path
+            id="Pfad_3"
+            data-name="Pfad 3"
             class="cls-3"
-            d="M645.839 608.77v24.2h28.946v-24.2Zm7.592 12.915h-4.834v-7.74h4.834Zm12.22 0h-10.677v-7.74h10.676Zm6.376 0h-4.834v-7.74h4.834Z"
-            transform="translate(2.821)"
+            d="M679.102 225.618v25.645h30.675v-25.645Zm8.046 13.687h-5.122v-8.2h5.124Zm12.95 0H688.78v-8.2h11.315Zm6.757 0h-5.13v-8.2h5.124Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_4"
+            data-name="Pfad 4"
             class="cls-3"
-            d="M660.312 600.703v-.001h-.015c-5.844.224-11.4 2.938-16.772 7.237l3.56 1.839h26.44l3.559-1.84c-5.372-4.298-10.928-7.012-16.772-7.235Z"
-            transform="translate(2.821)"
-          />
-        </g>
-        <g id="rad-wagon-4" data-name="rad-wagon">
-          <path
-            class="cls-3"
-            d="M415.85 607.79v24.201h28.947V607.79Zm7.593 12.916h-4.834v-7.74h4.834Zm12.22 0h-10.677v-7.74h10.677Zm6.376 0h-4.834v-7.74h4.834Z"
-            transform="translate(2.821)"
-          />
-          <path
-            class="cls-3"
-            d="M430.324 599.724h-.015c-5.844.223-11.4 2.937-16.772 7.236l3.56 1.839h26.44l3.559-1.84c-5.372-4.298-10.928-7.012-16.772-7.235Z"
-            transform="translate(2.821)"
+            d="M694.44 217.07h-.016c-6.193.236-12.081 3.112-17.773 7.668l3.773 1.95h28.018l3.771-1.95c-5.694-4.556-11.58-7.43-17.773-7.668Z"
+            transform="translate(40 302.817)"
           />
         </g>
-        <g id="rad-wagon-5" data-name="rad-wagon">
+        <g id="rad-wagon-3">
           <path
+            id="Pfad_5"
+            data-name="Pfad 5"
             class="cls-3"
-            d="M530.835 658.942v24.202h28.947v-24.202Zm7.592 12.917h-4.834v-7.741h4.834Zm12.22 0H539.97v-7.741h10.677Zm6.376 0h-4.834v-7.741h4.834Z"
-            transform="translate(2.821)"
+            d="M627.667 341.298v25.645h30.674v-25.645Zm8.045 13.685h-5.123v-8.2h5.123Zm12.95 0h-11.315v-8.2h11.313Zm6.757 0h-5.123v-8.2h5.123Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_6"
+            data-name="Pfad 6"
             class="cls-3"
-            d="M545.308 650.876h-.015c-5.843.223-11.4 2.937-16.771 7.236l3.559 1.839h26.44l3.56-1.84c-5.373-4.298-10.929-7.012-16.773-7.235Z"
-            transform="translate(2.821)"
-          />
-        </g>
-        <g id="rad-wagon-6" data-name="rad-wagon">
-          <path
-            class="cls-3"
-            d="M368.885 499.608v24.2h28.947v-24.2Zm7.593 12.916h-4.835v-7.741h4.835Zm12.219 0H378.02v-7.741h10.677Zm6.376 0h-4.834v-7.741h4.834Z"
-            transform="translate(2.821)"
-          />
-          <path
-            class="cls-3"
-            d="M383.358 491.541v-.001h-.015c-5.843.224-11.4 2.938-16.771 7.237l3.559 1.839h26.44l3.56-1.84c-5.373-4.298-10.929-7.011-16.773-7.235Z"
-            transform="translate(2.821)"
+            d="M643.004 332.745h-.014c-6.193.237-12.081 3.113-17.773 7.67l3.773 1.948h28.018l3.772-1.95c-5.693-4.555-11.58-7.43-17.773-7.667Z"
+            transform="translate(40 302.817)"
           />
         </g>
-        <g id="rad-wagon-7" data-name="rad-wagon">
+        <g id="rad-wagon-4">
           <path
+            id="Pfad_7"
+            data-name="Pfad 7"
             class="cls-3"
-            d="M530.835 324.215v24.2h28.946v-24.2Zm7.592 12.916h-4.834v-7.741h4.834Zm12.22 0H539.97v-7.741h10.677Zm6.376 0h-4.834v-7.741h4.834Z"
-            transform="translate(2.821)"
+            d="M383.948 340.26v25.645h30.675V340.26Zm8.046 13.686h-5.123v-8.2h5.127Zm12.95 0h-11.315v-8.2h11.314Zm6.757 0h-5.123v-8.2h5.12Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_8"
+            data-name="Pfad 8"
             class="cls-3"
-            d="M545.308 316.148h-.015c-5.843.224-11.4 2.937-16.771 7.236l3.559 1.839h26.44l3.559-1.839c-5.372-4.299-10.928-7.012-16.772-7.236Z"
-            transform="translate(2.821)"
+            d="M399.286 331.711h-.016c-6.193.237-12.081 3.112-17.773 7.669l3.773 1.948h28.019l3.77-1.95c-5.692-4.555-11.58-7.43-17.773-7.667Z"
+            transform="translate(40 302.817)"
           />
         </g>
-        <g id="rad-wagon-8" data-name="rad-wagon">
+        <g id="rad-wagon-5">
           <path
+            id="Pfad_9"
+            data-name="Pfad 9"
             class="cls-3"
-            d="M417.23 372.05v24.201h28.948V372.05Zm7.594 12.916h-4.835v-7.74h4.835Zm12.219 0h-10.677v-7.74h10.677Zm6.376 0h-4.834v-7.74h4.834Z"
-            transform="translate(2.821)"
+            d="M505.798 394.466v25.646h30.675v-25.647Zm8.045 13.687h-5.123v-8.2h5.123Zm12.95 0h-11.315v-8.2h11.315Zm6.757 0h-5.123v-8.2h5.123Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_10"
+            data-name="Pfad 10"
             class="cls-3"
-            d="M431.704 363.983h-.015c-5.844.224-11.4 2.938-16.772 7.236l3.56 1.84h26.44l3.559-1.84c-5.372-4.298-10.928-7.012-16.772-7.236Z"
-            transform="translate(2.821)"
+            d="M521.135 385.917h-.016c-6.192.236-12.081 3.112-17.772 7.669l3.771 1.948h28.019l3.772-1.95c-5.693-4.555-11.584-7.43-17.774-7.667Z"
+            transform="translate(40 302.817)"
+          />
+        </g>
+        <g id="rad-wagon-6">
+          <path
+            id="Pfad_11"
+            data-name="Pfad 11"
+            class="cls-3"
+            d="M334.179 225.618v25.645h30.675v-25.645Zm8.046 13.687H337.1v-8.2h5.124Zm12.948 0h-11.314v-8.2h11.315Zm6.757 0h-5.123v-8.2h5.123Z"
+            transform="translate(40 302.817)"
+          />
+          <path
+            id="Pfad_12"
+            data-name="Pfad 12"
+            class="cls-3"
+            d="M349.516 217.07h-.016c-6.192.236-12.081 3.112-17.772 7.668l3.771 1.95h28.019l3.773-1.95c-5.694-4.556-11.581-7.43-17.774-7.668Z"
+            transform="translate(40 302.817)"
+          />
+        </g>
+        <g id="rad-wagon-7">
+          <path
+            id="Pfad_13"
+            data-name="Pfad 13"
+            class="cls-3"
+            d="M505.798 39.754V65.4h30.674V39.754Zm8.045 13.685h-5.123v-8.2h5.123Zm12.95 0h-11.315v-8.2h11.315Zm6.757 0h-5.123v-8.2h5.123Z"
+            transform="translate(40 302.817)"
+          />
+          <path
+            id="Pfad_14"
+            data-name="Pfad 14"
+            class="cls-3"
+            d="M521.135 31.205h-.016c-6.192.237-12.081 3.112-17.772 7.668l3.771 1.95h28.019l3.77-1.95c-5.691-4.556-11.582-7.43-17.772-7.668Z"
+            transform="translate(40 302.817)"
+          />
+        </g>
+        <g id="rad-wagon-8">
+          <path
+            id="Pfad_15"
+            data-name="Pfad 15"
+            class="cls-3"
+            d="M385.41 90.445v25.65h30.676v-25.65Zm8.047 13.687h-5.124v-8.2h5.124Zm12.948 0h-11.314v-8.2h11.314Zm6.757 0h-5.122v-8.2h5.123Z"
+            transform="translate(40 302.817)"
+          />
+          <path
+            id="Pfad_16"
+            data-name="Pfad 16"
+            class="cls-3"
+            d="M400.748 81.896h-.016c-6.193.237-12.081 3.113-17.773 7.668l3.773 1.95h28.019l3.77-1.95c-5.692-4.55-11.58-7.43-17.773-7.668Z"
+            transform="translate(40 302.817)"
           />
         </g>
         <g id="geruest">
           <path
+            id="Pfad_17"
+            data-name="Pfad 17"
             class="cls-3"
-            d="M545.3 357.762a139.736 139.736 0 1 0 139.736 139.736 139.736 139.736 0 0 0-139.735-139.736Zm0 270.12a130.383 130.383 0 1 1 130.384-130.384A130.383 130.383 0 0 1 545.301 627.88Z"
-            transform="translate(2.821)"
+            d="M521.126 75.304Zm0 286.246Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_18"
+            data-name="Pfad 18"
             class="cls-3"
-            d="M545.3 390.923a106.574 106.574 0 1 0 106.575 106.575 106.574 106.574 0 0 0-106.574-106.575Zm0 203.395a96.82 96.82 0 1 1 96.821-96.82 96.82 96.82 0 0 1-96.82 96.82Z"
-            transform="translate(2.821)"
-          />
-          <path class="cls-3" d="M544.078 335.541V659.455h8.089V335.541h-8.089z" />
-          <path class="cls-3" d="M657.05 493.453H386.165v8.089H710.08v-8.089h-53.03z" />
-          <path
-            class="cls-3"
-            d="m430.741 385.837 35.25 35.249 9.403 9.403 184.39 184.39 5.719-5.72-184.39-184.39-9.402-9.402-35.25-35.25-5.72 5.72z"
+            d="M521.126 110.444a112.937 112.937 0 1 0 112.937 112.938 112.936 112.936 0 0 0-112.935-112.937Zm0 215.538a102.6 102.6 0 1 1 102.6-102.6 102.6 102.6 0 0 1-102.6 102.6Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_19"
+            data-name="Pfad 19"
             class="cls-3"
-            d="m665.503 385.837-35.25 35.249-9.402 9.403-184.39 184.39-5.72-5.72 184.39-184.39 9.403-9.402 35.25-35.25 5.719 5.72z"
+            d="M516.842 51.756V395.01h8.572V51.756Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_20"
+            data-name="Pfad 20"
             class="cls-3"
-            d="m482.407 349.416 19.078 46.057 5.088 12.285 99.791 240.917 7.473-3.096-99.791-240.917-5.088-12.285-19.078-46.056-7.473 3.095z"
+            d="M636.558 219.096H349.5v8.572h343.253v-8.572h-56.196Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_21"
+            data-name="Pfad 21"
             class="cls-3"
-            d="m613.837 349.416-19.077 46.057-5.089 12.285-99.791 240.917-7.473-3.096 99.791-240.917 5.089-12.285 19.077-46.056 7.473 3.095z"
+            d="m396.738 105.054 37.359 37.354 9.964 9.964 195.4 195.4 6.06-6.06-195.4-195.4-9.963-9.964-37.361-37.355-6.062 6.062Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_22"
+            data-name="Pfad 22"
             class="cls-3"
-            d="m647.211 452.076-9.349 3.873-240.917 99.791 3.096 7.473 240.917-99.791 9.348-3.873 48.993-20.293-3.095-7.473-48.993 20.293z"
+            d="m645.516 105.054-37.354 37.353-9.965 9.97-195.4 195.4-6.062-6.062 195.4-195.4 9.964-9.963 37.354-37.354 6.06 6.062Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_23"
+            data-name="Pfad 23"
             class="cls-3"
-            d="m449.034 452.076 9.348 3.873 240.917 99.791-3.095 7.473-240.917-99.791-9.349-3.873-48.993-20.293 3.096-7.473 48.993 20.293z"
-          />
-          <circle class="cls-3" cx="548.122" cy="497.498" r="38.51" />
-          <path
-            class="cls-3"
-            transform="rotate(-20 595.417 621.792)"
-            d="M583.036 517.528h21.94v224.527h-21.94z"
+            d="m451.489 66.46 20.217 48.806 5.392 13.018 105.749 255.3 7.919-3.28-105.75-255.3-5.391-13.019-20.217-48.805Z"
+            transform="translate(40 302.817)"
           />
           <path
+            id="Pfad_24"
+            data-name="Pfad 24"
             class="cls-3"
-            transform="rotate(-160 498.007 629.543)"
-            d="M485.626 517.528h21.94v224.527h-21.94z"
+            d="m590.766 66.46-20.216 48.806-5.393 13.018-105.75 255.3-7.918-3.28 105.749-255.3 5.393-13.019 20.216-48.806Z"
+            transform="translate(40 302.817)"
+          />
+          <path
+            id="Pfad_25"
+            data-name="Pfad 25"
+            class="cls-3"
+            d="m626.132 175.25-9.907 4.1-255.3 105.751 3.28 7.92 255.3-105.75 9.907-4.1 51.918-21.5-3.28-7.919-51.918 21.5Z"
+            transform="translate(40 302.817)"
+          />
+          <path
+            id="Pfad_26"
+            data-name="Pfad 26"
+            class="cls-3"
+            d="m416.124 175.25 9.906 4.1L681.33 285.1l-3.28 7.92-255.3-105.749-9.907-4.1-51.918-21.5 3.28-7.919 51.919 21.5Z"
+            transform="translate(40 302.817)"
+          />
+          <circle
+            id="Ellipse_1"
+            data-name="Ellipse 1"
+            class="cls-3"
+            cx="561.127"
+            cy="526.199"
+            r="40.809"
+          />
+          <path
+            id="Pfad_27"
+            data-name="Pfad 27"
+            class="cls-3"
+            d="m521.126 255.757 21.855-7.951 81.372 223.655-21.855 7.952Z"
+            transform="translate(40 302.817)"
+          />
+          <path
+            id="Pfad_28"
+            data-name="Pfad 28"
+            class="cls-3"
+            d="m439.752 479.343-21.855-7.951 81.372-223.655 21.855 7.951Z"
+            transform="translate(40 302.817)"
           />
         </g>
       </g>
       <path
         id="back2"
-        style="fill:url(#linear-gradient-3)"
-        d="m1841.328 305.57-64.031 88.598 1.127 272.952-44.52 14.73V538.215l-94.106-70.171v-39.988h-128.612v38.429h-107.699l-87.833 71.73v154.154h-87.832V489.424l-93.475-129.054V131.94H909.153v139.785h-69.18v470.502h-95.291l.408-100.202-46.851-65.684H559.595v380.341h-69.169V555.031H368.345v-29.8l-234.77 29.8V439.66H2.821v912.853h1919.545V305.57h-81.038z"
+        d="m1911.54 20.996-67.853 93.887 1.194 289.248-47.178 15.61V267.53l-99.724-74.36v-42.375h-136.29v40.723H1447.56l-93.077 76.012v163.357h-93.076v-215.06L1162.35 79.067V-163H923.712v148.13h-73.31v498.592h-100.98l.432-106.184-49.648-69.605H553.285V710.98h-73.3V285.35H350.617v-31.579L101.83 285.35V163.091H-36.73v967.351H1997.42V20.996h-85.879Z"
+        transform="translate(40 302.817)"
+        style="fill:url(#Unbenannter_Verlauf_3)"
       />
       <path
         id="back3"
-        style="fill:url(#linear-gradient-4)"
-        d="m1852.935 775.747-87.438 43.19v183.845h-54.452V542.215h-146.233l-65.817 69.613v326.157l-54.453-4.001V770.301l-219.118 20.353V760.841h-36.128v12.613h-130.371v17.2h-68.327v-29.813H952.9l-24.347-21.213h-62.829l-25.132 21.213h-28.295V859.173l-52.075 13.274V672.168H649.974v383.742h-60.633l-27.462-174.29h-48.62V623.831l-47.289-20.462v20.462h-26.703v91.716L196.849 630.33 80.563 715.547v181.362H54.908V757.783H.455v594.73h1921.911V775.747h-69.431z"
+        d="m1923.844 519.243-92.658 45.768v194.822h-57.7V271.768H1618.52l-69.746 73.77v345.628l-57.7-4.24V513.472l-232.2 21.568v-31.593h-38.285v13.366h-138.158v18.227h-72.406v-31.593H970.07l-25.8-22.479h-66.58l-26.632 22.479h-29.985v104.207l-55.184 14.067V409.48H649.06v406.652h-64.251l-29.1-184.7h-51.526V358.254l-50.112-21.68v21.68h-28.3v97.2l-256.891-90.3-123.225 90.3v192.19H18.468V500.207h-57.704v630.236h2036.65v-611.2h-73.57Z"
+        transform="translate(40 302.817)"
+        style="fill:url(#Unbenannter_Verlauf_4)"
       />
-      <!-- <path
-      id="logo"
-      d="M1060.951 138.018c-12.17 41.492-73.815 78.202-167.816 80.28v87.536c94-9.498 159.57-68.142 167.816-167.816Zm-52.986 80.478c-19.612 33.447-54.81 49.907-90.62 54.33v-27.318c34.409-.92 77.312-15.804 90.62-27.012Z"
-      transform="translate(2.821)"
-      style="fill:#fff"
-    /> -->
-      <g id="bruecke">
-        <path
-          id="bruecke-2"
-          data-name="bruecke"
-          class="cls-7"
-          d="M-10 961.695v393.694h62.845v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h72.718V961.695Z"
-          transform="translate(2.821)"
-        />
-        <path
-          id="bruecke-3"
-          data-name="bruecke"
-          class="cls-7"
-          d="M629.201 961.695v393.694h62.845v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.188 42.557 107.188 95.054v242.443h100.928v-242.443c0-52.497 47.99-95.054 107.188-95.054s107.189 42.557 107.189 95.054v242.443h72.717V961.695Z"
-          transform="translate(2.821)"
-        />
-      </g>
       <g id="zug">
         <path
-          class="cls-8"
-          d="M1200.6 945.814h25.164v7.577H1200.6zM1558.38 945.814h25.164v7.577h-25.164z"
+          id="Pfad_29"
+          data-name="Pfad 29"
+          class="cls-6"
+          d="M1232.559 699.465h26.666v8.029h-26.666Zm379.14 0h26.666v8.029h-26.666Z"
+          transform="translate(40 302.817)"
         />
         <g id="cockpit">
           <path
-            class="cls-9"
-            d="M1191.009 884.699H896.494l-33.998 39.543a49.178 49.178 0 0 0 0 19.082c.898 3.908 4.359 10.187 9.344 13.449h330.771v-65.518Zm-287.153 33.67H877.08l15.641-18.114h11.135Zm24.729-1.834H908.22v-16.28h20.365Zm24.728 0h-20.365v-16.28h20.365Zm24.728 0h-20.365v-16.28h20.365Zm16.164 0h-11.8v-16.28h20.364Zm151.307 0h-20.365v-16.28h20.365Zm24.729-.477a.477.477 0 0 1-.477.477h-19.412a.477.477 0 0 1-.476-.477v-15.326a.477.477 0 0 1 .476-.477h19.412a.477.477 0 0 1 .477.477Z"
-            transform="translate(2.821)"
+            id="Pfad_30"
+            data-name="Pfad 30"
+            class="cls-7"
+            d="M1225.385 634.702h-312.1l-36.028 41.9a52.11 52.11 0 0 0 0 20.22c.952 4.141 4.619 10.8 9.9 14.252h350.519v-69.43Zm-304.3 35.68h-28.371l16.575-19.2h11.8Zm26.205-1.943h-21.578v-17.253h21.58Zm26.2 0h-21.572v-17.253h21.58Zm26.2 0h-21.568v-17.253h21.585Zm17.129 0h-12.5v-17.253h21.58Zm160.34 0h-21.581v-17.253h21.58Zm26.205-.505a.506.506 0 0 1-.506.505h-20.571a.506.506 0 0 1-.5-.506V651.69a.505.505 0 0 1 .5-.505h20.57a.506.506 0 0 1 .506.505Z"
+            transform="translate(40 302.817)"
           />
           <g id="reifen">
-            <circle class="cls-10" cx="1168.646" cy="955.927" r="5.766" />
-            <path
-              class="cls-10"
-              d="M1135.961 945.08h40.545v7.515a4.24 4.24 0 0 1-4.239 4.24H1140.2a4.24 4.24 0 0 1-4.24-4.24v-7.516h.001Z"
-              transform="rotate(-180 1157.645 950.957)"
+            <circle
+              id="Ellipse_2"
+              data-name="Ellipse 2"
+              class="cls-6"
+              cx="1238.701"
+              cy="1012.997"
+              r="6.11"
             />
-            <circle class="cls-10" cx="1149.548" cy="955.928" r="5.766" />
+            <path
+              id="Pfad_31"
+              data-name="Pfad 31"
+              class="cls-6"
+              d="M1210.019 711.143h-42.966v-7.965a4.493 4.493 0 0 1 4.492-4.493h33.98a4.493 4.493 0 0 1 4.494 4.493v7.965Z"
+              transform="translate(40 302.817)"
+            />
+            <circle
+              id="Ellipse_3"
+              data-name="Ellipse 3"
+              class="cls-6"
+              cx="1218.461"
+              cy="1012.999"
+              r="6.11"
+            />
           </g>
-          <g id="reifen-2" data-name="reifen">
-            <circle class="cls-10" cx="937.247" cy="955.868" r="5.766" />
-            <path
-              class="cls-10"
-              d="M904.563 945.02h40.545v7.516a4.24 4.24 0 0 1-4.24 4.239h-32.066a4.24 4.24 0 0 1-4.24-4.24v-7.515Z"
-              transform="rotate(-180 926.246 950.898)"
+          <g id="reifen-2">
+            <circle
+              id="Ellipse_4"
+              data-name="Ellipse 4"
+              class="cls-6"
+              cx="993.483"
+              cy="1012.934"
+              r="6.11"
             />
-            <circle class="cls-10" cx="918.149" cy="955.869" r="5.766" />
+            <path
+              id="Pfad_32"
+              data-name="Pfad 32"
+              class="cls-6"
+              d="M964.804 711.08h-42.967v-7.965a4.493 4.493 0 0 1 4.492-4.492h33.982a4.493 4.493 0 0 1 4.493 4.493Z"
+              transform="translate(40 302.817)"
+            />
+            <circle
+              id="Ellipse_5"
+              data-name="Ellipse 5"
+              class="cls-6"
+              cx="973.245"
+              cy="1012.935"
+              r="6.11"
+            />
           </g>
           <path
-            class="cls-11"
-            d="M862.564 943.604h340.047v-10.538h-341.05a40.666 40.666 0 0 0 1.003 10.538ZM861.767 929.401h340.844v-3.758H862.246a34.304 34.304 0 0 0-.48 3.758Z"
-            transform="translate(2.821)"
+            id="Pfad_33"
+            data-name="Pfad 33"
+            class="cls-8"
+            d="M877.33 697.121h360.349v-11.167h-361.41a43.097 43.097 0 0 0 1.063 11.167Zm-.844-15.05h361.193v-3.983H876.994a36.376 36.376 0 0 0-.51 3.982Z"
+            transform="translate(40 302.817)"
           />
         </g>
         <g id="wagon">
-          <g id="reifen-3" data-name="reifen">
-            <path
-              class="cls-9"
-              d="M1547.348 884.853H1229.29l-11.603 6.556v65.563h341.265v-65.563Zm-300.361 36.037h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Z"
-              transform="translate(2.821)"
+          <path
+            id="Pfad_34"
+            data-name="Pfad 34"
+            class="cls-7"
+            d="M1602.999 634.863H1265.95l-12.3 6.947v69.477h361.639V641.81Zm-318.293 38.188h-21.581V655.8h21.58Zm26.759 0h-21.581V655.8h21.584Zm26.76 0h-21.581V655.8h21.58Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.577V655.8h21.58Zm26.762 0h-21.581V655.8h21.58Zm26.76 0h-21.581V655.8h21.582Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.58V655.8h21.582Zm26.762 0h-21.581V655.8h21.58Zm26.76 0h-21.581V655.8h21.58Zm26.76 0h-21.58V655.8h21.58Z"
+            transform="translate(40 302.817)"
+          />
+          <g id="reifen-3">
+            <circle
+              id="Ellipse_6"
+              data-name="Ellipse 6"
+              class="cls-6"
+              cx="1332.622"
+              cy="1012.994"
+              r="6.114"
             />
-            <circle class="cls-10" cx="1257.28" cy="955.924" r="5.77" />
             <path
-              class="cls-10"
-              d="M1250.803 945.21h32.093a4.24 4.24 0 0 1 4.239 4.24v7.522h-40.57v-7.523a4.24 4.24 0 0 1 4.238-4.239Z"
+              id="Pfad_35"
+              data-name="Pfad 35"
+              class="cls-6"
+              d="M1285.755 698.823h34.009a4.493 4.493 0 0 1 4.492 4.492v7.972h-42.992v-7.974a4.494 4.494 0 0 1 4.49-4.492Z"
+              transform="translate(40 302.817)"
             />
-            <circle class="cls-10" cx="1276.39" cy="955.925" r="5.77" />
+            <circle
+              id="Ellipse_7"
+              data-name="Ellipse 7"
+              class="cls-6"
+              cx="1352.873"
+              cy="1012.995"
+              r="6.114"
+            />
           </g>
-          <g id="reifen-4" data-name="reifen">
-            <circle class="cls-10" cx="1505.861" cy="955.924" r="5.77" />
-            <path
-              class="cls-10"
-              d="M1499.384 945.21h32.093a4.24 4.24 0 0 1 4.239 4.24v7.522h-40.57v-7.523a4.24 4.24 0 0 1 4.238-4.239Z"
+          <g id="reifen-4">
+            <circle
+              id="Ellipse_8"
+              data-name="Ellipse 8"
+              class="cls-6"
+              cx="1596.042"
+              cy="1012.993"
+              r="6.114"
             />
-            <circle class="cls-10" cx="1524.971" cy="955.925" r="5.77" />
+            <path
+              id="Pfad_36"
+              data-name="Pfad 36"
+              class="cls-6"
+              d="M1549.176 698.823h34.009a4.493 4.493 0 0 1 4.492 4.493v7.971h-42.992v-7.974a4.493 4.493 0 0 1 4.49-4.492Z"
+              transform="translate(40 302.817)"
+            />
+            <circle
+              id="Ellipse_9"
+              data-name="Ellipse 9"
+              class="cls-6"
+              cx="1616.293"
+              cy="1012.994"
+              r="6.114"
+            />
           </g>
           <path
-            class="cls-11"
-            d="M1220.508 925.643h341.264v3.758h-341.264zM1220.508 933.066h341.264v10.538h-341.264z"
+            id="Pfad_37"
+            data-name="Pfad 37"
+            class="cls-8"
+            d="M1253.657 678.088h361.638v3.982h-361.638Zm0 7.866h361.638v11.167h-361.638Z"
+            transform="translate(40 302.817)"
           />
         </g>
-        <g id="wagon-2" data-name="wagon">
-          <g id="reifen-5" data-name="reifen">
-            <path
-              class="cls-9"
-              d="M1903.688 884.853h-318.06l-11.602 6.556v65.563h341.264v-65.563Zm-300.362 36.037h-20.365v-16.28h20.365Zm25.252 0h-20.364v-16.28h20.364Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Zm25.253 0h-20.365v-16.28h20.365Zm25.252 0h-20.365v-16.28h20.365Z"
-              transform="translate(2.821)"
+        <g id="wagon-2">
+          <path
+            id="Pfad_38"
+            data-name="Pfad 38"
+            class="cls-7"
+            d="M1980.613 634.863h-337.048l-12.295 6.947v69.477h361.638V641.81Zm-318.294 38.188h-21.577V655.8h21.581Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.58V655.8h21.583Zm26.76 0h-21.58V655.8h21.581Zm26.762 0h-21.581V655.8h21.581Zm26.76 0h-21.58V655.8h21.582Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.58V655.8h21.58Zm26.762 0h-21.581V655.8h21.58Zm26.76 0h-21.581V655.8h21.58Zm26.76 0h-21.58V655.8h21.58Zm26.76 0h-21.581V655.8h21.58Z"
+            transform="translate(40 302.817)"
+          />
+          <g id="reifen-5">
+            <circle
+              id="Ellipse_10"
+              data-name="Ellipse 10"
+              class="cls-6"
+              cx="1710.236"
+              cy="1012.994"
+              r="6.114"
             />
-            <circle class="cls-10" cx="1613.619" cy="955.924" r="5.77" />
             <path
-              class="cls-10"
-              d="M1607.143 945.21h32.092a4.24 4.24 0 0 1 4.24 4.24v7.522h-40.571v-7.523a4.24 4.24 0 0 1 4.239-4.239Z"
+              id="Pfad_39"
+              data-name="Pfad 39"
+              class="cls-6"
+              d="M1663.369 698.823h34.007a4.493 4.493 0 0 1 4.493 4.493v7.971h-42.993v-7.974a4.493 4.493 0 0 1 4.492-4.492Z"
+              transform="translate(40 302.817)"
             />
-            <circle class="cls-10" cx="1632.729" cy="955.925" r="5.77" />
+            <circle
+              id="Ellipse_11"
+              data-name="Ellipse 11"
+              class="cls-6"
+              cx="1730.487"
+              cy="1012.995"
+              r="6.114"
+            />
           </g>
-          <g id="reifen-6" data-name="reifen">
-            <circle class="cls-10" cx="1862.2" cy="955.924" r="5.77" />
-            <path
-              class="cls-10"
-              d="M1855.724 945.21h32.092a4.24 4.24 0 0 1 4.24 4.24v7.522h-40.571v-7.523a4.24 4.24 0 0 1 4.239-4.239Z"
+          <g id="reifen-6">
+            <circle
+              id="Ellipse_12"
+              data-name="Ellipse 12"
+              class="cls-6"
+              cx="1973.657"
+              cy="1012.993"
+              r="6.114"
             />
-            <circle class="cls-10" cx="1881.31" cy="955.925" r="5.77" />
+            <path
+              id="Pfad_40"
+              data-name="Pfad 40"
+              class="cls-6"
+              d="M1926.79 698.823h34.008a4.493 4.493 0 0 1 4.493 4.493v7.971h-42.993v-7.974a4.492 4.492 0 0 1 4.492-4.49Z"
+              transform="translate(40 302.817)"
+            />
+            <circle
+              id="Ellipse_13"
+              data-name="Ellipse 13"
+              class="cls-6"
+              cx="1993.907"
+              cy="1012.994"
+              r="6.114"
+            />
           </g>
           <path
-            class="cls-11"
-            d="M1576.847 933.066h341.264v10.538h-341.264zM1576.847 925.643h341.264v3.758h-341.264z"
+            id="Pfad_41"
+            data-name="Pfad 41"
+            class="cls-8"
+            d="M1631.27 685.954h361.639v11.167H1631.27Zm0-7.866h361.639v3.982H1631.27Z"
+            transform="translate(40 302.817)"
           />
         </g>
       </g>
+      <g id="bruecke">
+        <path
+          id="bruecke-2"
+          class="cls-9"
+          d="M-37.906 716.297v417.2h66.6V876.573c0-55.63 50.855-100.729 113.587-100.729s113.587 45.1 113.587 100.73v256.916h106.95V876.573c0-55.63 50.856-100.729 113.588-100.729s113.587 45.1 113.587 100.73v256.916h106.954V876.573c0-55.63 50.855-100.729 113.587-100.729s113.587 45.1 113.587 100.73v256.916h106.954V876.573c0-55.63 50.855-100.729 113.587-100.729s113.587 45.1 113.587 100.73v256.916h77.056V716.297Z"
+          transform="translate(40 302.817)"
+        />
+        <path
+          id="bruecke-3"
+          class="cls-9"
+          d="M630.035 716.297v417.2h66.6V876.573c0-55.63 50.855-100.729 113.587-100.729s113.587 45.1 113.587 100.73v256.916h106.953V876.573c0-55.63 50.855-100.729 113.587-100.729s113.587 45.1 113.587 100.73v256.916h106.953V876.573c0-55.63 50.855-100.729 113.587-100.729s113.587 45.1 113.587 100.73v256.916h106.954V876.573c0-55.63 50.855-100.729 113.587-100.729s113.588 45.1 113.588 100.73v256.916h77.058V716.297Z"
+          transform="translate(40 302.817)"
+        />
+      </g>
+      <g id="overlay" style="opacity:.78">
+        <path style="fill:url(#Unbenannter_Verlauf_6)" d="M43 255.817h1920v1080H43z" />
+        <path style="fill:none;stroke:#707070" d="M43.5 256.317h1919v1079H43.5z" />
+      </g>
+      <!-- <path id="whiterect" style="fill:#fff" d="M0 1220.817h2043v262H0z" /> -->
     </svg>
-    <div class="start-text d-flex flex-column align-center pa-5">
-      <v-img class="mb-2" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
-      <div
-        class="mb-1 text-lg-h1 text-md-h2 text-h3 text-uppercase text-center grey--text text--lighten-2"
-      >
+    <!-- <v-container
+      class="start-text d-flex flex-column align-center pa-8 text-center grey--text text--lighten-2 "
+    >
+      <v-img class="mb-4" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
+      <div class="mb-4 text-lg-h1 text-md-h2 text-h3 text-uppercase font-weight-bold">
         Get Around - Vienna
       </div>
-      <div class="mb-4 text-lg-h3 text-md-h4 text-h5 text-center text--secondary">
+      <div class="mb-6 text-lg-h3 text-md-h4 text-h5">
         Leichter mit öffentlichen Verkehrmitteln durch Wien
       </div>
       <v-btn elevation="2" rounded large>Zu der App</v-btn>
-    </div>
+    </v-container> -->
+    <v-container
+      class="start-text d-flex flex-column align-center pa-8 text-center grey--text text--lighten-2 "
+    >
+      <v-img class="mb-4" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
+      <div class="mb-4 text-lg-h1 text-md-h2 text-h3 text-uppercase font-weight-bold">
+        Get Around - Vienna
+      </div>
+      <div class="mb-6 text-lg-h3 text-md-h4 text-h5">
+        Leichter mit öffentlichen Verkehrmitteln durch Wien
+      </div>
+      <v-btn elevation="2" rounded large>Zu der App</v-btn>
+    </v-container>
   </div>
 </template>
 
@@ -355,8 +586,12 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.start-section {
+  height: 100vh;
+}
 .start-section svg {
-  min-height: 100vh;
+  // height: 90vh;
+  min-height: 80vh;
 }
 .start-section .start-text {
   position: absolute;
@@ -367,19 +602,16 @@ export default {};
 .cls-3 {
   fill: #d3302f;
 }
+.cls-6 {
+  fill: #c2c2c2;
+}
 .cls-7 {
-  fill: #3c3c3b;
+  fill: #e2e2e2;
 }
 .cls-8 {
-  fill: #585857;
+  fill: #c72828;
 }
 .cls-9 {
-  fill: #f9b233;
-}
-.cls-10 {
-  fill: #575756;
-}
-.cls-11 {
-  fill: #951b81;
+  fill: #560e15;
 }
 </style>
