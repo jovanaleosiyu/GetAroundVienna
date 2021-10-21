@@ -62,7 +62,7 @@
         </div>
         <!-- Routes -->
         <v-row class="my-sm-16 mb-16 pb-lg-16 mx-md-16 mx-8 px-lg-16 px-0">
-          <v-col cols="12" md="4" xs="12">
+          <v-col cols="12" md="4">
             <div class="feature d-flex flex-column">
               <v-icon class="img mb-2 grey--text text--darken-4">mdi-routes</v-icon>
               <div class="title pb-4 text-lg-h5 text-sm-h6">Routen berechnen</div>
@@ -72,7 +72,7 @@
               </div>
             </div>
           </v-col>
-          <v-col cols="12" md="4" xs="12">
+          <v-col cols="12" md="4">
             <div class="feature d-flex flex-column">
               <v-icon class="img mb-2 grey--text text--darken-4">mdi-star</v-icon>
               <div class="title pb-4 text-lg-h5 text-sm-h6">Favoriten speichern</div>
@@ -82,7 +82,7 @@
               </div>
             </div>
           </v-col>
-          <v-col cols="12" md="4" xs="12">
+          <v-col cols="12" md="4">
             <div class="feature d-flex flex-column">
               <v-icon class="img mb-2 grey--text text--darken-4">mdi-calendar</v-icon>
               <div class="title pb-4 text-lg-h5 text-sm-h6">Persönlicher Planer</div>
@@ -97,150 +97,91 @@
       </section>
       <!-- Team -->
       <section id="team">
-        <v-row class="mx-auto grey lighten-5">
-          <!-- Profile 1 -->
-          <v-col align="center">
-            <v-card class="rounded-xl">
-              <v-card-text class="d-flex pt-12 px-8 flex-column align-start">
-                <v-avatar size="128">
+        <div class="wrapper">
+          <!-- Divider -->
+          <div class="divider d-flex flex-column">
+            <v-icon class="grey--text text--darken-4">mdi-account-supervisor-circle</v-icon>
+            <div class="title text-lg-h5 text-sm-h6">Unser Team</div>
+            <div class="subtitle text-lg-h4 text-h5 d-sm-block d-none">
+              Die Developer hinter Get Around - Vienna!
+            </div>
+          </div>
+          <v-row class="px-xl-16 mx-xl-16">
+            <!-- Profile 1 -->
+            <v-col align="center" cols="12" md="4" class="pl-xl-16">
+              <v-card class="rounded-xl ml-xl-16 mx-sm-0 mx-4">
+                <v-avatar class="profilepic" size="180">
                   <v-img
                     src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                   ></v-img>
                 </v-avatar>
-                <div class="mt-5 pb-1 text-h3 indigo--text">
-                  Jovana Stevic
+                <div class="d-flex flex-column align-center mt-6 px-6">
+                  <div class="mb-2">Projektleiter, Backend Developer</div>
+                  <div class="mb-2 text-h5 font-weight-bold">Si Yu Sun</div>
+                  <div class="mb-4">
+                    Datenbank, Datenmodell und <br />
+                    Schnittstellen Design
+                  </div>
                 </div>
-                <div class="text-caption">
-                  UI/UX Design, Frontend Development, Marketing
-                  <!-- , Projektmanagement -->
-                </div>
-                <v-list-item href="mailto:stevic.j02@htlwienwest.at" class="align-self-end">
-                  <v-list-item-content class="text-caption">
-                    stevic.j02@htlwienwest.at
-                  </v-list-item-content>
-                  <v-list-item-icon>
-                    <v-icon color="indigo">
-                      mdi-email
-                    </v-icon>
-                  </v-list-item-icon>
-                </v-list-item>
-                <p class="text-justify">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum...
-                </p>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <!-- Profile 2 -->
-          <v-col align="center">
-            <v-card class="rounded-xl">
-              <v-card-text class="d-flex pt-12 px-8 flex-column align-start">
-                <v-avatar size="128">
+                <v-btn href="mailto:sun.s02@htlwienwest.at" class="mb-16 primary" rounded
+                  >sun.s02@htlwienwest.at</v-btn
+                >
+              </v-card>
+            </v-col>
+            <!-- Profile 2 -->
+            <v-col align="center" cols="12" md="4">
+              <v-card class="rounded-xl mx-sm-0 mx-4">
+                <v-avatar class="profilepic" size="180">
                   <v-img
                     src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                   ></v-img>
                 </v-avatar>
-                <div class="mt-5 pb-1 text-h3 indigo--text">
-                  Si Yu Sun
+                <div class="d-flex flex-column align-center mt-6 px-6">
+                  <div class="mb-2">Frontend Developer</div>
+                  <div class="mb-2 text-h5 font-weight-bold">Leopold Urteil</div>
+                  <div class="mb-4">
+                    Umsetzung des Designs, Interaktionen,<br />aktuelle Datenanzeige
+                  </div>
                 </div>
-                <div class="text-caption">
-                  Backend Development
-                </div>
-                <v-list-item href="mailto:sun.s02@htlwienwest.at" class="align-self-end">
-                  <v-list-item-content class="text-caption">
-                    sun.s02@hltwienwest.at
-                  </v-list-item-content>
-                  <v-list-item-icon>
-                    <v-icon color="indigo">
-                      mdi-email
-                    </v-icon>
-                  </v-list-item-icon>
-                </v-list-item>
-                <p class="text-justify">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum...
-                </p>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <!-- Profile 3 -->
-          <v-col align="center">
-            <v-card class="rounded-xl">
-              <v-card-text class="d-flex pt-12 px-8 flex-column align-start">
-                <v-avatar size="128">
+                <v-btn href="mailto:urteil.l00@htlwienwest.at" class="mb-16 primary" rounded
+                  >urteil.l00@htlwienwest.at</v-btn
+                >
+              </v-card>
+            </v-col>
+            <!-- Profile 3 -->
+            <v-col align="center" cols="12" md="4" class="pr-xl-16">
+              <v-card class="rounded-xl mr-xl-16 mx-sm-0 mx-4">
+                <v-avatar class="profilepic" size="180">
                   <v-img
                     src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                   ></v-img>
                 </v-avatar>
-                <div class="mt-5 pb-1 text-h3 indigo--text">
-                  Leopold Urteil
+                <div class="d-flex flex-column align-center mt-6 px-6">
+                  <div class="mb-2">Designer, Frontend Developer</div>
+                  <div class="mb-2 text-h5 font-weight-bold">Jovana Stevic</div>
+                  <div class="mb-4">
+                    UI/UX/Grafikdesign, Automatisierte <br />
+                    Tests, Animationen/Übergänge
+                  </div>
                 </div>
-                <div class="text-caption">
-                  Frontend Development
-                </div>
-                <v-list-item href="mailto:urteil.l00@htlwienwest.at" class="align-self-end">
-                  <v-list-item-content class="text-caption">
-                    urteil.l00@htlwienwest.at
-                  </v-list-item-content>
-                  <v-list-item-icon>
-                    <v-icon color="indigo">
-                      mdi-email
-                    </v-icon>
-                  </v-list-item-icon>
-                </v-list-item>
-                <p class="text-justify">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum...
-                </p>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </section>
-      <!-- Contact  -->
-      <section id="contact">
-        <div class="elevation-4 pa-16 d-flex flex-column justify-center wrapper">
-          <div class="text-md-h1 text-h3 pb-8 red--text text--accent-2">
-            Interresse <span class="white--text">geweckt?</span><br />Fragen?
-          </div>
-          <div class="text-md-h5 pb-8 white--text">
-            Erreiche uns auf folgenden Social Media Profilen
-          </div>
-          <div>
-            <v-btn class="mr-4 mb-sm-0 mb-4" rounded x-large>
-              Instagram
-              <v-icon right dark>
-                mdi-instagram
-              </v-icon>
-            </v-btn>
-            <v-btn class="mb-sm-0 mb-4" rounded x-large>
-              Facebook
-              <v-icon right dark>
-                mdi-facebook
-              </v-icon>
-            </v-btn>
-          </div>
+                <v-btn href="mailto:stevic.j02@htlwienwest.at" class="mb-16 primary" rounded
+                  >stevic.j02@htlwienwest.at</v-btn
+                >
+              </v-card>
+            </v-col>
+          </v-row>
         </div>
       </section>
+      <!-- Contact  -->
+      <section id="contact"></section>
     </v-main>
+    <!-- Footer -->
     <v-footer dark padless>
-      <v-card flat tile class="red accent-2 text-center w-100">
-        <v-card-text class="white--text">
+      <v-card flat tile class="red accent-2 text-center" style="width:100vw">
+        <v-card-text class="text-body-1">
           Get Around - Vienna | Diplomarbeit an der
-          <a
-            class="text-decoration-none indigo--text text--accent-1"
-            href="https://www.htlwienwest.at/"
-            target="_blank"
-            >HTL Wien West</a
-          >
-          (Informationstechnologie) | 5BHITM 2021/22
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-text class="pa-2 text-right">
-          © 2021 - 2021 www.getaroundvienna.at - All Rights Reserved.
+          <a href="https://www.htlwienwest.at">HTL Wien West</a> (Informationstechnologie) | © 2021
+          - 2021 www.getaroundvienna.at - All Rights Reserved.
         </v-card-text>
       </v-card>
     </v-footer>
@@ -262,9 +203,6 @@ export default {
 
 <style lang="css">
 /* Divider */
-.divider {
-  padding-top: 5vh;
-}
 .divider .v-icon {
   font-size: 56px;
 }
@@ -310,18 +248,24 @@ export default {
   font-weight: bold;
 }
 /* Team */
-#about .v-card {
-  width: 400px;
-  min-height: 550px;
+#team .wrapper {
+  background-image: url("/img/map-bg.png");
+  padding-bottom: 25vh;
 }
-#about .row {
-  margin: 15vh 0 0 0;
-  padding: 12vh 0 20vh 0;
+#team .divider {
+  padding-bottom: 5vh;
+  padding-top: 10vh;
 }
-#contact .wrapper {
-  background-color: #3c3c3b;
-  width: 100vw;
-  min-height: 95vh;
+#team .profilepic {
+  margin-top: -90px;
+}
+#team .v-card {
+  max-width: 400px;
+  min-height: 380px;
+  margin-top: 15vh;
+}
+#team .v-btn {
+  text-transform: none;
 }
 /*  */
 .mobile-nav {
