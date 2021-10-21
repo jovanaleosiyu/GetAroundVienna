@@ -554,30 +554,7 @@
       </g>
       <!-- <path id="whiterect" style="fill:#fff" d="M0 1220.817h2043v262H0z" /> -->
     </svg>
-    <!-- <v-container
-      class="start-text d-flex flex-column align-center pa-8 text-center grey--text text--lighten-2 "
-    >
-      <v-img class="mb-4" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
-      <div class="mb-4 text-lg-h1 text-md-h2 text-h3 text-uppercase font-weight-bold">
-        Get Around - Vienna
-      </div>
-      <div class="mb-6 text-lg-h3 text-md-h4 text-h5">
-        Leichter mit öffentlichen Verkehrmitteln durch Wien
-      </div>
-      <v-btn elevation="2" rounded large>Zu der App</v-btn>
-    </v-container> -->
-    <!-- <v-container class="start-text d-flex flex-column">
-       <v-img class="mb-4" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
-      <div class="mb-4 text-lg-h1 text-md-h2 text-h3 text-uppercase font-weight-bold">
-        Get Around - Vienna
-      </div>
-      <div class="mb-6 text-lg-h3 text-md-h4 text-h5">
-        Leichter mit öffentlichen Verkehrmitteln durch Wien
-      </div>
-      <v-btn elevation="2" rounded large>Zu der App</v-btn> 
-    </v-container> -->
-
-    <v-row class="content text-sm-left text-center">
+    <v-row class="content text-md-left text-center mx-xl-16">
       <v-col cols="12" md="6" xs="12" class="text d-flex flex-column justify-center">
         <div class="heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
           Quer durch Wien mit Get Around - Vienna
@@ -588,8 +565,13 @@
         </div>
         <div>
           <v-btn elevation="2" dark rounded>auf zur App</v-btn>
-          <v-btn small text dark>oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn>
+          <v-btn class="d-md-inline d-none" small text dark
+            >oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn
+          >
         </div>
+        <v-btn class="mt-4 d-md-none d-block" small text dark>
+          <v-icon>mdi-chevron-double-down</v-icon>
+        </v-btn>
       </v-col>
       <v-col cols="12" sm="6" class="phone-img d-md-flex align-center justify-center d-none">
         <v-img max-width="350" src="/img/gav-phone-mockup.png"></v-img>
@@ -603,34 +585,42 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.start-section svg {
+  min-height: 100vh;
+}
 .start-section {
   height: 100vh;
   color: #fefefe;
 }
-.start-section svg {
-  min-height: 80vh;
-}
 .start-section .content {
   position: absolute;
   height: 100vh;
-  width: 100vw;
   top: 0;
-  padding: 0 16vw;
-}
-.start-section .text {
-  padding-bottom: 15vh;
+  padding: 0 10vw;
 }
 .start-section .heading {
   line-height: 1.15em;
 }
 .start-section .description {
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 .start-section .description {
 }
 .start-section .phone-img {
   padding-left: 2.5vw;
   padding-top: 10vh;
+}
+// Medium
+@media (min-width: 960px) {
+  .start-section svg {
+    min-height: 80vh;
+  }
+  .start-section .content {
+    padding: 0 10vw;
+  }
+  .start-section .text {
+    padding-bottom: 15vh;
+  }
 }
 // SVG Colors
 .cls-3 {
