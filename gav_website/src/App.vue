@@ -27,7 +27,7 @@
       <!-- Mobile -->
       <div class="d-md-none d-inline-flex">
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        <div class="mobile-nav">
+        <div class="mobile-nav d-none">
           <v-list nav class="pa-12">
             <v-list-item href="#description">Was</v-list-item>
             <v-list-item href="#features">Features</v-list-item>

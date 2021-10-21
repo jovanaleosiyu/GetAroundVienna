@@ -566,18 +566,35 @@
       </div>
       <v-btn elevation="2" rounded large>Zu der App</v-btn>
     </v-container> -->
-    <v-container
-      class="start-text d-flex flex-column align-center pa-8 text-center grey--text text--lighten-2 "
-    >
-      <v-img class="mb-4" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
+    <!-- <v-container class="start-text d-flex flex-column">
+       <v-img class="mb-4" alt="Get Around Logo" contain src="/img/logo.svg" width="70" />
       <div class="mb-4 text-lg-h1 text-md-h2 text-h3 text-uppercase font-weight-bold">
         Get Around - Vienna
       </div>
       <div class="mb-6 text-lg-h3 text-md-h4 text-h5">
         Leichter mit öffentlichen Verkehrmitteln durch Wien
       </div>
-      <v-btn elevation="2" rounded large>Zu der App</v-btn>
-    </v-container>
+      <v-btn elevation="2" rounded large>Zu der App</v-btn> 
+    </v-container> -->
+
+    <v-row class="start-content text-sm-left text-center">
+      <v-col cols="12" md="6" xs="12" class="start-text d-flex flex-column justify-center">
+        <div class="start-heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
+          Quer durch Wien mit Get Around - Vienna
+        </div>
+        <div class="start-desc mb-6 pr-sm-8 pr-0 text-lg-h5 text-sm-h6">
+          Die Öffi-App erleichtert dir mit ihren praktischen Funktionen das Fahren mit öffentlichen
+          Verkehrmitteln in Wien.
+        </div>
+        <div>
+          <v-btn elevation="2" dark rounded>auf zur App</v-btn>
+          <v-btn small text dark>oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn>
+        </div>
+      </v-col>
+      <v-col cols="12" sm="6" class="start-img d-md-flex align-center justify-center d-none">
+        <v-img max-width="350" src="/img/gav-phone-mockup.png"></v-img>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -588,17 +605,34 @@ export default {};
 <style lang="scss" scoped>
 .start-section {
   height: 100vh;
+  color: #fefefe;
 }
 .start-section svg {
-  // height: 90vh;
   min-height: 80vh;
 }
-.start-section .start-text {
+.start-section .start-content {
   position: absolute;
-  top: 20vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  padding: 0 16vw;
 }
-// SVG Farben
+.start-section .start-text {
+  padding-bottom: 15vh;
+}
+.start-section .start-heading {
+  line-height: 1.15em;
+}
+.start-section .start-desc {
+  line-height: 1.5em;
+}
+.start-section .description {
+}
+.start-section .start-img {
+  padding-left: 2.5vw;
+  padding-top: 10vh;
+}
+// SVG Colors
 .cls-3 {
   fill: #d3302f;
 }
