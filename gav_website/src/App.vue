@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- App Bar -->
-    <v-app-bar fixed dense dark flat class="transparent">
+    <v-app-bar fixed dark flat class="transparent">
       <v-img
         alt="Get Around Vienna Logo"
         class="shrink mr-2"
@@ -12,11 +12,8 @@
         style="cursor: pointer"
         @click="scrollTo('#home')"
       />
-      <!-- <v-toolbar-title>Get Around - Vienna</v-toolbar-title> -->
-
-      <!-- Desktop -->
-
       <v-spacer></v-spacer>
+      <!-- Desktop -->
       <div class="nav d-md-block d-none">
         <v-btn
           :class="section.className"
@@ -32,27 +29,35 @@
         </v-btn>
       </div>
       <v-spacer></v-spacer>
-      <v-btn class="primary" elevation="2" rounded>
+      <v-btn class="primary d-md-block d-none" elevation="2" rounded>
         Zu der App
       </v-btn>
       <!-- Mobile -->
-      <div class="nav d-md-none d-inline-flex">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        <div class="mobile-nav d-none">
-          <v-list nav class="pa-12">
-            <v-list-item @click="scrollTo('#home')">Home</v-list-item>
-            <v-list-item @click="scrollTo('#features')">Features</v-list-item>
-            <v-list-item @click="scrollTo('#team')">Über uns</v-list-item>
-            <v-list-item @click="scrollTo('#contact')">Kontakt</v-list-item>
-          </v-list>
-          <!-- <v-btn plain href="#description">Was</v-btn>
-          <v-btn plain href="#features">Features</v-btn>
-          <v-btn plain href="#about">Über uns</v-btn>
-          <v-btn plain href="#">Kontakt</v-btn>
-          <v-btn elevation="2" rounded>
-            Zu der App
-          </v-btn> -->
-        </div>
+      <div class="d-md-none d-inline-flex">
+        <v-btn icon @click="mobileMenu = true">
+          <v-icon large>mdi-menu</v-icon>
+        </v-btn>
+        <transition name="fade">
+          <div v-if="mobileMenu" class="mobile-nav nav">
+            <v-icon large @click="mobileMenu = false">mdi-close</v-icon>
+            <v-btn
+              :class="section.className"
+              plain
+              v-for="section of sections"
+              :key="section.to"
+              @click="
+                scrollTo(section.to);
+                section.className.active = true;
+                mobileMenu = false;
+              "
+            >
+              {{ section.name }}
+            </v-btn>
+            <v-btn class="primary d-md-block d-none" elevation="2" rounded>
+              Zu der App
+            </v-btn>
+          </div>
+        </transition>
       </div>
     </v-app-bar>
     <!-- Main -->
@@ -280,7 +285,8 @@ export default {
       v => !!v || "E-mail is required",
       v => /.+@.+\..+/.test(v) || "E-mail must be valid"
     ],
-    msgRules: [v => !!v || "Message is required"]
+    msgRules: [v => !!v || "Message is required"],
+    mobileMenu: false
   }),
   methods: {
     validate() {
@@ -299,7 +305,6 @@ export default {
       toggleClass: { targets: ".v-app-bar", className: "transparent" }
     });
     for (const section of this.sections) {
-      console.log(section);
       ScrollTrigger.create({
         trigger: section.to,
         start: "top 10%",
@@ -331,6 +336,7 @@ export default {
 .active:after {
   transform: scaleX(1) !important;
 }
+/* Hamburger Btn */
 
 /* Divider */
 .divider {
@@ -415,6 +421,24 @@ export default {
 .mobile-nav {
   position: fixed;
   right: 0;
+  top: 0;
+  height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25vh;
+  background-color: #212121;
+}
+.mobile-nav .v-btn {
+  margin-top: 1vh;
+}
+/* Transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
