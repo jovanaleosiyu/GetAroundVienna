@@ -577,12 +577,12 @@
       <v-btn elevation="2" rounded large>Zu der App</v-btn> 
     </v-container> -->
 
-    <v-row class="start-content text-sm-left text-center">
-      <v-col cols="12" md="6" xs="12" class="start-text d-flex flex-column justify-center">
-        <div class="start-heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
+    <v-row class="content text-sm-left text-center">
+      <v-col cols="12" md="6" xs="12" class="text d-flex flex-column justify-center">
+        <div class="heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
           Quer durch Wien mit Get Around - Vienna
         </div>
-        <div class="start-desc mb-6 pr-sm-8 pr-0 text-lg-h5 text-sm-h6">
+        <div class="description mb-6 pr-sm-8 pr-0 text-lg-h5 text-sm-h6">
           Die Öffi-App erleichtert dir mit ihren praktischen Funktionen das Fahren mit öffentlichen
           Verkehrmitteln in Wien.
         </div>
@@ -591,7 +591,7 @@
           <v-btn small text dark>oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn>
         </div>
       </v-col>
-      <v-col cols="12" sm="6" class="start-img d-md-flex align-center justify-center d-none">
+      <v-col cols="12" sm="6" class="phone-img d-md-flex align-center justify-center d-none">
         <v-img max-width="350" src="/img/gav-phone-mockup.png"></v-img>
       </v-col>
     </v-row>
@@ -610,25 +610,25 @@ export default {};
 .start-section svg {
   min-height: 80vh;
 }
-.start-section .start-content {
+.start-section .content {
   position: absolute;
   height: 100vh;
   width: 100vw;
   top: 0;
   padding: 0 16vw;
 }
-.start-section .start-text {
+.start-section .text {
   padding-bottom: 15vh;
 }
-.start-section .start-heading {
+.start-section .heading {
   line-height: 1.15em;
 }
-.start-section .start-desc {
+.start-section .description {
   line-height: 1.5em;
 }
 .start-section .description {
 }
-.start-section .start-img {
+.start-section .phone-img {
   padding-left: 2.5vw;
   padding-top: 10vh;
 }

@@ -2,7 +2,7 @@
   <v-app>
     <!-- App Bar -->
     <v-app-bar fixed dense flat dark class="transparent">
-      <a href="#">
+      <a href="/">
         <v-img
           alt="Get Around Vienna Logo"
           class="shrink mr-2"
@@ -16,7 +16,7 @@
       <v-spacer></v-spacer>
       <!-- Desktop -->
       <div class="d-md-block d-none">
-        <v-btn plain href="#description">Was</v-btn>
+        <v-btn plain href="/">Home</v-btn>
         <v-btn plain href="#features">Features</v-btn>
         <v-btn plain href="#about">Über uns</v-btn>
         <v-btn plain href="#contact">Kontakt</v-btn>
@@ -47,80 +47,56 @@
     <!-- Main -->
     <v-main>
       <!-- Start -->
-      <StartSection />
-      <!-- Description -->
-      <section id="description">
-        <v-row align="center" class="wrapper elevation-4">
-          <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div
-              class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4 pt-lg-0 pt-16 grey--text text--lighten-3"
-            >
-              Die <span class="pink--text text--lighten-2">Get Around - Vienna</span> App
-              erleichtert dir den Transport quer durch Wien
-            </div>
-            <div class="w-75 text-h5 grey--text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum.
-            </div>
-          </v-col>
-          <v-col cols="12" md="5" class="pa-md-0 pa-12">
-            <v-img class="mr-16" contain src="/img/phone-mockup.png"></v-img>
-          </v-col>
-        </v-row>
+      <section id="home">
+        <StartSection />
       </section>
       <!-- Features -->
       <section id="features">
+        <!-- Divider -->
+        <div class="divider d-flex flex-column">
+          <v-icon class="grey--text text--darken-4">mdi-star-circle</v-icon>
+          <div class="title text-lg-h5 text-sm-h6">Features</div>
+          <div class="subtitle text-lg-h4 text-h5 d-sm-block d-none">
+            Eine Liste unserer wichtigsten Features!
+          </div>
+        </div>
         <!-- Routes -->
-        <v-row align="center" class="wrapper">
-          <v-col class="pa-md-0 pa-16" cols="12" md="5">
-            <v-img class="ml-md-16" contain src="/img/street-map.svg"></v-img>
-          </v-col>
-          <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4">
-              Lasse dir die
-              <span class="light-blue--text text--lighten-2">Beste Route</span> von A zu B nach
-              deinen <span class="light-blue--text text--lighten-2">Kriterien</span> berechnen
-            </div>
-            <div class="w-75 text-h5 grey--text">
-              Ob schnell, mit wenigen Umstiegen oder einen Weg ohne bestimmte Verkehrsmittel die du
-              nicht magst.
+        <v-row class="my-sm-16 mb-16 pb-lg-16 mx-md-16 mx-8 px-lg-16 px-0">
+          <v-col cols="12" md="4" xs="12">
+            <div class="feature d-flex flex-column">
+              <v-icon class="img mb-2 grey--text text--darken-4">mdi-routes</v-icon>
+              <div class="title pb-4 text-lg-h5 text-sm-h6">Routen berechnen</div>
+              <div class="text text-body-1">
+                Lasse dir die beste Route zwischen zwei Orten berechnen. Diese kannst du nach
+                verschiedenen Kriterien filtern, wie zum Beispiel nach Umstiegen oder Linien.
+              </div>
             </div>
           </v-col>
-        </v-row>
-        <!-- Favourites -->
-        <v-row align="center" class="wrapper">
-          <v-col class="pa-md-0 pa-16" order-md="2" cols="12" md="5">
-            <v-img class="mr-md-16" contain src="/img/fav-star.svg"></v-img>
-          </v-col>
-          <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4">
-              Speichere <span class="yellow--text text--accent-4">Favoriten</span> um täglich Zeit
-              zu sparen
-            </div>
-            <div class="w-75 text-h5 grey--text">
-              Ob schnell, mit wenigen Umstiegen oder einen Weg ohne bestimmte Verkehrsmittel die du
-              nicht magst.
+          <v-col cols="12" md="4" xs="12">
+            <div class="feature d-flex flex-column">
+              <v-icon class="img mb-2 grey--text text--darken-4">mdi-star</v-icon>
+              <div class="title pb-4 text-lg-h5 text-sm-h6">Favoriten speichern</div>
+              <div class="text text-body-1">
+                Speichere dir Haltestellen und Routen als Favorit ab. So kannst du dir das ständige
+                Eintippen deiner Routen ersparen und schnell auf sie zugreifen.
+              </div>
             </div>
           </v-col>
-        </v-row>
-        <!-- Planer -->
-        <v-row align="center" class="wrapper pb-md-0 pb-16">
-          <v-col class="pa-md-0 pa-16" cols="12" md="5">
-            <v-img class="ml-md-16" contain src="/img/planer.svg"></v-img>
-          </v-col>
-          <v-col cols="12" md="7" class="d-flex flex-column align-center">
-            <div class="w-75 pb-4 text-lg-h2 text-md-h3 text-h4">
-              Dein <span class="red--text">Persönlicher Planer</span> mit deinen eigenen Routinen
-            </div>
-            <div class="w-75 text-h5 grey--text">
-              Schickt dir rechtzeitig Benachrichtigungen, damit du nicht zu spät kommt
+          <v-col cols="12" md="4" xs="12">
+            <div class="feature d-flex flex-column">
+              <v-icon class="img mb-2 grey--text text--darken-4">mdi-calendar</v-icon>
+              <div class="title pb-4 text-lg-h5 text-sm-h6">Persönlicher Planer</div>
+              <div class="text text-body-1">
+                Trage wiederkehrende Fahrten in einen Planer ein. Um pünktlich bei deinem Ziel
+                anzukommen, werden dir Benachrichtigungen geschickt, welche dich an die Abfahrt
+                erinnern.
+              </div>
             </div>
           </v-col>
         </v-row>
       </section>
-      <!-- About -->
-      <section id="about">
+      <!-- Team -->
+      <section id="team">
         <v-row class="mx-auto grey lighten-5">
           <!-- Profile 1 -->
           <v-col align="center">
@@ -285,26 +261,55 @@ export default {
 </script>
 
 <style lang="css">
-.w-75 {
-  width: 75%;
+/* Divider */
+.divider {
+  padding-top: 5vh;
 }
-.w-100 {
-  width: 100%;
+.divider .v-icon {
+  font-size: 56px;
 }
-#description .wrapper {
-  background-color: #3c3c3b;
-  width: 100vw;
-  min-height: 105vh;
-  margin-bottom: 10vh;
+.divider .title {
+  width: 80%;
+  margin: 0.3em auto;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 300;
+  color: #212121;
+  font-weight: bold;
 }
-#features .wrapper {
-  width: 100vw;
-  min-height: 85vh;
+.divider .title:before,
+.divider .title:after {
+  content: "";
+  display: inline-block;
+  /* width: 15%; */
+  width: 60px;
+  margin: 0 0.5em 0 -55%;
+  vertical-align: middle;
+  border-bottom: 3px solid;
 }
-#features .row {
-  width: 90%;
-  margin: auto;
+.divider .title:after {
+  margin: 0 -55% 0 0.5em;
 }
+.divider .subtitle {
+  text-align: center;
+  margin-top: 12px;
+  font-weight: bold;
+}
+/* Features */
+#features .feature {
+  text-align: center;
+  padding: 10vh 10%;
+}
+#features .feature .text {
+  line-height: 1.8em;
+}
+#features .feature .img {
+  font-size: 100px;
+}
+#features .feature .title {
+  font-weight: bold;
+}
+/* Team */
 #about .v-card {
   width: 400px;
   min-height: 550px;
@@ -318,6 +323,7 @@ export default {
   width: 100vw;
   min-height: 95vh;
 }
+/*  */
 .mobile-nav {
   position: fixed;
   right: 0;
