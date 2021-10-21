@@ -1,38 +1,49 @@
 <template>
   <v-app>
     <!-- App Bar -->
-    <v-app-bar fixed dense flat dark class="transparent">
-      <a href="/">
-        <v-img
-          alt="Get Around Vienna Logo"
-          class="shrink mr-2"
-          contain
-          src="./assets/logo.svg"
-          transition="fab-transition"
-          width="35"
-        />
-      </a>
+    <v-app-bar fixed dense dark flat class="transparent">
+      <v-img
+        alt="Get Around Vienna Logo"
+        class="shrink mr-2"
+        contain
+        src="./assets/logo.svg"
+        transition="fab-transition"
+        width="35"
+        style="cursor: pointer"
+        @click="scrollTo('#home')"
+      />
       <!-- <v-toolbar-title>Get Around - Vienna</v-toolbar-title> -->
-      <v-spacer></v-spacer>
+
       <!-- Desktop -->
-      <div class="d-md-block d-none">
-        <v-btn plain href="/">Home</v-btn>
-        <v-btn plain href="#features">Features</v-btn>
-        <v-btn plain href="#team">Über uns</v-btn>
-        <v-btn plain href="#contact">Kontakt</v-btn>
-        <v-btn elevation="2" rounded>
-          Zu der App
+
+      <v-spacer></v-spacer>
+      <div class="nav d-md-block d-none">
+        <v-btn
+          :class="section.className"
+          v-for="section of sections"
+          :key="section.to"
+          @click="
+            scrollTo(section.to);
+            section.className.active = true;
+          "
+          plain
+        >
+          {{ section.name }}
         </v-btn>
       </div>
+      <v-spacer></v-spacer>
+      <v-btn class="primary" elevation="2" rounded>
+        Zu der App
+      </v-btn>
       <!-- Mobile -->
-      <div class="d-md-none d-inline-flex">
+      <div class="nav d-md-none d-inline-flex">
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <div class="mobile-nav d-none">
           <v-list nav class="pa-12">
-            <v-list-item href="#description">Was</v-list-item>
-            <v-list-item href="#features">Features</v-list-item>
-            <v-list-item href="#about">Über uns</v-list-item>
-            <v-list-item href="#contact">Kontakt</v-list-item>
+            <v-list-item @click="scrollTo('#home')">Home</v-list-item>
+            <v-list-item @click="scrollTo('#features')">Features</v-list-item>
+            <v-list-item @click="scrollTo('#team')">Über uns</v-list-item>
+            <v-list-item @click="scrollTo('#contact')">Kontakt</v-list-item>
           </v-list>
           <!-- <v-btn plain href="#description">Was</v-btn>
           <v-btn plain href="#features">Features</v-btn>
@@ -226,7 +237,7 @@
     </v-main>
     <!-- Footer -->
     <v-footer dark padless>
-      <v-card flat tile class="primary text-center" style="width:100vw">
+      <v-card flat tile class="grey darken-4 text-center" style="width:100vw">
         <v-card-text class="text-body-1">
           Get Around - Vienna | Diplomarbeit an der
           <a
@@ -244,12 +255,20 @@
 
 <script>
 import StartSection from "./components/StartSection.vue";
+import Gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   name: "App",
   components: {
     StartSection
   },
   data: () => ({
+    sections: [
+      { name: "Home", to: "#home", className: { "home-link": true, active: true } },
+      { name: "Features", to: "#features", className: { "features-link": true, active: false } },
+      { name: "Über uns", to: "#team", className: { "team-link": true, active: false } },
+      { name: "Kontakt", to: "#contact", className: { "contact-link": true, active: false } }
+    ],
     valid: true,
     name: "",
     nameRules: [
@@ -266,12 +285,53 @@ export default {
   methods: {
     validate() {
       this.$refs.form.validate();
+    },
+    scrollTo(target) {
+      this.$vuetify.goTo(target, { duration: 800 });
+    }
+  },
+  mounted() {
+    Gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: "#home",
+      start: "top top",
+      scrub: 0.5,
+      toggleClass: { targets: ".v-app-bar", className: "transparent" }
+    });
+    for (const section of this.sections) {
+      console.log(section);
+      ScrollTrigger.create({
+        trigger: section.to,
+        start: "top 10%",
+        onToggle: ({ isActive }) => (section.className.active = isActive)
+      });
     }
   }
 };
 </script>
 
 <style lang="css">
+.v-application {
+  overflow: hidden;
+}
+/* App Bar Hover */
+.nav .v-btn:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 0;
+  width: 70%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s;
+  transform: scaleX(0);
+}
+.nav .v-btn:hover:after,
+.active:after {
+  transform: scaleX(1) !important;
+}
+
 /* Divider */
 .divider {
   padding-top: 5vh;

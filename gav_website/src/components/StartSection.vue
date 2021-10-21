@@ -565,11 +565,11 @@
         </div>
         <div>
           <v-btn elevation="2" dark rounded>auf zur App</v-btn>
-          <v-btn class="d-md-inline d-none" small text dark
+          <v-btn @click="scrollTo('#features')" class="d-md-inline d-none" small text dark
             >oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn
           >
         </div>
-        <v-btn class="mt-4 d-md-none d-block" small text dark>
+        <v-btn @click="scrollTo('#features')" class="mt-4 d-md-none d-block" small text dark>
           <v-icon>mdi-chevron-double-down</v-icon>
         </v-btn>
       </v-col>
@@ -581,12 +581,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    scrollTo(target) {
+      this.$vuetify.goTo(target, { duration: 800 });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .start-section svg {
-  min-height: 100vh;
+  height: 100vh;
 }
 .start-section {
   height: 100vh;
@@ -604,23 +610,21 @@ export default {};
 .start-section .description {
   line-height: 1.8em;
 }
-.start-section .description {
-}
 .start-section .phone-img {
   padding-left: 2.5vw;
   padding-top: 10vh;
 }
 // Medium
 @media (min-width: 960px) {
-  .start-section svg {
-    min-height: 80vh;
-  }
+  // .start-section svg {
+  //   height: 80vh;
+  // }
   .start-section .content {
     padding: 0 10vw;
   }
-  .start-section .text {
-    padding-bottom: 15vh;
-  }
+  // .start-section .text {
+  // padding-bottom: 15vh;
+  // }
 }
 // SVG Colors
 .cls-3 {
