@@ -18,7 +18,7 @@
       <div class="d-md-block d-none">
         <v-btn plain href="/">Home</v-btn>
         <v-btn plain href="#features">Features</v-btn>
-        <v-btn plain href="#about">Über uns</v-btn>
+        <v-btn plain href="#team">Über uns</v-btn>
         <v-btn plain href="#contact">Kontakt</v-btn>
         <v-btn elevation="2" rounded>
           Zu der App
@@ -173,15 +173,69 @@
         </div>
       </section>
       <!-- Contact  -->
-      <section id="contact"></section>
+      <section id="contact">
+        <!-- Divider -->
+        <div class="divider d-flex flex-column">
+          <v-icon class="grey--text text--darken-4">mdi-information</v-icon>
+          <div class="title text-lg-h5 text-sm-h6">Kontakt</div>
+          <div class="subtitle text-lg-h4 text-h5 d-sm-block d-none">
+            Bei Fragen kannst du uns gerne kontaktieren!
+          </div>
+        </div>
+        <!-- Contact Formular -->
+        <v-sheet elevation="2" class="mt-12 mx-sm-auto mx-4  rounded-xl">
+          <v-form ref="form" v-model="valid" lazy-validation class="pa-md-16 pa-8">
+            <div class="text-lg-h5 text-h6 text-center font-weight-bold pb-md-12 pb-4">
+              Schreibe uns eine Nachricht!
+            </div>
+            <v-text-field
+              v-model="name"
+              :counter="30"
+              :rules="nameRules"
+              label="Name"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+            ></v-text-field>
+            <v-textarea
+              label="Nachricht"
+              hint="Schreibe deine Nachricht an uns!"
+              auto-grow
+              :rules="msgRules"
+              required
+            ></v-textarea>
+            <v-btn class="mt-md-4" fab color="primary" :disabled="!valid" @click="validate">
+              <v-icon dark>
+                mdi-send
+              </v-icon>
+            </v-btn>
+          </v-form>
+        </v-sheet>
+        <!-- Instagram -->
+        <div class="insta mt-16 text-center pa-md-16 pa-8 d-flex flex-column align-center">
+          <div class="subtitle text-lg-h5 text-h6 font-weight-bold">
+            Wenn du Lust und Zeit hast, kannst du uns noch auf unserem Instagram besuchen!
+          </div>
+          <v-btn class="mt-8 mb-16" x-large rounded color="primary">@getaroundvienna</v-btn>
+        </div>
+      </section>
     </v-main>
     <!-- Footer -->
     <v-footer dark padless>
-      <v-card flat tile class="red accent-2 text-center" style="width:100vw">
+      <v-card flat tile class="primary text-center" style="width:100vw">
         <v-card-text class="text-body-1">
           Get Around - Vienna | Diplomarbeit an der
-          <a href="https://www.htlwienwest.at">HTL Wien West</a> (Informationstechnologie) | © 2021
-          - 2021 www.getaroundvienna.at - All Rights Reserved.
+          <a
+            href="https://www.htlwienwest.at"
+            target="_blank"
+            class="light-blue--text text--lighten-2 text-decoration-none"
+            >HTL Wien West</a
+          >
+          (Informationstechnologie) | © 2021 - 2021 www.getaroundvienna.at - All Rights Reserved.
         </v-card-text>
       </v-card>
     </v-footer>
@@ -196,13 +250,32 @@ export default {
     StartSection
   },
   data: () => ({
-    //
-  })
+    valid: true,
+    name: "",
+    nameRules: [
+      v => !!v || "Name is required",
+      v => (v && v.length <= 30) || "Name must be less than 30 characters"
+    ],
+    email: "",
+    emailRules: [
+      v => !!v || "E-mail is required",
+      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+    ],
+    msgRules: [v => !!v || "Message is required"]
+  }),
+  methods: {
+    validate() {
+      this.$refs.form.validate();
+    }
+  }
 };
 </script>
 
 <style lang="css">
 /* Divider */
+.divider {
+  padding-top: 5vh;
+}
 .divider .v-icon {
   font-size: 56px;
 }
@@ -267,7 +340,18 @@ export default {
 #team .v-btn {
   text-transform: none;
 }
-/*  */
+/* Contact */
+#contact .v-sheet {
+  max-width: 700px;
+}
+#contact .insta .subtitle {
+  line-height: 1.5em;
+  max-width: 600px;
+}
+/* Footer */
+.v-footer {
+  margin-top: 10vh;
+}
 .mobile-nav {
   position: fixed;
   right: 0;
