@@ -559,12 +559,7 @@
       <!-- <path id="whiterect" style="fill:#fff" d="M0 1220.817h2043v262H0z" /> -->
     </svg>
     <v-row class="content text-md-left text-center mx-xl-16">
-      <v-col
-        cols="12"
-        md="6"
-        xs="12"
-        class="reveal reveal_b text d-flex flex-column justify-center"
-      >
+      <v-col cols="12" md="6" xs="12" class="reveal text d-flex flex-column justify-center">
         <div class="heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
           Quer durch Wien mit Get Around - Vienna
         </div>
@@ -599,15 +594,6 @@ function animateFrom(elem, direction) {
   direction = direction || 1;
   let x = 0;
   let y = direction * 100;
-  if (elem.classList.contains("reveal_l")) {
-    x = -100;
-    y = 0;
-  } else if (elem.classList.contains("reveal_r")) {
-    x = 100;
-    y = 0;
-  } else if (elem.classList.contains("reveal_b")) {
-    y *= -1;
-  }
   elem.style.transform = "translate(" + x + "px, " + y + "px)";
   elem.style.opacity = "0";
   gsap.fromTo(
@@ -634,20 +620,21 @@ export default {
   },
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".reveal").forEach(function(elem) {
-      hide(elem);
-      ScrollTrigger.create({
-        trigger: elem,
-        onEnter: function() {
-          animateFrom(elem);
-        },
-        onEnterBack: function() {
-          animateFrom(elem, -1);
-        },
-        onLeave: function() {
-          hide(elem);
-        }
-      });
+    const elem = document.querySelector(".reveal");
+    hide(elem);
+    ScrollTrigger.create({
+      trigger: elem,
+      markers: true,
+      end: "200% top",
+      onEnter: function() {
+        animateFrom(elem, -1);
+      },
+      onEnterBack: function() {
+        animateFrom(elem);
+      },
+      onLeave: function() {
+        hide(elem);
+      }
     });
     gsap.to(".phone", {
       opacity: 1,
@@ -658,7 +645,7 @@ export default {
       delay: 1
     });
     gsap.to("#zug", {
-      x: -1800,
+      x: -1600,
       scrollTrigger: {
         pin: "#home",
         scrub: 0.7
