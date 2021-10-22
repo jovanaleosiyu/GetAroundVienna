@@ -76,10 +76,10 @@
             Eine Liste unserer wichtigsten Features!
           </div>
         </div>
-        <!-- Routes -->
         <v-row class="my-sm-16 mb-16 pb-lg-16 mx-md-16 mx-8 px-lg-16 px-0">
+          <!-- Routes -->
           <v-col cols="12" md="4">
-            <div class="feature d-flex flex-column">
+            <div class="reveal reveal_l feature d-flex flex-column">
               <v-icon class="img mb-2 grey--text text--darken-4">mdi-routes</v-icon>
               <div class="title pb-4 text-lg-h5 text-sm-h6">Routen berechnen</div>
               <div class="text text-body-1">
@@ -88,8 +88,9 @@
               </div>
             </div>
           </v-col>
+          <!-- Favourites -->
           <v-col cols="12" md="4">
-            <div class="feature d-flex flex-column">
+            <div class="reveal feature d-flex flex-column">
               <v-icon class="img mb-2 grey--text text--darken-4">mdi-star</v-icon>
               <div class="title pb-4 text-lg-h5 text-sm-h6">Favoriten speichern</div>
               <div class="text text-body-1">
@@ -98,8 +99,9 @@
               </div>
             </div>
           </v-col>
+          <!-- Planer -->
           <v-col cols="12" md="4">
-            <div class="feature d-flex flex-column">
+            <div class="reveal reveal_r feature d-flex flex-column">
               <v-icon class="img mb-2 grey--text text--darken-4">mdi-calendar</v-icon>
               <div class="title pb-4 text-lg-h5 text-sm-h6">Persönlicher Planer</div>
               <div class="text text-body-1">
@@ -199,7 +201,7 @@
           </div>
         </div>
         <!-- Contact Formular -->
-        <v-sheet elevation="2" class="mt-12 mx-sm-auto mx-4  rounded-xl">
+        <v-sheet elevation="2" class="reveal mt-12 mx-sm-auto mx-4  rounded-xl">
           <v-form ref="form" v-model="valid" lazy-validation class="pa-md-16 pa-8">
             <div class="text-lg-h5 text-h6 text-center font-weight-bold pb-md-12 pb-4">
               Schreibe uns eine Nachricht!
@@ -260,8 +262,39 @@
 
 <script>
 import StartSection from "./components/StartSection.vue";
-import Gsap from "gsap";
+import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+function animateFrom(elem, direction) {
+  direction = direction || 1;
+  let x = 0;
+  let y = direction * 100;
+  if (elem.classList.contains("reveal_l")) {
+    x = -100;
+    y = 0;
+  } else if (elem.classList.contains("reveal_r")) {
+    x = 100;
+    y = 0;
+  } else if (elem.classList.contains("reveal_b")) {
+    y *= -1;
+  }
+  elem.style.transform = "translate(" + x + "px, " + y + "px)";
+  elem.style.opacity = "0";
+  gsap.fromTo(
+    elem,
+    { x: x, y: y, autoAlpha: 0 },
+    {
+      duration: 1.25,
+      x: 0,
+      y: 0,
+      autoAlpha: 1,
+      ease: "expo",
+      overwrite: "auto"
+    }
+  );
+}
+function hide(elem) {
+  gsap.set(elem, { autoAlpha: 0 });
+}
 export default {
   name: "App",
   components: {
@@ -297,7 +330,7 @@ export default {
     }
   },
   mounted() {
-    Gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
       trigger: "#home",
       start: "top top",
@@ -311,6 +344,22 @@ export default {
         onToggle: ({ isActive }) => (section.className.active = isActive)
       });
     }
+    // Reveal
+    gsap.utils.toArray(".reveal").forEach(function(elem) {
+      hide(elem);
+      ScrollTrigger.create({
+        trigger: elem,
+        onEnter: function() {
+          animateFrom(elem);
+        },
+        onEnterBack: function() {
+          animateFrom(elem, -1);
+        },
+        onLeave: function() {
+          hide(elem);
+        }
+      });
+    });
   }
 };
 </script>
@@ -336,8 +385,6 @@ export default {
 .active:after {
   transform: scaleX(1) !important;
 }
-/* Hamburger Btn */
-
 /* Divider */
 .divider {
   padding-top: 5vh;
@@ -383,6 +430,10 @@ export default {
 #features .feature .img {
   font-size: 100px;
 }
+#features .feature .img:hover {
+  font-size: 110px;
+  cursor: zoom-in;
+}
 #features .feature .title {
   font-weight: bold;
 }
@@ -405,6 +456,10 @@ export default {
 }
 #team .v-btn {
   text-transform: none;
+}
+#team .v-card:hover {
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%),
+    0px 1px 10px 0px rgb(0 0 0 / 12%) !important;
 }
 /* Contact */
 #contact .v-sheet {

@@ -555,7 +555,12 @@
       <!-- <path id="whiterect" style="fill:#fff" d="M0 1220.817h2043v262H0z" /> -->
     </svg>
     <v-row class="content text-md-left text-center mx-xl-16">
-      <v-col cols="12" md="6" xs="12" class="text d-flex flex-column justify-center">
+      <v-col
+        cols="12"
+        md="6"
+        xs="12"
+        class="reveal reveal_b text d-flex flex-column justify-center"
+      >
         <div class="heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
           Quer durch Wien mit Get Around - Vienna
         </div>
@@ -569,28 +574,96 @@
             >oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn
           >
         </div>
-        <v-btn @click="scrollTo('#features')" class="mt-4 d-md-none d-block" small text dark>
-          <v-icon>mdi-chevron-double-down</v-icon>
-        </v-btn>
+        <div class="d-flex justify-center">
+          <v-btn @click="scrollTo('#features')" fab class="mt-4 d-md-none d-block" small text dark>
+            <v-icon>mdi-chevron-double-down</v-icon>
+          </v-btn>
+        </div>
       </v-col>
       <v-col cols="12" sm="6" class="phone-img d-md-flex align-center justify-center d-none">
-        <v-img max-width="350" src="/img/gav-phone-mockup.png"></v-img>
+        <v-img class="phone-black" max-width="350" src="/img/gav-black-phone.png"></v-img>
+        <v-img class="phone" max-width="350" src="/img/gav-phone-mockup.png"></v-img>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+function animateFrom(elem, direction) {
+  direction = direction || 1;
+  let x = 0;
+  let y = direction * 100;
+  if (elem.classList.contains("reveal_l")) {
+    x = -100;
+    y = 0;
+  } else if (elem.classList.contains("reveal_r")) {
+    x = 100;
+    y = 0;
+  } else if (elem.classList.contains("reveal_b")) {
+    y *= -1;
+  }
+  elem.style.transform = "translate(" + x + "px, " + y + "px)";
+  elem.style.opacity = "0";
+  gsap.fromTo(
+    elem,
+    { x: x, y: y, autoAlpha: 0 },
+    {
+      duration: 1.25,
+      x: 0,
+      y: 0,
+      autoAlpha: 1,
+      ease: "expo",
+      overwrite: "auto"
+    }
+  );
+}
+function hide(elem) {
+  gsap.set(elem, { autoAlpha: 0 });
+}
 export default {
   methods: {
     scrollTo(target) {
       this.$vuetify.goTo(target, { duration: 800 });
     }
+  },
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".reveal").forEach(function(elem) {
+      hide(elem);
+      ScrollTrigger.create({
+        trigger: elem,
+        onEnter: function() {
+          animateFrom(elem);
+        },
+        onEnterBack: function() {
+          animateFrom(elem, -1);
+        },
+        onLeave: function() {
+          hide(elem);
+        }
+      });
+    });
+    gsap.to(".phone", {
+      opacity: 1,
+      delay: 1
+    });
+    gsap.to(".phone-black", {
+      opacity: 0,
+      delay: 1
+    });
   }
 };
 </script>
 
 <style lang="scss" scoped>
+// Phone
+.phone {
+  position: absolute;
+  opacity: 0;
+}
+//
 .start-section svg {
   height: 100vh;
 }
