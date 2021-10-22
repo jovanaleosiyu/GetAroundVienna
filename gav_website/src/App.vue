@@ -220,13 +220,14 @@
               required
             ></v-text-field>
             <v-textarea
+              v-model="msg"
               label="Nachricht"
               hint="Schreibe deine Nachricht an uns!"
               auto-grow
               :rules="msgRules"
               required
             ></v-textarea>
-            <v-btn class="mt-md-4" fab color="primary" :disabled="!valid" @click="validate">
+            <v-btn class="mt-md-4" fab color="primary" :disabled="!valid" @click="send">
               <v-icon dark>
                 mdi-send
               </v-icon>
@@ -264,6 +265,7 @@
 import StartSection from "./components/StartSection.vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Email } from "./assets/smtp.js";
 function animateFrom(elem, direction) {
   direction = direction || 1;
   let x = 0;
@@ -318,12 +320,22 @@ export default {
       v => !!v || "E-mail is required",
       v => /.+@.+\..+/.test(v) || "E-mail must be valid"
     ],
+    msg: "",
     msgRules: [v => !!v || "Message is required"],
     mobileMenu: false
   }),
   methods: {
-    validate() {
-      this.$refs.form.validate();
+    send() {
+      if (!this.$refs.form.validate()) return;
+      return; // Code ab hier geht nicht
+      console.log(this.msg, this.name, this.email);
+      Email.send({
+        SecureToken: "7fb364bc-c581-4d1a-9b83-e07ce64873ee",
+        To: "getaroundvienna@gmail.com",
+        From: this.email,
+        Subject: `Message from ${this.name}`,
+        Body: this.msg
+      }).then(message => alert(message));
     },
     scrollTo(target) {
       this.$vuetify.goTo(target, { duration: 800 });
