@@ -129,9 +129,7 @@
             <v-col align="center" cols="12" md="4" class="pl-xl-16">
               <v-card class="rounded-xl ml-xl-16 mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img
-                    src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  ></v-img>
+                  <v-img src="/img/sun.png"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Projektleiter, Backend Developer</div>
@@ -150,9 +148,7 @@
             <v-col align="center" cols="12" md="4">
               <v-card class="rounded-xl mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img
-                    src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  ></v-img>
+                  <v-img src="/img/urteil.png"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Frontend Developer</div>
@@ -170,9 +166,7 @@
             <v-col align="center" cols="12" md="4" class="pr-xl-16">
               <v-card class="rounded-xl mr-xl-16 mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img
-                    src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  ></v-img>
+                  <v-img src="/img/stevic.png"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Designer, Frontend Developer</div>
@@ -239,7 +233,17 @@
           <div class="subtitle text-lg-h5 text-h6 font-weight-bold">
             Wenn du Lust und Zeit hast, kannst du uns noch auf unserem Instagram besuchen!
           </div>
-          <v-btn class="mt-8 mb-16" x-large rounded color="primary">@getaroundvienna</v-btn>
+          <v-btn
+            href="https://www.instagram.com/getaroundvienna/"
+            target="_blank"
+            class="mt-8 mb-16"
+            x-large
+            rounded
+            color="primary"
+          >
+            <v-icon>mdi-instagram</v-icon>
+            @getaroundvienna
+          </v-btn>
         </div>
       </section>
     </v-main>
