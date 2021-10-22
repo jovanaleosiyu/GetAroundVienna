@@ -129,7 +129,7 @@
             <v-col align="center" cols="12" md="4" class="pl-xl-16">
               <v-card class="rounded-xl ml-xl-16 mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img src="/img/sun.png"></v-img>
+                  <v-img lazy-src="/img/sun.png" src="/img/sun.png"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Projektleiter, Backend Developer</div>
@@ -148,7 +148,7 @@
             <v-col align="center" cols="12" md="4">
               <v-card class="rounded-xl mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img src="/img/urteil.png"></v-img>
+                  <v-img lazy-src="/img/urteil.png" src="/img/urteil.png"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Frontend Developer</div>
@@ -166,7 +166,7 @@
             <v-col align="center" cols="12" md="4" class="pr-xl-16">
               <v-card class="rounded-xl mr-xl-16 mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img src="/img/stevic.png"></v-img>
+                  <v-img lazy-src="/img/stevic.png" src="/img/stevic.png"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Designer, Frontend Developer</div>
