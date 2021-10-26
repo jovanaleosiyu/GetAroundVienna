@@ -624,8 +624,9 @@ export default {
     hide(elem);
     ScrollTrigger.create({
       trigger: elem,
-      markers: true,
-      end: "200% top",
+      end: "300% bottom",
+      endTrigger: "#home",
+      preventOverlaps: true,
       onEnter: function() {
         animateFrom(elem, -1);
       },

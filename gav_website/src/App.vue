@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- App Bar -->
-    <v-app-bar fixed dark flat class="transparent">
+    <v-app-bar fixed dark flat :class="{ transparent: transp }">
       <v-img
         alt="Get Around Vienna Logo"
         class="shrink mr-2"
@@ -196,7 +196,18 @@
         </div>
         <!-- Contact Formular -->
         <v-sheet elevation="2" class="reveal mt-12 mx-sm-auto mx-4  rounded-xl">
-          <v-form ref="form" v-model="valid" lazy-validation class="pa-md-16 pa-8">
+          <v-form
+            :disabled="formsended"
+            ref="form"
+            v-model="valid"
+            lazy-validation
+            class="pa-md-16 pa-8"
+          >
+            <v-slide-x-transition>
+              <v-alert v-if="formsended" dense text type="success">
+                Danke für deine Nachricht!
+              </v-alert>
+            </v-slide-x-transition>
             <div class="text-lg-h5 text-h6 text-center font-weight-bold pb-md-12 pb-4">
               Schreibe uns eine Nachricht!
             </div>
@@ -221,7 +232,14 @@
               :rules="msgRules"
               required
             ></v-textarea>
-            <v-btn class="mt-md-4" fab color="primary" :disabled="!valid" @click="send">
+            <v-btn
+              :loading="formsending"
+              class="mt-md-4"
+              fab
+              color="primary"
+              :disabled="!valid || formsended"
+              @click="send"
+            >
               <v-icon dark>
                 mdi-send
               </v-icon>
@@ -269,7 +287,8 @@
 import StartSection from "./components/StartSection.vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Email } from "./assets/smtp.js";
+import axios from "axios";
+
 function animateFrom(elem, direction) {
   direction = direction || 1;
   let x = 0;
@@ -308,7 +327,7 @@ export default {
   },
   data: () => ({
     sections: [
-      { name: "Home", to: "#home", className: { "home-link": true, active: true } },
+      { name: "Home", to: "#home", className: { "home-link": true, active: false } },
       { name: "Features", to: "#features", className: { "features-link": true, active: false } },
       { name: "Über uns", to: "#team", className: { "team-link": true, active: false } },
       { name: "Kontakt", to: "#contact", className: { "contact-link": true, active: false } }
@@ -326,20 +345,36 @@ export default {
     ],
     msg: "",
     msgRules: [v => !!v || "Message is required"],
-    mobileMenu: false
+    mobileMenu: false,
+    transp: true,
+    formsending: false,
+    formsended: false
   }),
   methods: {
     send() {
       if (!this.$refs.form.validate()) return;
-      return; // Code ab hier geht nicht
-      console.log(this.msg, this.name, this.email);
-      Email.send({
-        SecureToken: "7fb364bc-c581-4d1a-9b83-e07ce64873ee",
-        To: "getaroundvienna@gmail.com",
-        From: this.email,
-        Subject: `Message from ${this.name}`,
-        Body: this.msg
-      }).then(message => alert(message));
+      this.formsending = true; // start loading anim
+      this.formsended = false;
+      const url =
+        "https://script.google.com/macros/s/AKfycbwTCzCtZu-t0-gZjeMRAhDoSDE4DlwnAan6UNim0g/exec";
+      const data = {
+        name: this.name,
+        email: this.email,
+        message: this.msg,
+        formDataNameOrder: JSON.stringify(["name", "email", "message"]),
+        formGoogleSheetName: "responses", // default sheet name
+        formGoogleSendEmail: "gav-website@gmail.com" // no email by default
+      };
+      const encoded = Object.keys(data)
+        .map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        })
+        .join("&");
+      axios.post(url, encoded).then(res => {
+        this.$refs.form.reset();
+        this.formsending = false;
+        this.formsended = true;
+      });
     },
     scrollTo(target) {
       this.$vuetify.goTo(target, { duration: 800 });
@@ -350,8 +385,11 @@ export default {
     ScrollTrigger.create({
       trigger: "#home",
       start: "top top",
+      end: "95% top",
+      // markers: true,
       scrub: 0.5,
-      toggleClass: { targets: ".v-app-bar", className: "transparent" }
+      onLeave: () => (this.transp = false),
+      onEnterBack: () => (this.transp = true)
     });
     for (const section of this.sections) {
       ScrollTrigger.create({
