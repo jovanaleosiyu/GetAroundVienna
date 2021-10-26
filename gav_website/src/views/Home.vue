@@ -263,6 +263,14 @@
           </v-btn>
         </div>
       </section>
+      <!-- Back to the top -->
+      <v-fade-transition>
+        <v-btn v-if="scrolledDown" class="back-to-top" @click="scrollTo('#home')" fab>
+          <v-icon>
+            mdi-chevron-up
+          </v-icon>
+        </v-btn>
+      </v-fade-transition>
     </v-main>
   </div>
 </template>
@@ -330,9 +338,9 @@ export default {
     msg: "",
     msgRules: [v => !!v || "Message is required"],
     mobileMenu: false,
-    transp: true,
     formsending: false,
-    formsended: false
+    formsended: false,
+    scrolledDown: false
   }),
   methods: {
     send() {
@@ -371,7 +379,7 @@ export default {
     const appBar = document.querySelector(".v-app-bar");
     if (window.scrollY < home.getBoundingClientRect().bottom) {
       appBar.style.backgroundColor = "rgba(39,39,39,0)";
-    }
+    } else this.scrolledDown = true;
     ScrollTrigger.create({
       trigger: home,
       start: "bottom top",
@@ -385,6 +393,12 @@ export default {
           backgroundColor: "rgba(39,39,39,0)",
           duration: 0.2
         })
+    });
+    ScrollTrigger.create({
+      trigger: home,
+      start: "bottom bottom",
+      onLeave: () => (this.scrolledDown = true),
+      onEnterBack: () => (this.scrolledDown = false)
     });
     // Active Links
     for (const section of this.sections) {
@@ -417,6 +431,12 @@ export default {
 <style lang="css">
 .v-application {
   overflow: hidden;
+}
+.back-to-top {
+  position: fixed;
+  z-index: 1;
+  bottom: 30px;
+  right: 30px;
 }
 /* App Bar Hover */
 .nav .v-btn:after {
