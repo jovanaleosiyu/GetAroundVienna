@@ -29,8 +29,8 @@
         </v-btn>
       </div>
       <v-spacer></v-spacer>
-      <v-btn class="primary d-md-block d-none" elevation="2" rounded>
-        Zu der App
+      <v-btn to="/temp" exact class="primary d-md-flex d-none" elevation="2" rounded>
+        Zur App
       </v-btn>
       <!-- Mobile -->
       <div class="d-md-none d-inline-flex">
@@ -53,7 +53,7 @@
             >
               {{ section.name }}
             </v-btn>
-            <v-btn class="primary d-md-block d-none" elevation="2" rounded>
+            <v-btn to="/temp" exact class="primary d-md-block d-none" elevation="2" rounded>
               Zu der App
             </v-btn>
           </div>
@@ -250,7 +250,7 @@
         <!-- Instagram -->
         <div class="insta mt-16 text-center pa-md-16 pa-8 d-flex flex-column align-center">
           <div class="subtitle text-lg-h5 text-h6 font-weight-bold">
-            Wenn du Lust und Zeit hast, kannst du uns noch auf unserem Instagram besuchen!
+            Besuche uns noch auf unserem Instagram besuchen!
           </div>
           <v-btn
             href="https://www.instagram.com/getaroundvienna/"
@@ -261,7 +261,7 @@
             color="primary"
           >
             <v-icon>mdi-instagram</v-icon>
-            @getaroundvienna
+            getaroundvienna
           </v-btn>
         </div>
       </section>
@@ -274,7 +274,6 @@ import StartSection from "../components/StartSection.vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import axios from "axios";
-
 function animateFrom(elem, direction) {
   direction = direction || 1;
   let x = 0;

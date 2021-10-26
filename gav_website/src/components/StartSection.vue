@@ -568,7 +568,7 @@
           Verkehrmitteln in Wien.
         </div>
         <div>
-          <v-btn elevation="2" dark rounded>auf zur App</v-btn>
+          <v-btn to="/temp" exact elevation="2" dark rounded>Zu der App</v-btn>
           <v-btn @click="scrollTo('#features')" class="d-md-inline d-none" small text dark
             >oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn
           >

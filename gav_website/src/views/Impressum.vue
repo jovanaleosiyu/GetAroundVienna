@@ -1,7 +1,7 @@
 <template>
   <div class="impressum">
     <v-app-bar dark flat>
-      <router-link to="/">
+      <router-link exact to="/">
         <v-img
           alt="Get Around Vienna Logo"
           class="shrink mr-2"
