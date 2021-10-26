@@ -559,26 +559,42 @@
       <!-- <path id="whiterect" style="fill:#fff" d="M0 1220.817h2043v262H0z" /> -->
     </svg>
     <v-row class="content text-md-left text-center mx-xl-16">
+      <!-- Text -->
       <v-col cols="12" md="6" xs="12" class="text d-flex flex-column justify-center">
+        <!-- Heading -->
         <div class="heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
           Quer durch Wien mit Get Around - Vienna
         </div>
+        <!-- Description -->
         <div class="description mb-6 pr-sm-8 pr-0 text-lg-h5 text-sm-h6">
           Die Öffi-App erleichtert dir mit ihren praktischen Funktionen das Fahren mit öffentlichen
           Verkehrmitteln in Wien.
         </div>
+        <!-- CTA -->
         <div>
           <v-btn to="/temp" exact elevation="2" dark rounded>Zu der App</v-btn>
-          <v-btn @click="scrollTo('#features')" class="d-md-inline d-none" small text dark
-            >oder lese weiter<v-icon>mdi-mouse-move-down</v-icon></v-btn
+          <v-btn
+            rounded
+            @click="scrollTo('#features')"
+            class="d-md-inline-flex d-none ml-1"
+            small
+            text
+            dark
           >
+            oder lese weiter
+            <div class="mouse ml-2"><div class="wheel"></div></div>
+          </v-btn>
         </div>
-        <div class="d-flex justify-center">
-          <v-btn @click="scrollTo('#features')" fab class="mt-4 d-md-none d-block" small text dark>
-            <v-icon>mdi-chevron-double-down</v-icon>
+        <!-- Scroll -->
+        <div class="d-md-none d-flex justify-center">
+          <v-btn @click="scrollTo('#features')" fab class="mt-4" small text dark>
+            <div class="scroll">
+              <span class="unu"></span> <span class="doi"></span> <span class="trei"></span>
+            </div>
           </v-btn>
         </div>
       </v-col>
+      <!-- Phone -->
       <v-col cols="12" sm="6" class="phone-img d-md-flex align-center justify-center d-none">
         <v-img class="phone-black" max-width="350" src="/img/gav-black-phone.png"></v-img>
         <v-img class="phone" max-width="350" src="/img/gav-phone-mockup.png"></v-img>
@@ -590,6 +606,7 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import gsapCore from "gsap/gsap-core";
 export default {
   methods: {
     scrollTo(target) {
@@ -607,6 +624,29 @@ export default {
       opacity: 0,
       delay: 1
     });
+    // Mouse
+    gsap.fromTo(
+      ".mouse .wheel",
+      {
+        opacity: 0,
+        y: -1
+      },
+      {
+        opacity: 1,
+        y: 5,
+        repeat: -1,
+        duration: 1.3
+      }
+    );
+    // Arrows
+    const arrows = document.querySelectorAll(".scroll span");
+    for (const i in arrows) {
+      gsap.fromTo(
+        arrows[i],
+        { opacity: 0 },
+        { opacity: 1, duration: 1, repeat: -1, delay: i / 10, yoyo: true }
+      );
+    }
     // Text Fade in
     const elem = document.querySelector(".start-section .text");
     const reveal = gsap.fromTo(elem, { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
@@ -644,6 +684,35 @@ export default {
 .phone {
   position: absolute;
   opacity: 0;
+}
+// Mouse
+.mouse {
+  height: 21px;
+  width: 14px;
+  border-radius: 10px;
+  transform: none;
+  border: 2px solid white;
+  top: 170px;
+}
+.wheel {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: white;
+  position: relative;
+}
+// Arrows
+.scroll span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-bottom: 2px;
 }
 //
 .start-section svg {
