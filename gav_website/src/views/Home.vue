@@ -390,7 +390,7 @@ export default {
     for (const section of this.sections) {
       ScrollTrigger.create({
         trigger: section.to,
-        start: "top 10%",
+        start: "top 1%",
         onToggle: ({ isActive }) => (section.className.active = isActive)
       });
     }

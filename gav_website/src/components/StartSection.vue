@@ -559,7 +559,7 @@
       <!-- <path id="whiterect" style="fill:#fff" d="M0 1220.817h2043v262H0z" /> -->
     </svg>
     <v-row class="content text-md-left text-center mx-xl-16">
-      <v-col cols="12" md="6" xs="12" class="reveal text d-flex flex-column justify-center">
+      <v-col cols="12" md="6" xs="12" class="text d-flex flex-column justify-center">
         <div class="heading mb-8 text-lg-h2 text-sm-h3 text-h4 font-weight-bold">
           Quer durch Wien mit Get Around - Vienna
         </div>
@@ -590,28 +590,6 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-function animateFrom(elem, direction) {
-  direction = direction || 1;
-  let x = 0;
-  let y = direction * 100;
-  elem.style.transform = "translate(" + x + "px, " + y + "px)";
-  elem.style.opacity = "0";
-  gsap.fromTo(
-    elem,
-    { x: x, y: y, autoAlpha: 0 },
-    {
-      duration: 1.25,
-      x: 0,
-      y: 0,
-      autoAlpha: 1,
-      ease: "expo",
-      overwrite: "auto"
-    }
-  );
-}
-function hide(elem) {
-  gsap.set(elem, { autoAlpha: 0 });
-}
 export default {
   methods: {
     scrollTo(target) {
@@ -620,31 +598,30 @@ export default {
   },
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
-    const elem = document.querySelector(".reveal");
-    hide(elem);
-    ScrollTrigger.create({
-      trigger: elem,
-      end: "300% bottom",
-      endTrigger: "#home",
-      preventOverlaps: true,
-      onEnter: function() {
-        animateFrom(elem, -1);
-      },
-      onEnterBack: function() {
-        animateFrom(elem);
-      },
-      onLeave: function() {
-        hide(elem);
-      }
-    });
-    gsap.to(".phone", {
+    // Phone
+    const p1 = gsap.to(".phone", {
       opacity: 1,
       delay: 1
     });
-    gsap.to(".phone-black", {
+    const p2 = gsap.to(".phone-black", {
       opacity: 0,
       delay: 1
     });
+    // Text Fade in
+    const elem = document.querySelector(".start-section .text");
+    const reveal = gsap.fromTo(elem, { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
+    ScrollTrigger.create({
+      trigger: elem,
+      onEnter: function() {
+        reveal.play();
+      },
+      onEnterBack: function() {
+        reveal.restart(true);
+        p1.restart(true);
+        p2.restart(true);
+      }
+    });
+    // Zug
     gsap.to("#zug", {
       x: -1600,
       scrollTrigger: {
@@ -653,7 +630,7 @@ export default {
       }
     });
     gsap.to("#radg, #rad", {
-      rotate: 90,
+      rotate: 10,
       scrollTrigger: {
         scrub: 0.7
       }
@@ -691,6 +668,12 @@ export default {
 .start-section .phone-img {
   padding-left: 2.5vw;
   padding-top: 10vh;
+}
+.start-section .phone-black {
+  z-index: 1;
+}
+.start-section .phone {
+  // z-index: 0;
 }
 // Medium
 @media (min-width: 960px) {
