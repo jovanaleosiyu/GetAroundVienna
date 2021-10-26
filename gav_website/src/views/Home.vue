@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- App Bar -->
-    <v-app-bar fixed dark flat :class="{ transparent: transp }">
+    <v-app-bar fixed dark flat>
       <v-img
         alt="Get Around Vienna Logo"
         class="shrink mr-2"
@@ -272,6 +272,7 @@ import StartSection from "../components/StartSection.vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import axios from "axios";
+
 function animateFrom(elem, direction) {
   direction = direction || 1;
   let x = 0;
@@ -365,15 +366,27 @@ export default {
   },
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
+    // App Bar Background
+    const home = document.querySelector("#home");
+    const appBar = document.querySelector(".v-app-bar");
+    if (window.scrollY < home.getBoundingClientRect().bottom) {
+      appBar.style.backgroundColor = "rgba(39,39,39,0)";
+    }
     ScrollTrigger.create({
-      trigger: "#home",
-      start: "top top",
-      end: "95% top",
-      // markers: true,
-      scrub: 0.5,
-      onLeave: () => (this.transp = false),
-      onEnterBack: () => (this.transp = true)
+      trigger: home,
+      start: "bottom top",
+      onLeave: () =>
+        gsap.to(appBar, {
+          backgroundColor: "rgba(39,39,39,1)",
+          duration: 0.2
+        }),
+      onEnterBack: () =>
+        gsap.to(appBar, {
+          backgroundColor: "rgba(39,39,39,0)",
+          duration: 0.2
+        })
     });
+    // Active Links
     for (const section of this.sections) {
       ScrollTrigger.create({
         trigger: section.to,
