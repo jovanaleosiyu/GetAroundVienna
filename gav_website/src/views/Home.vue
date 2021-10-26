@@ -37,27 +37,25 @@
         <v-btn icon @click="mobileMenu = true">
           <v-icon large>mdi-menu</v-icon>
         </v-btn>
-        <transition name="fade">
-          <div v-if="mobileMenu" class="mobile-nav nav">
+        <v-fade-transition>
+          <div v-if="mobileMenu" class="mobile-nav nav" @click="mobileMenu = false">
             <v-icon large @click="mobileMenu = false">mdi-close</v-icon>
-            <v-btn
-              :class="section.className"
-              plain
+            <div
+              class="btn-wrapper"
               v-for="section of sections"
-              :key="section.to"
               @click="
                 scrollTo(section.to);
                 section.className.active = true;
                 mobileMenu = false;
               "
+              :key="section.to"
             >
-              {{ section.name }}
-            </v-btn>
-            <v-btn to="/temp" exact class="primary d-md-block d-none" elevation="2" rounded>
-              Zu der App
-            </v-btn>
+              <v-btn plain :class="section.className">
+                {{ section.name }}
+              </v-btn>
+            </div>
           </div>
-        </transition>
+        </v-fade-transition>
       </div>
     </v-app-bar>
     <!-- Main -->
@@ -520,15 +518,11 @@ export default {
   padding-top: 25vh;
   background-color: #212121;
 }
+.mobile-nav .btn-wrapper {
+  width: 100%;
+  text-align: center;
+}
 .mobile-nav .v-btn {
   margin-top: 1vh;
-}
-/* Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
 </style>
