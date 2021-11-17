@@ -567,8 +567,8 @@
         </div>
         <!-- Description -->
         <div class="description mb-6 pr-sm-8 pr-0 text-lg-h5 text-sm-h6">
-          Die Öffi-App erleichtert dir mit ihren praktischen Funktionen das Fahren mit öffentlichen
-          Verkehrmitteln in Wien.
+          Die Öffi-App erleichtert dir mit ihren praktischen Funktionen das Fahren mit den
+          öffentlichen Verkehrsmitteln in Wien.
         </div>
         <!-- CTA -->
         <div>
@@ -650,17 +650,17 @@ export default {
     // Text Fade in
     const elem = document.querySelector(".start-section .text");
     const reveal = gsap.fromTo(elem, { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
-    ScrollTrigger.create({
-      trigger: elem,
-      onEnter: function() {
-        reveal.play();
-      },
-      onEnterBack: function() {
-        reveal.restart(true);
-        p1.restart(true);
-        p2.restart(true);
-      }
-    });
+    // ScrollTrigger.create({
+    //   trigger: elem,
+    //   onEnter: function() {
+    //     reveal.play();
+    //   },
+    //   onEnterBack: function() {
+    //     reveal.restart(true);
+    //     p1.restart(true);
+    //     p2.restart(true);
+    //   }
+    // });
     // Zug
     gsap.to("#zug", {
       x: -1600,

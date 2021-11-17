@@ -126,9 +126,9 @@
           <v-row class="px-xl-16 mx-xl-16">
             <!-- Profile 1 -->
             <v-col align="center" cols="12" md="4" class="pl-xl-16">
-              <v-card class="rounded-xl ml-xl-16 mx-sm-0 mx-4">
+              <v-card class="reveal reveal_b rounded-xl ml-xl-16 mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img lazy-src="/img/sun.png" src="/img/sun.jpg"></v-img>
+                  <v-img src="/img/sun.jpg"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Projektleiter, Backend Developer</div>
@@ -145,9 +145,9 @@
             </v-col>
             <!-- Profile 2 -->
             <v-col align="center" cols="12" md="4">
-              <v-card class="rounded-xl mx-sm-0 mx-4">
+              <v-card class="reveal reveal_b rounded-xl mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img lazy-src="/img/urteil.png" src="/img/urteil.jpg"></v-img>
+                  <v-img src="/img/urteil.jpg"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Frontend Developer</div>
@@ -163,9 +163,9 @@
             </v-col>
             <!-- Profile 3 -->
             <v-col align="center" cols="12" md="4" class="pr-xl-16">
-              <v-card class="rounded-xl mr-xl-16 mx-sm-0 mx-4">
+              <v-card class="reveal reveal_b rounded-xl mr-xl-16 mx-sm-0 mx-4">
                 <v-avatar class="profilepic" size="180">
-                  <v-img lazy-src="/img/stevic.png" src="/img/stevic.jpg"></v-img>
+                  <v-img src="/img/stevic.jpg"></v-img>
                 </v-avatar>
                 <div class="d-flex flex-column align-center mt-6 px-6">
                   <div class="mb-2">Designer, Frontend Developer</div>
@@ -220,7 +220,7 @@
             <v-text-field
               v-model="email"
               :rules="emailRules"
-              label="E-mail"
+              label="E-Mail"
               required
             ></v-text-field>
             <v-textarea
@@ -248,7 +248,7 @@
         <!-- Instagram -->
         <div class="insta mt-16 text-center pa-md-16 pa-8 d-flex flex-column align-center">
           <div class="subtitle text-lg-h5 text-h6 font-weight-bold">
-            Besuche uns noch auf unserem Instagram besuchen!
+            Besuche uns noch auf unserem Instagram!
           </div>
           <v-btn
             href="https://www.instagram.com/getaroundvienna/"
@@ -284,12 +284,12 @@ import axios from "axios";
 function animateFrom(elem, direction) {
   direction = direction || 1;
   let x = 0;
-  let y = direction * 100;
+  let y = direction * 50;
   if (elem.classList.contains("reveal_l")) {
     x = -100;
     y = 0;
   } else if (elem.classList.contains("reveal_r")) {
-    x = 100;
+    x = 50;
     y = 0;
   } else if (elem.classList.contains("reveal_b")) {
     y *= -1;
@@ -327,16 +327,16 @@ export default {
     valid: true,
     name: "",
     nameRules: [
-      v => !!v || "Name is required",
-      v => (v && v.length <= 30) || "Name must be less than 30 characters"
+      v => !!v || "Name ist erforderlich",
+      v => (v && v.length <= 30) || "Name muss kürzer als 30 Zeichen sein"
     ],
     email: "",
     emailRules: [
-      v => !!v || "E-mail is required",
-      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      v => !!v || "E-Mail ist erforderlich",
+      v => /.+@.+\..+/.test(v) || "E-Mail muss gültig sein"
     ],
     msg: "",
-    msgRules: [v => !!v || "Message is required"],
+    msgRules: [v => !!v || "Nachricht ist erforderlich"],
     mobileMenu: false,
     formsending: false,
     formsended: false,
@@ -510,6 +510,7 @@ export default {
 /* Team */
 #team .wrapper {
   background-image: url("/img/map-bg.png");
+  background-size: cover;
   padding-bottom: 25vh;
 }
 #team .divider {
