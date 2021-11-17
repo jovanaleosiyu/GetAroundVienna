@@ -28,8 +28,10 @@ module.exports = {
     } else res.status(400).send('Email or password missing');
   }),
   logout: asyncHandler(async (req, res) => {
-    req.session.destroy();
-    res.clearCookie(process.env.SESSION_NAME);
-    res.status(200).json('User successfully logged out');
+    if (req.session.userid) {
+      req.session.destroy();
+      res.clearCookie(process.env.SESSION_NAME);
+      res.status(200).send('User successfully logged out');
+    } else res.status(404).send('Already logged out');
   }),
 };
