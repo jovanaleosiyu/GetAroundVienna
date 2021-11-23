@@ -12,5 +12,6 @@ module.exports = {
     'linebreak-style': 0,
     'no-console': 0,
     'comma-dangle': 0,
+    'object-curly-newline': 0,
   },
 };

@@ -41,3 +41,6 @@ content-type: application/json
 
 ### logout
 GET http://localhost:3000/logout
+### trip
+
+GET http://localhost:3000/trip
