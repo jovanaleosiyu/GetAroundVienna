@@ -5,7 +5,6 @@ const url = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?';
 
 module.exports = {
   getTrip: asyncHandler(async (req, res) => {
-    console.log(req.body);
     const {
       typeOrigin,
       nameOrigin,
@@ -13,8 +12,8 @@ module.exports = {
       nameDestination,
       options,
     } = req.body;
-    const queryString = `outputFormat=JSON&coordOutputFormat=WGS84[DD.ddddd]&type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}`;
     console.log(`options: ${options}`);
+    const queryString = `outputFormat=JSON&coordOutputFormat=WGS84[DD.ddddd]&type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}`;
     const { data } = await axios.get(url + queryString);
     const trips = data.trips.map((t) => ({
       duration: t.duration,
@@ -62,7 +61,6 @@ module.exports = {
         };
       }),
     }));
-    console.log(trips);
     res.status(200).json(trips);
   }),
 };

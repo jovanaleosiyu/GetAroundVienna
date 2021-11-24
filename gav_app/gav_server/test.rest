@@ -41,7 +41,7 @@ content-type: application/json
 
 ### logout
 GET http://localhost:3000/logout
-### trip
+### trip: Stop to Address
 
 GET http://localhost:3000/trip
 content-type: application/json
@@ -53,3 +53,10 @@ content-type: application/json
 "typeDestination":"coord"
 }
 
+### Point
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Meidling"
+}
