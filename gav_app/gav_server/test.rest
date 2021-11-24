@@ -41,6 +41,28 @@ content-type: application/json
 
 ### logout
 GET http://localhost:3000/logout
+
+### Point
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Meidling"
+}
+### Umlaute
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Am Schöpfwerk"
+}
+### No Points
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": ""
+}
 ### trip: Stop to Address
 
 GET http://localhost:3000/trip
@@ -51,12 +73,4 @@ content-type: application/json
 "typeOrigin": "stopID",
 "nameDestination": "16.31318:48.21196:WGS84",
 "typeDestination":"coord"
-}
-
-### Point
-GET http://localhost:3000/points
-content-type: application/json
-
-{
-"searchName": "Meidling"
 }
