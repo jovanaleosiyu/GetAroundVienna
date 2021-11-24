@@ -13,7 +13,8 @@ const url =
 const structurePoint = (p) => ({
   name: p.name,
   type: p.anyType,
-  ref: p.anyType === 'stop' ? p.ref.id : p.ref.coords,
+  ref:
+    p.anyType === 'stop' ? p.ref.id : `${p.ref.coords.replace(',', ':')}:WGS84`,
 });
 
 module.exports = {
