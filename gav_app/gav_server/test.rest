@@ -44,3 +44,12 @@ GET http://localhost:3000/logout
 ### trip
 
 GET http://localhost:3000/trip
+content-type: application/json
+
+{
+"nameOrigin": "60200913", 
+"typeOrigin": "stopID",
+"nameDestination": "16.31318:48.21196:WGS84",
+"typeDestination":"coord"
+}
+
