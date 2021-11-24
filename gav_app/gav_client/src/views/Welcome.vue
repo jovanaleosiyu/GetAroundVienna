@@ -8,11 +8,11 @@ v-
       class="mx-auto"
     ></v-img>
     <h1 class="text-center mt-8 mb-16">Get Around<br />Vienna</h1>
-    <v-btn to="/login" class="grey darken-4 white--text mx-auto mb-4"
+    <v-btn to="/login" class="grey darken-4 white--text mx-auto mb-4 rounded-pill"
       >Anmelden</v-btn
     >
 
-    <v-btn to="/sign-up" class="grey darken-4 white--text mx-auto mb-4"
+    <v-btn to="/sign-up" class="grey darken-4 white--text mx-auto mb-4 rounded-pill"
       >Registrieren</v-btn
     >
 
