@@ -15,6 +15,7 @@ module.exports = {
     console.log(`options: ${options}`);
     const queryString = `outputFormat=JSON&coordOutputFormat=WGS84[DD.ddddd]&type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}`;
     const { data } = await axios.get(url + queryString);
+    console.log(data);
     const trips = data.trips.map((t) => ({
       duration: t.duration,
       interchange: t.interchange,

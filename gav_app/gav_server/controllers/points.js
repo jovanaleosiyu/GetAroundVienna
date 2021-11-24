@@ -10,20 +10,25 @@ const url =
   'anyObjFilter_origin=10&' +
   'type_origin=any&';
 
+const structurePoint = (p) => ({
+  name: p.name,
+  type: p.anyType,
+  ref: p.anyType === 'stop' ? p.ref.id : p.ref.coords,
+});
+
 module.exports = {
   getPoints: asyncHandler(async (req, res) => {
     const { searchName } = req.body;
     const queryString = querystring.encode({ name_origin: searchName });
     const { data } = await axios.get(url + queryString);
     const { points } = data.origin;
+    console.log(points);
     if (points) {
-      res.status(200).json(
-        points.map((p) => ({
-          name: p.name,
-          type: p.anyType,
-          ref: p.anyType === 'stop' ? p.ref.id : p.ref.coords,
-        }))
-      );
+      if (points instanceof Array) {
+        res.status(200).json(points.map((p) => structurePoint(p)));
+      } else {
+        res.status(200).send(structurePoint(points.point));
+      }
     } else res.status(404).send('No points found.');
   }),
 };
