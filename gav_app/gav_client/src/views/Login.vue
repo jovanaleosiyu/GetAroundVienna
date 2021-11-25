@@ -6,7 +6,7 @@ v-
       <div class="d-flex justify-start" style="width: 100%">
 
         <v-btn
-          to="/welcome"
+          to="/"
           icon
           class="my-auto"
           >
