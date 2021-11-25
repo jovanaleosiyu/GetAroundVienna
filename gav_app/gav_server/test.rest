@@ -41,6 +41,62 @@ content-type: application/json
 
 ### logout
 GET http://localhost:3000/logout
-### trip
+
+### Point
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Meidling"
+}
+### Umlaute
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Am Schöpfwerk"
+}
+### Single Point
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Thaliastraße 125"
+}
+### No Points
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": ""
+}
+### trip: Stop to Address
 
 GET http://localhost:3000/trip
+content-type: application/json
+
+{
+"typeOrigin": "stopID",
+"nameOrigin": "60200913", 
+"typeDestination":"coord",
+"nameDestination": "16.31318:48.21196:WGS84"
+}
+
+###
+GET http://localhost:3000/points
+content-type: application/json
+
+{
+"searchName": "Johnstraße"
+}
+###
+
+GET http://localhost:3000/trip
+content-type: application/json
+
+{
+"typeOrigin": "coord",
+"nameOrigin": "16.31318:48.21196:WGS84", 
+"typeDestination":"stopID",
+"nameDestination": "60200606"
+}

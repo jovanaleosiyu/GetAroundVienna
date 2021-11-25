@@ -9,6 +9,7 @@ require('colors');
 
 const accountRouter = require('./routes/account');
 const tripRouter = require('./routes/trip');
+const pointsRouter = require('./routes/points');
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.json());
 app.use('/', accountRouter);
 app.use('/trip', tripRouter);
+app.use('/points', pointsRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
