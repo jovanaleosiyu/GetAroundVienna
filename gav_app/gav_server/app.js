@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const path = require('path');
 const session = require('express-session');
+const cors = require('cors');
 
 require('dotenv').config();
 require('colors');
@@ -16,6 +17,7 @@ const app = express();
 
 const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
 
+app.use(cors());
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(

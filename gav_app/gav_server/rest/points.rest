@@ -1,28 +1,7 @@
 ### Point
-GET http://localhost:3000/points
-content-type: application/json
-
-{
-"searchName": "Meidling"
-}
+GET http://localhost:3000/points/Meidling
 ### Umlaute
-GET http://localhost:3000/points
+GET http://localhost:3000/points/Am Schöpfwerk
 content-type: application/json
-
-{
-"searchName": "Am Schöpfwerk"
-}
 ### Single Point
-GET http://localhost:3000/points
-content-type: application/json
-
-{
-"searchName": "Thaliastraße 125"
-}
-### No Points
-GET http://localhost:3000/points
-content-type: application/json
-
-{
-"searchName": ""
-}
+GET http://localhost:3000/points/Thaliastraße 125

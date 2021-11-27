@@ -19,7 +19,7 @@ const structurePoint = (p) => ({
 
 module.exports = {
   getPoints: asyncHandler(async (req, res) => {
-    const { searchName } = req.body;
+    const searchName = req.params.searchname;
     const queryString = querystring.encode({ name_origin: searchName });
     const { data } = await axios.get(url + queryString);
     const { points } = data.origin;
