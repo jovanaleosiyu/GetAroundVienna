@@ -1,0 +1,11 @@
+### trip: Stop to Address
+
+GET http://localhost:3000/trip
+content-type: application/json
+
+{
+"typeOrigin": "stopID",
+"nameOrigin": "60200913", 
+"typeDestination":"coord",
+"nameDestination": "16.31318:48.21196:WGS84"
+}

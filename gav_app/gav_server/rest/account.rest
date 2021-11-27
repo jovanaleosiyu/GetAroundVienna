@@ -1,0 +1,43 @@
+### register success
+POST http://localhost:3000/register
+content-type: application/json
+
+{
+  "email": "new@email.com",
+  "password": "max123"
+}
+### register fail email already
+POST http://localhost:3000/register
+content-type: application/json
+
+{
+  "email": "max.muster@email.com",
+  "password": "max123"
+}
+
+### register fail nothing
+POST http://localhost:3000/register
+content-type: application/json
+### login success
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+  "email": "max.muster@email.com",
+  "password": "max123"
+}
+### login fail email
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+  "email": "wrongmax.muster@email.com",
+  "password": "max123"
+}
+
+### login fail nothing
+POST http://localhost:3000/login
+content-type: application/json
+
+### logout
+GET http://localhost:3000/logout
