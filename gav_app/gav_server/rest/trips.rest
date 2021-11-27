@@ -1,3 +1,8 @@
 ### trip basic
-
 GET http://localhost:3000/trip?typeOrigin=stopID&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84
+
+### trip date time dep
+GET http://localhost:3000/trip?typeOrigin=stopID&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&date=20211128&time=1000
+
+### trip time arr
+GET http://localhost:3000/trip?typeOrigin=stopID&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&time=1000&depArr=arr
