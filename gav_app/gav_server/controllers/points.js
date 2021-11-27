@@ -12,7 +12,7 @@ const url =
 
 const structurePoint = (p) => ({
   name: p.name,
-  type: p.anyType,
+  type: p.anyType === 'stop' ? 'stopID' : 'coord',
   ref:
     p.anyType === 'stop' ? p.ref.id : `${p.ref.coords.replace(',', ':')}:WGS84`,
 });
@@ -23,7 +23,6 @@ module.exports = {
     const queryString = querystring.encode({ name_origin: searchName });
     const { data } = await axios.get(url + queryString);
     const { points } = data.origin;
-    console.log(points);
     if (points) {
       if (points instanceof Array) {
         res.status(200).json(points.map((p) => structurePoint(p)));
