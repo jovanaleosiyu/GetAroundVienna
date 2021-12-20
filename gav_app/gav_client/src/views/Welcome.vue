@@ -17,7 +17,7 @@
       Registrieren
     </v-btn>
 
-    <router-link class="black--text" to="#" style="text-decoration: none">
+    <router-link to="/home" class="black--text" style="text-decoration: none">
       Ohne Anmeldung fortfahren
     </router-link>
 
