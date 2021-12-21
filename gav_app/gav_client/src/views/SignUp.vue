@@ -92,7 +92,12 @@ import axios from "axios";
         await axios.post("http://localhost:3000/register",data).then(response =>{
           console.log(response);
         }).catch(error =>{
-          console.log(error.response.status);
+          if(error.response.status == 409){
+            errorMessage = "E-Mail wurde bereits verwendet!"
+          }
+          else{
+            errorMessage = "Daten sind nicht passend!"
+          }
         })
       }
     },

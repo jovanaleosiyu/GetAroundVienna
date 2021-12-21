@@ -86,7 +86,7 @@ export default {
         this.$router.push({ name: 'Home' })
       }).catch(error =>{
         if(error.response.status != 200){
-          this.errorMessage = "E-Mail oder Passwort ist falsch"
+          this.errorMessage = "E-Mail oder Passwort ist falsch!"
         }
       });
     },
