@@ -89,7 +89,11 @@ import axios from "axios";
           email: this.email,
           password: this.password,
         }
-        await axios.post("http://localhost:3000/register",data)
+        await axios.post("http://localhost:3000/register",data).then(response =>{
+          console.log(response);
+        }).catch(error =>{
+          console.log(error.response.status);
+        })
       }
     },
     computed: {

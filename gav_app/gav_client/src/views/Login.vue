@@ -46,17 +46,20 @@
         ></v-text-field>
         </div>
 
+        <h2>{{ errorMessage }}</h2>
+
         <v-btn elevation="5" @click="login()" :disabled="!valid" fab class="align-self-end grey darken-3 white--text mt-16">
         <v-icon> mdi-arrow-right </v-icon>
       </v-btn>
       </v-form>
-
     </v-card>
   </v-container>
 </template>
 
 <script>
 import axios from "axios";
+import { bus } from "../main";
+import VueCookies from 'vue-cookies';
 export default {
   name: 'Login',
   data: () => ({
@@ -68,18 +71,25 @@ export default {
       ],
     password: '',
     passwordRules: [v => !!v || "Passwort ist erforderlich"],
-    show: false
+    show: false,
+    errorMessage: ''
   }),
   methods: {
     async login() {
-      var data = {
+      var loginData = {
         email: this.email,
         password: this.password
       }
-      this.email = '';
-      this.password = '';
-      await axios.post("http://localhost:3000/login",data)
-    }
+      await axios.post("http://localhost:3000/login",loginData).then(response => {
+        bus.$data.userId = response.data;
+        VueCookies.set('userId', response.data);
+        this.$router.push({ name: 'Home' })
+      }).catch(error =>{
+        if(error.response.status != 200){
+          this.errorMessage = "E-Mail oder Passwort ist falsch"
+        }
+      });
+    },
   },
 };
 </script>
