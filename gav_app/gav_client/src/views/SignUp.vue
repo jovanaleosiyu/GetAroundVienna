@@ -56,6 +56,8 @@ v-<template>
         ></v-text-field>
         </div>
 
+        <h2>{{ errorMessage }}</h2>
+
         <v-btn elevation="5" @click="register()" :disabled="!valid" fab class="align-self-end grey darken-3 white--text mt-16">
         <v-icon> mdi-arrow-right </v-icon>
       </v-btn>
@@ -81,7 +83,8 @@ import axios from "axios";
       password: '',
       passwordRules: [v => !!v || "Passwort ist erforderlich"],
       confirmePassword: '',
-      confirmePasswordRules: [v => !!v || "Eingabe erforderlich"]
+      confirmePasswordRules: [v => !!v || "Eingabe erforderlich"],
+      errorMessage: '',
     }),
     methods: {
       async register() {
@@ -93,10 +96,10 @@ import axios from "axios";
           console.log(response);
         }).catch(error =>{
           if(error.response.status == 409){
-            errorMessage = "E-Mail wurde bereits verwendet!"
+            this.errorMessage = "E-Mail wurde bereits verwendet!"
           }
           else{
-            errorMessage = "Daten sind nicht passend!"
+            this.errorMessage = "Daten sind nicht passend!"
           }
         })
       }
