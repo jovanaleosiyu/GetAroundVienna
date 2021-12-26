@@ -1,6 +1,6 @@
 v-<template>
     <v-container class="d-flex flex-column align-center mt-16">
-      <v-card class="d-flex flex-column align-center" :min-width="$vuetify.breakpoint.mdAndUp ? 450 :'100%'" outlined="flase" style="border: none">
+      <v-card class="d-flex flex-column align-center" :min-width="$vuetify.breakpoint.mdAndUp ? 450 :'100%'" :outlined=true style="border: none">
 
         <div class="d-flex justify-start" style="width: 100%">
 
@@ -26,26 +26,89 @@ v-<template>
         
         <h1 class="text-center mt-8 mb-16">Erstelle einen<br>Account</h1>
 
+        <v-form class="d-flex flex-column align-center" v-model="valid" style="width: 100%">
         <div style="width: 80%">
-            <v-text-field label="E-Mail"></v-text-field>
-            <v-text-field label="Passwort"></v-text-field>
-            <v-text-field label="Passwort nochmal eingeben"></v-text-field>
+        <v-text-field
+        v-model="email"
+        :rules="emailRules"
+        label="E-Mail"
+        required
+        ></v-text-field>
+
+        <v-text-field
+        v-model="password"
+        :rules="passwordRules"
+        :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+        :type="show1 ? 'text' : 'password'"
+        @click:append="show1 = !show1"
+        label="Passwort"
+        required
+        ></v-text-field>
+
+        <v-text-field
+        v-model="confirmePassword"
+        :rules="[passwordConfirmationRule]"
+        :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+        :type="show2 ? 'text' : 'password'"
+        @click:append="show2 = !show2"
+        label="Passwort nochmal eingeben"
+        required
+        ></v-text-field>
         </div>
 
-        <v-btn elevation="4" fab class="align-self-end grey darken-3 white--text mt-16">
-          <v-icon> mdi-arrow-right </v-icon>
-        </v-btn>
+        <h2>{{ errorMessage }}</h2>
+
+        <v-btn elevation="5" @click="register()" :disabled="!valid" fab class="align-self-end grey darken-3 white--text mt-16">
+        <v-icon> mdi-arrow-right </v-icon>
+      </v-btn>
+      </v-form>
 
       </v-card>
     </v-container>
 </template>
 
 <script>
+import axios from "axios";
   export default {
     name: "SignUp",
     data: () => ({
-
+      show1: false,
+      show2: false,
+      valid: true,
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail ist erforderlich',
+        v => /.+@.+\..+/.test(v) || 'E-mail muss passend sein',
+      ],
+      password: '',
+      passwordRules: [v => !!v || "Passwort ist erforderlich"],
+      confirmePassword: '',
+      confirmePasswordRules: [v => !!v || "Eingabe erforderlich"],
+      errorMessage: '',
     }),
+    methods: {
+      async register() {
+        var data = {
+          email: this.email,
+          password: this.password,
+        }
+        await axios.post("http://localhost:3000/register",data).then(response =>{
+          console.log(response);
+        }).catch(error =>{
+          if(error.response.status == 409){
+            this.errorMessage = "E-Mail wurde bereits verwendet!"
+          }
+          else{
+            this.errorMessage = "Daten sind nicht passend!"
+          }
+        })
+      }
+    },
+    computed: {
+       passwordConfirmationRule() {
+        return (this.password === this.confirmePassword) || "Passwort muss übereinstimmen"
+      }
+    },
   }
 </script>
 
