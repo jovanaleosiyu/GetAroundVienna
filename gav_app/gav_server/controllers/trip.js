@@ -1,7 +1,9 @@
 const asyncHandler = require('express-async-handler');
 const axios = require('axios');
+const dbUrl = require('debug')('API_CALL');
+const dbVerify = require('debug')('VERIFY_CALL');
 
-const url = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
+const baseUrl = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
   + 'outputFormat=JSON&'
   + 'coordOutputFormat=WGS84[DD.ddddd]&'
   + 'ptOptionsActive=1&'
@@ -36,16 +38,18 @@ module.exports = {
     if (excludedMeans) {
       const emarr = excludedMeans.split(';');
       // Verify here
-      if (!emarr.every((e) => e !== '' && !Number.isNaN(e) && e >= 0 && e <= 11)) {
+      if (
+        !emarr.every((e) => e !== '' && !Number.isNaN(e) && e >= 0 && e <= 11)
+      ) {
         res.status(400).send('Invalid Excluded Means');
         return;
       }
       queryString += emarr.reduce((p, c) => `${p}excludedMeans=${c}&`, '');
     }
     // Verify Points
-    const verify = (await axios.get(`${url}${queryString}execInst=verifyOnly&`))
-      .data;
-    console.log(`${url}${queryString}execInst=verifyOnly&`);
+    const verifyUrl = `${baseUrl}${queryString}execInst=verifyOnly&`;
+    dbVerify(verifyUrl);
+    const verify = (await axios.get(verifyUrl)).data;
     if (!verify.origin.points || !verify.destination.points) {
       res.status(400).send('Invalid origin or destination');
       return;
@@ -75,8 +79,9 @@ module.exports = {
       return;
     }
     // Get Trip
-    console.log(url + queryString);
-    const { data } = await axios.get(url + queryString);
+    const url = baseUrl + queryString;
+    dbUrl(url);
+    const { data } = await axios.get(url);
     const trips = data.trips.map((t) => ({
       duration: t.duration,
       interchange: t.interchange,

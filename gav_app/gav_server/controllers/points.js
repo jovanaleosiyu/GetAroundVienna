@@ -1,7 +1,8 @@
 const asyncHandler = require('express-async-handler');
 const axios = require('axios');
+const dbUrl = require('debug')('API_CALL');
 
-const url = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
+const baseUrl = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
   + 'locationServerActive=1&'
   + 'outputFormat=JSON&'
   + 'coordOutputFormat=WGS84[DD.ddddd]&'
@@ -19,8 +20,9 @@ module.exports = {
   getPoints: asyncHandler(async (req, res) => {
     const searchName = req.params.searchname;
     const queryString = encodeURI(searchName);
-    console.log(url + queryString);
-    const { data } = await axios.get(url + queryString);
+    const url = baseUrl + queryString;
+    dbUrl(url);
+    const { data } = await axios.get(baseUrl + queryString);
     const { points } = data.origin;
     if (points) {
       if (points instanceof Array) {
