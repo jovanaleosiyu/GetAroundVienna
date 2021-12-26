@@ -4,7 +4,8 @@ const axios = require('axios');
 const url = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
   + 'outputFormat=JSON&'
   + 'coordOutputFormat=WGS84[DD.ddddd]&'
-  + 'ptOptionsActive=1&';
+  + 'ptOptionsActive=1&'
+  + 'useProxFootSearch=1&';
 
 module.exports = {
   getTrip: asyncHandler(async (req, res) => {
@@ -21,6 +22,7 @@ module.exports = {
       maxChanges,
       routeType,
       changeSpeed,
+      excludedMeans,
     } = req.query;
     // Querystring
     let queryString = `type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}&`;
@@ -30,6 +32,16 @@ module.exports = {
     if (maxChanges) queryString += `maxChanges=${maxChanges}&`;
     if (routeType) queryString += `routeType=${routeType}&`;
     if (changeSpeed) queryString += `changeSpeed=${changeSpeed}&`;
+    // Excluded Means
+    if (excludedMeans) {
+      const emarr = excludedMeans.split(';');
+      // Verify here
+      if (!emarr.every((e) => e !== '' && !Number.isNaN(e) && e >= 0 && e <= 11)) {
+        res.status(400).send('Invalid Excluded Means');
+        return;
+      }
+      queryString += emarr.reduce((p, c) => `${p}excludedMeans=${c}&`, '');
+    }
     // Verify Points
     const verify = (await axios.get(`${url}${queryString}execInst=verifyOnly&`))
       .data;
