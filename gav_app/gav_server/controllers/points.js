@@ -1,13 +1,12 @@
 const asyncHandler = require('express-async-handler');
 const axios = require('axios');
 
-const url =
-  'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?' +
-  'locationServerActive=1&' +
-  'outputFormat=JSON&' +
-  'coordOutputFormat=WGS84[DD.ddddd]&' +
-  'anyObjFilter_origin=10&' +
-  'type_origin=any&name_origin=';
+const url = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
+  + 'locationServerActive=1&'
+  + 'outputFormat=JSON&'
+  + 'coordOutputFormat=WGS84[DD.ddddd]&'
+  + 'anyObjFilter_origin=10&'
+  + 'type_origin=any&name_origin=';
 
 const structurePoint = (p) => ({
   name: p.name,
