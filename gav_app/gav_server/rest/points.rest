@@ -4,3 +4,5 @@ GET http://localhost:3000/points/Meidling
 GET http://localhost:3000/points/Am Schöpfwerk
 ### Single Point
 GET http://localhost:3000/points/Thaliastraße 125
+### Not Points found
+GET http://localhost:3000/points/_

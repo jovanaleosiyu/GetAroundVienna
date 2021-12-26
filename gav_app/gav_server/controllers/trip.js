@@ -1,11 +1,10 @@
 const asyncHandler = require('express-async-handler');
 const axios = require('axios');
 
-const url =
-  'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?' +
-  'outputFormat=JSON&' +
-  'coordOutputFormat=WGS84[DD.ddddd]&' +
-  'ptOptionsActive=1&';
+const url = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
+  + 'outputFormat=JSON&'
+  + 'coordOutputFormat=WGS84[DD.ddddd]&'
+  + 'ptOptionsActive=1&';
 
 module.exports = {
   getTrip: asyncHandler(async (req, res) => {
@@ -15,7 +14,7 @@ module.exports = {
       nameOrigin,
       typeDestination,
       nameDestination,
-      // optional - time
+      // optional
       depArr,
       date,
       time,
@@ -23,15 +22,47 @@ module.exports = {
       routeType,
       changeSpeed,
     } = req.query;
-    let queryString = `type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}`;
-    console.log(req.query);
-    // Time and Date
-    if (depArr) queryString += `&itdTripDateTimeDepArr=${depArr}`;
-    if (time) queryString += `&itdTime=${time}`;
-    if (date) queryString += `&itdDate=${date}`;
-    if (maxChanges) queryString += `&maxChanges=${maxChanges}`;
-    if (routeType) queryString += `&routeType=${routeType}`;
-    if (changeSpeed) queryString += `&changeSpeed=${changeSpeed}`;
+    // Querystring
+    let queryString = `type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}&`;
+    if (depArr) queryString += `itdTripDateTimeDepArr=${depArr}&`;
+    if (time) queryString += `itdTime=${time}&`;
+    if (date) queryString += `itdDate=${date}&`;
+    if (maxChanges) queryString += `maxChanges=${maxChanges}&`;
+    if (routeType) queryString += `routeType=${routeType}&`;
+    if (changeSpeed) queryString += `changeSpeed=${changeSpeed}&`;
+    // Verify Points
+    const verify = (await axios.get(`${url}${queryString}execInst=verifyOnly&`))
+      .data;
+    console.log(`${url}${queryString}execInst=verifyOnly&`);
+    if (!verify.origin.points || !verify.destination.points) {
+      res.status(400).send('Invalid origin or destination');
+      return;
+    }
+    // Verify Options
+    const vdtm = verify.dateTime.message;
+    if (vdtm) {
+      const err = vdtm.find((m) => m.name === 'error');
+      res.status(400).send(`Invalid Datetime: ${err.value}`);
+      return;
+    }
+    if (depArr && verify.dateTime.deparr !== depArr) {
+      res.status(400).send('Invalid depArr');
+      return;
+    }
+    const vpt = verify.option.ptOption;
+    if (maxChanges && vpt.maxChanges !== maxChanges) {
+      res.status(400).send('Invalid max changes');
+      return;
+    }
+    if (routeType && vpt.routeType !== routeType.toUpperCase()) {
+      res.status(400).send('Invalid route type');
+      return;
+    }
+    if (changeSpeed && vpt.changeSpeed !== changeSpeed) {
+      res.status(400).send('Invalid change Speed');
+      return;
+    }
+    // Get Trip
     console.log(url + queryString);
     const { data } = await axios.get(url + queryString);
     const trips = data.trips.map((t) => ({
