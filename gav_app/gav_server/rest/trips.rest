@@ -1,14 +1,34 @@
 ### trip basic
 GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84
-
-### trip date time dep
-GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&date=20211128&time=1000
-
+### trip date time
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&date=20220111&time=1000
 ### trip time arr
-GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&time=1000&depArr=arrGET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&time=1000&depArr=arr
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&time=1000&depArr=arr
 ### trip route type
 GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&routeType=leastinterchange
 ### trip change speed
 GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&changeSpeed=fast
 ### trip max changes
 GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&maxChanges=4
+### excluded means
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&excludedMeans=1;5
+
+
+### trip basic ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=6asdfasdf913&typeDestination=coordfd&nameDestination=16.31318:48.21196:WGS84
+### trip date time ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&date=20213028&time=1000
+### trip time arr ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&time=1000&depArr=blob
+### trip route type ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&routeType=blob
+### trip change speed ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&changeSpeed=faster
+### trip max changes ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&maxChanges=24
+### excluded means ERROR
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&excludedMeans=1;5;
+### excluded means ERROR 2
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&excludedMeans=13
+### excluded means ERROR 3
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestination=coord&nameDestination=16.31318:48.21196:WGS84&excludedMeans=asdf

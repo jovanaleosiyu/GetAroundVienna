@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const dbInfo = require('debug')('INFO');
 const users = require('../model/users');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
       if (user) res.status(409).send('Email already registered');
       else {
         const newRow = await users.addUser(email, password);
-        console.log(newRow);
+        dbInfo(`User with ID:${newRow.userid} registered.`);
         req.session.userid = newRow.userid;
         res.status(200).json(newRow.userid);
       }
@@ -22,6 +23,7 @@ module.exports = {
         (u) => u.email === email && u.password === password
       );
       if (user) {
+        dbInfo(`User with ID:${user.userid} logged in.`);
         req.session.userid = user.userid;
         res.status(200).json(user.userid);
       } else res.status(401).send('Wrong email or password');
@@ -29,6 +31,7 @@ module.exports = {
   }),
   logout: asyncHandler(async (req, res) => {
     if (req.session.userid) {
+      dbInfo(`User with ID:${req.session.userid} logged out.`);
       req.session.destroy();
       res.clearCookie(process.env.SESSION_NAME);
       res.status(200).send('User successfully logged out');
