@@ -1,6 +1,7 @@
 <template>
   <v-card class="mx-auto" max-width="600" outlined>
     <v-card-title>Favoriten</v-card-title>
+    <!-- Stops list -->
     <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
     <v-list class="d-flex flex-row">
       <v-list-item>
@@ -13,12 +14,11 @@
       </v-list-item>
       <v-list-item>
         <div class="text-center">
-          <v-btn icon large elevation="3">
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
+          <Popup></Popup>
         </div>
       </v-list-item>
     </v-list>
+    <!-- Routes list -->
     <v-card-subtitle>Routen</v-card-subtitle>
     <v-list class="d-flex flex-row">
       <v-list-item>
@@ -31,9 +31,7 @@
       </v-list-item>
       <v-list-item>
         <div class="text-center">
-          <v-btn icon large elevation="3">
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
+          <Popup></Popup>
         </div>
       </v-list-item>
     </v-list>
@@ -41,7 +39,12 @@
 </template>
 
 <script>
-export default {};
+import Popup from '../components/Favorites_Popup.vue';
+export default {
+  components: {
+    Popup,
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
