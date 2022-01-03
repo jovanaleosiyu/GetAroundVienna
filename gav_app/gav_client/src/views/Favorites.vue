@@ -5,15 +5,15 @@
     <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
     <v-list class="d-flex flex-row">
       <v-list-item>
-        <div class="text-center">
+        <div>
           <v-btn icon elevation="3" large class="red">
-            <v-icon>mdi-home</v-icon>
+            <v-icon color="white">mdi-home</v-icon>
           </v-btn>
           <p class="my-2">Home</p>
         </div>
       </v-list-item>
       <v-list-item>
-        <div class="text-center">
+        <div>
           <Popup></Popup>
         </div>
       </v-list-item>
@@ -22,7 +22,7 @@
     <v-card-subtitle>Routen</v-card-subtitle>
     <v-list class="d-flex flex-row">
       <v-list-item>
-        <div class="text-center">
+        <div>
           <v-btn icon elevation="3" large class="red">
             <v-icon>mdi-home</v-icon>
           </v-btn>
@@ -30,7 +30,7 @@
         </div>
       </v-list-item>
       <v-list-item>
-        <div class="text-center">
+        <div>
           <Popup></Popup>
         </div>
       </v-list-item>
