@@ -35,6 +35,13 @@
             </v-list-item-icon>
             <v-list-item-title>Route</v-list-item-title>
           </v-list-item>
+
+          <v-list-item to="/favoriten">
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Favoriten</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>

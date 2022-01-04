@@ -3,7 +3,8 @@
     <v-card-title>Favoriten</v-card-title>
     <!-- Stops list -->
     <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
-    <v-list class="d-flex flex-row">
+    <div class="d-flex">
+    <v-list class="d-flex flex-row align-start">
       <v-list-item>
         <div>
           <v-btn icon elevation="3" large class="red">
@@ -12,12 +13,14 @@
           <p class="my-2">Home</p>
         </div>
       </v-list-item>
-      <v-list-item>
-        <div>
+      <v-list-item >
           <Popup></Popup>
-        </div>
+      </v-list-item>
+      <v-list-item>
+          <Popup></Popup>
       </v-list-item>
     </v-list>
+    </div>
     <!-- Routes list -->
     <v-card-subtitle>Routen</v-card-subtitle>
     <v-list class="d-flex flex-row">
