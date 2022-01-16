@@ -11,6 +11,7 @@ require('colors');
 const accountRouter = require('./routes/account');
 const tripRouter = require('./routes/trip');
 const pointsRouter = require('./routes/points');
+const favoritesRouter = require('./routes/favorites');
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
 
 const app = express();
@@ -40,6 +41,7 @@ app.use(express.json());
 app.use('/', accountRouter);
 app.use('/trip', tripRouter);
 app.use('/points', pointsRouter);
+app.use('/favorites', favoritesRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

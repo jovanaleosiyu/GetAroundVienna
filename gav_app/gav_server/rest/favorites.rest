@@ -1,0 +1,17 @@
+### get all favorites
+GET http://localhost:3000/favorites
+### get all favorite points
+GET http://localhost:3000/favorites?type=trip
+### get all favorite trips
+GET http://localhost:3000/favorites?type=point
+### add favorite point
+POST http://localhost:3000/favorites/points
+content-type: application/json
+
+{
+  "title": "Restaurant",
+  "icon": "food",
+  "color": "orange",
+  "ref": "16.32019:48.15985:WGS84",
+  "type": "coord"
+}
