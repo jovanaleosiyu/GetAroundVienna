@@ -1,5 +1,7 @@
 ### get all favorites
 GET http://localhost:3000/favorites
+### get favorite, success if user 1 logged in
+GET http://localhost:3000/favorites/1
 ### get all favorite points
 GET http://localhost:3000/favorites?type=trip
 ### get all favorite trips

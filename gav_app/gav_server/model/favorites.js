@@ -1,6 +1,47 @@
 const { pool } = require('../db/index');
 
 module.exports = {
+  getFavorites: async (userid) => {
+    const res = await pool.query(
+      `SELECT *
+      FROM favorites
+              FULL JOIN favpoints USING (favid)
+              FULL JOIN favtrips USING (favid)
+      WHERE userid = $1;`,
+      [userid]
+    );
+    return res.rows;
+  },
+  getFavPoints: async (userid) => {
+    const res = await pool.query(
+      `SELECT *
+      FROM favorites
+              FULL JOIN favpoints USING (favid)
+      WHERE userid = $1;`,
+      [userid]
+    );
+    return res.rows;
+  },
+  getFavorite: async (favid, userid) => {
+    console.log(favid, userid);
+    let res = await pool.query(
+      `SELECT *
+      FROM favpoints
+              JOIN favorites USING (favid)
+      WHERE favid = $1 AND userid = $2;`,
+      [favid, userid]
+    );
+    if (!res.rows) {
+      res = await pool.query(
+        `SELECT *
+        FROM favtrips
+                JOIN favorites USING (favid)
+        WHERE favid = $1 AND userid = $2;`,
+        [favid, userid]
+      );
+    }
+    return res.rows[0];
+  },
   addFavPoint: async (title, icon, color, ref, type, userid) => {
     const client = await pool.connect();
     try {

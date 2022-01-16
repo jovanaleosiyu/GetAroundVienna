@@ -1,10 +1,14 @@
 const express = require('express');
-const { addFavPoint } = require('../controllers/favorites');
+const {
+  addFavPoint,
+  getFavorites,
+  getFavorite,
+} = require('../controllers/favorites');
 
 const router = express.Router();
 
-// router.get('/', );
-// router.get('?type=point', );
+router.get('/', getFavorites);
+router.get('/:favid', getFavorite);
 // router.get('?type=trip', );
 router.post('/points', addFavPoint);
 
