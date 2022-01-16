@@ -1,45 +1,51 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Welcome from '../views/Welcome.vue'
-import Login from '../views/Login.vue'
-import SignUp from '../views/SignUp.vue'
-import Home from '../views/Home.vue'
-import Route from '../views/Route.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Welcome from '../views/Welcome.vue';
+import Login from '../views/Login.vue';
+import SignUp from '../views/SignUp.vue';
+import Home from '../views/Home.vue';
+import Route from '../views/Route.vue';
+import Favorites from '../views/Favorites.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     name: 'Welcome',
     component: Welcome,
-    path: '/' 
+    path: '/',
   },
   {
     name: 'Login',
     component: Login,
-    path: '/login' 
+    path: '/login',
   },
   {
     name: 'SignUp',
     component: SignUp,
-    path: '/sign-up' 
+    path: '/sign-up',
   },
   {
     name: 'Home',
     component: Home,
-    path: '/home' 
+    path: '/home',
   },
   {
     name: 'Route',
     component: Route,
-    path: '/route' 
+    path: '/route',
   },
-]
+  {
+    name: 'Favorites',
+    component: Favorites,
+    path: '/favoriten',
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
