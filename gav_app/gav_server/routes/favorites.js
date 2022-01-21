@@ -11,7 +11,6 @@ const router = express.Router();
 
 router.get('/', getFavorites);
 router.get('/:favid', getFavorite);
-// router.get('?type=trip', );
 router.post('/points', addFavPoint);
 router.post('/trips', addFavTrip);
 router.delete('/:favid', delFavorite);

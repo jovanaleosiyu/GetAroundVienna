@@ -15,15 +15,24 @@ module.exports = {
   getFavPoints: async (userid) => {
     const res = await pool.query(
       `SELECT *
-      FROM favorites
-              FULL JOIN favpoints USING (favid)
+      FROM favpoints
+              JOIN favorites USING (favid)
+      WHERE userid = $1;`,
+      [userid]
+    );
+    return res.rows;
+  },
+  getFavTrips: async (userid) => {
+    const res = await pool.query(
+      `SELECT *
+      FROM favtrips
+              JOIN favorites USING (favid)
       WHERE userid = $1;`,
       [userid]
     );
     return res.rows;
   },
   getFavorite: async (favid, userid) => {
-    console.log(favid, userid);
     let res = await pool.query(
       `SELECT *
       FROM favpoints

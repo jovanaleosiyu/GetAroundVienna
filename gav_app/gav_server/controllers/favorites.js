@@ -14,9 +14,8 @@ module.exports = {
           rows = await favorites.getFavPoints(userid);
           break;
         case 'trip':
-          res.status(501).send('Not implemented yet.');
-          return;
-        // break;
+          rows = await favorites.getFavTrips(userid);
+          break;
         default:
           rows = await favorites.getFavorites(userid);
       }
@@ -25,10 +24,10 @@ module.exports = {
       res.status(403).send('No User logged in.');
     }
   }),
-  getFavPoints: asyncHandler(async (req, res) => {
+  getFavTrips: asyncHandler(async (req, res) => {
     const { userid } = req.session;
     if (userid) {
-      const rows = await favorites.getFavPoints(userid);
+      const rows = await favorites.getFavTrips(userid);
       res.status(200).json(rows);
     } else {
       res.status(403).send('No User logged in.');
