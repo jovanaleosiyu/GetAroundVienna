@@ -72,4 +72,38 @@ module.exports = {
       res.status(403).send('No User logged in.');
     }
   }),
+  addFavTrip: asyncHandler(async (req, res) => {
+    const { userid } = req.session;
+    if (userid) {
+      const { title, icon, color, origRef, origType, destRef, destType } =
+        req.body;
+      if (
+        title &&
+        icon &&
+        color &&
+        origRef &&
+        origType &&
+        destRef &&
+        destType
+      ) {
+        const options = req.body.options ?? {};
+        dbInfo(`options: ${options}`);
+        const favid = await favorites.addFavTrip(
+          title,
+          icon,
+          color,
+          origRef,
+          origType,
+          destRef,
+          destType,
+          userid,
+          options
+        );
+        dbInfo(`User with ID:${userid} created favorite trip with ID:${favid}`);
+        res.status(200).json(favid);
+      } else res.status(400).send('Required Content missing.');
+    } else {
+      res.status(403).send('No User logged in.');
+    }
+  }),
 };

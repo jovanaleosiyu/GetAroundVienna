@@ -17,3 +17,20 @@ content-type: application/json
   "ref": "16.32019:48.15985:WGS84",
   "type": "coord"
 }
+### add favorite trip
+POST http://localhost:3000/favorites/trips
+content-type: application/json
+
+{
+  "title": "Weg 123",
+  "icon": "food",
+  "color": "red",
+  "origRef": "16.31933:48.16815:WGS84",
+  "origType":"coord",
+  "destRef": "60201468",
+  "destType": "stop",
+  "options": {
+    "changeSpeed": "slow",
+    "routeType": "leastinterchange"
+  }
+}

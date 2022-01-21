@@ -13,5 +13,6 @@ module.exports = {
     'no-console': 0,
     'comma-dangle': 0,
     'object-curly-newline': 0,
+    'operator-linebreak': 0,
   },
 };

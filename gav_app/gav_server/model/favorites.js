@@ -67,4 +67,50 @@ module.exports = {
       client.release();
     }
   },
+  addFavTrip: async (
+    title,
+    icon,
+    color,
+    origRef,
+    origType,
+    destRef,
+    destType,
+    userid,
+    options
+  ) => {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+      const res = await client.query(
+        `INSERT INTO favorites (favid, title, icon, color, userid)
+        VALUES (default, $1, $2, $3, $4)
+        RETURNING favid`,
+        [title, icon, color, userid]
+      );
+      const { favid } = res.rows[0];
+      const { maxChanges, routeType, changeSpeed, excludedMeans } = options;
+      await client.query(
+        `INSERT INTO favtrips (orig_ref, orig_type, dest_ref, dest_type, maxchanges, routetype, changespeed, exclmeans, favid)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);`,
+        [
+          origRef,
+          origType,
+          destRef,
+          destType,
+          maxChanges,
+          routeType,
+          changeSpeed,
+          excludedMeans,
+          favid,
+        ]
+      );
+      await client.query('COMMIT');
+      return favid;
+    } catch (e) {
+      await client.query('ROLLBACK');
+      throw e;
+    } finally {
+      client.release();
+    }
+  },
 };
