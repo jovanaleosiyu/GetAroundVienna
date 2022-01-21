@@ -87,7 +87,6 @@ module.exports = {
         destType
       ) {
         const options = req.body.options ?? {};
-        dbInfo(`options: ${options}`);
         const favid = await favorites.addFavTrip(
           title,
           icon,
@@ -101,6 +100,21 @@ module.exports = {
         );
         dbInfo(`User with ID:${userid} created favorite trip with ID:${favid}`);
         res.status(200).json(favid);
+      } else res.status(400).send('Required Content missing.');
+    } else {
+      res.status(403).send('No User logged in.');
+    }
+  }),
+  delFavorite: asyncHandler(async (req, res) => {
+    const { userid } = req.session;
+    if (userid) {
+      const { favid } = req.params;
+      if (favid) {
+        const row = await favorites.delFavorite(userid, favid);
+        if (row) {
+          dbInfo(`User with ID:${userid} deleted favorite with ID:${favid}`);
+          res.status(200).end();
+        } else res.status(404).send('Favorite not found.');
       } else res.status(400).send('Required Content missing.');
     } else {
       res.status(403).send('No User logged in.');

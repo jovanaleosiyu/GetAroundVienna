@@ -84,7 +84,7 @@ module.exports = {
       const res = await client.query(
         `INSERT INTO favorites (favid, title, icon, color, userid)
         VALUES (default, $1, $2, $3, $4)
-        RETURNING favid`,
+        RETURNING favid;`,
         [title, icon, color, userid]
       );
       const { favid } = res.rows[0];
@@ -112,5 +112,16 @@ module.exports = {
     } finally {
       client.release();
     }
+  },
+  delFavorite: async (userid, favid) => {
+    const res = await pool.query(
+      `DELETE
+      FROM favorites
+      WHERE favid = $1
+        AND userid = $2
+      RETURNING *;`,
+      [favid, userid]
+    );
+    return res.rows[0];
   },
 };

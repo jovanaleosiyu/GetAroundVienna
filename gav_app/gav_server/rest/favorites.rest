@@ -34,3 +34,10 @@ content-type: application/json
     "routeType": "leastinterchange"
   }
 }
+### delete favorite ERROR not found
+DELETE http://localhost:3000/favorites/-1
+### delete favorite if user 1 logged in ERROR wrong user => so not found
+### * because now favid=2 belongs to user 2
+DELETE http://localhost:3000/favorites/2
+### * delete favorite success
+DELETE http://localhost:3000/favorites/8
