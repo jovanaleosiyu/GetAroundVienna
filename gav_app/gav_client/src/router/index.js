@@ -6,6 +6,7 @@ import SignUp from '../views/SignUp.vue';
 import Home from '../views/Home.vue';
 import Route from '../views/Route.vue';
 import Favorites from '../views/Favorites.vue';
+import Monitor from '../views/Monitor.vue';
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     name: 'Favorites',
     component: Favorites,
     path: '/favoriten',
+  },
+  {
+    name: 'Monitor',
+    component: Monitor,
+    path: '/monitor',
   },
 ];
 
