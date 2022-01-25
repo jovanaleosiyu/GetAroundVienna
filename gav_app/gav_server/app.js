@@ -16,9 +16,15 @@ const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
 
 const app = express();
 
-const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
+const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET, CLIENT } = process.env;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: CLIENT,
+    credentials: true,
+  })
+);
+
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(
@@ -28,7 +34,7 @@ app.use(
     saveUninitialized: false,
     resave: false,
     cookie: {
-      httpOnly: true,
+      httpOnly: false,
       sameSite: true,
       secure: NODE_ENV === 'production',
     },
