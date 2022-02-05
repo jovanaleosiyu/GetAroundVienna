@@ -1,4 +1,3 @@
-v-
 <template>
   <v-container class="d-flex flex-column align-center mt-16">
     <v-card
@@ -25,6 +24,16 @@ v-
       </div>
 
       <h1 class="text-center mt-8 mb-16">Erstelle einen<br />Account</h1>
+
+       <v-alert
+        class="mb-12"
+        color="red"
+        elevation="4"
+        outlined
+        text
+        type="error"
+        v-if="error"
+      >{{errorMessage}}</v-alert>
 
       <v-form
         class="d-flex flex-column align-center"
@@ -60,8 +69,6 @@ v-
           ></v-text-field>
         </div>
 
-        <h2>{{ errorMessage }}</h2>
-
         <v-btn
           elevation="5"
           @click="register()"
@@ -96,6 +103,7 @@ export default {
     confirmePassword: '',
     confirmePasswordRules: [(v) => !!v || 'Eingabe erforderlich'],
     errorMessage: '',
+    error: false,
   }),
   methods: {
     async register() {
@@ -110,14 +118,17 @@ export default {
         .then((response) => {
           console.log(response);
           bus.$data.userId = response.data;
+          bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
           this.$router.push({ name: 'Home' });
         })
         .catch((error) => {
           if (error.response.status == 409) {
             this.errorMessage = 'E-Mail wurde bereits verwendet!';
+            this.error = true;
           } else {
             this.errorMessage = 'Daten sind nicht passend!';
+            this.error = true;
           }
         });
     },
