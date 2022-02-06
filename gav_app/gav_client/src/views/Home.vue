@@ -12,6 +12,7 @@ export default {
   data: () => ({}),
   created() {
     bus.$data.userId = VueCookies.get('userId');
+    bus.$data.loggedIn = VueCookies.get('loggedIn')
     console.log('User eingeloggt mit der ID: ' + bus.$data.userId);
     // alert('User eingeloggt' + bus.$data.userId);
   },
