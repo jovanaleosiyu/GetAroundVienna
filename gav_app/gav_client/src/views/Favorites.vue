@@ -44,6 +44,12 @@
 // import PopupRoute from '../components/Favorites_Route.vue';
 import PopupStop from '../components/Favorites_Stop.vue';
 import axios from 'axios';
+
+const instance = axios.create({
+  withCredentials: true,
+  baseURL: 'http://localhost:3000', // verlagere in .env maybe??
+});
+
 export default {
   components: {
     // PopupRoute,
@@ -57,22 +63,16 @@ export default {
   },
   methods: {
     async getFavorites() {
-      this.favorites = (
-        await axios.get('http://localhost:3000/favorites')
-      ).data;
+      const { data } = await instance.get('/favorites');
+      this.favorites = data;
     },
     async getFavPoints() {
-      this.favStops = (
-        await axios.get('http://localhost:3000/favorites?type=point')
-      ).data;
+      const { data } = await instance.get('/favorites?type=point');
+      this.favStops = data;
     },
     async getFavTrips() {
-      this.favTrips = (
-        await axios.get('http://localhost:3000/favorites?type=trip')
-      ).data;
-      axios
-        .get('http://localhost:3000/favorites?type=trip')
-        .catch((e) => console.log(e));
+      const { data } = await instance.get('/favorites?type=trip');
+      this.favTrips = data;
     },
   },
   created() {

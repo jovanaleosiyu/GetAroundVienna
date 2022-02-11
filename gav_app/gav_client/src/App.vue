@@ -4,6 +4,7 @@
       <v-app-bar
       color="gray"
       dark
+      v-if="loggedIn"
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title>Title</v-toolbar-title>
@@ -19,7 +20,6 @@
         dense
       >
         <v-list-item-group
-          v-model="group"
           active-class="gray--text text--accent-4"
         >
           <v-list-item to="/home">
@@ -52,12 +52,20 @@
 </template>
 
 <script>
+import { bus } from "./main";
+import VueCookies from 'vue-cookies';
 export default {
   name: "App",
 
   data: () => ({
       drawer: false,
-      group: null,
+      loggedIn: false,
     }),
+    created () {
+      bus.$on('loggedIn', (data) => {
+        this.loggedIn = data;
+      });
+      this.loggedIn = bus.$data.loggedIn = VueCookies.get('loggedIn');
+    },
 };
 </script>

@@ -1,14 +1,20 @@
 <template>
-  <v-container class="d-flex flex-column align-center">
-    <v-card
-      class="d-flex flex-column align-center"
-      :outlined="true"
-      :min-width="$vuetify.breakpoint.mdAndUp ? 450 : '100%'"
-      style="border: none"
-    >
-      <v-form class="d-flex flex-column align-center" style="width: 100%">
-        <div class="d-flex" style="width: 100%">
-          <div style="width: 80%">
+    <v-container class="d-flex flex-column">
+      <div>
+      <v-form class="d-flex align-center">
+       <svg xmlns="http://www.w3.org/2000/svg" width="31" height="175" viewBox="0 0 31 175" class="mr-3 py-11">
+        <g id="grafik" transform="translate(-45.698 -179.326)">
+          <circle id="Ellipse_2" data-name="Ellipse 2" cx="15.5" cy="15.5" r="15.5" transform="translate(45.698 179.326)" fill="#a1a1a1"/>
+          <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="15.5" cy="15" rx="15.5" ry="15" transform="translate(45.698 324.326)" fill="#1a1a1a"/>
+          <circle id="Ellipse_4" data-name="Ellipse 4" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 225.326)" fill="#d8d8d8"/>
+          <circle id="Ellipse_5" data-name="Ellipse 5" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 273.326)" fill="#d8d8d8"/>
+          <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(56.698 256.326)" fill="#d8d8d8"/>
+          <circle id="Ellipse_7" data-name="Ellipse 7" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 240.326)" fill="#d8d8d8"/>
+          <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(56.698 289.326)" fill="#d8d8d8"/>
+          <circle id="Ellipse_9" data-name="Ellipse 9" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 304.326)" fill="#d8d8d8"/>
+        </g>
+      </svg>
+          <div  style="width: 100%;">
             <v-text-field
               v-model="depInput"
               @keyup.enter="getStopList('dep')"
@@ -42,16 +48,18 @@
             </v-list>
           </div>
 
-          <v-icon large class="my-auto pl-3 darkgrey--text" @click="swap()">
+          <v-icon large class="my-auto ml-3 darkgrey--text" @click="swap()">
             mdi-swap-vertical
           </v-icon>
-        </div>
+        </v-form>
+      </div>
 
-        <div class="d-flex" style="width: 80%">
-          <v-switch
-            v-model="depArr"
-            :label="depArr ? 'Ankunft' : 'Abfahrt'"
-          ></v-switch>
+        <div class="d-flex align-center">
+          <v-btn-toggle
+          mandatory>
+            <v-btn small>An</v-btn>
+            <v-btn small>Ab</v-btn>
+          </v-btn-toggle>
 
           <v-menu
             ref="menu"
@@ -106,19 +114,18 @@
               @input="menu2 = false"
             ></v-date-picker>
           </v-menu>
-
           <v-btn
             elevation="5"
             @click="getTrip()"
             fab
+            small
             class="grey darken-3 white--text"
           >
             <v-icon> mdi-magnify </v-icon>
           </v-btn>
         </div>
-      </v-form>
-
-      <div class="list-group">
+    </v-container>
+      <!-- <div class="list-group">
         <div v-for="(trip, i) of trips" :key="i" class="mb-3">
           <a
             class="list-group-item list-group-item-action"
@@ -156,9 +163,7 @@
             </ul>
           </div>
         </div>
-      </div>
-    </v-card>
-  </v-container>
+      </div> -->
 </template>
 
 <script>
