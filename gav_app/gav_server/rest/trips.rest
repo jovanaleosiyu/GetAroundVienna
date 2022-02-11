@@ -7,7 +7,7 @@ GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60200913&typeDestinati
 ### trip route type
 GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&routeType=leastinterchange
 ### trip change speed
-GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&changeSpeed=fast
+GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&changeSpeed=slow
 ### trip max changes
 GET http://localhost:3000/trip?typeOrigin=stop&nameOrigin=60201015&typeDestination=stop&nameDestination=60200048&maxChanges=4
 ### excluded means
