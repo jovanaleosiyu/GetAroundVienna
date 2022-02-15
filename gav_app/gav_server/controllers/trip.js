@@ -1,13 +1,18 @@
 const asyncHandler = require('express-async-handler');
 const axios = require('axios');
+
 const dbUrl = require('debug')('API_CALL');
 const dbVerify = require('debug')('VERIFY_CALL');
+const dbInfo = require('debug')('INFO');
 
-const baseUrl = 'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?'
-  + 'outputFormat=JSON&'
-  + 'coordOutputFormat=WGS84[DD.ddddd]&'
-  + 'ptOptionsActive=1&'
-  + 'useProxFootSearch=1&';
+const users = require('../model/users');
+
+const baseUrl =
+  'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?' +
+  'outputFormat=JSON&' +
+  'coordOutputFormat=WGS84[DD.ddddd]&' +
+  'ptOptionsActive=1&' +
+  'useProxFootSearch=1&';
 
 module.exports = {
   getTrip: asyncHandler(async (req, res) => {
@@ -21,11 +26,18 @@ module.exports = {
       depArr,
       date,
       time,
-      maxChanges,
-      routeType,
-      changeSpeed,
-      excludedMeans,
     } = req.query;
+    let { maxChanges, routeType, changeSpeed, excludedMeans } = req.query;
+    const { userid } = req.session;
+    if (userid) {
+      // if logged in, mind user options
+      dbInfo(`User with ID:${userid} calls trip: `);
+      const usettings = await users.getUserSettings(userid);
+      maxChanges = maxChanges ?? usettings.maxchanges;
+      routeType = routeType ?? usettings.routetype;
+      changeSpeed = changeSpeed ?? usettings.changespeed;
+      excludedMeans = excludedMeans ?? usettings.excludedmeans;
+    }
     // Querystring
     let queryString = `type_origin=${typeOrigin}&name_origin=${nameOrigin}&type_destination=${typeDestination}&name_destination=${nameDestination}&`;
     if (depArr) queryString += `itdTripDateTimeDepArr=${depArr}&`;
