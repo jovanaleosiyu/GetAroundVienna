@@ -3,45 +3,43 @@
     <v-card-title>Favoriten</v-card-title>
     <!-- Stops list -->
     <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
-    <div class="d-flex">
-      <v-list class="d-flex flex-row align-start">
-        <v-list-item>
-          <div>
-            <v-btn icon elevation="3" large class="red">
-              <v-icon color="white">mdi-home</v-icon>
-            </v-btn>
-            <p class="my-2">Home</p>
-          </div>
-        </v-list-item>
-        <v-list-item>
-          <PopupStop></PopupStop>
-        </v-list-item>
-      </v-list>
+    <div class="d-flex flex-row align-start favrow">
+      <div
+        v-for="s in favStops"
+        :key="s.favid"
+        class="d-flex flex-column align-center favspace"
+      >
+        <v-btn icon elevation="3" x-large :class="s.color">
+          <v-icon color="white">mdi-{{ s.icon }}</v-icon>
+        </v-btn>
+        <span class="my-2 favtitle">{{ s.title }}</span>
+      </div>
+      <div class="d-flex justify-center favspace">
+        <PopupStop></PopupStop>
+      </div>
     </div>
     <!-- Routes list -->
     <v-card-subtitle>Routen</v-card-subtitle>
-    <div class="d-flex">
-      <v-list class="d-flex flex-row align-start">
-        <v-list-item v-for="t in favTrips" :key="t.favid">
-          <div>
-            <v-btn icon elevation="3" large class="red">
-              <!-- <v-icon>mdi-{{ t.icon }}</v-icon> -->
-            </v-btn>
-            <p class="my-2">{{ t.title }}</p>
-          </div>
-        </v-list-item>
-        <!-- <v-list-item>
-          <div>
-            <PopupRoute></PopupRoute>
-          </div>
-        </v-list-item> -->
-      </v-list>
+    <div class="d-flex flex-row align-start favrow">
+      <div
+        v-for="t in favTrips"
+        :key="t.favid"
+        class="d-flex flex-column align-center favspace"
+      >
+        <v-btn icon elevation="3" x-large :class="t.color">
+          <v-icon color="white">mdi-{{ t.icon }}</v-icon>
+        </v-btn>
+        <span class="my-2 favtitle">{{ t.title }}</span>
+      </div>
+      <div class="d-flex justify-center favspace">
+        <PopupRoute></PopupRoute>
+      </div>
     </div>
   </v-card>
 </template>
 
 <script>
-// import PopupRoute from '../components/Favorites_Route.vue';
+import PopupRoute from '../components/Favorites_Route.vue';
 import PopupStop from '../components/Favorites_Stop.vue';
 import axios from 'axios';
 
@@ -52,7 +50,7 @@ const instance = axios.create({
 
 export default {
   components: {
-    // PopupRoute,
+    PopupRoute,
     PopupStop,
   },
   data() {
@@ -74,6 +72,14 @@ export default {
       const { data } = await instance.get('/favorites?type=trip');
       this.favTrips = data;
     },
+    async addFavStop() {
+      const { data } = await instance.get('/favorites?type=trip');
+      this.favTrips = data;
+    },
+    async addFavRoute() {
+      const { data } = await instance.get('/favorites?type=trip');
+      this.favTrips = data;
+    },
   },
   created() {
     this.getFavPoints();
@@ -82,4 +88,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+.favtitle {
+  white-space: nowrap;
+}
+.favrow {
+  width: 100%;
+}
+.favspace {
+  width: 15%;
+}
+</style>
