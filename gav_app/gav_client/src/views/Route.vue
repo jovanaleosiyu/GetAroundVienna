@@ -15,37 +15,8 @@
         </g>
       </svg>
           <div  style="width: 100%;">
-            <v-text-field
-              v-model="depInput"
-              @keyup.enter="getStopList('dep')"
-              label="Start"
-              required
-            ></v-text-field>
-            <v-list v-if="depList">
-              <v-list-item
-                v-for="el of depList"
-                :key="el.name"
-                @click="setStop('dep', el)"
-              >
-                <v-list-item-content>{{ el.name }}</v-list-item-content>
-              </v-list-item>
-            </v-list>
-
-            <v-text-field
-              v-model="desInput"
-              @keyup.enter="getStopList('des')"
-              label="Ziel"
-              required
-            ></v-text-field>
-            <v-list v-if="desList">
-              <v-list-item
-                v-for="el of desList"
-                :key="el.name"
-                @click="setStop('des', el)"
-              >
-                <v-list-item-content>{{ el.name }}</v-list-item-content>
-              </v-list-item>
-            </v-list>
+            <RouteInputField title="Start" :searchString="depInput" @setStop="setStop"></RouteInputField>
+            <RouteInputField title="Ziel" :searchString="desInput" @setStop="setStop"></RouteInputField>
           </div>
 
           <v-icon large class="my-auto ml-3 darkgrey--text" @click="swap()">
@@ -54,44 +25,43 @@
         </v-form>
       </div>
 
-        <div class="d-flex align-center">
-
-          <v-btn-toggle
-          v-model="depArr"
-          mandatory>
-            <v-btn small :value="false" >An</v-btn>
-            <v-btn small :value="true">Ab</v-btn>
-          </v-btn-toggle>
-
-          <v-menu
-            ref="menu"
-            v-model="menu1"
-            :close-on-content-click="false"
-            :nudge-right="40"
-            :return-value.sync="time"
-            transition="scale-transition"
-            offset-y
-            max-width="290px"
-            min-width="290px"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-text-field
-                v-model="time"
-                label="Zeit Wählen"
-                readonly
-                v-bind="attrs"
-                v-on="on"
-                class="mx-3"
-              ></v-text-field>
-            </template>
-            <v-time-picker
-              v-if="menu1"
+      <div>
+      <div class="d-flex align-center">
+        <v-btn-toggle
+        v-model="depArr"
+        mandatory>
+          <v-btn small :value="false" >An</v-btn>
+          <v-btn small :value="true">Ab</v-btn>
+        </v-btn-toggle>
+        <v-menu
+          ref="menu"
+          v-model="menu1"
+          :close-on-content-click="false"
+          :nudge-right="40"
+          :return-value.sync="time"
+          transition="scale-transition"
+          offset-y
+          max-width="290px"
+          min-width="290px"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
               v-model="time"
-              format="24hr"
-              full-width
-              @click:minute="$refs.menu.save(time)"
+              label="Zeit Wählen"
+              readonly
+              v-bind="attrs"
+              v-on="on"
+              class="mx-3"
+            ></v-text-field>
+          </template>
+          <v-time-picker
+            v-if="menu1"
+            v-model="time"
+            format="24hr"
+            full-width
+            @click:minute="$refs.menu.save(time)"
             ></v-time-picker>
-          </v-menu>
+        </v-menu>
 
           <v-menu
             v-model="menu2"
@@ -125,7 +95,7 @@
             <v-icon> mdi-magnify </v-icon>
           </v-btn>
         </div>
-       <v-expansion-panels>
+       <v-expansion-panels flat>
         <v-expansion-panel>
           <v-expansion-panel-header>
             Optionen
@@ -162,17 +132,25 @@
             persistent-hint
             multiple
           ></v-select>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-  </v-expansion-panels> 
-    </v-container>
-      <!-- <div class="list-group">
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+    </div>
+
+    <div class="flex-column">
+      <div class="d-flex">
+      Startzeit <v-spacer></v-spacer> Dauer <v-spacer></v-spacer> Zielzeit
+      </div>
+      <span>S45 U4</span>
+    </div>
+
+    <div class="list-group">
         <div v-for="(trip, i) of trips" :key="i" class="mb-3">
           <a
             class="list-group-item list-group-item-action"
             @click="trip.col = !trip.col"
           >
-            <span class="badge rounded-pill bg-info">start-time: </span>
+            <span>start-time: </span>
             {{ trip.steps[0].start.time }} <br />
             <span class="badge rounded-pill bg-info">end-time: </span>
             {{ trip.steps[trip.steps.length - 1].end.time }} <br />
@@ -204,21 +182,24 @@
             </ul>
           </div>
         </div>
-      </div> -->
+      </div>
+    </v-container>
 </template>
 
 <script>
 import axios from 'axios';
+import RouteInputField from '../components/RouteInputField.vue'
 export default {
   name: 'Route',
+  components: {
+    RouteInputField,
+  },
   data: () => ({
-    dep: '',
-    depInput: undefined,
-    depList: undefined,
+    depInput: '',
+    desInput: '',
 
-    des: '',
-    desInput: undefined,
-    desList: undefined,
+    dep: {},
+    des: {},
 
     menu1: false,
     menu2: false,
@@ -261,46 +242,6 @@ export default {
     trips: [],
   }),
   methods: {
-    async getStopList(depdes) {
-      if (depdes == 'dep') {
-        const { data } = await axios.get(
-          `http://localhost:3000/points/${this.depInput}`
-        );
-        if (data instanceof Array) {
-          this.depList = data;
-        } else {
-          this.depList = [data];
-        }
-      }
-      if (depdes == 'des') {
-        const { data } = await axios.get(
-          `http://localhost:3000/points/${this.desInput}`
-        );
-        if (data instanceof Array) {
-          this.desList = data;
-        } else {
-          this.desList = [data];
-        }
-      }
-    },
-    setStop(depdes, el) {
-      if ('dep' === depdes) {
-        this.dep = {
-          ref: el.ref,
-          type: el.type,
-        };
-        this.depInput = el.name;
-        this.depList = undefined;
-      }
-      if ('des' === depdes) {
-        this.des = {
-          ref: el.ref,
-          type: el.type,
-        };
-        this.desInput = el.name;
-        this.desList = undefined;
-      }
-    },
     async getTrip() {
       if (!this.dep || !this.des) return;
       let time, date;
@@ -326,13 +267,20 @@ export default {
         col: false,
       }));
     },
-    swap() {
-      let holdInput = this.depInput;
-      this.depInput = this.desInput;
-      this.desInput = holdInput;
-      let hold = this.dep;
-      this.dep = this.des;
-      this.des = hold;
+    setStop(stop){
+      console.log(stop);
+      if(stop.stopType == "Start"){
+        this.dep.ref = stop.ref;
+        this.dep.type = stop.type;
+      }
+      else if(stop.stopType == "Ziel"){
+        this.des.ref = stop.ref;
+        this.des.type = stop.type;
+      }
+      else console.log("Error!")
+    },
+    swap(){
+      console.log(this.depInput);
     },
   },
   created () {
