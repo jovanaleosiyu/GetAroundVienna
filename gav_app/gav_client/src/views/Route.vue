@@ -55,10 +55,12 @@
       </div>
 
         <div class="d-flex align-center">
+
           <v-btn-toggle
+          v-model="depArr"
           mandatory>
-            <v-btn small>An</v-btn>
-            <v-btn small>Ab</v-btn>
+            <v-btn small :value="false" >An</v-btn>
+            <v-btn small :value="true">Ab</v-btn>
           </v-btn-toggle>
 
           <v-menu
@@ -76,10 +78,10 @@
               <v-text-field
                 v-model="time"
                 label="Zeit Wählen"
-                prepend-icon="mdi-clock-time-four-outline"
                 readonly
                 v-bind="attrs"
                 v-on="on"
+                class="mx-3"
               ></v-text-field>
             </template>
             <v-time-picker
@@ -94,7 +96,7 @@
           <v-menu
             v-model="menu2"
             :close-on-content-click="false"
-            :nudge-right="40"
+            :nudge-left="170"
             transition="scale-transition"
             offset-y
             min-width="auto"
@@ -103,7 +105,6 @@
               <v-text-field
                 v-model="date"
                 label="Datum Wählen"
-                prepend-icon="mdi-calendar"
                 readonly
                 v-bind="attrs"
                 v-on="on"
@@ -119,11 +120,51 @@
             @click="getTrip()"
             fab
             small
-            class="grey darken-3 white--text"
+            class="grey darken-3 white--text ml-3"
           >
             <v-icon> mdi-magnify </v-icon>
           </v-btn>
         </div>
+       <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            Optionen
+          </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-select
+            v-model="maxChanges"
+            :items="[1,2,3,4,5,6,7,8,9]"
+            hint="Anzahl der Umstiege"
+            persistent-hint
+          ></v-select>
+          <v-select
+            v-model="routeType"
+            :items="routeTypes"
+            hint="Art der Route"
+            item-text="text"
+            item-value="type"
+            persistent-hint
+          ></v-select>
+          <v-select
+            v-model="changeSpeed"
+            :items="changeSpeeds"
+            hint="Umsteige Zeit"
+            item-text="text"
+            item-value="speed"
+            persistent-hint
+          ></v-select>
+          <v-select
+            v-model="excludedMeans"
+            :items="ids"
+            hint="Verkehrmittel"
+            item-text="text"
+            item-value="id"
+            persistent-hint
+            multiple
+          ></v-select>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels> 
     </v-container>
       <!-- <div class="list-group">
         <div v-for="(trip, i) of trips" :key="i" class="mb-3">
@@ -179,15 +220,43 @@ export default {
     desInput: undefined,
     desList: undefined,
 
-    depArr: false,
-
-    time: undefined,
     menu1: false,
-
-    date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-      .toISOString()
-      .substr(0, 10),
     menu2: false,
+
+    depArr: '',
+    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+    date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10),
+    maxChanges: 9,
+
+    routeType: 'leasttime',
+    routeTypes: [
+      {text: 'Kürzeste Route', type: 'leasttime'},
+      {text: 'Wenigste Umstiege', type: 'leastinterchange'},
+      {text: 'Wenigstes Gehen', type: 'leastwalking'},
+      ],
+
+    changeSpeed: 'normal',
+    changeSpeeds: [
+      {text: 'Lang', speed: 'slow'},
+      {text: 'Mittel', speed: 'normal'},
+      {text: 'Kurz', speed: 'fast'},
+    ],
+
+    excludedMeans: undefined,
+    ids: [
+      {text: 'Zug', id: '0'},
+      {text: 'S-Bahn', id: '1'},
+      {text: 'U-Bahn', id: '2'},
+      {text: 'Stadtbahn', id: '3'},
+      {text: 'Straßen-/Trambahn', id: '4'},
+      {text: 'Stadtbus', id: '5'},
+      {text: 'Regionalbus', id: '6'},
+      {text: 'Schnellbus', id: '7'},
+      {text: 'Seil-/Zahnradbahn', id: '8'},
+      {text: 'Schiff', id: '9'},
+      {text: 'AST/Rufbus', id: '10'},
+      {text: 'Sonstiges', id: '11'},
+    ],
 
     trips: [],
   }),
@@ -265,6 +334,9 @@ export default {
       this.dep = this.des;
       this.des = hold;
     },
+  },
+  created () {
+    console.log();
   },
 };
 </script>
