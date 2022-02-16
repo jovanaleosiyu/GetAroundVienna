@@ -139,15 +139,20 @@
 
     <div class="flex-column">
       <div class="d-flex mb-1">
-      13:00 <v-spacer></v-spacer> 30 Min <v-spacer></v-spacer> 13:30
+        13:00 <v-spacer></v-spacer> 01:40 <v-spacer></v-spacer> 14:40
       </div>
-        <div class="d-flex align-center">
-        <div class="Point"></div>
-        <div class="dottedLine mx-1" ></div>
-        <div class="publicTransport"></div>
-        <div class="dottedLine mx-1"></div>
-        <div class="Point"></div>
-        </div>
+      <div class="d-flex align-center">
+        <div class="point"></div>
+        <RouteStep fill="" duration=10 tripDuration="01:40"></RouteStep>
+        <RouteStep fill="U-Bahn" duration=60 tripDuration="01:40"></RouteStep>
+        <RouteStep fill="bla" duration=30 tripDuration="01:40"></RouteStep>
+        <div class="point"></div>
+      </div>
+      <div class="d-flex justify-center  mt-1 ">
+        <span class="ml-1">ka</span>
+        <span class="ml-1">ka</span>
+        <span class="ml-1">ka</span>
+      </div>
     </div>
 
     <!-- <div>
@@ -177,11 +182,13 @@
 
 <script>
 import axios from 'axios';
-import RouteInputField from '../components/RouteInputField.vue'
+import RouteInputField from '../components/RouteInputField.vue';
+import RouteStep from '../components/RouteStep.vue';
 export default {
   name: 'Route',
   components: {
     RouteInputField,
+    RouteStep,
   },
   data: () => ({
     depInput: '',
@@ -279,21 +286,10 @@ export default {
 </script>
 
 <style scoped>
-.Point{
-  height: 20px;
-  width: 20px;
-  background-color: black;
+.point{
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
-}
-
-.dottedLine{
-  border-top: 5px grey dotted;
-  height: 0px;
-}
-
-.publicTransport{
-  background-color: darkgreen;
-  border-radius: 8px;
-  height: 15px;
+  background-color: cadetblue;
 }
 </style>
