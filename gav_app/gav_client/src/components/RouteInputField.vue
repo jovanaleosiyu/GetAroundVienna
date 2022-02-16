@@ -32,12 +32,13 @@ import axios from 'axios';
     export default {
         data() {
             return {
-                input: this.searchString,
+                input: '',
                 list: undefined,
             }
         },
         props: {
             title: String,
+            searchString: String,
         },
         methods: {
             async getStopList() {

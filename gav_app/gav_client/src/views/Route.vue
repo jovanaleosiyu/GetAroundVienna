@@ -138,51 +138,40 @@
     </div>
 
     <div class="flex-column">
-      <div class="d-flex">
-      Startzeit <v-spacer></v-spacer> Dauer <v-spacer></v-spacer> Zielzeit
+      <div class="d-flex mb-1">
+      13:00 <v-spacer></v-spacer> 30 Min <v-spacer></v-spacer> 13:30
       </div>
-      <span>S45 U4</span>
+        <div class="d-flex align-center">
+        <div class="Point"></div>
+        <div class="dottedLine mx-1" ></div>
+        <div class="publicTransport"></div>
+        <div class="dottedLine mx-1"></div>
+        <div class="Point"></div>
+        </div>
     </div>
 
-    <div class="list-group">
+    <!-- <div>
         <div v-for="(trip, i) of trips" :key="i" class="mb-3">
-          <a
-            class="list-group-item list-group-item-action"
-            @click="trip.col = !trip.col"
-          >
-            <span>start-time: </span>
-            {{ trip.steps[0].start.time }} <br />
-            <span class="badge rounded-pill bg-info">end-time: </span>
-            {{ trip.steps[trip.steps.length - 1].end.time }} <br />
-            <span class="badge rounded-pill bg-success">duration: </span>
-            {{ trip.duration }} <br />
-            <span class="badge rounded-pill bg-warning">interchange: </span>
-            {{ trip.interchange }}
+          <a @click="trip.col = !trip.col">
+            <span>start-time: </span>{{ trip.steps[0].start.time }} <br />
+            <span>end-time: </span>{{ trip.steps[trip.steps.length - 1].end.time }} <br />
+            <span>duration: </span>{{ trip.duration }} <br />
+            <span>interchange: </span>{{ trip.interchange }}
           </a>
-          <div v-if="trip.col" class="card card-body">
-            <ul class="list-group">
+          <div v-if="trip.col">
+            <ul>
               <li
                 v-for="(step, j) of trip.steps"
                 :key="j"
-                class="list-group-item"
               >
-                <strong>
-                  {{ step.mode.name ? step.mode.name : step.mode.type }}
-                </strong>
-                <br />
-                <span class="badge rounded-pill bg-info">
-                  {{ step.start.time }}
-                </span>
-                {{ step.start.name }} <br />
-                <span class="badge rounded-pill bg-info">
-                  {{ step.end.time }}
-                </span>
-                {{ step.end.name }}
+                <strong>{{ step.mode.name ? step.mode.name : step.mode.type }}</strong><br />
+                <span>{{ step.start.time }}</span>{{ step.start.name }} <br />
+                <span>{{ step.end.time }}</span>{{ step.end.name }}
               </li>
             </ul>
           </div>
         </div>
-      </div>
+      </div> -->
     </v-container>
 </template>
 
@@ -289,4 +278,22 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.Point{
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.dottedLine{
+  border-top: 5px grey dotted;
+  height: 0px;
+}
+
+.publicTransport{
+  background-color: darkgreen;
+  border-radius: 8px;
+  height: 15px;
+}
+</style>
