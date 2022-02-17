@@ -1,7 +1,8 @@
 <template>
-        <svg :width="width" height="10" class="mx-1">
+        <svg v-if="this.fill != ''" :width="width" height="10" class="mx-1">
             <rect rx="5" ry="5" width="100%" height="10" :fill="getColor(fill)"/>
         </svg>
+        <div class="dottedLine mx-1" :style="`width: ${width}`" v-else></div>
 </template>
 
 <script>
@@ -11,7 +12,7 @@
                 width: this.duration*100/this.translateTripDuration(this.tripDuration) + "%",
 
                 //Ka
-                transportType: [
+                transportTypes: [
                     {type: "", color: "grey"},
                     {type: "U-Bahn", color: "green"},
                 ],
@@ -31,8 +32,8 @@
         },
         methods: {
             getColor(type) {
-                for(var i = 0; i < this.transportType.length; i++){
-                    if(type == this.transportType[i].type) return this.transportType[i].color;
+                for(var i = 0; i < this.transportTypes.length; i++){
+                    if(type == this.transportTypes[i].type) return this.transportTypes[i].color;
                 }
                 return "cyan"
             },
@@ -46,5 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.dottedLine{
+  border-top: 7px grey dotted;
+}
 </style>

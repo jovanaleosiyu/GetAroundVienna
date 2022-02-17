@@ -137,18 +137,22 @@
     </v-expansion-panels>
     </div>
 
-    <div class="flex-column">
+    <div class="flex-column" @click="test()">
       <div class="d-flex mb-1">
-        13:00 <v-spacer></v-spacer> 01:40 <v-spacer></v-spacer> 14:40
+        13:00 <v-spacer></v-spacer> 40min <v-spacer></v-spacer> 13:40
       </div>
+
       <div class="d-flex align-center">
-        <div class="point"></div>
-        <RouteStep fill="" duration=10 tripDuration="01:40"></RouteStep>
-        <RouteStep fill="U-Bahn" duration=60 tripDuration="01:40"></RouteStep>
-        <RouteStep fill="bla" duration=30 tripDuration="01:40"></RouteStep>
+        <div :class="`point ${testcolor}`" ></div>
+        <div class="d-flex" style="width: 100%">
+        <RouteStep fill="" duration=5 tripDuration="00:40"></RouteStep>
+        <RouteStep fill="U-Bahn" duration=25 tripDuration="00:40"></RouteStep>
+        <RouteStep fill="bla" duration=10 tripDuration="00:40"></RouteStep>
+        </div>
         <div class="point"></div>
       </div>
-      <div class="d-flex justify-center  mt-1 ">
+
+      <div class="d-flex justify-center mt-1 ">
         <span class="ml-1">ka</span>
         <span class="ml-1">ka</span>
         <span class="ml-1">ka</span>
@@ -191,6 +195,8 @@ export default {
     RouteStep,
   },
   data: () => ({
+    testcolor: "red",
+
     depInput: '',
     desInput: '',
 
@@ -238,6 +244,9 @@ export default {
     trips: [],
   }),
   methods: {
+    test(){
+      this.$router.push({ name: 'Home' });
+    },
     async getTrip() {
       if (!this.dep || !this.des) return;
       let time, date;
@@ -287,9 +296,9 @@ export default {
 
 <style scoped>
 .point{
-  height: 18px;
-  width: 18px;
+  height: 17px;
+  width: 17px;
   border-radius: 50%;
-  background-color: cadetblue;
+  background-color: black;
 }
 </style>
