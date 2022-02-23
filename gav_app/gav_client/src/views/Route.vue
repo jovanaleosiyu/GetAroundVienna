@@ -30,8 +30,8 @@
         <v-btn-toggle
         v-model="depArr"
         mandatory>
-          <v-btn small :value="false" >An</v-btn>
-          <v-btn small :value="true">Ab</v-btn>
+          <v-btn small :value="true" >Ab</v-btn>
+          <v-btn small :value="false">An</v-btn>
         </v-btn-toggle>
         <v-menu
           ref="menu"
@@ -136,19 +136,46 @@
       </v-expansion-panel>
     </v-expansion-panels>
     </div>
-
-    <div class="flex-column">
+    
+    <div v-for="(trip, i) of trips" :key="i" class="flex-column" @click="test()">
       <div class="d-flex mb-1">
-      13:00 <v-spacer></v-spacer> 30 Min <v-spacer></v-spacer> 13:30
+        {{ trip.steps[0].start.time }} <v-spacer></v-spacer> {{ trip.duration }} <v-spacer></v-spacer> {{ trip.steps[trip.steps.length - 1].end.time }}
       </div>
-        <div class="d-flex align-center">
-        <div class="Point"></div>
-        <div class="dottedLine mx-1" ></div>
-        <div class="publicTransport"></div>
-        <div class="dottedLine mx-1"></div>
-        <div class="Point"></div>
+
+      <div class="d-flex align-center">
+        <div :class="`point ${testcolor}`" ></div>
+        <div class="d-flex" style="width: 100%">
+        <RouteStep v-for="(step, j) of trip.steps" :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
         </div>
+        <div class="point"></div>
+      </div>
+
+      <div class="d-flex justify-center mt-1 ">
+        <span v-for="(step, j) of trip.steps" :key="j" class="ml-1">{{ step.mode.name }}</span>
+      </div>
     </div>
+
+    <!-- <div class="flex-column" @click="test()">
+      <div class="d-flex mb-1">
+        13:00 <v-spacer></v-spacer> 40min <v-spacer></v-spacer> 13:40
+      </div>
+
+      <div class="d-flex align-center">
+        <div :class="`point ${testcolor}`" ></div>
+        <div class="d-flex" style="width: 100%">
+        <RouteStep stepName="" stepType="" duration=5 tripDuration="00:40"></RouteStep>
+        <RouteStep stepName="" stepType="U-Bahn" duration=25 tripDuration="00:40"></RouteStep>
+        <RouteStep stepName="" stepType="bla" duration=10 tripDuration="00:40"></RouteStep>
+        </div>
+        <div class="point"></div>
+      </div>
+
+      <div class="d-flex justify-center mt-1 ">
+        <span class="ml-1">ka</span>
+        <span class="ml-1">ka</span>
+        <span class="ml-1">ka</span>
+      </div>
+    </div> -->
 
     <!-- <div>
         <div v-for="(trip, i) of trips" :key="i" class="mb-3">
@@ -167,6 +194,7 @@
                 <strong>{{ step.mode.name ? step.mode.name : step.mode.type }}</strong><br />
                 <span>{{ step.start.time }}</span>{{ step.start.name }} <br />
                 <span>{{ step.end.time }}</span>{{ step.end.name }}
+                <span>{{ step.duration}}</span>
               </li>
             </ul>
           </div>
@@ -177,13 +205,17 @@
 
 <script>
 import axios from 'axios';
-import RouteInputField from '../components/RouteInputField.vue'
+import RouteInputField from '../components/RouteInputField.vue';
+import RouteStep from '../components/RouteStep.vue';
 export default {
   name: 'Route',
   components: {
     RouteInputField,
+    RouteStep,
   },
   data: () => ({
+    testcolor: "red",
+
     depInput: '',
     desInput: '',
 
@@ -231,6 +263,9 @@ export default {
     trips: [],
   }),
   methods: {
+    test(){
+      this.$router.push({ name: 'Home' });
+    },
     async getTrip() {
       if (!this.dep || !this.des) return;
       let time, date;
@@ -279,21 +314,10 @@ export default {
 </script>
 
 <style scoped>
-.Point{
-  height: 20px;
-  width: 20px;
-  background-color: black;
+.point{
+  height: 17px;
+  width: 17px;
   border-radius: 50%;
-}
-
-.dottedLine{
-  border-top: 5px grey dotted;
-  height: 0px;
-}
-
-.publicTransport{
-  background-color: darkgreen;
-  border-radius: 8px;
-  height: 15px;
+  background-color: black;
 }
 </style>
