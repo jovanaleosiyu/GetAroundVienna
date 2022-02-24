@@ -26,6 +26,16 @@
 
       <h1 class="text-center mt-8 mb-16">Willkommen<br />zurück!</h1>
 
+      <v-alert
+        class="mb-12"
+        color="red"
+        elevation="4"
+        outlined
+        text
+        type="error"
+        v-if="error"
+      >{{errorMessage}}</v-alert>
+
       <v-form class="d-flex flex-column align-center" v-model="valid" style="width: 100%">
         <div style="width: 80%">
         <v-text-field
@@ -45,8 +55,6 @@
         required
         ></v-text-field>
         </div>
-
-        <h2>{{ errorMessage }}</h2>
 
         <v-btn elevation="5" @click="login()" :disabled="!valid" fab class="align-self-end grey darken-3 white--text mt-16">
         <v-icon> mdi-arrow-right </v-icon>
@@ -72,7 +80,8 @@ export default {
     password: '',
     passwordRules: [v => !!v || "Passwort ist erforderlich"],
     show: false,
-    errorMessage: ''
+    errorMessage: '',
+    error: false,
   }),
   methods: {
     async login() {
@@ -80,13 +89,16 @@ export default {
         email: this.email,
         password: this.password
       }
-      await axios.post("http://localhost:3000/login",loginData).then(response => {
+      await axios.post("http://localhost:3000/login",loginData)
+      .then(response => {
         bus.$data.userId = response.data;
+        bus.$emit('loggedIn', true);
         VueCookies.set('userId', response.data);
         this.$router.push({ name: 'Home' })
       }).catch(error =>{
         if(error.response.status != 200){
           this.errorMessage = "E-Mail oder Passwort ist falsch!"
+          this.error = true;
         }
       });
     },
