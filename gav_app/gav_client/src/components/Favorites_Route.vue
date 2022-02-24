@@ -13,7 +13,14 @@
           <v-col cols="12" align="center">
             <v-menu offset-y>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn large icon :class="iconcolor" v-bind="attrs" v-on="on">
+                <v-btn
+                  large
+                  icon
+                  :class="iconcolor"
+                  v-model="color"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <v-icon color="white">mdi-{{ iconimage }}</v-icon>
                 </v-btn>
               </template>
@@ -48,19 +55,9 @@
               required
             ></v-text-field>
 
-            <v-text-field
-              v-model="address"
-              :rules="emailRules"
-              label="Start"
-              required
-            ></v-text-field>
+            <RouteInput title="Start"></RouteInput>
 
-            <v-text-field
-              v-model="address"
-              :rules="emailRules"
-              label="Ziel"
-              required
-            ></v-text-field>
+            <RouteInput title="Ziel"></RouteInput>
           </v-col>
         </v-row>
       </v-container>
@@ -76,6 +73,14 @@
 </template>
 
 <script>
+import axios from 'axios';
+import RouteInput from './RouteInputField.vue';
+
+const instance = axios.create({
+  withCredentials: true,
+  baseURL: 'http://localhost:3000',
+});
+
 export default {
   data() {
     return {
@@ -92,6 +97,19 @@ export default {
       iconcolor: '',
       iconimage: '',
     };
+  },
+  methods: {
+    async addRoute() {
+      let routeData = {
+        iconcolor: this.color,
+        //input start
+        //input ziel
+      };
+      await instance.post('/favorites?type=trip', routeData);
+    },
+  },
+  components: {
+    RouteInput,
   },
   created() {
     this.iconcolor = this.colors[0];
