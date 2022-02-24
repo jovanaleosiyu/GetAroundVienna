@@ -53,7 +53,6 @@
 
 <script>
 import { bus } from "./main";
-import VueCookies from 'vue-cookies';
 export default {
   name: "App",
 
@@ -63,9 +62,8 @@ export default {
     }),
     created () {
       bus.$on('loggedIn', (data) => {
-        this.loggedIn = data;
+        this.test = data;
       });
-      this.loggedIn = bus.$data.loggedIn = VueCookies.get('loggedIn');
     },
 };
 </script>

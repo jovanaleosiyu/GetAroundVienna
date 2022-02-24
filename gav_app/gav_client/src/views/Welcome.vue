@@ -26,15 +26,12 @@
 
 <script>
 import { bus } from '../main';
-import VueCookies from 'vue-cookies';
 export default {
   name: "Welcome",
   data: () => ({}),
   methods: {
     guestLogin() {
       bus.$emit('loggedIn', true);
-      bus.$data.loggedIn = true;
-      VueCookies.set('loggedIn', true);
       this.$router.push({ name: 'Home' });
     }
   },

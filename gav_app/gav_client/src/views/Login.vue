@@ -87,13 +87,10 @@ export default {
     async login() {
       var loginData = {
         email: this.email,
-        password: this.password,
-      };
-      await axios
-        .post('http://localhost:3000/login', loginData, {
-          withCredentials: true,
-        })
-        .then(response => {
+        password: this.password
+      }
+      await axios.post("http://localhost:3000/login",loginData)
+      .then(response => {
         bus.$data.userId = response.data;
         bus.$emit('loggedIn', true);
         VueCookies.set('userId', response.data);
