@@ -35,6 +35,6 @@ module.exports = {
       req.session.destroy();
       res.clearCookie(process.env.SESSION_NAME);
       res.status(200).send('User successfully logged out');
-    } else res.status(404).send('Already logged out');
+    } else res.status(400).send('Already logged out');
   }),
 };

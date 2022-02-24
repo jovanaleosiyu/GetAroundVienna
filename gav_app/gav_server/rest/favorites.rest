@@ -1,0 +1,43 @@
+### get all favorites
+GET http://localhost:3000/favorites
+### get favorite, success if user 1 logged in
+GET http://localhost:3000/favorites/1
+### get all favorite points
+GET http://localhost:3000/favorites?type=point
+### get all favorite trips
+GET http://localhost:3000/favorites?type=trip
+### add favorite point
+POST http://localhost:3000/favorites/points
+content-type: application/json
+
+{
+  "title": "Restaurant",
+  "icon": "food",
+  "color": "orange",
+  "ref": "16.32019:48.15985:WGS84",
+  "type": "coord"
+}
+### add favorite trip
+POST http://localhost:3000/favorites/trips
+content-type: application/json
+
+{
+  "title": "Weg 123",
+  "icon": "food",
+  "color": "red",
+  "origRef": "16.31933:48.16815:WGS84",
+  "origType":"coord",
+  "destRef": "60201468",
+  "destType": "stop",
+  "options": {
+    "changeSpeed": "slow",
+    "routeType": "leastinterchange"
+  }
+}
+### delete favorite ERROR not found
+DELETE http://localhost:3000/favorites/-1
+### delete favorite if user 1 logged in ERROR wrong user => so not found
+### * because now favid=2 belongs to user 2
+DELETE http://localhost:3000/favorites/2
+### * delete favorite success
+DELETE http://localhost:3000/favorites/8

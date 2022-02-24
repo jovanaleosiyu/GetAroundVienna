@@ -65,8 +65,8 @@
 </template>
 
 <script>
-import axios from "axios";
-import { bus } from "../main";
+import axios from 'axios';
+import { bus } from '../main';
 import VueCookies from 'vue-cookies';
 export default {
   name: 'Login',
@@ -74,11 +74,11 @@ export default {
     valid: true,
     email: '',
     emailRules: [
-        v => !!v || 'E-mail ist erforderlich',
-        v => /.+@.+\..+/.test(v) || 'E-mail muss passend sein',
-      ],
+      (v) => !!v || 'E-Mail ist erforderlich',
+      (v) => /.+@.+\..+/.test(v) || 'E-Mail muss passend sein',
+    ],
     password: '',
-    passwordRules: [v => !!v || "Passwort ist erforderlich"],
+    passwordRules: [(v) => !!v || 'Passwort ist erforderlich'],
     show: false,
     errorMessage: '',
     error: false,
@@ -94,6 +94,8 @@ export default {
         bus.$data.userId = response.data;
         bus.$emit('loggedIn', true);
         VueCookies.set('userId', response.data);
+        bus.$data.loggedIn = true;
+        VueCookies.set('loggedIn', true);
         this.$router.push({ name: 'Home' })
       }).catch(error =>{
         if(error.response.status != 200){
@@ -106,5 +108,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

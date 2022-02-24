@@ -1,92 +1,72 @@
 <template>
-  <v-container class="d-flex flex-column align-center">
-    <v-card
-      class="d-flex flex-column align-center"
-      :outlined="true"
-      :min-width="$vuetify.breakpoint.mdAndUp ? 450 : '100%'"
-      style="border: none"
-    >
-      <v-form class="d-flex flex-column align-center" style="width: 100%">
-        <div class="d-flex" style="width: 100%">
-          <div style="width: 80%">
-            <v-text-field
-              v-model="depInput"
-              @keyup.enter="getStopList('dep')"
-              label="Start"
-              required
-            ></v-text-field>
-            <v-list v-if="depList">
-              <v-list-item
-                v-for="el of depList"
-                :key="el.name"
-                @click="setStop('dep', el)"
-              >
-                <v-list-item-content>{{ el.name }}</v-list-item-content>
-              </v-list-item>
-            </v-list>
-
-            <v-text-field
-              v-model="desInput"
-              @keyup.enter="getStopList('des')"
-              label="Ziel"
-              required
-            ></v-text-field>
-            <v-list v-if="desList">
-              <v-list-item
-                v-for="el of desList"
-                :key="el.name"
-                @click="setStop('des', el)"
-              >
-                <v-list-item-content>{{ el.name }}</v-list-item-content>
-              </v-list-item>
-            </v-list>
+    <v-container class="d-flex flex-column">
+      <div>
+      <v-form class="d-flex align-center">
+       <svg xmlns="http://www.w3.org/2000/svg" width="31" height="175" viewBox="0 0 31 175" class="mr-3 py-11">
+        <g id="grafik" transform="translate(-45.698 -179.326)">
+          <circle id="Ellipse_2" data-name="Ellipse 2" cx="15.5" cy="15.5" r="15.5" transform="translate(45.698 179.326)" fill="#a1a1a1"/>
+          <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="15.5" cy="15" rx="15.5" ry="15" transform="translate(45.698 324.326)" fill="#1a1a1a"/>
+          <circle id="Ellipse_4" data-name="Ellipse 4" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 225.326)" fill="#d8d8d8"/>
+          <circle id="Ellipse_5" data-name="Ellipse 5" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 273.326)" fill="#d8d8d8"/>
+          <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(56.698 256.326)" fill="#d8d8d8"/>
+          <circle id="Ellipse_7" data-name="Ellipse 7" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 240.326)" fill="#d8d8d8"/>
+          <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(56.698 289.326)" fill="#d8d8d8"/>
+          <circle id="Ellipse_9" data-name="Ellipse 9" cx="3.5" cy="3.5" r="3.5" transform="translate(56.698 304.326)" fill="#d8d8d8"/>
+        </g>
+      </svg>
+          <div  style="width: 100%;">
+            <RouteInputField title="Start" :searchString="depInput" @setStop="setStop"></RouteInputField>
+            <RouteInputField title="Ziel" :searchString="desInput" @setStop="setStop"></RouteInputField>
           </div>
 
-          <v-icon large class="my-auto pl-3 darkgrey--text" @click="swap()">
+          <v-icon large class="my-auto ml-3 darkgrey--text" @click="swap()">
             mdi-swap-vertical
           </v-icon>
-        </div>
+        </v-form>
+      </div>
 
-        <div class="d-flex" style="width: 80%">
-          <v-switch
-            v-model="depArr"
-            :label="depArr ? 'Ankunft' : 'Abfahrt'"
-          ></v-switch>
-
-          <v-menu
-            ref="menu"
-            v-model="menu1"
-            :close-on-content-click="false"
-            :nudge-right="40"
-            :return-value.sync="time"
-            transition="scale-transition"
-            offset-y
-            max-width="290px"
-            min-width="290px"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-text-field
-                v-model="time"
-                label="Zeit Wählen"
-                prepend-icon="mdi-clock-time-four-outline"
-                readonly
-                v-bind="attrs"
-                v-on="on"
-              ></v-text-field>
-            </template>
-            <v-time-picker
-              v-if="menu1"
+      <div>
+      <div class="d-flex align-center">
+        <v-btn-toggle
+        v-model="depArr"
+        mandatory>
+          <v-btn small :value="true" >Ab</v-btn>
+          <v-btn small :value="false">An</v-btn>
+        </v-btn-toggle>
+        <v-menu
+          ref="menu"
+          v-model="menu1"
+          :close-on-content-click="false"
+          :nudge-right="40"
+          :return-value.sync="time"
+          transition="scale-transition"
+          offset-y
+          max-width="290px"
+          min-width="290px"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
               v-model="time"
-              format="24hr"
-              full-width
-              @click:minute="$refs.menu.save(time)"
+              label="Zeit Wählen"
+              readonly
+              v-bind="attrs"
+              v-on="on"
+              class="mx-3"
+            ></v-text-field>
+          </template>
+          <v-time-picker
+            v-if="menu1"
+            v-model="time"
+            format="24hr"
+            full-width
+            @click:minute="$refs.menu.save(time)"
             ></v-time-picker>
-          </v-menu>
+        </v-menu>
 
           <v-menu
             v-model="menu2"
             :close-on-content-click="false"
-            :nudge-right="40"
+            :nudge-left="170"
             transition="scale-transition"
             offset-y
             min-width="auto"
@@ -95,7 +75,6 @@
               <v-text-field
                 v-model="date"
                 label="Datum Wählen"
-                prepend-icon="mdi-calendar"
                 readonly
                 v-bind="attrs"
                 v-on="on"
@@ -106,126 +85,186 @@
               @input="menu2 = false"
             ></v-date-picker>
           </v-menu>
-
           <v-btn
             elevation="5"
             @click="getTrip()"
             fab
-            class="grey darken-3 white--text"
+            small
+            class="grey darken-3 white--text ml-3"
           >
             <v-icon> mdi-magnify </v-icon>
           </v-btn>
         </div>
-      </v-form>
+       <v-expansion-panels flat>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            Optionen
+          </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-select
+            v-model="maxChanges"
+            :items="[1,2,3,4,5,6,7,8,9]"
+            hint="Anzahl der Umstiege"
+            persistent-hint
+          ></v-select>
+          <v-select
+            v-model="routeType"
+            :items="routeTypes"
+            hint="Art der Route"
+            item-text="text"
+            item-value="type"
+            persistent-hint
+          ></v-select>
+          <v-select
+            v-model="changeSpeed"
+            :items="changeSpeeds"
+            hint="Umsteige Zeit"
+            item-text="text"
+            item-value="speed"
+            persistent-hint
+          ></v-select>
+          <v-select
+            v-model="excludedMeans"
+            :items="ids"
+            hint="Verkehrmittel"
+            item-text="text"
+            item-value="id"
+            persistent-hint
+            multiple
+          ></v-select>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+    </div>
+    
+    <div v-for="(trip, i) of trips" :key="i" class="flex-column" @click="test()">
+      <div class="d-flex mb-1">
+        {{ trip.steps[0].start.time }} <v-spacer></v-spacer> {{ trip.duration }} <v-spacer></v-spacer> {{ trip.steps[trip.steps.length - 1].end.time }}
+      </div>
 
-      <div class="list-group">
+      <div class="d-flex align-center">
+        <div :class="`point ${testcolor}`" ></div>
+        <div class="d-flex" style="width: 100%">
+        <RouteStep v-for="(step, j) of trip.steps" :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
+        </div>
+        <div class="point"></div>
+      </div>
+
+      <div class="d-flex justify-center mt-1 ">
+        <span v-for="(step, j) of trip.steps" :key="j" class="ml-1">{{ step.mode.name }}</span>
+      </div>
+    </div>
+
+    <!-- <div class="flex-column" @click="test()">
+      <div class="d-flex mb-1">
+        13:00 <v-spacer></v-spacer> 40min <v-spacer></v-spacer> 13:40
+      </div>
+
+      <div class="d-flex align-center">
+        <div :class="`point ${testcolor}`" ></div>
+        <div class="d-flex" style="width: 100%">
+        <RouteStep stepName="" stepType="" duration=5 tripDuration="00:40"></RouteStep>
+        <RouteStep stepName="" stepType="U-Bahn" duration=25 tripDuration="00:40"></RouteStep>
+        <RouteStep stepName="" stepType="bla" duration=10 tripDuration="00:40"></RouteStep>
+        </div>
+        <div class="point"></div>
+      </div>
+
+      <div class="d-flex justify-center mt-1 ">
+        <span class="ml-1">ka</span>
+        <span class="ml-1">ka</span>
+        <span class="ml-1">ka</span>
+      </div>
+    </div> -->
+
+    <!-- <div>
         <div v-for="(trip, i) of trips" :key="i" class="mb-3">
-          <a
-            class="list-group-item list-group-item-action"
-            @click="trip.col = !trip.col"
-          >
-            <span class="badge rounded-pill bg-info">start-time: </span>
-            {{ trip.steps[0].start.time }} <br />
-            <span class="badge rounded-pill bg-info">end-time: </span>
-            {{ trip.steps[trip.steps.length - 1].end.time }} <br />
-            <span class="badge rounded-pill bg-success">duration: </span>
-            {{ trip.duration }} <br />
-            <span class="badge rounded-pill bg-warning">interchange: </span>
-            {{ trip.interchange }}
+          <a @click="trip.col = !trip.col">
+            <span>start-time: </span>{{ trip.steps[0].start.time }} <br />
+            <span>end-time: </span>{{ trip.steps[trip.steps.length - 1].end.time }} <br />
+            <span>duration: </span>{{ trip.duration }} <br />
+            <span>interchange: </span>{{ trip.interchange }}
           </a>
-          <div v-if="trip.col" class="card card-body">
-            <ul class="list-group">
+          <div v-if="trip.col">
+            <ul>
               <li
                 v-for="(step, j) of trip.steps"
                 :key="j"
-                class="list-group-item"
               >
-                <strong>
-                  {{ step.mode.name ? step.mode.name : step.mode.type }}
-                </strong>
-                <br />
-                <span class="badge rounded-pill bg-info">
-                  {{ step.start.time }}
-                </span>
-                {{ step.start.name }} <br />
-                <span class="badge rounded-pill bg-info">
-                  {{ step.end.time }}
-                </span>
-                {{ step.end.name }}
+                <strong>{{ step.mode.name ? step.mode.name : step.mode.type }}</strong><br />
+                <span>{{ step.start.time }}</span>{{ step.start.name }} <br />
+                <span>{{ step.end.time }}</span>{{ step.end.name }}
+                <span>{{ step.duration}}</span>
               </li>
             </ul>
           </div>
         </div>
-      </div>
-    </v-card>
-  </v-container>
+      </div> -->
+    </v-container>
 </template>
 
 <script>
 import axios from 'axios';
+import RouteInputField from '../components/RouteInputField.vue';
+import RouteStep from '../components/RouteStep.vue';
 export default {
   name: 'Route',
+  components: {
+    RouteInputField,
+    RouteStep,
+  },
   data: () => ({
-    dep: '',
-    depInput: undefined,
-    depList: undefined,
+    testcolor: "red",
 
-    des: '',
-    desInput: undefined,
-    desList: undefined,
+    depInput: '',
+    desInput: '',
 
-    depArr: false,
+    dep: {},
+    des: {},
 
-    time: undefined,
     menu1: false,
-
-    date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-      .toISOString()
-      .substr(0, 10),
     menu2: false,
+
+    depArr: '',
+    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+    date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10),
+    maxChanges: 9,
+
+    routeType: 'leasttime',
+    routeTypes: [
+      {text: 'Kürzeste Route', type: 'leasttime'},
+      {text: 'Wenigste Umstiege', type: 'leastinterchange'},
+      {text: 'Wenigstes Gehen', type: 'leastwalking'},
+      ],
+
+    changeSpeed: 'normal',
+    changeSpeeds: [
+      {text: 'Lang', speed: 'slow'},
+      {text: 'Mittel', speed: 'normal'},
+      {text: 'Kurz', speed: 'fast'},
+    ],
+
+    excludedMeans: undefined,
+    ids: [
+      {text: 'Zug', id: '0'},
+      {text: 'S-Bahn', id: '1'},
+      {text: 'U-Bahn', id: '2'},
+      {text: 'Stadtbahn', id: '3'},
+      {text: 'Straßen-/Trambahn', id: '4'},
+      {text: 'Stadtbus', id: '5'},
+      {text: 'Regionalbus', id: '6'},
+      {text: 'Schnellbus', id: '7'},
+      {text: 'Seil-/Zahnradbahn', id: '8'},
+      {text: 'Schiff', id: '9'},
+      {text: 'AST/Rufbus', id: '10'},
+      {text: 'Sonstiges', id: '11'},
+    ],
 
     trips: [],
   }),
   methods: {
-    async getStopList(depdes) {
-      if (depdes == 'dep') {
-        const { data } = await axios.get(
-          `http://localhost:3000/points/${this.depInput}`
-        );
-        if (data instanceof Array) {
-          this.depList = data;
-        } else {
-          this.depList = [data];
-        }
-      }
-      if (depdes == 'des') {
-        const { data } = await axios.get(
-          `http://localhost:3000/points/${this.desInput}`
-        );
-        if (data instanceof Array) {
-          this.desList = data;
-        } else {
-          this.desList = [data];
-        }
-      }
-    },
-    setStop(depdes, el) {
-      if ('dep' === depdes) {
-        this.dep = {
-          ref: el.ref,
-          type: el.type,
-        };
-        this.depInput = el.name;
-        this.depList = undefined;
-      }
-      if ('des' === depdes) {
-        this.des = {
-          ref: el.ref,
-          type: el.type,
-        };
-        this.desInput = el.name;
-        this.desList = undefined;
-      }
+    test(){
+      this.$router.push({ name: 'Home' });
     },
     async getTrip() {
       if (!this.dep || !this.des) return;
@@ -252,16 +291,33 @@ export default {
         col: false,
       }));
     },
-    swap() {
-      let holdInput = this.depInput;
-      this.depInput = this.desInput;
-      this.desInput = holdInput;
-      let hold = this.dep;
-      this.dep = this.des;
-      this.des = hold;
+    setStop(stop){
+      console.log(stop);
+      if(stop.stopType == "Start"){
+        this.dep.ref = stop.ref;
+        this.dep.type = stop.type;
+      }
+      else if(stop.stopType == "Ziel"){
+        this.des.ref = stop.ref;
+        this.des.type = stop.type;
+      }
+      else console.log("Error!")
     },
+    swap(){
+      console.log(this.depInput);
+    },
+  },
+  created () {
+    console.log();
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.point{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background-color: black;
+}
+</style>

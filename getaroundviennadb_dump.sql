@@ -21,7 +21,7 @@ SET row_security = off;
 --
 
 CREATE DOMAIN public.d_ref_type AS character varying(6)
-	CONSTRAINT d_ref_type_check CHECK (((VALUE)::text = ANY ((ARRAY['stopID'::character varying, 'coord'::character varying])::text[])));
+	CONSTRAINT d_ref_type_check CHECK (((VALUE)::text = ANY ((ARRAY['coord'::character varying, 'stop'::character varying])::text[])));
 
 
 ALTER DOMAIN public.d_ref_type OWNER TO postgres;
@@ -31,7 +31,7 @@ ALTER DOMAIN public.d_ref_type OWNER TO postgres;
 --
 
 CREATE DOMAIN public.d_route_type AS character varying(16)
-	CONSTRAINT d_route_type_check CHECK (((VALUE)::text = ANY ((ARRAY['LEASTTIME'::character varying, 'LEASTINTERCHANGE'::character varying, 'LEASTWALKING'::character varying])::text[])));
+	CONSTRAINT d_route_type_check CHECK (((VALUE)::text = ANY ((ARRAY['leasttime'::character varying, 'leastinterchange'::character varying, 'leastwalking'::character varying])::text[])));
 
 
 ALTER DOMAIN public.d_route_type OWNER TO postgres;
@@ -41,7 +41,7 @@ ALTER DOMAIN public.d_route_type OWNER TO postgres;
 --
 
 CREATE DOMAIN public.d_speed AS character varying(6)
-	CONSTRAINT d_speed_check CHECK (((VALUE)::text = ANY ((ARRAY['Slow'::character varying, 'Normal'::character varying, 'Fast'::character varying])::text[])));
+	CONSTRAINT d_speed_check CHECK (((VALUE)::text = ANY ((ARRAY['slow'::character varying, 'normal'::character varying, 'fast'::character varying])::text[])));
 
 
 ALTER DOMAIN public.d_speed OWNER TO postgres;
@@ -109,7 +109,7 @@ CREATE TABLE public.favtrips (
     orig_type public.d_ref_type NOT NULL,
     dest_ref text NOT NULL,
     dest_type public.d_ref_type NOT NULL,
-    exclmeans integer,
+    exclmeans text,
     changespeed public.d_speed,
     routetype public.d_route_type,
     maxchanges integer,
@@ -226,7 +226,7 @@ CREATE TABLE public.users (
     password character varying(255) NOT NULL,
     colortheme text DEFAULT 'blue'::text NOT NULL,
     darkmode boolean DEFAULT false NOT NULL,
-    exclmeans integer,
+    exclmeans text,
     changespeed public.d_speed,
     routetype public.d_route_type,
     maxchanges integer
@@ -289,18 +289,32 @@ ALTER TABLE ONLY public.users ALTER COLUMN userid SET DEFAULT nextval('public.us
 -- Data for Name: favorites; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public.favorites VALUES (1, 'yellow', 'home', 'Zuhause', 1);
+INSERT INTO public.favorites VALUES (2, 'blue', 'school', 'Schulweg', 2);
+INSERT INTO public.favorites VALUES (8, 'orange', 'food', 'Restaurant', 1);
+INSERT INTO public.favorites VALUES (9, 'orange', 'food', 'Restaurant', 1);
+INSERT INTO public.favorites VALUES (13, 'red', 'food', 'Weg 123', 1);
+INSERT INTO public.favorites VALUES (14, 'red', 'food', 'Weg 123', 1);
+INSERT INTO public.favorites VALUES (15, 'red', 'food', 'Weg 123', 1);
 
 
 --
 -- Data for Name: favpoints; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public.favpoints VALUES ('60200844', 'stop', 1);
+INSERT INTO public.favpoints VALUES ('16.32019:48.15985:WGS84', 'coord', 8);
+INSERT INTO public.favpoints VALUES ('16.32019:48.15985:WGS84', 'coord', 9);
 
 
 --
 -- Data for Name: favtrips; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public.favtrips VALUES ('60200844', 'stop', '16.31318:48.21196:WGS84', 'coord', NULL, NULL, NULL, NULL, 2);
+INSERT INTO public.favtrips VALUES ('16.31933:48.16815:WGS84', 'coord', '60201468', 'stop', NULL, 'slow', 'leastinterchange', NULL, 13);
+INSERT INTO public.favtrips VALUES ('16.31933:48.16815:WGS84', 'coord', '60201468', 'stop', NULL, 'slow', 'leastinterchange', NULL, 14);
+INSERT INTO public.favtrips VALUES ('16.31933:48.16815:WGS84', 'coord', '60201468', 'stop', NULL, 'slow', 'leastinterchange', NULL, 15);
 
 
 --
@@ -335,7 +349,7 @@ INSERT INTO public.users VALUES (4, 'dora.dunny@email.com', 'dora123', 'blue', f
 -- Name: favorites_favid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.favorites_favid_seq', 1, false);
+SELECT pg_catalog.setval('public.favorites_favid_seq', 15, true);
 
 
 --

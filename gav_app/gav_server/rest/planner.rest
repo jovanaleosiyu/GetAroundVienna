@@ -1,0 +1,29 @@
+### ALL ROUTES ONLY IF LOGGED IN
+### GET planner entries
+GET http://localhost:3000/plannerentry
+### GET planner entry
+GET http://localhost:3000/plannerentry/2
+### POST planner entry
+POST http://localhost:3000/plannerentry
+content-type: application/json
+
+{
+  "title": "Test",
+  "notification": false,
+  "color": "orange",
+  "repeat": 0,
+  "time": "13:00",
+  "dep": false,
+  "origref": "60200844",
+  "origtype": "stop",
+  "destref": "16.31318:48.21196:WGS84",
+  "desttype": "coord",
+  "exclmeans": null,
+  "changespeed": null,
+  "routetype": "leastwalking",
+  "maxchanges": 3,
+  "startdate": "2022-02-14",
+  "enddate": "2022-06-12"
+}
+### DELETE planner entry
+DELETE http://localhost:3000/plannerentry/7

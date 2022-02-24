@@ -112,7 +112,9 @@ export default {
         password: this.password,
       };
       await axios
-        .post('http://localhost:3000/register', data)
+        .post('http://localhost:3000/register', data, {
+          withCredentials: true,
+        })
         .then((response) => {
           console.log(response);
           bus.$data.userId = response.data;

@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" width="500">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn icon large elevation="3" v-bind="attrs" v-on="on">
+      <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </template>
@@ -26,14 +26,7 @@
             <v-text-field
               v-model="address"
               :rules="emailRules"
-              label="Start"
-              required
-            ></v-text-field>
-
-            <v-text-field
-              v-model="address"
-              :rules="emailRules"
-              label="Zielss"
+              label="Adresse"
               required
             ></v-text-field>
           </v-col>

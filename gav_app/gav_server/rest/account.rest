@@ -37,7 +37,6 @@ content-type: application/json
 
 ### login fail nothing
 POST http://localhost:3000/login
-content-type: application/json
 
 ### logout
 GET http://localhost:3000/logout

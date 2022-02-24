@@ -11,13 +11,21 @@ require('colors');
 const accountRouter = require('./routes/account');
 const tripRouter = require('./routes/trip');
 const pointsRouter = require('./routes/points');
+const favoritesRouter = require('./routes/favorites');
+const plannerRouter = require('./routes/planner');
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
 
 const app = express();
 
-const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
+const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET, CLIENT } = process.env;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: CLIENT,
+    credentials: true,
+  })
+);
+
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(
@@ -27,7 +35,7 @@ app.use(
     saveUninitialized: false,
     resave: false,
     cookie: {
-      httpOnly: true,
+      httpOnly: false,
       sameSite: true,
       secure: NODE_ENV === 'production',
     },
@@ -40,6 +48,8 @@ app.use(express.json());
 app.use('/', accountRouter);
 app.use('/trip', tripRouter);
 app.use('/points', pointsRouter);
+app.use('/favorites', favoritesRouter);
+app.use('/plannerentry', plannerRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
