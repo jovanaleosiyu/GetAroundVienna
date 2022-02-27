@@ -3,32 +3,47 @@
     <v-card-title>Favoriten</v-card-title>
     <!-- Stops list -->
     <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
-    <div class="d-flex flex-row align-start favrow">
-      <div
-        v-for="s in favStops"
-        :key="s.favid"
-        class="d-flex flex-column align-center favspace"
-      >
-        <v-btn icon elevation="3" x-large :class="s.color">
-          <v-icon color="white">mdi-{{ s.icon }}</v-icon>
-        </v-btn>
-        <span class="my-2 favtitle">{{ s.title }}</span>
-      </div>
-      <div class="d-flex justify-center favspace">
-        <PopupStop></PopupStop>
-      </div>
-    </div>
+    <v-sheet class="mx-auto" max-width="700">
+      <v-slide-group show-arrows>
+        <v-slide-item
+          v-for="s in favStops"
+          :key="s.favid"
+          v-slot="{ active, toggle }"
+          class="favspace"
+        >
+          <div class="d-flex flex-column align-center mx-3">
+            <v-btn
+              icon
+              elevation="3"
+              x-large
+              :class="s.color"
+              :input-value="active"
+              @click="toggle"
+            >
+              <v-icon color="white">mdi-{{ s.icon }}</v-icon>
+            </v-btn>
+            <span class="my-2 favtitle">{{ s.title }}</span>
+          </div>
+        </v-slide-item>
+        <v-slide-item>
+          <div class="mx-3">
+            <PopupStop @reload="getFavPoints"></PopupStop>
+          </div>
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
     <!-- Routes list -->
     <v-card-subtitle>Routen</v-card-subtitle>
 
     <v-sheet class="mx-auto" max-width="700">
-      <v-slide-group multiple show-arrows>
+      <v-slide-group show-arrows>
         <v-slide-item
           v-for="t in favTrips"
           :key="t.favid"
           v-slot="{ active, toggle }"
           class="favspace"
-          ><div class="d-flex flex-column">
+        >
+          <div class="d-flex flex-column align-center mx-3">
             <v-btn
               icon
               elevation="3"
@@ -43,28 +58,20 @@
           </div>
         </v-slide-item>
         <v-slide-item>
-          <div class="d-flex flex-column">
+          <div class="mx-3">
             <PopupRoute @reload="getFavTrips"></PopupRoute>
           </div>
         </v-slide-item>
       </v-slide-group>
     </v-sheet>
-
-    <!-- <div class="d-flex flex-row align-start favrow">
-      <div
-        v-for="t in favTrips"
-        :key="t.favid"
-        class="d-flex flex-column align-center favspace"
-      >
-        <v-btn icon elevation="3" x-large :class="t.color">
-          <v-icon color="white">mdi-{{ t.icon }}</v-icon>
-        </v-btn>
-        <span class="my-2 favtitle">{{ t.title }}</span>
-      </div>
-      <div class="d-flex justify-center favspace">
-        <PopupRoute @reload="getFavTrips"></PopupRoute>
-      </div>
-    </div> -->
+    <div class="d-flex justify-end">
+      <v-btn icon>
+        <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-delete</v-icon>
+      </v-btn>
+    </div>
   </v-card>
 </template>
 
@@ -106,10 +113,6 @@ export default {
       const { data } = await instance.get('/favorites?type=point');
       this.favTrips = data;
     },
-    async addFavRoute() {
-      const { data } = await instance.get('/favorites?type=trip');
-      this.favTrips = data;
-    },
   },
   created() {
     this.getFavPoints();
@@ -126,6 +129,6 @@ export default {
   width: 100%;
 }
 .favspace {
-  width: 25%;
+  width: 62px;
 }
 </style>
