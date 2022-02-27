@@ -7,6 +7,7 @@ import Home from '../views/Home.vue';
 import Route from '../views/Route.vue';
 import Favorites from '../views/Favorites.vue';
 import Monitor from '../views/Monitor.vue';
+import Planer from '../views/Planer.vue';
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     name: 'Monitor',
     component: Monitor,
     path: '/monitor',
+  },
+  {
+    name: 'Planer',
+    component: Planer,
+    path: '/planer',
   },
 ];
 

@@ -27,23 +27,30 @@
         >
           <v-list-item to="/home">
             <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
+              <v-icon>mdi-home-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/route">
             <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
+              <v-icon>mdi-compass-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Route</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/favoriten">
             <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
+              <v-icon>mdi-star-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Favoriten</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/planer">
+            <v-list-item-icon>
+              <v-icon>mdi-calendar-blank-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Planer</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -65,6 +72,11 @@ export default {
       loggedIn: false,
       title: '',
     }),
+    methods: {
+      test() {
+        console.log("mus unten");
+      }
+    },
     created () {
       bus.$on('loggedIn', (data) => {
         this.loggedIn = data;

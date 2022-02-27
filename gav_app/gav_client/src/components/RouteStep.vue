@@ -11,7 +11,6 @@
             return {
                 width: this.duration*100/this.translateTripDuration(this.tripDuration) + "%",
 
-                //Ka
                 transportTypes: [
                     {type: "", color: "grey"},
                     {type: "U-Bahn", colors:[

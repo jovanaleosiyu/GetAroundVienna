@@ -75,14 +75,14 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import { bus } from '../main';
 import VueCookies from 'vue-cookies';
 
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
+// const instance = axios.create({
+//   withCredentials: true,
+//   baseURL: 'http://localhost:3000',
+// });
 
 export default {
   name: 'Login',
@@ -105,8 +105,7 @@ export default {
         email: this.email,
         password: this.password,
       };
-      await instance
-        .post('/login', loginData)
+      await bus.$data.instance.post('/login', loginData)
         .then((response) => {
           bus.$data.userId = response.data;
           bus.$emit('loggedIn', true);
