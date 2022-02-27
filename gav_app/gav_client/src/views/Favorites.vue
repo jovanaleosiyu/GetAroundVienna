@@ -20,7 +20,37 @@
     </div>
     <!-- Routes list -->
     <v-card-subtitle>Routen</v-card-subtitle>
-    <div class="d-flex flex-row align-start favrow">
+
+    <v-sheet class="mx-auto" max-width="700">
+      <v-slide-group multiple show-arrows>
+        <v-slide-item
+          v-for="t in favTrips"
+          :key="t.favid"
+          v-slot="{ active, toggle }"
+          class="favspace"
+          ><div class="d-flex flex-column">
+            <v-btn
+              icon
+              elevation="3"
+              x-large
+              :class="t.color"
+              :input-value="active"
+              @click="toggle"
+            >
+              <v-icon color="white">mdi-{{ t.icon }}</v-icon>
+            </v-btn>
+            <span class="my-2 favtitle">{{ t.title }}</span>
+          </div>
+        </v-slide-item>
+        <v-slide-item>
+          <div class="d-flex flex-column">
+            <PopupRoute @reload="getFavTrips"></PopupRoute>
+          </div>
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
+
+    <!-- <div class="d-flex flex-row align-start favrow">
       <div
         v-for="t in favTrips"
         :key="t.favid"
@@ -32,9 +62,9 @@
         <span class="my-2 favtitle">{{ t.title }}</span>
       </div>
       <div class="d-flex justify-center favspace">
-        <PopupRoute></PopupRoute>
+        <PopupRoute @reload="getFavTrips"></PopupRoute>
       </div>
-    </div>
+    </div> -->
   </v-card>
 </template>
 
@@ -96,6 +126,6 @@ export default {
   width: 100%;
 }
 .favspace {
-  width: 15%;
+  width: 25%;
 }
 </style>
