@@ -62,7 +62,7 @@ export default {
     }),
     created () {
       bus.$on('loggedIn', (data) => {
-        this.test = data;
+        this.loggedIn = data;
       });
     },
 };
