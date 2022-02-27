@@ -303,6 +303,7 @@
 import axios from 'axios';
 import RouteInputField from '../components/RouteInputField.vue';
 import RouteStep from '../components/RouteStep.vue';
+import { bus } from '../main';
 
 const instance = axios.create({
   withCredentials: true,
@@ -430,7 +431,7 @@ export default {
     },
   },
   created() {
-    console.log();
+    bus.$emit('title', 'Route');
   },
 };
 </script>

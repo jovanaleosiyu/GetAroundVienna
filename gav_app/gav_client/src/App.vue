@@ -5,9 +5,12 @@
       color="gray"
       dark
       v-if="loggedIn"
+      class="pr-9"
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>{{ title }} </v-toolbar-title>
+      <v-spacer></v-spacer>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -60,6 +63,7 @@ export default {
   data: () => ({
       drawer: false,
       loggedIn: false,
+      title: '',
     }),
     created () {
       bus.$on('loggedIn', (data) => {
@@ -67,6 +71,9 @@ export default {
       });
       this.loggedIn = VueCookies.get('loggedIn');
       bus.$data.userId = VueCookies.get('userId');
+      bus.$on('title', (data) => {
+        this.title = data
+      })
       console.log('User eingellogt mit ID: ' + bus.$data.userId);
     },
 };

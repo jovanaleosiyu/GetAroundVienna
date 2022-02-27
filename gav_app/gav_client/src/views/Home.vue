@@ -1,6 +1,6 @@
 <template>
   <v-container class="d-flex flex-column align-center">
-    <h1>Home</h1>
+    
   </v-container>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     bus.$data.userId = VueCookies.get('userId');
     bus.$data.loggedIn = VueCookies.get('loggedIn')
     console.log('User eingeloggt mit der ID: ' + bus.$data.userId);
-    // alert('User eingeloggt' + bus.$data.userId);
+    bus.$emit('title', 'Home');
   },
 };
 </script>
