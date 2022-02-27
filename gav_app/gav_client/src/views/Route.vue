@@ -137,7 +137,7 @@
     </v-expansion-panels>
     </div>
     
-    <div v-for="(trip, i) of trips" :key="i" class="flex-column" @click="test()">
+    <!-- <div v-for="(trip, i) of trips" :key="i" class="flex-column">
       <div class="d-flex mb-1">
         {{ trip.steps[0].start.time }} <v-spacer></v-spacer> {{ trip.duration }} <v-spacer></v-spacer> {{ trip.steps[trip.steps.length - 1].end.time }}
       </div>
@@ -145,7 +145,9 @@
       <div class="d-flex align-center">
         <div :class="`point ${testcolor}`" ></div>
         <div class="d-flex" style="width: 100%">
-        <RouteStep v-for="(step, j) of trip.steps" :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
+          <template v-for="(step, j) of trip.steps">
+            <RouteStep :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
+          </template>
         </div>
         <div class="point"></div>
       </div>
@@ -153,53 +155,69 @@
       <div class="d-flex justify-center mt-1 ">
         <span v-for="(step, j) of trip.steps" :key="j" class="ml-1">{{ step.mode.name }}</span>
       </div>
-    </div>
+    </div> -->
 
-    <!-- <div class="flex-column" @click="test()">
-      <div class="d-flex mb-1">
-        13:00 <v-spacer></v-spacer> 40min <v-spacer></v-spacer> 13:40
+    
+    <v-expansion-panels class="rounded-xl" accordion>
+    <v-expansion-panel v-for="(trip, i) of trips" :key="i">
+      <v-expansion-panel-header expand-icon="" class="px-2">
+        <div class="flex-column my-1">
+        <div class="d-flex mb-2">
+        {{ trip.steps[0].start.time }} <v-spacer></v-spacer> {{ trip.duration }} <v-spacer></v-spacer> {{ trip.steps[trip.steps.length - 1].end.time }}
       </div>
 
       <div class="d-flex align-center">
-        <div :class="`point ${testcolor}`" ></div>
+        <div :class="`point ${Testcolor}`" ></div>
         <div class="d-flex" style="width: 100%">
-        <RouteStep stepName="" stepType="" duration=5 tripDuration="00:40"></RouteStep>
-        <RouteStep stepName="" stepType="U-Bahn" duration=25 tripDuration="00:40"></RouteStep>
-        <RouteStep stepName="" stepType="bla" duration=10 tripDuration="00:40"></RouteStep>
+          <template v-for="(step, j) of trip.steps">
+            <RouteStep :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
+          </template>
         </div>
         <div class="point"></div>
       </div>
 
-      <div class="d-flex justify-center mt-1 ">
-        <span class="ml-1">ka</span>
-        <span class="ml-1">ka</span>
-        <span class="ml-1">ka</span>
+      <div class="d-flex justify-center mt-2">
+        <span v-for="(step, j) of trip.steps" :key="j" class="ml-1">{{ step.mode.name }}</span>
       </div>
-    </div> -->
+        </div>
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
 
-    <!-- <div>
-        <div v-for="(trip, i) of trips" :key="i" class="mb-3">
-          <a @click="trip.col = !trip.col">
-            <span>start-time: </span>{{ trip.steps[0].start.time }} <br />
-            <span>end-time: </span>{{ trip.steps[trip.steps.length - 1].end.time }} <br />
-            <span>duration: </span>{{ trip.duration }} <br />
-            <span>interchange: </span>{{ trip.interchange }}
-          </a>
-          <div v-if="trip.col">
-            <ul>
-              <li
-                v-for="(step, j) of trip.steps"
-                :key="j"
-              >
-                <strong>{{ step.mode.name ? step.mode.name : step.mode.type }}</strong><br />
-                <span>{{ step.start.time }}</span>{{ step.start.name }} <br />
-                <span>{{ step.end.time }}</span>{{ step.end.name }}
-                <span>{{ step.duration}}</span>
-              </li>
-            </ul>
+        <v-icon>mdi-clock-outline</v-icon> {{ trip.duration }} <br>
+        {{trip.steps[0].start.time}} {{trip.steps[0].start.name}} <br>
+
+        <div v-for="(step, j) of trip.steps" :key="j" class="my-3">
+          <div class="d-flex">
+          <div style="width: 10px; height: 100; background-color: red; border-radius: 5px;" class="mx-4"></div>
+          <div style="width: 100%;">
+            {{ step.mode.direction }} <br>
+          {{ step.start.time }} {{ step.start.name }} <br>
+          <div class="d-flex">
+
+          <v-expansion-panels flat v-if="step.stopSeq.length-2 > 0">
+            <v-expansion-panel>
+              <v-expansion-panel-header expand-icon="" class="pa-0 ma-0">
+                <v-divider></v-divider>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div class="flex-column">
+                  <p v-for="x in step.stopSeq.length-2" :key="x" >{{ step.stopSeq[x].datetime.split(' ')[1] }} {{ step.stopSeq[x].name }}</p>
+                </div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+
+          </div>
+          {{ step.end.time }} {{ step.end.name }} <br>
           </div>
         </div>
-      </div> -->
+        </div>
+
+        {{ trip.steps[trip.steps.length - 1].end.time }} {{ trip.steps[trip.steps.length - 1].end.name }}
+
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
     </v-container>
 </template>
 
@@ -214,7 +232,7 @@ export default {
     RouteStep,
   },
   data: () => ({
-    testcolor: "red",
+    Testcolor: "red",
 
     depInput: '',
     desInput: '',
@@ -279,6 +297,10 @@ export default {
         time: time,
         date: date,
         depArr: this.depArr ? 'dep' : 'arr',
+        maxChanges: this.maxChanges,
+        routeType: this.routeType,
+        changeSpeed: this.changeSpeed,
+        excludedMeans: this.excludedMeans,
       };
       console.log(params);
       const { data } = await axios.get('http://localhost:3000/trip', {
@@ -288,7 +310,6 @@ export default {
       this.trips = [];
       this.trips = data.map((d) => ({
         ...d,
-        col: false,
       }));
     },
     setStop(stop){
@@ -303,6 +324,20 @@ export default {
       }
       else console.log("Error!")
     },
+    translateTripDuration(tripDuration){
+      let splitDuration = tripDuration.split(':');
+      return parseInt(splitDuration[0])*60 + parseInt(splitDuration[1]);
+    },
+    calDifference(start, end){
+      if(start != undefined && end != undefined){
+        console.log(start);
+        console.log(end);
+        let transStart = this.translateTripDuration(start);
+        let transEnd = this.translateTripDuration(end);
+        let difference = transStart - transEnd;
+        return difference
+      }
+    },
     swap(){
       console.log(this.depInput);
     },
@@ -315,8 +350,8 @@ export default {
 
 <style scoped>
 .point{
-  height: 17px;
-  width: 17px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background-color: black;
 }

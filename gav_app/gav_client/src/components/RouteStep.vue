@@ -46,17 +46,15 @@
                     else if (stepType == "U-Bahn"){
                         for(var c = 0; c < this.transportTypes[1].colors.length; c++){
                             if (this.stepName == this.transportTypes[1].colors[c].name){
-                                console.log(this.transportTypes[1].colors[c].color);
                                 return this.transportTypes[1].colors[c].color;
                             } 
-                            // this.transportTypes[1].colors.color[c]
                         }
                     }
                 }
                 return "cyan"
             },
             translateTripDuration(tripDuration){
-                var splitDuration = tripDuration.split(':');
+                let splitDuration = tripDuration.split(':');
                 return parseInt(splitDuration[0])*60 + parseInt(splitDuration[1]);
             }
         },
@@ -66,7 +64,7 @@
             console.log("Step Duration: " + this.duration);
             console.log("Duration: " + this.tripDuration);
             console.log("Duration in Min: " + this.translateTripDuration(this.tripDuration));
-            console.log("Länge: " + this.width);
+            console.log("Duration in %: " + this.width);
             console.log("Länge der U-Bahnliste: " + this.transportTypes[1].colors.length);
             console.log("---------------");
         },
