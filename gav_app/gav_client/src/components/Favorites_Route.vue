@@ -59,6 +59,46 @@
 
             <RouteInput title="Ziel" @setStop="setStop"></RouteInput>
           </v-col>
+          <v-col cols="11">
+            <v-expansion-panels flat>
+              <v-expansion-panel>
+                <v-expansion-panel-header>Filtern</v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <v-select
+                    v-model="maxChanges"
+                    :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+                    hint="Anzahl der Umstiege"
+                    persistent-hint
+                  ></v-select>
+                  <v-select
+                    v-model="routeType"
+                    :items="routeTypes"
+                    hint="Art der Route"
+                    item-text="text"
+                    item-value="type"
+                    persistent-hint
+                  ></v-select>
+                  <v-select
+                    v-model="changeSpeed"
+                    :items="changeSpeeds"
+                    hint="Umsteige Zeit"
+                    item-text="text"
+                    item-value="speed"
+                    persistent-hint
+                  ></v-select>
+                  <v-select
+                    v-model="excludedMeans"
+                    :items="ids"
+                    hint="Verkehrmittel"
+                    item-text="text"
+                    item-value="id"
+                    persistent-hint
+                    multiple
+                  ></v-select>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
+          </v-col>
         </v-row>
       </v-container>
 
@@ -93,12 +133,44 @@ export default {
         'cyan darken-1',
         'deep-orange darken-3',
       ],
-      icons: ['home', 'work', 'school', 'tree', 'cafe', 'food', 'gym', 'shop'],
+      icons: ['home', 'school', 'tree', 'food'],
       iconcolor: '',
       iconimage: '',
       start: '',
       ziel: '',
       name: '',
+      //filter
+      maxChanges: 9,
+
+      routeType: 'leasttime',
+      routeTypes: [
+        { text: 'Kürzeste Route', type: 'leasttime' },
+        { text: 'Wenigste Umstiege', type: 'leastinterchange' },
+        { text: 'Wenigstes Gehen', type: 'leastwalking' },
+      ],
+
+      changeSpeed: 'normal',
+      changeSpeeds: [
+        { text: 'Lang', speed: 'slow' },
+        { text: 'Mittel', speed: 'normal' },
+        { text: 'Kurz', speed: 'fast' },
+      ],
+
+      excludedMeans: undefined,
+      ids: [
+        { text: 'Zug', id: '0' },
+        { text: 'S-Bahn', id: '1' },
+        { text: 'U-Bahn', id: '2' },
+        { text: 'Stadtbahn', id: '3' },
+        { text: 'Straßen-/Trambahn', id: '4' },
+        { text: 'Stadtbus', id: '5' },
+        { text: 'Regionalbus', id: '6' },
+        { text: 'Schnellbus', id: '7' },
+        { text: 'Seil-/Zahnradbahn', id: '8' },
+        { text: 'Schiff', id: '9' },
+        { text: 'AST/Rufbus', id: '10' },
+        { text: 'Sonstiges', id: '11' },
+      ],
     };
   },
   methods: {
@@ -112,7 +184,9 @@ export default {
           destRef: ziel.ref,
           destType: ziel.type,
           title: this.name,
-          // options:
+          options: {
+            
+          }
 
           //           {
           //   "title": "Weg 123",
