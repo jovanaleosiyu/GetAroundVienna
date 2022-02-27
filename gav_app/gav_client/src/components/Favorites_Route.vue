@@ -17,7 +17,7 @@
                   large
                   icon
                   :class="iconcolor"
-                  v-model="color"
+                  v-model="iconcolor"
                   v-bind="attrs"
                   v-on="on"
                 >
@@ -113,13 +113,13 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import RouteInput from './RouteInputField.vue';
 
-// const instance = axios.create({
-//   withCredentials: true,
-//   baseURL: 'http://localhost:3000',
-// });
+const instance = axios.create({
+  withCredentials: true,
+  baseURL: 'http://localhost:3000',
+});
 
 export default {
   data() {
@@ -174,39 +174,28 @@ export default {
     };
   },
   methods: {
-    async addRoute(start, ziel) {
+    async addRoute() {
       if (this.start && this.ziel) {
         let routeData = {
           color: this.iconcolor,
           icon: this.iconimage,
-          origRef: start.ref,
-          origType: start.type,
-          destRef: ziel.ref,
-          destType: ziel.type,
+          origRef: this.start.ref,
+          origType: this.start.type,
+          destRef: this.ziel.ref,
+          destType: this.ziel.type,
           title: this.name,
           options: {
-            
-          }
-
-          //           {
-          //   "title": "Weg 123",
-          //   "icon": "food",
-          //   "color": "red",
-          //   "origRef": "16.31933:48.16815:WGS84",
-          //   "origType":"coord",
-          //   "destRef": "60201468",
-          //   "destType": "stop",
-          //   "options": {
-          //     "changeSpeed": "slow",
-          //     "routeType": "leastinterchange"
-          //   }
-          // }
-          //input ziel
+            changeSpeed: this.changeSpeed,
+            routeType: this.routeType,
+          },
         };
         console.log(routeData);
-        // await instance.post('/favorites?type=trip', routeData);
+        await instance.post('/favorites/trips', routeData);
+        this.dialog = false;
+        this.$emit('reload');
       } else {
         // Fehlermeldung
+        console.log('error');
       }
     },
     setStop(stop) {

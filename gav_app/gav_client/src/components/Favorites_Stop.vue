@@ -16,7 +16,7 @@
             </v-btn>
           </v-col>
           <v-col cols="10">
-            <v-text-field
+            <!-- <v-text-field
               v-model="name"
               :rules="nameRules"
               label="Name"
@@ -28,7 +28,7 @@
               :rules="emailRules"
               label="Adresse"
               required
-            ></v-text-field>
+            ></v-text-field> -->
           </v-col>
         </v-row>
       </v-container>
