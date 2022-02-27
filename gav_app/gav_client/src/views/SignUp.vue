@@ -116,10 +116,10 @@ export default {
           withCredentials: true,
         })
         .then((response) => {
-          console.log(response);
           bus.$data.userId = response.data;
           bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
+          VueCookies.set('loggedIn', true);
           this.$router.push({ name: 'Home' });
         })
         .catch((error) => {
