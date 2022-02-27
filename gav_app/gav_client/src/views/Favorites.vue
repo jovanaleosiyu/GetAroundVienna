@@ -45,7 +45,7 @@ import axios from 'axios';
 
 const instance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:3000', // verlagere in .env maybe??
+  baseURL: 'http://localhost:3000',
 });
 
 export default {
@@ -73,7 +73,7 @@ export default {
       this.favTrips = data;
     },
     async addFavStop() {
-      const { data } = await instance.get('/favorites?type=trip');
+      const { data } = await instance.get('/favorites?type=point');
       this.favTrips = data;
     },
     async addFavRoute() {

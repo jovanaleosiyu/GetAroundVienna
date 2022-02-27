@@ -55,16 +55,16 @@
               required
             ></v-text-field>
 
-            <RouteInput title="Start"></RouteInput>
+            <RouteInput title="Start" @setStop="setStop"></RouteInput>
 
-            <RouteInput title="Ziel"></RouteInput>
+            <RouteInput title="Ziel" @setStop="setStop"></RouteInput>
           </v-col>
         </v-row>
       </v-container>
 
       <v-card-actions class="justify-center">
         <v-spacer></v-spacer>
-        <v-btn icon large class="grey darken-3" @click="dialog = false">
+        <v-btn icon large class="grey darken-3" @click="addRoute">
           <v-icon color="white">mdi-check</v-icon>
         </v-btn>
       </v-card-actions>
@@ -73,13 +73,13 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import RouteInput from './RouteInputField.vue';
 
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
+// const instance = axios.create({
+//   withCredentials: true,
+//   baseURL: 'http://localhost:3000',
+// });
 
 export default {
   data() {
@@ -96,16 +96,50 @@ export default {
       icons: ['home', 'work', 'school', 'tree', 'cafe', 'food', 'gym', 'shop'],
       iconcolor: '',
       iconimage: '',
+      start: '',
+      ziel: '',
+      name: '',
     };
   },
   methods: {
-    async addRoute() {
-      let routeData = {
-        iconcolor: this.color,
-        //input start
-        //input ziel
-      };
-      await instance.post('/favorites?type=trip', routeData);
+    async addRoute(start, ziel) {
+      if (this.start && this.ziel) {
+        let routeData = {
+          color: this.iconcolor,
+          icon: this.iconimage,
+          origRef: start.ref,
+          origType: start.type,
+          destRef: ziel.ref,
+          destType: ziel.type,
+          title: this.name,
+          // options:
+
+          //           {
+          //   "title": "Weg 123",
+          //   "icon": "food",
+          //   "color": "red",
+          //   "origRef": "16.31933:48.16815:WGS84",
+          //   "origType":"coord",
+          //   "destRef": "60201468",
+          //   "destType": "stop",
+          //   "options": {
+          //     "changeSpeed": "slow",
+          //     "routeType": "leastinterchange"
+          //   }
+          // }
+          //input ziel
+        };
+        console.log(routeData);
+        // await instance.post('/favorites?type=trip', routeData);
+      } else {
+        // Fehlermeldung
+      }
+    },
+    setStop(stop) {
+      console.log(stop);
+      if (stop.stopType === 'Start') this.start = stop;
+      else if (stop.stopType === 'Ziel') this.ziel = stop;
+      else console.log('error');
     },
   },
   components: {
