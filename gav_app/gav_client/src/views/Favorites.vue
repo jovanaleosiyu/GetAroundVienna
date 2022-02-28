@@ -11,6 +11,7 @@
           v-slot="{ active }"
           class="favspace"
         >
+          <!-- Favorite icon  -->
           <div class="d-flex flex-column align-center mx-3">
             <v-btn
               icon
@@ -18,6 +19,7 @@
               x-large
               :class="s.color"
               :input-value="active"
+              @click="callRoute(t)"
             >
               <v-icon color="white">mdi-{{ s.icon }}</v-icon>
             </v-btn>
@@ -26,7 +28,80 @@
         </v-slide-item>
         <v-slide-item>
           <div class="mx-3">
-            <PopupStop @reload="getFavPoints"></PopupStop>
+            <!-- Stops dialog  -->
+            <v-dialog v-model="dialogStop" width="500">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on">
+                  <v-icon>mdi-plus</v-icon>
+                </v-btn>
+              </template>
+
+              <v-card>
+                <v-card-title class="text-h6"> Favorit erstellen </v-card-title>
+                <v-container class="justify-center" width="50">
+                  <v-row align="center" justify="center">
+                    <v-col cols="12" align="center">
+                      <v-menu offset-y>
+                        <template v-slot:activator="{ attrs, on }">
+                          <v-btn
+                            large
+                            icon
+                            :class="iconcolor"
+                            v-model="iconcolor"
+                            v-bind="attrs"
+                            v-on="on"
+                          >
+                            <v-icon color="white">mdi-{{ iconimage }}</v-icon>
+                          </v-btn>
+                        </template>
+                        <div>
+                          <v-btn
+                            icon
+                            small
+                            v-for="col in colors"
+                            :class="col"
+                            :key="col"
+                            @click="iconcolor = col"
+                          ></v-btn>
+                        </div>
+                        <v-divider></v-divider>
+                        <div>
+                          <v-btn
+                            v-for="icon in icons"
+                            :class="icon"
+                            :key="icon"
+                            @click="iconimage = icon"
+                          >
+                            <v-icon large color="black">mdi-{{ icon }}</v-icon>
+                          </v-btn>
+                        </div>
+                      </v-menu>
+                    </v-col>
+                    <v-col cols="10">
+                      <v-text-field
+                        v-model="nameStop"
+                        label="Name"
+                        required
+                        counter
+                        maxlength="10"
+                      ></v-text-field>
+
+                      <RouteInput
+                        title="Haltestelle"
+                        @setStop="setStop"
+                      ></RouteInput>
+                    </v-col>
+                  </v-row>
+                </v-container>
+
+                <v-card-actions class="justify-center">
+                  <v-spacer></v-spacer>
+                  <v-btn icon large class="grey darken-3" @click="addStop">
+                    <v-icon color="white">mdi-check</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
           </div>
         </v-slide-item>
       </v-slide-group>
@@ -49,6 +124,7 @@
               x-large
               :class="t.color"
               :input-value="active"
+              @click="favEvent"
             >
               <v-icon color="white">mdi-{{ t.icon }}</v-icon>
             </v-btn>
@@ -57,16 +133,153 @@
         </v-slide-item>
         <v-slide-item>
           <div class="mx-3">
-            <PopupRoute @reload="getFavTrips"></PopupRoute>
+            <v-dialog v-model="dialogRoute" width="500">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on">
+                  <v-icon>mdi-plus</v-icon>
+                </v-btn>
+              </template>
+
+              <v-form>
+                <v-card>
+                  <v-card-title class="text-h6">
+                    Favorit erstellen
+                  </v-card-title>
+                  <v-container class="justify-center" width="50">
+                    <v-row align="center" justify="center">
+                      <v-col cols="12" align="center">
+                        <v-menu offset-y>
+                          <template v-slot:activator="{ attrs, on }">
+                            <v-btn
+                              large
+                              icon
+                              :class="iconcolortrip"
+                              v-model="iconcolor"
+                              v-bind="attrs"
+                              v-on="on"
+                            >
+                              <v-icon color="white"
+                                >mdi-{{ iconimagetrip }}</v-icon
+                              >
+                            </v-btn>
+                          </template>
+                          <div>
+                            <v-btn
+                              icon
+                              small
+                              v-for="col in colors"
+                              :class="col"
+                              :key="col"
+                              @click="iconcolortrip = col"
+                            ></v-btn>
+                          </div>
+                          <v-divider></v-divider>
+                          <div>
+                            <v-btn
+                              v-for="icon in icons"
+                              :class="icon"
+                              :key="icon"
+                              @click="iconimagetrip = icon"
+                            >
+                              <v-icon large color="black"
+                                >mdi-{{ icon }}</v-icon
+                              >
+                            </v-btn>
+                          </div>
+                        </v-menu>
+                      </v-col>
+                      <v-col cols="10">
+                        <v-text-field
+                          v-model="nameRoute"
+                          counter
+                          maxlength="10"
+                          label="Name"
+                          required
+                        ></v-text-field>
+
+                        <RouteInput
+                          title="Start"
+                          @setStop="setStopRoute"
+                          required
+                        ></RouteInput>
+
+                        <RouteInput
+                          title="Ziel"
+                          @setStop="setStopRoute"
+                          required
+                        ></RouteInput>
+                      </v-col>
+                      <v-col cols="11">
+                        <v-expansion-panels flat>
+                          <v-expansion-panel>
+                            <v-expansion-panel-header
+                              >Filtern</v-expansion-panel-header
+                            >
+                            <v-expansion-panel-content>
+                              <v-select
+                                v-model="maxChanges"
+                                :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+                                hint="Anzahl der Umstiege"
+                                persistent-hint
+                              ></v-select>
+                              <v-select
+                                v-model="routeType"
+                                :items="routeTypes"
+                                hint="Art der Route"
+                                item-text="text"
+                                item-value="type"
+                                persistent-hint
+                              ></v-select>
+                              <v-select
+                                v-model="changeSpeed"
+                                :items="changeSpeeds"
+                                hint="Umsteige Zeit"
+                                item-text="text"
+                                item-value="speed"
+                                persistent-hint
+                              ></v-select>
+                              <v-select
+                                v-model="excludedMeans"
+                                :items="ids"
+                                hint="Verkehrmittel"
+                                item-text="text"
+                                item-value="id"
+                                persistent-hint
+                                multiple
+                              ></v-select>
+                            </v-expansion-panel-content>
+                          </v-expansion-panel>
+                        </v-expansion-panels>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <v-card-actions class="justify-center">
+                    <v-spacer></v-spacer>
+                    <v-btn icon large class="grey darken-3" @click="addRoute">
+                      <v-icon color="white">mdi-check</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-form>
+            </v-dialog>
           </div>
         </v-slide-item>
       </v-slide-group>
     </v-sheet>
     <div class="d-flex justify-end">
-      <v-btn icon @click="editMode = true">
+      <v-btn
+        icon
+        @click="mode = mode == 'edit' ? '' : 'edit'"
+        :color="mode == 'edit' ? 'blue' : ''"
+      >
         <v-icon>mdi-pencil</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn
+        icon
+        @click="mode = mode == 'delete' ? '' : 'delete'"
+        :color="mode == 'delete' ? 'red' : ''"
+      >
         <v-icon>mdi-delete</v-icon>
       </v-btn>
     </div>
@@ -74,21 +287,75 @@
 </template>
 
 <script>
-import PopupRoute from '../components/Favorites_Route.vue';
-import PopupStop from '../components/Favorites_Stop.vue';
+// import PopupRoute from '../components/Favorites_Route.vue';
+// import PopupStop from '../components/Favorites_Stop.vue';
+import RouteInput from '../components/RouteInputField.vue';
 import { bus } from '../main';
 
 export default {
   components: {
-    PopupRoute,
-    PopupStop,
+    // PopupRoute,
+    RouteInput,
   },
   data() {
     return {
-      dialog: false,
+      dialogStop: false,
       favStops: [],
       favTrips: [],
-      // editMode: false,
+      mode: '',
+      //stops
+      dialogRoute: false,
+      colors: [
+        'red darken-1',
+        'purple darken-1',
+        'orange darken-1',
+        'green darken-1',
+        'cyan darken-1',
+        'deep-orange darken-3',
+      ],
+      icons: ['home', 'school', 'tree', 'food'],
+      iconcolor: '',
+      iconimage: '',
+      haltestelle: '',
+      nameStop: '',
+      //trips
+      iconcolortrip: '',
+      iconimagetrip: '',
+      start: '',
+      ziel: '',
+      nameRoute: '',
+      //filter
+      maxChanges: 9,
+
+      routeType: 'leasttime',
+      routeTypes: [
+        { text: 'Kürzeste Route', type: 'leasttime' },
+        { text: 'Wenigste Umstiege', type: 'leastinterchange' },
+        { text: 'Wenigstes Gehen', type: 'leastwalking' },
+      ],
+
+      changeSpeed: 'normal',
+      changeSpeeds: [
+        { text: 'Lang', speed: 'slow' },
+        { text: 'Mittel', speed: 'normal' },
+        { text: 'Kurz', speed: 'fast' },
+      ],
+
+      excludedMeans: undefined,
+      ids: [
+        { text: 'Zug', id: '0' },
+        { text: 'S-Bahn', id: '1' },
+        { text: 'U-Bahn', id: '2' },
+        { text: 'Stadtbahn', id: '3' },
+        { text: 'Straßen-/Trambahn', id: '4' },
+        { text: 'Stadtbus', id: '5' },
+        { text: 'Regionalbus', id: '6' },
+        { text: 'Schnellbus', id: '7' },
+        { text: 'Seil-/Zahnradbahn', id: '8' },
+        { text: 'Schiff', id: '9' },
+        { text: 'AST/Rufbus', id: '10' },
+        { text: 'Sonstiges', id: '11' },
+      ],
       // delMode: false,
     };
   },
@@ -101,32 +368,93 @@ export default {
       const { data } = await bus.$data.instance.get('/favorites?type=trip');
       this.favTrips = data;
     },
-    async delFav(id) {
-      await bus.$data.instance.delete(`/favorites/${id}`);
-      this.getFavPoints();
-      this.getFavTrips();
-    },
+    // async delFav(id) {
+    //   await bus.$data.instance.delete(`/favorites/${id}`);
+    //   this.getFavPoints();
+    //   this.getFavTrips();
+    // },
     // async updateFav(fav) {
     //   await bus.$data.instance.patch(`/favorites/${fav.id}`, fav);
     // },
-    // favEvent() {
-    //   route ausführung
-    //   if (delMode) {
-    //     await bus.$data.instance.get('/favorites');
-    //   } else if (editMode) {
-    //   } else {
-    //     console.log('error: no mode is true');
-    //   }
-    // },
+    favEvent() {
+      // route ausführung
+      switch (this.mode) {
+        case 'edit':
+          break;
+        case 'delete':
+          break;
+        default:
+          break;
+      }
+    },
     callRoute(trip) {
       bus.$emit('callTrip', trip);
       this.$router.push({ path: '/route' });
+    },
+    // stop methods
+    async addStop() {
+      if (this.haltestelle) {
+        let stopData = {
+          title: this.nameStop,
+          icon: this.iconimage,
+          color: this.iconcolor,
+          ref: this.haltestelle.ref,
+          type: this.haltestelle.type,
+        };
+        console.log(stopData);
+        await bus.$data.instance.post('/favorites/points', stopData);
+        this.dialogStop = false;
+        this.getFavPoints();
+      } else {
+        console.log('error addStop');
+        console.log(this.haltestelle);
+      }
+    },
+    setStop(stop) {
+      console.log(stop);
+      if (stop.stopType === 'Haltestelle') this.haltestelle = stop;
+      else console.log('error setStop');
+    },
+    // trip methods
+    async addRoute() {
+      if (this.start && this.ziel) {
+        let routeData = {
+          color: this.iconcolortrip,
+          icon: this.iconimagetrip,
+          origRef: this.start.ref,
+          origType: this.start.type,
+          destRef: this.ziel.ref,
+          destType: this.ziel.type,
+          title: this.nameRoute,
+          options: {
+            changeSpeed: this.changeSpeed,
+            routeType: this.routeType,
+          },
+        };
+        console.log(routeData);
+        await bus.$data.instance.post('/favorites/trips', routeData);
+        this.dialogRoute = false;
+        this.getFavTrips();
+      } else {
+        // Fehlermeldung
+        console.log('error');
+      }
+    },
+    setStopRoute(stop) {
+      console.log(stop);
+      if (stop.stopType === 'Start') this.start = stop;
+      else if (stop.stopType === 'Ziel') this.ziel = stop;
+      else console.log('error');
     },
   },
   created() {
     this.getFavPoints();
     this.getFavTrips();
     bus.$emit('title', 'Favoriten');
+    this.iconcolor = this.colors[0];
+    this.iconimage = this.icons[0];
+    this.iconcolortrip = this.colors[0];
+    this.iconimagetrip = this.icons[0];
   },
 };
 </script>
