@@ -119,4 +119,67 @@ module.exports = {
       res.status(403).send('No User logged in.');
     }
   }),
+  updFavPoint: asyncHandler(async (req, res) => {
+    const { userid } = req.session;
+    if (userid) {
+      const { favid } = req.params;
+      if (favid) {
+        const { color, icon, title, ref, type } = req.body;
+        if (!(color && icon && title && ref && type)) {
+          res.status(400).send('Required Content missing.');
+          return;
+        }
+        await favorites.updFavPoint(userid, favid, req.body);
+        dbInfo(`User with ID:${userid} patched favorite with ID:${favid}`);
+        res.status(200).end();
+      } else res.status(400).send('Required Content missing.');
+    } else {
+      res.status(403).send('No User logged in.');
+    }
+  }),
+  updFavTrip: asyncHandler(async (req, res) => {
+    const { userid } = req.session;
+    if (userid) {
+      const { favid } = req.params;
+      if (favid) {
+        const {
+          color,
+          icon,
+          title,
+          origRef,
+          origType,
+          destRef,
+          destType,
+          exclMeans,
+          changeSpeed,
+          routeType,
+          maxChanges,
+        } = req.body;
+        if (
+          !(
+            color &&
+            icon &&
+            title &&
+            origRef &&
+            origType &&
+            destRef &&
+            destType &&
+            // options
+            exclMeans &&
+            changeSpeed &&
+            routeType &&
+            maxChanges
+          )
+        ) {
+          res.status(400).send('Required Content missing.');
+          return;
+        }
+        await favorites.updFavTrip(userid, favid, req.body);
+        dbInfo(`User with ID:${userid} patched favorite with ID:${favid}`);
+        res.status(200).end();
+      } else res.status(400).send('Required Content missing.');
+    } else {
+      res.status(403).send('No User logged in.');
+    }
+  }),
 };
