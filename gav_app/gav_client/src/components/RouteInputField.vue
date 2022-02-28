@@ -21,11 +21,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
+import { bus } from '../main';
 export default {
   data() {
     return {
@@ -38,7 +34,7 @@ export default {
   },
   methods: {
     async getStopList() {
-      const { data } = await instance.get(`/points/${this.input}`);
+      const { data } = await bus.$data.instance.get(`/points/${this.input}`);
       if (data instanceof Array) this.list = data;
       else this.list = [data];
     },
