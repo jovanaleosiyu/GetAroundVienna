@@ -83,6 +83,7 @@ export default {
       });
       this.loggedIn = VueCookies.get('loggedIn');
       bus.$data.userId = VueCookies.get('userId');
+      bus.$data.loggedIn = VueCookies.get('loggedIn')
       bus.$on('title', (data) => {
         this.title = data
       })
