@@ -113,13 +113,8 @@
 </template>
 
 <script>
-import axios from 'axios';
 import RouteInput from './RouteInputField.vue';
-
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
+import { bus } from '../main';
 
 export default {
   data() {
@@ -190,7 +185,7 @@ export default {
           },
         };
         console.log(routeData);
-        await instance.post('/favorites/trips', routeData);
+        await bus.$data.instance.post('/favorites/trips', routeData);
         this.dialog = false;
         this.$emit('reload');
       } else {

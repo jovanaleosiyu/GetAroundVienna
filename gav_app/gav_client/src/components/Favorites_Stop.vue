@@ -72,11 +72,7 @@
 
 <script>
 import RouteInput from './RouteInputField.vue';
-import axios from 'axios';
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
+import { bus } from '../main';
 export default {
   data() {
     return {
@@ -115,7 +111,7 @@ export default {
           type: this.haltestelle.type,
         };
         console.log(stopData);
-        await instance.post('/favorites/points', stopData);
+        await bus.$data.instance.post('/favorites/points', stopData);
         this.dialog = false;
         this.$emit('reload');
       } else {
@@ -132,7 +128,6 @@ export default {
   created() {
     this.iconcolor = this.colors[0];
     this.iconimage = this.icons[0];
-    // bus.$emit('title', 'Favoriten');
   },
 };
 </script>

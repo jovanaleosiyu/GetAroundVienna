@@ -8,7 +8,7 @@
         <v-slide-item
           v-for="s in favStops"
           :key="s.favid"
-          v-slot="{ active, toggle }"
+          v-slot="{ active }"
           class="favspace"
         >
           <div class="d-flex flex-column align-center mx-3">
@@ -18,7 +18,6 @@
               x-large
               :class="s.color"
               :input-value="active"
-              @click="toggle"
             >
               <v-icon color="white">mdi-{{ s.icon }}</v-icon>
             </v-btn>
@@ -78,12 +77,7 @@
 <script>
 import PopupRoute from '../components/Favorites_Route.vue';
 import PopupStop from '../components/Favorites_Stop.vue';
-import axios from 'axios';
-
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
+import { bus } from '../main';
 
 export default {
   components: {
@@ -98,25 +92,26 @@ export default {
   },
   methods: {
     async getFavorites() {
-      const { data } = await instance.get('/favorites');
+      const { data } = await bus.$data.instance.get('/favorites');
       this.favorites = data;
     },
     async getFavPoints() {
-      const { data } = await instance.get('/favorites?type=point');
+      const { data } = await bus.$data.instance.get('/favorites?type=point');
       this.favStops = data;
     },
     async getFavTrips() {
-      const { data } = await instance.get('/favorites?type=trip');
+      const { data } = await bus.$data.instance.get('/favorites?type=trip');
       this.favTrips = data;
     },
     async addFavStop() {
-      const { data } = await instance.get('/favorites?type=point');
+      const { data } = await bus.$data.instance.get('/favorites?type=point');
       this.favTrips = data;
     },
   },
   created() {
     this.getFavPoints();
     this.getFavTrips();
+    bus.$emit('title', 'Favoriten');
   },
 };
 </script>
