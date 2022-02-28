@@ -50,9 +50,10 @@
           <v-col cols="10">
             <v-text-field
               v-model="name"
-              :rules="nameRules"
               label="Name"
               required
+              counter
+              maxlength="10"
             ></v-text-field>
 
             <RouteInput title="Haltestelle" @setStop="setStop"></RouteInput>
@@ -90,11 +91,6 @@ export default {
       iconimage: '',
       haltestelle: '',
       name: '',
-      // title: 'Restaurant',
-      // icon: 'food',
-      // color: 'orange',
-      // ref: '16.32019:48.15985:WGS84',
-      // type: 'coord',
     };
   },
   components: {

@@ -133,4 +133,76 @@ module.exports = {
     );
     return res.rows[0];
   },
+  updFavPoint: async (userid, favid, data) => {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+      await client.query(
+        `UPDATE favorites
+          SET color=$1,
+              icon=$2,
+              title=$3
+          WHERE favid = $4
+            AND userid = $5;`,
+        [data.color, data.icon, data.title, favid, userid]
+      );
+      await client.query(
+        `UPDATE favpoints
+          SET ref=$1,
+              type=$2
+          WHERE favid = $3;`,
+        [data.ref, data.type, favid]
+      );
+      await client.query('COMMIT');
+    } catch (e) {
+      await client.query('ROLLBACK');
+      throw e;
+    } finally {
+      client.release();
+    }
+  },
+  updFavTrip: async (userid, favid, data) => {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+      await client.query(
+        `UPDATE favorites
+          SET color=$1,
+              icon=$2,
+              title=$3
+          WHERE favid = $4
+            AND userid = $5;`,
+        [data.color, data.icon, data.title, favid, userid]
+      );
+      await client.query(
+        `UPDATE favtrips
+          SET orig_ref = $1,
+              orig_type = $2,
+              dest_ref = $3,
+              dest_type = $4,
+              exclmeans = $5,
+              changespeed = $6,
+              routetype = $7,
+              maxchanges = $8
+          WHERE favid = $9;`,
+        [
+          data.origRef,
+          data.origType,
+          data.destRef,
+          data.destType,
+          data.exclMeans,
+          data.changeSpeed,
+          data.routeType,
+          data.maxChanges,
+          favid,
+        ]
+      );
+      await client.query('COMMIT');
+    } catch (e) {
+      await client.query('ROLLBACK');
+      throw e;
+    } finally {
+      client.release();
+    }
+  },
 };

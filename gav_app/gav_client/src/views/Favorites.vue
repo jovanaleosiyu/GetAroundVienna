@@ -18,7 +18,6 @@
               x-large
               :class="s.color"
               :input-value="active"
-              @click="favEvent"
             >
               <v-icon color="white">mdi-{{ s.icon }}</v-icon>
             </v-btn>
@@ -89,8 +88,8 @@ export default {
       dialog: false,
       favStops: [],
       favTrips: [],
-      editMode: false,
-      delMode: false,
+      // editMode: false,
+      // delMode: false,
     };
   },
   methods: {
@@ -102,13 +101,26 @@ export default {
       const { data } = await bus.$data.instance.get('/favorites?type=trip');
       this.favTrips = data;
     },
-    favEvent() {
-      // route ausführung
-      // if (delMode) {
-      // } else if (editMode) {
-      // } else {
-      //   console.log('error: no mode is true');
-      // }
+    async delFav(id) {
+      await bus.$data.instance.delete(`/favorites/${id}`);
+      this.getFavPoints();
+      this.getFavTrips();
+    },
+    // async updateFav(fav) {
+    //   await bus.$data.instance.patch(`/favorites/${fav.id}`, fav);
+    // },
+    // favEvent() {
+    //   route ausführung
+    //   if (delMode) {
+    //     await bus.$data.instance.get('/favorites');
+    //   } else if (editMode) {
+    //   } else {
+    //     console.log('error: no mode is true');
+    //   }
+    // },
+    callRoute(trip) {
+      bus.$emit('callTrip', trip);
+      this.$router.push({ path: '/route' });
     },
   },
   created() {

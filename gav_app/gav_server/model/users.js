@@ -2,6 +2,7 @@ const { query } = require('../db/index');
 
 module.exports = {
   getUsers: async () => (await query('SELECT * FROM users')).rows,
+  getUser: async (userid) => (await query('SELECT * FROM users WHERE userid = $1', [userid])).rows[0],
   getUserSettings: async (userid) => {
     const res = await query(
       `
