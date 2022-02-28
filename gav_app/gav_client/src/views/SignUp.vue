@@ -25,7 +25,7 @@
 
       <h1 class="text-center mt-8 mb-16">Erstelle einen<br />Account</h1>
 
-       <v-alert
+      <v-alert
         class="mb-12"
         color="red"
         elevation="4"
@@ -33,7 +33,8 @@
         text
         type="error"
         v-if="error"
-      >{{errorMessage}}</v-alert>
+        >{{ errorMessage }}</v-alert
+      >
 
       <v-form
         class="d-flex flex-column align-center"
@@ -84,7 +85,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import { bus } from '../main';
 import VueCookies from 'vue-cookies';
 export default {
@@ -111,8 +111,8 @@ export default {
         email: this.email,
         password: this.password,
       };
-      await axios
-        .post('http://localhost:3000/register', data, {
+      await bus.$data.instance
+        .post('/register', data, {
           withCredentials: true,
         })
         .then((response) => {

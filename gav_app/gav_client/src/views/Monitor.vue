@@ -1,5 +1,5 @@
 <template>
-  <div>djesba</div>
+  <div>monitor</div>
 </template>
 
 <script>
