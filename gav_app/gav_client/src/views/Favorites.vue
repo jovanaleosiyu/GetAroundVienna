@@ -18,6 +18,7 @@
               x-large
               :class="s.color"
               :input-value="active"
+              @click="favEvent"
             >
               <v-icon color="white">mdi-{{ s.icon }}</v-icon>
             </v-btn>
@@ -64,7 +65,7 @@
       </v-slide-group>
     </v-sheet>
     <div class="d-flex justify-end">
-      <v-btn icon>
+      <v-btn icon @click="editMode = true">
         <v-icon>mdi-pencil</v-icon>
       </v-btn>
       <v-btn icon>
@@ -88,13 +89,11 @@ export default {
     return {
       favStops: [],
       favTrips: [],
+      editMode: false,
+      delMode: false,
     };
   },
   methods: {
-    async getFavorites() {
-      const { data } = await bus.$data.instance.get('/favorites');
-      this.favorites = data;
-    },
     async getFavPoints() {
       const { data } = await bus.$data.instance.get('/favorites?type=point');
       this.favStops = data;
@@ -103,9 +102,13 @@ export default {
       const { data } = await bus.$data.instance.get('/favorites?type=trip');
       this.favTrips = data;
     },
-    async addFavStop() {
-      const { data } = await bus.$data.instance.get('/favorites?type=point');
-      this.favTrips = data;
+    favEvent() {
+      // route ausführung
+      // if (delMode) {
+      // } else if (editMode) {
+      // } else {
+      //   console.log('error: no mode is true');
+      // }
     },
   },
   created() {
