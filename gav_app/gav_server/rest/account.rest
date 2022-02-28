@@ -40,3 +40,6 @@ POST http://localhost:3000/login
 
 ### logout
 GET http://localhost:3000/logout
+
+### get user
+GET http://localhost:3000/user

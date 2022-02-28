@@ -18,6 +18,12 @@
       absolute
       temporary
     >
+    <v-img src="./assets/GAV-logo.svg" max-height="40" max-width="40" class="ma-5"></v-img>
+    <div class="pl-4">
+      <v-icon class="mr-7">mdi-account-outline</v-icon>
+      <span>bla@email.com</span>
+    </div>
+    <v-divider class="my-5"></v-divider>
       <v-list
         nav
         dense
@@ -52,6 +58,16 @@
             </v-list-item-icon>
             <v-list-item-title>Planer</v-list-item-title>
           </v-list-item>
+
+          <v-divider class="my-5"></v-divider>
+
+          <v-list-item to="/home">
+            <v-list-item-icon>
+              <v-icon>mdi-cog-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Einstellungen</v-list-item-title>
+          </v-list-item>
+
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
