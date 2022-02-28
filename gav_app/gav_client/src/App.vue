@@ -72,11 +72,6 @@ export default {
       loggedIn: false,
       title: '',
     }),
-    methods: {
-      test() {
-        console.log("mus unten");
-      }
-    },
     created () {
       bus.$on('loggedIn', (data) => {
         this.loggedIn = data;

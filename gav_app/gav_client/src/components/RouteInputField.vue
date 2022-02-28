@@ -35,7 +35,6 @@ export default {
   },
   props: {
     title: String,
-    searchString: String,
   },
   methods: {
     async getStopList() {

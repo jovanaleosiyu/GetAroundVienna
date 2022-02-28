@@ -1,6 +1,5 @@
 <template>
-  <v-card class="mx-auto pa-2" rounded="xl" max-width="600" elevation="10">
-    <v-card-title>Routen</v-card-title>
+  <v-container class="mx-auto pa-2" rounded="xl" max-width="600" elevation="10">
     <v-form class="d-flex align-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -88,16 +87,8 @@
         </g>
       </svg>
       <div style="width: 100%">
-        <RouteInputField
-          title="Start"
-          :searchString="depInput"
-          @setStop="setStop"
-        ></RouteInputField>
-        <RouteInputField
-          title="Ziel"
-          :searchString="desInput"
-          @setStop="setStop"
-        ></RouteInputField>
+        <RouteInputField title="Start" @setStop="setStop"></RouteInputField>
+        <RouteInputField title="Ziel" @setStop="setStop"></RouteInputField>
       </div>
 
       <v-icon large class="my-auto ml-3 darkgrey--text" @click="swap()">
@@ -313,19 +304,13 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-  </v-card>
+  </v-container>
 </template>
 
 <script>
-import axios from 'axios';
 import RouteInputField from '../components/RouteInputField.vue';
 import RouteStep from '../components/RouteStep.vue';
 import { bus } from '../main';
-
-const instance = axios.create({
-  withCredentials: true,
-  baseURL: 'http://localhost:3000',
-});
 
 export default {
   name: 'Route',
@@ -388,9 +373,6 @@ export default {
     trips: [],
   }),
   methods: {
-    test() {
-      this.$router.push({ name: 'Home' });
-    },
     async getTrip() {
       if (!this.dep || !this.des) return;
       let time, date;
@@ -409,15 +391,18 @@ export default {
         changeSpeed: this.changeSpeed,
         excludedMeans: this.excludedMeans,
       };
-      console.log(params);
-      const { data } = await instance.get('/trip', {
+      // console.log(params);
+      const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
-      console.log(data);
+      // console.log(data);
       this.trips = [];
       this.trips = data.map((d) => ({
         ...d,
       }));
+      console.log(this.trips);
+
+      this.$forceUpdate();
     },
     setStop(stop) {
       console.log(stop);
@@ -429,26 +414,38 @@ export default {
         this.des.type = stop.type;
       } else console.log('Error!');
     },
-    translateTripDuration(tripDuration) {
-      let splitDuration = tripDuration.split(':');
-      return parseInt(splitDuration[0]) * 60 + parseInt(splitDuration[1]);
-    },
-    calDifference(start, end) {
-      if (start != undefined && end != undefined) {
-        console.log(start);
-        console.log(end);
-        let transStart = this.translateTripDuration(start);
-        let transEnd = this.translateTripDuration(end);
-        let difference = transStart - transEnd;
-        return difference;
-      }
-    },
     swap() {
       console.log(this.depInput);
     },
   },
   created() {
     bus.$emit('title', 'Route');
+    bus.$on('callTrip', async (trip) => {
+      console.log('TESTTTT');
+      // const params = {
+      //   typeOrigin: this.dep.type,
+      //   nameOrigin: this.dep.ref,
+      //   typeDestination: this.des.type,
+      //   nameDestination: this.des.ref,
+      //   time: time,
+      //   date: date,
+      //   depArr: this.depArr ? 'dep' : 'arr',
+      //   maxChanges: this.maxChanges,
+      //   routeType: this.routeType,
+      //   changeSpeed: this.changeSpeed,
+      //   excludedMeans: this.excludedMeans,
+      // };
+      this.dep.type = trip.orig_type;
+      this.dep.ref = trip.orig_ref;
+      this.des.type = trip.dest_type;
+      this.des.ref = trip.dest_ref;
+      this.depArr = 'dep';
+      this.maxChanges = trip.maxchanges;
+      this.routeType = trip.routetype;
+      this.changeSpeed = trip.changespeed;
+      this.excludedMeans = trip.exclmeans;
+      this.getTrip();
+    });
   },
 };
 </script>
