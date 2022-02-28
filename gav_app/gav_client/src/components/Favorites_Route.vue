@@ -6,110 +6,116 @@
       </v-btn>
     </template>
 
-    <v-card>
-      <v-card-title class="text-h6"> Favorit erstellen </v-card-title>
-      <v-container class="justify-center" width="50">
-        <v-row align="center" justify="center">
-          <v-col cols="12" align="center">
-            <v-menu offset-y>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  large
-                  icon
-                  :class="iconcolor"
-                  v-model="iconcolor"
-                  v-bind="attrs"
-                  v-on="on"
-                >
-                  <v-icon color="white">mdi-{{ iconimage }}</v-icon>
-                </v-btn>
-              </template>
-              <div>
-                <v-btn
-                  icon
-                  small
-                  v-for="col in colors"
-                  :class="col"
-                  :key="col"
-                  @click="iconcolor = col"
-                ></v-btn>
-              </div>
-              <v-divider></v-divider>
-              <div>
-                <v-btn
-                  v-for="icon in icons"
-                  :class="icon"
-                  :key="icon"
-                  @click="iconimage = icon"
-                >
-                  <v-icon large color="black">mdi-{{ icon }}</v-icon>
-                </v-btn>
-              </div>
-            </v-menu>
-          </v-col>
-          <v-col cols="10">
-            <v-text-field
-              v-model="name"
-              counter
-              maxlength="10"
-              label="Name"
-              required
-            ></v-text-field>
+    <v-form>
+      <v-card>
+        <v-card-title class="text-h6"> Favorit erstellen </v-card-title>
+        <v-container class="justify-center" width="50">
+          <v-row align="center" justify="center">
+            <v-col cols="12" align="center">
+              <v-menu offset-y>
+                <template v-slot:activator="{ attrs, on }">
+                  <v-btn
+                    large
+                    icon
+                    :class="iconcolor"
+                    v-model="iconcolor"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon color="white">mdi-{{ iconimage }}</v-icon>
+                  </v-btn>
+                </template>
+                <div>
+                  <v-btn
+                    icon
+                    small
+                    v-for="col in colors"
+                    :class="col"
+                    :key="col"
+                    @click="iconcolor = col"
+                  ></v-btn>
+                </div>
+                <v-divider></v-divider>
+                <div>
+                  <v-btn
+                    v-for="icon in icons"
+                    :class="icon"
+                    :key="icon"
+                    @click="iconimage = icon"
+                  >
+                    <v-icon large color="black">mdi-{{ icon }}</v-icon>
+                  </v-btn>
+                </div>
+              </v-menu>
+            </v-col>
+            <v-col cols="10">
+              <v-text-field
+                v-model="name"
+                counter
+                maxlength="10"
+                label="Name"
+                required
+              ></v-text-field>
 
-            <RouteInput title="Start" @setStop="setStop" required></RouteInput>
+              <RouteInput
+                title="Start"
+                @setStop="setStop"
+                required
+              ></RouteInput>
 
-            <RouteInput title="Ziel" @setStop="setStop" required></RouteInput>
-          </v-col>
-          <v-col cols="11">
-            <v-expansion-panels flat>
-              <v-expansion-panel>
-                <v-expansion-panel-header>Filtern</v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  <v-select
-                    v-model="maxChanges"
-                    :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
-                    hint="Anzahl der Umstiege"
-                    persistent-hint
-                  ></v-select>
-                  <v-select
-                    v-model="routeType"
-                    :items="routeTypes"
-                    hint="Art der Route"
-                    item-text="text"
-                    item-value="type"
-                    persistent-hint
-                  ></v-select>
-                  <v-select
-                    v-model="changeSpeed"
-                    :items="changeSpeeds"
-                    hint="Umsteige Zeit"
-                    item-text="text"
-                    item-value="speed"
-                    persistent-hint
-                  ></v-select>
-                  <v-select
-                    v-model="excludedMeans"
-                    :items="ids"
-                    hint="Verkehrmittel"
-                    item-text="text"
-                    item-value="id"
-                    persistent-hint
-                    multiple
-                  ></v-select>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
-          </v-col>
-        </v-row>
-      </v-container>
+              <RouteInput title="Ziel" @setStop="setStop" required></RouteInput>
+            </v-col>
+            <v-col cols="11">
+              <v-expansion-panels flat>
+                <v-expansion-panel>
+                  <v-expansion-panel-header>Filtern</v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    <v-select
+                      v-model="maxChanges"
+                      :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+                      hint="Anzahl der Umstiege"
+                      persistent-hint
+                    ></v-select>
+                    <v-select
+                      v-model="routeType"
+                      :items="routeTypes"
+                      hint="Art der Route"
+                      item-text="text"
+                      item-value="type"
+                      persistent-hint
+                    ></v-select>
+                    <v-select
+                      v-model="changeSpeed"
+                      :items="changeSpeeds"
+                      hint="Umsteige Zeit"
+                      item-text="text"
+                      item-value="speed"
+                      persistent-hint
+                    ></v-select>
+                    <v-select
+                      v-model="excludedMeans"
+                      :items="ids"
+                      hint="Verkehrmittel"
+                      item-text="text"
+                      item-value="id"
+                      persistent-hint
+                      multiple
+                    ></v-select>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </v-col>
+          </v-row>
+        </v-container>
 
-      <v-card-actions class="justify-center">
-        <v-spacer></v-spacer>
-        <v-btn icon large class="grey darken-3" @click="addRoute">
-          <v-icon color="white">mdi-check</v-icon>
-        </v-btn>
-      </v-card-actions>
-    </v-card>
+        <v-card-actions class="justify-center">
+          <v-spacer></v-spacer>
+          <v-btn icon large class="grey darken-3" @click="addRoute">
+            <v-icon color="white">mdi-check</v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-form>
   </v-dialog>
 </template>
 
