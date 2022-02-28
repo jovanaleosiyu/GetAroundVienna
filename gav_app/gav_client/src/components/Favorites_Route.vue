@@ -50,14 +50,15 @@
           <v-col cols="10">
             <v-text-field
               v-model="name"
-              :rules="nameRules"
+              counter
+              maxlength="10"
               label="Name"
               required
             ></v-text-field>
 
-            <RouteInput title="Start" @setStop="setStop"></RouteInput>
+            <RouteInput title="Start" @setStop="setStop" required></RouteInput>
 
-            <RouteInput title="Ziel" @setStop="setStop"></RouteInput>
+            <RouteInput title="Ziel" @setStop="setStop" required></RouteInput>
           </v-col>
           <v-col cols="11">
             <v-expansion-panels flat>
