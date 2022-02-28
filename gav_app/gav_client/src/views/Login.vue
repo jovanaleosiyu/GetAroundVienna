@@ -107,6 +107,7 @@ export default {
           VueCookies.set('userId', response.data);
           bus.$data.loggedIn = true;
           VueCookies.set('loggedIn', true);
+          this.$emit('loadUser');
           this.$router.push({ name: 'Home' });
         })
         .catch((error) => {

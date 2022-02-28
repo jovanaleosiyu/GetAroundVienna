@@ -349,8 +349,8 @@ import { bus } from '../main';
       events: [
         {
           name: "Schule",
-          start: "2022-02-28 11:59",
-          end: "2022-02-28 12:28",
+          start: "2022-03-10 11:59",
+          end: "2022-03-10 12:28",
           color: "#7A007A",
           typeOrigin: "stop",
           nameOrigin: "60200491",
@@ -364,9 +364,25 @@ import { bus } from '../main';
           changeSpeed: "normal"
         },
         {
+          name: "Fußball",
+          start: "2022-03-25 11:59",
+          end: "2022-03-25 12:28",
+          color: "#ABCDF9",
+          typeOrigin: "stop",
+          nameOrigin: "60200491",
+          typeDestination: "stop",
+          nameDestination: "60200048",
+          time: "1200",
+          date: "20220228",
+          depArr: "dep",
+          maxChanges: 9,
+          routeType: "leasttime",
+          changeSpeed: "normal"
+        },
+        {
           name: "Arzt",
-          start: "2022-02-22 11:59",
-          end: "2022-02-22 12:28",
+          start: "2022-03-14 11:59",
+          end: "2022-03-14 12:28",
           color: "#007A7A",
           typeOrigin: "stop",
           nameOrigin: "60200491",

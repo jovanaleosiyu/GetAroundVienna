@@ -21,7 +21,8 @@
     <v-img src="./assets/GAV-logo.svg" max-height="40" max-width="40" class="ma-5"></v-img>
     <div class="pl-4">
       <v-icon class="mr-7">mdi-account-outline</v-icon>
-      <span>bla@email.com</span>
+      <span v-if="userId != null">{{ email }}</span>
+      <span v-else>Gast</span>
     </div>
     <v-divider class="my-5"></v-divider>
       <v-list
@@ -72,7 +73,7 @@
       </v-list>
     </v-navigation-drawer>
 
-      <router-view />
+      <router-view @loadUser="loadUser"/>
     </v-main>
   </v-app>
 </template>
@@ -87,18 +88,37 @@ export default {
       drawer: false,
       loggedIn: false,
       title: '',
+      email: '',
+      userId: '',
     }),
+    methods: {
+      async getUser() {
+        if(this.userId != null){
+          const { data } = await bus.$data.instance.get('/user');
+          this.email = data.email;
+        }
+        else return;
+      },
+      loadUser(){
+        this.$router.push({ name: 'Home' });
+        window.location.reload();
+      }
+    },
     created () {
       bus.$on('loggedIn', (data) => {
         this.loggedIn = data;
       });
+
+      bus.$on('title', (data) => {
+        this.title = data
+      });
+
       this.loggedIn = VueCookies.get('loggedIn');
       bus.$data.userId = VueCookies.get('userId');
       bus.$data.loggedIn = VueCookies.get('loggedIn')
-      bus.$on('title', (data) => {
-        this.title = data
-      })
-      console.log('User eingellogt mit ID: ' + bus.$data.userId);
+
+      this.userId = VueCookies.get('userId');
+      this.getUser();
     },
 };
 </script>
