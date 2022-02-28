@@ -50,7 +50,6 @@
               x-large
               :class="t.color"
               :input-value="active"
-              @click="callRoute(t)"
             >
               <v-icon color="white">mdi-{{ t.icon }}</v-icon>
             </v-btn>
@@ -87,6 +86,7 @@ export default {
   },
   data() {
     return {
+      dialog: false,
       favStops: [],
       favTrips: [],
       editMode: false,
