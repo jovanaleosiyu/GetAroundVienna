@@ -39,7 +39,7 @@
         <v-slide-item
           v-for="t in favTrips"
           :key="t.favid"
-          v-slot="{ active, toggle }"
+          v-slot="{ active }"
           class="favspace"
         >
           <div class="d-flex flex-column align-center mx-3">
@@ -49,7 +49,6 @@
               x-large
               :class="t.color"
               :input-value="active"
-              @click="toggle"
             >
               <v-icon color="white">mdi-{{ t.icon }}</v-icon>
             </v-btn>
@@ -86,6 +85,7 @@ export default {
   },
   data() {
     return {
+      dialog: false,
       favStops: [],
       favTrips: [],
     };
