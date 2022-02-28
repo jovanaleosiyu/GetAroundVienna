@@ -7,6 +7,7 @@
         :weekdays="[1, 2, 3, 4, 5, 6, 0]"
         type="month"
         event-overlap-mode="stack"
+        color="primary"
       ></v-calendar>
     </v-sheet>
     <div class="flex-column pa-4">
