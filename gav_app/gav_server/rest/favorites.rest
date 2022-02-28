@@ -40,4 +40,32 @@ DELETE http://localhost:3000/favorites/-1
 ### * because now favid=2 belongs to user 2
 DELETE http://localhost:3000/favorites/2
 ### * delete favorite success
-DELETE http://localhost:3000/favorites/8
+DELETE http://localhost:3000/favorites/1
+### update favorite point
+PATCH http://localhost:3000/favorites/points/1
+content-type: application/json
+
+{
+  "title": "Bla",
+  "icon": "school",
+  "color": "red",
+  "ref": "16.32019:48.15985:WGS84",
+  "type": "coord"
+}
+### update favorite trip
+PATCH http://localhost:3000/favorites/trips/13
+content-type: application/json
+
+{
+  "title": "Bla",
+  "icon": "school",
+  "color": "red",
+  "origRef": "16.32019:48.15985:WGS84",
+  "origType": "coord",
+  "destRef": "60200844",
+  "destType": "stop",
+  "exclMeans": "1;5",
+  "changeSpeed": "slow",
+  "routeType": "leasttime",
+  "maxChanges": "5"
+}
