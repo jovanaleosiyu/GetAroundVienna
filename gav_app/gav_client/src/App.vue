@@ -2,8 +2,7 @@
   <v-app>
     <v-main>
       <v-app-bar
-      color="gray"
-      dark
+      color="white"
       v-if="loggedIn"
       class="pr-9"
     >
@@ -24,7 +23,7 @@
       <span v-if="userId != null">{{ email }}</span>
       <span v-else>Gast</span>
     </div>
-    <v-divider class="my-5"></v-divider>
+    <v-divider class="mt-5 mb-1"></v-divider>
       <v-list
         nav
         dense
@@ -71,6 +70,9 @@
 
         </v-list-item-group>
       </v-list>
+
+      <v-btn @click="logout" class="ml-1 pr-16" text><v-icon class="mr-7">mdi-logout</v-icon>Abmelden</v-btn>
+
     </v-navigation-drawer>
 
       <router-view @loadUser="loadUser"/>
@@ -98,6 +100,23 @@ export default {
           this.email = data.email;
         }
         else return;
+      },
+      async logout(){
+        if(this.userId == null){
+          VueCookies.remove('loggedIn');
+          VueCookies.remove('userId');
+          VueCookies.remove('sid');
+         this.$router.push({ name: 'Welcome' });
+          window.location.reload();
+        }
+        else{
+          await bus.$data.instance.get('/logout');
+          VueCookies.remove('loggedIn');
+          VueCookies.remove('userId');
+          VueCookies.remove('sid');
+         this.$router.push({ name: 'Welcome' });
+         window.location.reload();
+        }
       },
       loadUser(){
         this.$router.push({ name: 'Home' });
