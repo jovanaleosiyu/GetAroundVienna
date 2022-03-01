@@ -2,8 +2,7 @@
   <v-app>
     <v-main>
       <v-app-bar
-      color="gray"
-      dark
+      color="white"
       v-if="loggedIn"
       class="pr-9"
     >
@@ -21,9 +20,10 @@
     <v-img src="./assets/GAV-logo.svg" max-height="40" max-width="40" class="ma-5"></v-img>
     <div class="pl-4">
       <v-icon class="mr-7">mdi-account-outline</v-icon>
-      <span>bla@email.com</span>
+      <span v-if="userId != null">{{ email }}</span>
+      <span v-else>Gast</span>
     </div>
-    <v-divider class="my-5"></v-divider>
+    <v-divider class="mt-5 mb-1"></v-divider>
       <v-list
         nav
         dense
@@ -31,7 +31,7 @@
         <v-list-item-group
           active-class="gray--text text--accent-4"
         >
-          <v-list-item to="/home">
+          <v-list-item v-if="userId != null" to="/home">
             <v-list-item-icon>
               <v-icon>mdi-home-outline</v-icon>
             </v-list-item-icon>
@@ -45,14 +45,14 @@
             <v-list-item-title>Route</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/favoriten">
+          <v-list-item v-if="userId != null" to="/favoriten">
             <v-list-item-icon>
               <v-icon>mdi-star-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Favoriten</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/planer">
+          <v-list-item v-if="userId != null" to="/planer">
             <v-list-item-icon>
               <v-icon>mdi-calendar-blank-outline</v-icon>
             </v-list-item-icon>
@@ -70,9 +70,12 @@
 
         </v-list-item-group>
       </v-list>
+
+      <v-btn @click="logout" class="ml-1 pr-16" text><v-icon class="mr-7">mdi-logout</v-icon>Abmelden</v-btn>
+
     </v-navigation-drawer>
 
-      <router-view />
+      <router-view @loadUser="loadUser"/>
     </v-main>
   </v-app>
 </template>
@@ -87,18 +90,54 @@ export default {
       drawer: false,
       loggedIn: false,
       title: '',
+      email: '',
+      userId: '',
     }),
+    methods: {
+      async getUser() {
+        if(this.userId != null){
+          const { data } = await bus.$data.instance.get('/user');
+          this.email = data.email;
+        }
+        else return;
+      },
+      async logout(){
+        if(this.userId == null){
+          VueCookies.remove('loggedIn');
+          VueCookies.remove('userId');
+          VueCookies.remove('sid');
+         this.$router.push({ name: 'Welcome' });
+          window.location.reload();
+        }
+        else{
+          await bus.$data.instance.get('/logout');
+          VueCookies.remove('loggedIn');
+          VueCookies.remove('userId');
+          VueCookies.remove('sid');
+         this.$router.push({ name: 'Welcome' });
+         window.location.reload();
+        }
+      },
+      loadUser(){
+        this.$router.push({ name: 'Home' });
+        window.location.reload();
+      }
+    },
     created () {
       bus.$on('loggedIn', (data) => {
         this.loggedIn = data;
       });
+
+      bus.$on('title', (data) => {
+        this.title = data
+      });
+
       this.loggedIn = VueCookies.get('loggedIn');
       bus.$data.userId = VueCookies.get('userId');
       bus.$data.loggedIn = VueCookies.get('loggedIn')
-      bus.$on('title', (data) => {
-        this.title = data
-      })
-      console.log('User eingellogt mit ID: ' + bus.$data.userId);
+
+      this.userId = VueCookies.get('userId');
+      this.getUser();
     },
 };
 </script>
