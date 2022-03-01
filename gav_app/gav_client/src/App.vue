@@ -31,7 +31,7 @@
         <v-list-item-group
           active-class="gray--text text--accent-4"
         >
-          <v-list-item to="/home">
+          <v-list-item v-if="userId != null" to="/home">
             <v-list-item-icon>
               <v-icon>mdi-home-outline</v-icon>
             </v-list-item-icon>
@@ -45,14 +45,14 @@
             <v-list-item-title>Route</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/favoriten">
+          <v-list-item v-if="userId != null" to="/favoriten">
             <v-list-item-icon>
               <v-icon>mdi-star-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Favoriten</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/planer">
+          <v-list-item v-if="userId != null" to="/planer">
             <v-list-item-icon>
               <v-icon>mdi-calendar-blank-outline</v-icon>
             </v-list-item-icon>

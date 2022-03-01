@@ -43,7 +43,7 @@ export default {
     guestLogin() {
       bus.$emit('loggedIn', true);
       VueCookies.set('loggedIn', true);
-      this.$router.push({ name: 'Home' });
+      this.$router.push({ name: 'Route' });
     },
   },
 };
