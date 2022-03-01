@@ -19,7 +19,7 @@
               x-large
               :class="s.color"
               :input-value="active"
-              @click="callRoute(t)"
+              @click="favEventStop(s)"
             >
               <v-icon color="white">mdi-{{ s.icon }}</v-icon>
             </v-btn>
@@ -37,7 +37,12 @@
               </template>
 
               <v-card>
-                <v-card-title class="text-h6"> Favorit erstellen </v-card-title>
+                <v-card-title class="text-h6" v-if="mode == ''">
+                  Favorit erstellen
+                </v-card-title>
+                <v-card-title class="text-h6" v-if="mode == 'edit'">
+                  Favorit bearbeiten
+                </v-card-title>
                 <v-container class="justify-center" width="50">
                   <v-row align="center" justify="center">
                     <v-col cols="12" align="center">
@@ -124,7 +129,7 @@
               x-large
               :class="t.color"
               :input-value="active"
-              @click="favEvent"
+              @click="favEventTrip(t)"
             >
               <v-icon color="white">mdi-{{ t.icon }}</v-icon>
             </v-btn>
@@ -133,17 +138,21 @@
         </v-slide-item>
         <v-slide-item>
           <div class="mx-3">
+            <!-- Dialog route  -->
             <v-dialog v-model="dialogRoute" width="500">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on">
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </template>
-
+              <!-- Routes dialog  -->
               <v-form>
                 <v-card>
-                  <v-card-title class="text-h6">
+                  <v-card-title class="text-h6" v-if="mode == ''">
                     Favorit erstellen
+                  </v-card-title>
+                  <v-card-title class="text-h6" v-if="mode == 'edit'">
+                    Favorit bearbeiten
                   </v-card-title>
                   <v-container class="justify-center" width="50">
                     <v-row align="center" justify="center">
@@ -256,12 +265,53 @@
 
                   <v-card-actions class="justify-center">
                     <v-spacer></v-spacer>
-                    <v-btn icon large class="grey darken-3" @click="addRoute">
+                    <v-btn
+                      icon
+                      large
+                      class="grey darken-3"
+                      v-if="mode == ''"
+                      @click="addRoute"
+                    >
+                      <v-icon color="white">mdi-check</v-icon>
+                    </v-btn>
+                    <v-btn
+                      icon
+                      large
+                      class="grey darken-3"
+                      v-if="mode == 'edit'"
+                      @click="updateRoute(t)"
+                    >
                       <v-icon color="white">mdi-check</v-icon>
                     </v-btn>
                   </v-card-actions>
                 </v-card>
               </v-form>
+            </v-dialog>
+            <!-- Delete dialog  -->
+            <v-dialog v-model="dialogDelete" max-width="290">
+              <v-card>
+                <v-card-title> Bist du sicher? </v-card-title>
+
+                <v-card-text>
+                  Du kannst den Vorgang nicht mehr rückgängig machen.
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+
+                  <v-btn color="green darken-1" text @click="delFav(t.id)">
+                    Löschen
+                  </v-btn>
+
+                  <v-btn
+                    color="green darken-1"
+                    text
+                    @click="dialogDelete = false"
+                  >
+                    Abbrechen
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
             </v-dialog>
           </div>
         </v-slide-item>
@@ -323,6 +373,7 @@ export default {
       iconimagetrip: '',
       start: '',
       ziel: '',
+      currentId: undefined,
       nameRoute: '',
       //filter
       maxChanges: 9,
@@ -356,6 +407,7 @@ export default {
         { text: 'AST/Rufbus', id: '10' },
         { text: 'Sonstiges', id: '11' },
       ],
+      dialogDelete: false,
       // delMode: false,
     };
   },
@@ -368,20 +420,40 @@ export default {
       const { data } = await bus.$data.instance.get('/favorites?type=trip');
       this.favTrips = data;
     },
-    // async delFav(id) {
-    //   await bus.$data.instance.delete(`/favorites/${id}`);
-    //   this.getFavPoints();
-    //   this.getFavTrips();
-    // },
+    async delFav(id) {
+      await bus.$data.instance.delete(`/favorites/${id}`);
+      this.dialogDelete = false;
+      this.getFavPoints();
+      this.getFavTrips();
+    },
     // async updateFav(fav) {
     //   await bus.$data.instance.patch(`/favorites/${fav.id}`, fav);
     // },
-    favEvent() {
+    favEventStop() {
       // route ausführung
       switch (this.mode) {
         case 'edit':
+          this.dialogStop = true;
           break;
         case 'delete':
+          break;
+        default:
+          break;
+      }
+    },
+    favEventTrip(t) {
+      // route ausführung
+      switch (this.mode) {
+        case 'edit':
+          this.dialogRoute = true;
+          this.iconcolortrip = t.color;
+          this.iconimagetrip = t.icon;
+          this.nameRoute = t.title;
+          this.currentId = t.id;
+          console.log(t);
+          break;
+        case 'delete':
+          this.dialogDelete = true;
           break;
         default:
           break;
@@ -437,7 +509,7 @@ export default {
         this.getFavTrips();
       } else {
         // Fehlermeldung
-        console.log('error');
+        console.log('error addRoute');
       }
     },
     setStopRoute(stop) {
@@ -445,6 +517,22 @@ export default {
       if (stop.stopType === 'Start') this.start = stop;
       else if (stop.stopType === 'Ziel') this.ziel = stop;
       else console.log('error');
+    },
+    async updateRoute() {
+      // await bus.$data.instance.patch(`/favorites/trips/${this.id}`, {
+      //   color: this.iconcolortrip,
+      //   // title: 'Bla',
+      //   // icon: 'school',
+      //   // color: 'red',
+      //   // origRef: '16.32019:48.15985:WGS84',
+      //   // origType: 'coord',
+      //   // destRef: '60200844',
+      //   // destType: 'stop',
+      //   // exclMeans: '1;5',
+      //   // changeSpeed: 'slow',
+      //   // routeType: 'leasttime',
+      //   // maxChanges: '5',
+      // });
     },
   },
   created() {
