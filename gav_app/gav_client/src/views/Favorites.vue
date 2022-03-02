@@ -1,9 +1,11 @@
 <template>
-  <v-card class="mx-auto pa-2" rounded="xl" max-width="600" elevation="10">
-    <v-card-title>Favoriten</v-card-title>
+  <v-container>
+    <!-- <v-card class="mx-auto pa-2" rounded="xl" max-width="600" elevation="10"> -->
+    <!-- <v-card-title>Favoriten</v-card-title> -->
     <!-- Stops list -->
-    <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
-    <v-sheet class="mx-auto" max-width="700">
+    <!-- <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle> -->
+    <span>Haltestellen</span>
+    <v-sheet class="my-5" max-width="700">
       <v-slide-group show-arrows>
         <v-slide-item
           v-for="s in favStops"
@@ -112,9 +114,10 @@
       </v-slide-group>
     </v-sheet>
     <!-- Routes list -->
-    <v-card-subtitle>Routen</v-card-subtitle>
-
-    <v-sheet class="mx-auto" max-width="700">
+    <!-- <v-card-subtitle>Routen</v-card-subtitle> -->
+    <span>Routen</span>
+    <!-- <v-sheet class="mx-auto" max-width="700"> -->
+    <v-sheet class="my-5" max-width="700">
       <v-slide-group show-arrows>
         <v-slide-item
           v-for="t in favTrips"
@@ -333,7 +336,8 @@
         <v-icon>mdi-delete</v-icon>
       </v-btn>
     </div>
-  </v-card>
+  </v-container>
+  <!-- </v-card> -->
 </template>
 
 <script>
