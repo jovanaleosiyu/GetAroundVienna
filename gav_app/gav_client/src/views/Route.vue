@@ -155,6 +155,8 @@
         @click="getTrip()"
         fab
         small
+        :loading="loading"
+        :disabled="loading"
         class="grey darken-3 white--text ml-3"
       >
         <v-icon> mdi-magnify </v-icon>
@@ -266,7 +268,7 @@
                 style="
                   width: 10px;
                   height: 100;
-                  background-color: red;
+                  background-color: black;
                   border-radius: 5px;
                 "
                 class="mx-4"
@@ -319,7 +321,8 @@ export default {
     RouteStep,
   },
   data: () => ({
-    Testcolor: 'red',
+    Testcolor: 'black',
+    loading: false,
 
     depInput: '',
     desInput: '',
@@ -374,6 +377,7 @@ export default {
   }),
   methods: {
     async getTrip() {
+      this.loading = true;
       if (!this.dep || !this.des) return;
       let time, date;
       if (this.time) time = this.time.replaceAll(':', '');
@@ -400,9 +404,9 @@ export default {
       this.trips = data.map((d) => ({
         ...d,
       }));
-      console.log(this.trips);
 
       this.$forceUpdate();
+      this.loading = false;
     },
     setStop(stop) {
       console.log(stop);

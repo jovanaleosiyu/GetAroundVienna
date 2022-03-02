@@ -108,7 +108,7 @@ export default {
           bus.$data.loggedIn = true;
           VueCookies.set('loggedIn', true);
           this.$emit('loadUser');
-          this.$router.push({ name: 'Home' });
+          this.$router.push({ name: 'Route' });
         })
         .catch((error) => {
           if (error.response.status != 200) {

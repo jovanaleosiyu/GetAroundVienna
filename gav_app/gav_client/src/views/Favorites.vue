@@ -1,9 +1,7 @@
 <template>
-  <v-card class="mx-auto pa-2" rounded="xl" max-width="600" elevation="10">
-    <v-card-title>Favoriten</v-card-title>
+  <v-container>
     <!-- Stops list -->
-    <v-card-subtitle class="my-1">Haltestellen</v-card-subtitle>
-    <v-sheet class="mx-auto" max-width="700">
+    <h3 class="mb-3">Haltestellen</h3>
       <v-slide-group show-arrows>
         <v-slide-item
           v-for="s in favStops"
@@ -31,7 +29,7 @@
             <!-- Stops dialog  -->
             <v-dialog v-model="dialogStop" width="500">
               <template v-slot:activator="{ on, attrs }">
-                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on">
+                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on"  class="my-1">
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </template>
@@ -110,9 +108,8 @@
           </div>
         </v-slide-item>
       </v-slide-group>
-    </v-sheet>
     <!-- Routes list -->
-    <v-card-subtitle>Routen</v-card-subtitle>
+    <h3 class="mb-3 mt-4">Routen</h3>
 
     <v-sheet class="mx-auto" max-width="700">
       <v-slide-group show-arrows>
@@ -141,7 +138,7 @@
             <!-- Dialog route  -->
             <v-dialog v-model="dialogRoute" width="500">
               <template v-slot:activator="{ on, attrs }">
-                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on">
+                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on" class="my-1">
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </template>
@@ -333,7 +330,7 @@
         <v-icon>mdi-delete</v-icon>
       </v-btn>
     </div>
-  </v-card>
+  </v-container>
 </template>
 
 <script>

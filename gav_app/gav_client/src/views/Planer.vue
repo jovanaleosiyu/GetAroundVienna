@@ -255,7 +255,6 @@
                     v-model="date1"
                     v-bind="attrs"
                     v-on="on"
-                    color="primary"
                     text
                   >{{ date1 }}</v-btn>
                 </template>
@@ -278,7 +277,6 @@
                     v-model="date2"
                     v-bind="attrs"
                     v-on="on"
-                    color="primary"
                     text
                   >{{ date2 }}</v-btn>
                 </template>
@@ -308,7 +306,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="primary"
+            color="grey"
             fab
             small
             @click="test"
@@ -349,8 +347,8 @@ import { bus } from '../main';
       events: [
         {
           name: "Schule",
-          start: "2022-03-10 11:59",
-          end: "2022-03-10 12:28",
+          start: "2022-03-7 7:00",
+          end: "2022-03-11 13:00",
           color: "#7A007A",
           typeOrigin: "stop",
           nameOrigin: "60200491",
@@ -364,26 +362,10 @@ import { bus } from '../main';
           changeSpeed: "normal"
         },
         {
-          name: "Fußball",
-          start: "2022-03-25 11:59",
-          end: "2022-03-25 12:28",
+          name: "Schwimmen",
+          start: "2022-03-14 15:00",
+          end: "2022-03-17 16:00",
           color: "#ABCDF9",
-          typeOrigin: "stop",
-          nameOrigin: "60200491",
-          typeDestination: "stop",
-          nameDestination: "60200048",
-          time: "1200",
-          date: "20220228",
-          depArr: "dep",
-          maxChanges: 9,
-          routeType: "leasttime",
-          changeSpeed: "normal"
-        },
-        {
-          name: "Arzt",
-          start: "2022-03-14 11:59",
-          end: "2022-03-14 12:28",
-          color: "#007A7A",
           typeOrigin: "stop",
           nameOrigin: "60200491",
           typeDestination: "stop",

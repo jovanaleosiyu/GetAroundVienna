@@ -120,6 +120,7 @@ export default {
           bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
           VueCookies.set('loggedIn', true);
+          this.$emit('loadUser');
           this.$router.push({ name: 'Home' });
         })
         .catch((error) => {

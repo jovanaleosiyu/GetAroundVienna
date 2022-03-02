@@ -8,6 +8,7 @@ import Route from '../views/Route.vue';
 import Favorites from '../views/Favorites.vue';
 import Monitor from '../views/Monitor.vue';
 import Planer from '../views/Planer.vue';
+import Settings from '../views/Settings.vue';
 
 Vue.use(VueRouter);
 
@@ -51,6 +52,11 @@ const routes = [
     name: 'Planer',
     component: Planer,
     path: '/planer',
+  },
+  {
+    name: 'Settings',
+    component: Settings,
+    path: '/settings',
   },
 ];
 
