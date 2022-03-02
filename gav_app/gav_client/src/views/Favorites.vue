@@ -334,8 +334,6 @@
 </template>
 
 <script>
-// import PopupRoute from '../components/Favorites_Route.vue';
-// import PopupStop from '../components/Favorites_Stop.vue';
 import RouteInput from '../components/RouteInputField.vue';
 import { bus } from '../main';
 
