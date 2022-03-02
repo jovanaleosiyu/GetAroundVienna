@@ -106,16 +106,16 @@ export default {
           VueCookies.remove('loggedIn');
           VueCookies.remove('userId');
           VueCookies.remove('sid');
-         this.$router.push({ name: 'Welcome' });
           window.location.reload();
+          this.$router.push({ name: 'Welcome' });
         }
         else{
           await bus.$data.instance.get('/logout');
           VueCookies.remove('loggedIn');
           VueCookies.remove('userId');
           VueCookies.remove('sid');
-         this.$router.push({ name: 'Welcome' });
-         window.location.reload();
+           window.location.reload();
+          this.$router.push({ name: 'Welcome' });
         }
       },
       loadUser(){
