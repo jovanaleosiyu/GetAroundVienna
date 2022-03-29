@@ -125,7 +125,7 @@
         <v-time-picker
           v-if="menu1"
           v-model="time"
-          format="24hr"
+          format="24h"
           full-width
           @click:minute="$refs.menu.save(time)"
         ></v-time-picker>
