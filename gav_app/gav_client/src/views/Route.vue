@@ -320,6 +320,9 @@ export default {
     RouteInputField,
     RouteStep,
   },
+  props: {
+    query: Object,
+  },
   data: () => ({
     Testcolor: 'black',
     loading: false,
@@ -423,6 +426,19 @@ export default {
     },
   },
   created() {
+    if (this.query) {
+      this.dep.type = this.query.orig_type;
+      this.dep.ref = this.query.orig_ref;
+      this.des.type = this.query.dest_type;
+      this.des.ref = this.query.dest_ref;
+      this.depArr = 'dep';
+      // this.maxChanges = this.query.maxchanges;
+      // this.routeType = this.query.routetype;
+      // this.changeSpeed = this.query.changespeed;
+      // this.excludedMeans = this.query.exclmeans;
+      this.getTrip();
+    }
+    console.log(this.query);
     bus.$emit('title', 'Route');
     bus.$on('callTrip', async (trip) => {
       console.log('TESTTTT');

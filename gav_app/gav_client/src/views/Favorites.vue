@@ -462,6 +462,7 @@ export default {
     // },
     favEventStop() {
       // route ausführung
+      // mode
       switch (this.mode) {
         case 'edit':
           this.dialogStop = true;
@@ -474,6 +475,17 @@ export default {
     },
     favEventTrip(t) {
       // route ausführung
+      console.log(t);
+      this.$router.push({
+        path: 'route',
+        query: {
+          orig_type: t.orig_type,
+          orig_ref: t.orig_ref,
+          dest_type: t.dest_type,
+          dest_ref: t.dest_ref,
+        },
+      });
+      // mode
       switch (this.mode) {
         case 'edit':
           this.dialogRoute = true;
