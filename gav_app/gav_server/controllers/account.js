@@ -1,15 +1,19 @@
 const asyncHandler = require('express-async-handler');
 const dbInfo = require('debug')('INFO');
+const bcrypt = require('bcrypt');
 const users = require('../model/users');
+
+const saltRounds = 10;
 
 module.exports = {
   register: asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     if (email && password) {
-      const user = (await users.getUsers()).find((u) => u.email === email);
+      const user = await users.getUserEmail(email);
       if (user) res.status(409).send('Email already registered');
       else {
-        const newRow = await users.addUser(email, password);
+        const hash = bcrypt.hashSync(password, saltRounds);
+        const newRow = await users.addUser(email, hash);
         dbInfo(`User with ID:${newRow.userid} registered.`);
         req.session.userid = newRow.userid;
         res.status(200).json(newRow.userid);
@@ -19,10 +23,11 @@ module.exports = {
   login: asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     if (email && password) {
-      const user = (await users.getUsers()).find(
-        (u) => u.email === email && u.password === password
-      );
-      if (user) {
+      const user = await users.getUserEmail(email);
+      let match;
+      if (user) match = await bcrypt.compare(password, user.password);
+      else match = false;
+      if (match) {
         dbInfo(`User with ID:${user.userid} logged in.`);
         req.session.userid = user.userid;
         res.status(200).json(user.userid);

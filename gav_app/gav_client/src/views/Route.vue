@@ -125,7 +125,7 @@
         <v-time-picker
           v-if="menu1"
           v-model="time"
-          format="24hr"
+          format="24h"
           full-width
           @click:minute="$refs.menu.save(time)"
         ></v-time-picker>
@@ -296,6 +296,9 @@ export default {
     RouteInputField,
     RouteStep,
   },
+  props: {
+    query: Object,
+  },
   data: () => ({
     Testcolor: 'black',
     loading: false,
@@ -375,7 +378,7 @@ export default {
       const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
-      // console.log(data);
+      console.log(data);
       this.trips = [];
       this.trips = data.map((d) => ({
         ...d,
@@ -399,33 +402,46 @@ export default {
     },
   },
   created() {
-    bus.$emit('title', 'Route');
-    bus.$on('callTrip', async (trip) => {
-      console.log('TESTTTT');
-      // const params = {
-      //   typeOrigin: this.dep.type,
-      //   nameOrigin: this.dep.ref,
-      //   typeDestination: this.des.type,
-      //   nameDestination: this.des.ref,
-      //   time: time,
-      //   date: date,
-      //   depArr: this.depArr ? 'dep' : 'arr',
-      //   maxChanges: this.maxChanges,
-      //   routeType: this.routeType,
-      //   changeSpeed: this.changeSpeed,
-      //   excludedMeans: this.excludedMeans,
-      // };
-      this.dep.type = trip.orig_type;
-      this.dep.ref = trip.orig_ref;
-      this.des.type = trip.dest_type;
-      this.des.ref = trip.dest_ref;
+    const { orig_ref, orig_type, dest_ref, dest_type } = this.query;
+    if ((orig_ref, orig_type, dest_ref, dest_type)) {
+      this.dep.type = orig_type;
+      this.dep.ref = orig_ref;
+      this.des.type = dest_type;
+      this.des.ref = dest_ref;
       this.depArr = 'dep';
-      this.maxChanges = trip.maxchanges;
-      this.routeType = trip.routetype;
-      this.changeSpeed = trip.changespeed;
-      this.excludedMeans = trip.exclmeans;
+      // this.maxChanges = this.query.maxchanges;
+      // this.routeType = this.query.routetype;
+      // this.changeSpeed = this.query.changespeed;
+      // this.excludedMeans = this.query.exclmeans;
       this.getTrip();
-    });
+    }
+    bus.$emit('title', 'Route');
+    // bus.$on('callTrip', async (trip) => {
+    //   console.log('TESTTTT');
+    //   // const params = {
+    //   //   typeOrigin: this.dep.type,
+    //   //   nameOrigin: this.dep.ref,
+    //   //   typeDestination: this.des.type,
+    //   //   nameDestination: this.des.ref,
+    //   //   time: time,
+    //   //   date: date,
+    //   //   depArr: this.depArr ? 'dep' : 'arr',
+    //   //   maxChanges: this.maxChanges,
+    //   //   routeType: this.routeType,
+    //   //   changeSpeed: this.changeSpeed,
+    //   //   excludedMeans: this.excludedMeans,
+    //   // };
+    //   this.dep.type = trip.orig_type;
+    //   this.dep.ref = trip.orig_ref;
+    //   this.des.type = trip.dest_type;
+    //   this.des.ref = trip.dest_ref;
+    //   this.depArr = 'dep';
+    //   this.maxChanges = trip.maxchanges;
+    //   this.routeType = trip.routetype;
+    //   this.changeSpeed = trip.changespeed;
+    //   this.excludedMeans = trip.exclmeans;
+    //   this.getTrip();
+    // });
   },
 };
 </script>

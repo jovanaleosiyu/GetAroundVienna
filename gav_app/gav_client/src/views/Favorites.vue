@@ -2,112 +2,125 @@
   <v-container>
     <!-- Stops list -->
     <h3 class="mb-3">Haltestellen</h3>
-      <v-slide-group show-arrows>
-        <v-slide-item
-          v-for="s in favStops"
-          :key="s.favid"
-          v-slot="{ active }"
-          class="favspace"
-        >
-          <!-- Favorite icon  -->
-          <div class="d-flex flex-column align-center mx-3">
-            <v-btn
-              icon
-              elevation="3"
-              x-large
-              :class="s.color"
-              :input-value="active"
-              @click="favEventStop(s)"
-            >
-              <v-icon color="white">mdi-{{ s.icon }}</v-icon>
-            </v-btn>
-            <span class="my-2 favtitle">{{ s.title }}</span>
-          </div>
-        </v-slide-item>
-        <v-slide-item>
-          <div class="mx-3">
-            <!-- Stops dialog  -->
-            <v-dialog v-model="dialogStop" width="500">
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on"  class="my-1">
-                  <v-icon>mdi-plus</v-icon>
-                </v-btn>
-              </template>
+    <v-slide-group show-arrows>
+      <v-slide-item
+        v-for="s in favStops"
+        :key="s.favid"
+        v-slot="{ active }"
+        class="favspace"
+      >
+        <!-- Favorite icon  -->
+        <div class="d-flex flex-column align-center mx-3">
+          <v-btn
+            icon
+            elevation="3"
+            x-large
+            :class="s.color"
+            :input-value="active"
+            @click="favEventStop(s)"
+          >
+            <v-icon color="white">mdi-{{ s.icon }}</v-icon>
+          </v-btn>
+          <span class="my-2 favtitle">{{ s.title }}</span>
+        </div>
+      </v-slide-item>
+      <v-slide-item>
+        <div class="mx-3">
+          <!-- Stops dialog  -->
+          <v-dialog v-model="dialogStop" width="500">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                icon
+                x-large
+                elevation="3"
+                v-bind="attrs"
+                v-on="on"
+                class="my-1"
+              >
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+            </template>
 
-              <v-card>
-                <v-card-title class="text-h6" v-if="mode == ''">
-                  Favorit erstellen
-                </v-card-title>
-                <v-card-title class="text-h6" v-if="mode == 'edit'">
-                  Favorit bearbeiten
-                </v-card-title>
-                <v-container class="justify-center" width="50">
-                  <v-row align="center" justify="center">
-                    <v-col cols="12" align="center">
-                      <v-menu offset-y>
-                        <template v-slot:activator="{ attrs, on }">
+            <v-card>
+              <v-card-title class="text-h6" v-if="mode == ''">
+                Favorit erstellen
+              </v-card-title>
+              <v-card-title class="text-h6" v-if="mode == 'edit'">
+                Favorit bearbeiten
+              </v-card-title>
+              <v-container class="justify-center" width="50">
+                <v-row align="center" justify="center">
+                  <v-col cols="12" align="center">
+                    <v-menu offset-y :nudge-left="112">
+                      <template v-slot:activator="{ attrs, on }">
+                        <v-btn
+                          x-large
+                          icon
+                          :class="iconcolor"
+                          v-model="iconcolor"
+                          v-bind="attrs"
+                          v-on="on"
+                        >
+                          <v-icon color="white">mdi-{{ iconimage }}</v-icon>
+                        </v-btn>
+                      </template>
+                      <div
+                        class="white d-flex flex-column align-center px-2 py-3"
+                      >
+                        <div class="my-3">
                           <v-btn
-                            large
                             icon
-                            :class="iconcolor"
-                            v-model="iconcolor"
-                            v-bind="attrs"
-                            v-on="on"
-                          >
-                            <v-icon color="white">mdi-{{ iconimage }}</v-icon>
-                          </v-btn>
-                        </template>
-                        <div>
-                          <v-btn
-                            icon
-                            small
                             v-for="col in colors"
                             :class="col"
+                            class="mx-1"
                             :key="col"
                             @click="iconcolor = col"
                           ></v-btn>
                         </div>
-                        <v-divider></v-divider>
-                        <div>
+
+                        <div class="my-3">
                           <v-btn
+                            icon
                             v-for="icon in icons"
                             :class="icon"
                             :key="icon"
                             @click="iconimage = icon"
+                            class="mx-1"
                           >
                             <v-icon large color="black">mdi-{{ icon }}</v-icon>
                           </v-btn>
                         </div>
-                      </v-menu>
-                    </v-col>
-                    <v-col cols="10">
-                      <v-text-field
-                        v-model="nameStop"
-                        label="Name"
-                        required
-                        counter
-                        maxlength="10"
-                      ></v-text-field>
+                      </div>
+                    </v-menu>
+                  </v-col>
+                  <v-col cols="10">
+                    <v-text-field
+                      v-model="nameStop"
+                      label="Name"
+                      required
+                      counter
+                      maxlength="10"
+                    ></v-text-field>
 
-                      <RouteInput
-                        title="Haltestelle"
-                        @setStop="setStop"
-                      ></RouteInput>
-                    </v-col>
-                  </v-row>
-                </v-container>
+                    <RouteInput
+                      title="Haltestelle"
+                      @setStop="setStop"
+                    ></RouteInput>
+                  </v-col>
+                </v-row>
+              </v-container>
 
-                <v-card-actions class="justify-center">
-                  <v-spacer></v-spacer>
-                  <v-btn icon large class="grey darken-3" @click="addStop">
-                    <v-icon color="white">mdi-check</v-icon>
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-dialog>
-          </div>
-        </v-slide-item>
-      </v-slide-group>
+              <v-card-actions class="justify-center">
+                <v-spacer></v-spacer>
+                <v-btn icon large class="grey darken-3" @click="addStop">
+                  <v-icon color="white">mdi-check</v-icon>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
+      </v-slide-item>
+    </v-slide-group>
     <!-- Routes list -->
     <h3 class="mb-3 mt-4">Routen</h3>
 
@@ -138,7 +151,14 @@
             <!-- Dialog route  -->
             <v-dialog v-model="dialogRoute" width="500">
               <template v-slot:activator="{ on, attrs }">
-                <v-btn icon x-large elevation="3" v-bind="attrs" v-on="on" class="my-1">
+                <v-btn
+                  icon
+                  x-large
+                  elevation="3"
+                  v-bind="attrs"
+                  v-on="on"
+                  class="my-1"
+                >
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </template>
@@ -154,10 +174,14 @@
                   <v-container class="justify-center" width="50">
                     <v-row align="center" justify="center">
                       <v-col cols="12" align="center">
-                        <v-menu offset-y>
+                        <v-menu
+                          offset-y
+                          transition="slide-y-transition"
+                          :nudge-left="112"
+                        >
                           <template v-slot:activator="{ attrs, on }">
                             <v-btn
-                              large
+                              x-large
                               icon
                               :class="iconcolortrip"
                               v-model="iconcolor"
@@ -169,28 +193,40 @@
                               >
                             </v-btn>
                           </template>
-                          <div>
-                            <v-btn
-                              icon
-                              small
-                              v-for="col in colors"
-                              :class="col"
-                              :key="col"
-                              @click="iconcolortrip = col"
-                            ></v-btn>
-                          </div>
-                          <v-divider></v-divider>
-                          <div>
-                            <v-btn
-                              v-for="icon in icons"
-                              :class="icon"
-                              :key="icon"
-                              @click="iconimagetrip = icon"
-                            >
-                              <v-icon large color="black"
-                                >mdi-{{ icon }}</v-icon
+                          <div
+                            class="
+                              white
+                              d-flex
+                              flex-column
+                              align-center
+                              px-2
+                              py-3
+                            "
+                          >
+                            <div class="my-3">
+                              <v-btn
+                                class="mx-1"
+                                icon
+                                v-for="col in colors"
+                                :class="col"
+                                :key="col"
+                                @click="iconcolortrip = col"
+                              ></v-btn>
+                            </div>
+                            <div class="my-3">
+                              <v-btn
+                                v-for="icon in icons"
+                                :class="icon"
+                                class="mx-1"
+                                icon
+                                :key="icon"
+                                @click="iconimagetrip = icon"
                               >
-                            </v-btn>
+                                <v-icon large color="black"
+                                  >mdi-{{ icon }}</v-icon
+                                >
+                              </v-btn>
+                            </div>
                           </div>
                         </v-menu>
                       </v-col>
@@ -358,7 +394,7 @@ export default {
         'cyan darken-1',
         'deep-orange darken-3',
       ],
-      icons: ['home', 'school', 'tree', 'food'],
+      icons: ['home', 'school', 'tree', 'food', 'account', 'briefcase'],
       iconcolor: '',
       iconimage: '',
       haltestelle: '',
@@ -426,6 +462,7 @@ export default {
     // },
     favEventStop() {
       // route ausführung
+      // mode
       switch (this.mode) {
         case 'edit':
           this.dialogStop = true;
@@ -438,6 +475,17 @@ export default {
     },
     favEventTrip(t) {
       // route ausführung
+      console.log(t);
+      this.$router.push({
+        path: 'route',
+        query: {
+          orig_type: t.orig_type,
+          orig_ref: t.orig_ref,
+          dest_type: t.dest_type,
+          dest_ref: t.dest_ref,
+        },
+      });
+      // mode
       switch (this.mode) {
         case 'edit':
           this.dialogRoute = true;

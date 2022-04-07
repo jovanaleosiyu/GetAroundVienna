@@ -120,53 +120,6 @@ CREATE TABLE public.favtrips (
 ALTER TABLE public.favtrips OWNER TO postgres;
 
 --
--- Name: groups; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.groups (
-    groupid integer NOT NULL,
-    name text NOT NULL,
-    color text NOT NULL
-);
-
-
-ALTER TABLE public.groups OWNER TO postgres;
-
---
--- Name: groups_groupid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.groups_groupid_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.groups_groupid_seq OWNER TO postgres;
-
---
--- Name: groups_groupid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.groups_groupid_seq OWNED BY public.groups.groupid;
-
-
---
--- Name: planentr_groups; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.planentr_groups (
-    groupid integer NOT NULL,
-    planid integer NOT NULL
-);
-
-
-ALTER TABLE public.planentr_groups OWNER TO postgres;
-
---
 -- Name: plannerentries; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -188,6 +141,7 @@ CREATE TABLE public.plannerentries (
     startdate date NOT NULL,
     enddate date,
     userid integer NOT NULL,
+    color text NOT NULL,
     CONSTRAINT chk_date CHECK ((startdate < enddate))
 );
 
@@ -265,13 +219,6 @@ ALTER TABLE ONLY public.favorites ALTER COLUMN favid SET DEFAULT nextval('public
 
 
 --
--- Name: groups groupid; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.groups ALTER COLUMN groupid SET DEFAULT nextval('public.groups_groupid_seq'::regclass);
-
-
---
 -- Name: plannerentries planid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -289,88 +236,71 @@ ALTER TABLE ONLY public.users ALTER COLUMN userid SET DEFAULT nextval('public.us
 -- Data for Name: favorites; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.favorites VALUES (1, 'yellow', 'home', 'Zuhause', 1);
-INSERT INTO public.favorites VALUES (2, 'blue', 'school', 'Schulweg', 2);
-INSERT INTO public.favorites VALUES (8, 'orange', 'food', 'Restaurant', 1);
-INSERT INTO public.favorites VALUES (9, 'orange', 'food', 'Restaurant', 1);
-INSERT INTO public.favorites VALUES (13, 'red', 'food', 'Weg 123', 1);
-INSERT INTO public.favorites VALUES (14, 'red', 'food', 'Weg 123', 1);
-INSERT INTO public.favorites VALUES (15, 'red', 'food', 'Weg 123', 1);
+COPY public.favorites (favid, color, icon, title, userid) FROM stdin;
+33	red	food	Weg 123	1
+34	orange	food	Restaurant	1
+35	orange	food	Restaurant	1
+36	red	food	Weg 123	1
+\.
 
 
 --
 -- Data for Name: favpoints; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.favpoints VALUES ('60200844', 'stop', 1);
-INSERT INTO public.favpoints VALUES ('16.32019:48.15985:WGS84', 'coord', 8);
-INSERT INTO public.favpoints VALUES ('16.32019:48.15985:WGS84', 'coord', 9);
+COPY public.favpoints (ref, type, favid) FROM stdin;
+16.32019:48.15985:WGS84	coord	34
+16.32019:48.15985:WGS84	coord	35
+\.
 
 
 --
 -- Data for Name: favtrips; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.favtrips VALUES ('60200844', 'stop', '16.31318:48.21196:WGS84', 'coord', NULL, NULL, NULL, NULL, 2);
-INSERT INTO public.favtrips VALUES ('16.31933:48.16815:WGS84', 'coord', '60201468', 'stop', NULL, 'slow', 'leastinterchange', NULL, 13);
-INSERT INTO public.favtrips VALUES ('16.31933:48.16815:WGS84', 'coord', '60201468', 'stop', NULL, 'slow', 'leastinterchange', NULL, 14);
-INSERT INTO public.favtrips VALUES ('16.31933:48.16815:WGS84', 'coord', '60201468', 'stop', NULL, 'slow', 'leastinterchange', NULL, 15);
-
-
---
--- Data for Name: groups; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- Data for Name: planentr_groups; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
+COPY public.favtrips (orig_ref, orig_type, dest_ref, dest_type, exclmeans, changespeed, routetype, maxchanges, favid) FROM stdin;
+16.31933:48.16815:WGS84	coord	60201468	stop	\N	slow	leastinterchange	\N	33
+16.31933:48.16815:WGS84	coord	60201468	stop	\N	slow	leastinterchange	\N	36
+\.
 
 
 --
 -- Data for Name: plannerentries; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.plannerentries (planid, title, notification, repeat, "time", dep, orig_ref, orig_type, dest_ref, dest_type, exclmeans, changespeed, routetype, maxchanges, startdate, enddate, userid, color) FROM stdin;
+\.
 
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.users VALUES (1, 'max.muster@email.com', 'max123', 'blue', false, NULL, NULL, NULL, NULL);
-INSERT INTO public.users VALUES (2, 'beatrix.beate@email.com', 'beatrix123', 'blue', false, NULL, NULL, NULL, NULL);
-INSERT INTO public.users VALUES (3, 'holly.hoess@email.com', 'holly123', 'blue', false, NULL, NULL, NULL, NULL);
-INSERT INTO public.users VALUES (4, 'dora.dunny@email.com', 'dora123', 'blue', false, NULL, NULL, NULL, NULL);
+COPY public.users (userid, email, password, colortheme, darkmode, exclmeans, changespeed, routetype, maxchanges) FROM stdin;
+10	new@email.com	$2b$10$XTAjCz.BUnpe26qwlwp1COfLgozIwi2qOsQ6g6be1311GK2JYjNQG	blue	f	\N	\N	\N	\N
+1	max.muster@email.com	$2b$10$TjUDuru4UPr9WyUAHgtcquJRrKCE2fyjmp4ZYXTCRMQbxbmvHakPm	blue	f	\N	\N	\N	\N
+\.
 
 
 --
 -- Name: favorites_favid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.favorites_favid_seq', 15, true);
-
-
---
--- Name: groups_groupid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.groups_groupid_seq', 1, false);
+SELECT pg_catalog.setval('public.favorites_favid_seq', 36, true);
 
 
 --
 -- Name: plannerentries_planid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.plannerentries_planid_seq', 1, false);
+SELECT pg_catalog.setval('public.plannerentries_planid_seq', 7, true);
 
 
 --
 -- Name: users_userid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.users_userid_seq', 4, true);
+SELECT pg_catalog.setval('public.users_userid_seq', 11, true);
 
 
 --
@@ -379,14 +309,6 @@ SELECT pg_catalog.setval('public.users_userid_seq', 4, true);
 
 ALTER TABLE ONLY public.favorites
     ADD CONSTRAINT favorites_pkey PRIMARY KEY (favid);
-
-
---
--- Name: groups groups_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.groups
-    ADD CONSTRAINT groups_pkey PRIMARY KEY (groupid);
 
 
 --
@@ -411,14 +333,6 @@ ALTER TABLE ONLY public.favpoints
 
 ALTER TABLE ONLY public.favtrips
     ADD CONSTRAINT unique_fav_trips UNIQUE (orig_ref, dest_ref, favid);
-
-
---
--- Name: planentr_groups unique_peg; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.planentr_groups
-    ADD CONSTRAINT unique_peg UNIQUE (groupid, planid);
 
 
 --
@@ -454,27 +368,46 @@ ALTER TABLE ONLY public.favorites
 
 
 --
--- Name: planentr_groups fk_peg_groups; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.planentr_groups
-    ADD CONSTRAINT fk_peg_groups FOREIGN KEY (groupid) REFERENCES public.groups(groupid) ON UPDATE CASCADE ON DELETE CASCADE;
-
-
---
--- Name: planentr_groups fk_peg_planentr; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.planentr_groups
-    ADD CONSTRAINT fk_peg_planentr FOREIGN KEY (planid) REFERENCES public.plannerentries(planid) ON UPDATE CASCADE ON DELETE CASCADE;
-
-
---
 -- Name: plannerentries fk_planentr_users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.plannerentries
     ADD CONSTRAINT fk_planentr_users FOREIGN KEY (userid) REFERENCES public.users(userid) ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- Name: TABLE favorites; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.favorites TO gav;
+
+
+--
+-- Name: TABLE favpoints; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.favpoints TO gav;
+
+
+--
+-- Name: TABLE favtrips; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.favtrips TO gav;
+
+
+--
+-- Name: TABLE plannerentries; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.plannerentries TO gav;
+
+
+--
+-- Name: TABLE users; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.users TO gav;
 
 
 --

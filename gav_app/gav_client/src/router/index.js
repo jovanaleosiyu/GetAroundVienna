@@ -37,6 +37,7 @@ const routes = [
     name: 'Route',
     component: Route,
     path: '/route',
+    props: (route) => ({ query: route.query }),
   },
   {
     name: 'Favorites',
