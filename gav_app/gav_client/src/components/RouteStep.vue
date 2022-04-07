@@ -12,14 +12,15 @@
                 width: this.duration*100/this.translateTripDuration(this.tripDuration) + "%",
 
                 transportTypes: [
-                    {type: "", color: "grey"},
+                    {type: "S-Bahn", color: "#0189c5"},
                     {type: "U-Bahn", colors:[
-                        {name: "U-Bahn U1", color: "red"},
-                        {name: "U-Bahn U2", color: "purple"},
-                        {name: "U-Bahn U3", color: "orange"},
-                        {name: "U-Bahn U4", color: "green"},
-                        {name: "U-Bahn U6", color: "#5e3200"},
+                        {name: "U-Bahn U1", color: "#e60013"},
+                        {name: "U-Bahn U2", color: "#a861a3"},
+                        {name: "U-Bahn U3", color: "#db7708"},
+                        {name: "U-Bahn U4", color: "#00963f"},
+                        {name: "U-Bahn U6", color: "#9c682f"},
                     ]},
+                    {type: "", color: "grey"},
                 ],
             }
         },
@@ -41,7 +42,9 @@
         methods: {
             getColor(stepType) {
                 for(var i = 0; i < this.transportTypes.length; i++){
-                    if(stepType == this.transportTypes[i].type && stepType != "U-Bahn") return this.transportTypes[i].color;
+                    if(stepType == this.transportTypes[i].type && stepType != "U-Bahn") {
+                        return this.transportTypes[i].color;
+                    }
                     else if (stepType == "U-Bahn"){
                         for(var c = 0; c < this.transportTypes[1].colors.length; c++){
                             if (this.stepName == this.transportTypes[1].colors[c].name){
