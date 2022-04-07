@@ -14,6 +14,7 @@ const pointsRouter = require('./routes/points');
 const favoritesRouter = require('./routes/favorites');
 const plannerRouter = require('./routes/planner');
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
+const { restrict } = require('./middleware/restrict');
 
 const app = express();
 
@@ -48,6 +49,7 @@ app.use(express.json());
 app.use('/', accountRouter);
 app.use('/trip', tripRouter);
 app.use('/points', pointsRouter);
+app.use(restrict);
 app.use('/favorites', favoritesRouter);
 app.use('/plannerentry', plannerRouter);
 
