@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mx-auto pa-2" rounded="xl" max-width="600" elevation="10">
+  <v-container class="mx-auto pa-6" rounded="xl" max-width="600" elevation="10">
     <v-form class="d-flex align-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -200,30 +200,6 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-
-    <!-- <div v-for="(trip, i) of trips" :key="i" class="flex-column">
-      <div class="d-flex mb-1">
-        {{ trip.steps[0].start.time }} <v-spacer></v-spacer>
-        {{ trip.duration }} <v-spacer></v-spacer>
-        {{ trip.steps[trip.steps.length - 1].end.time }}
-      </div>
-
-      <div class="d-flex align-center">
-        <div :class="`point ${testcolor}`"></div>
-        <div class="d-flex" style="width: 100%">
-          <template v-for="(step, j) of trip.steps">
-            <RouteStep :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
-          </template>
-        </div>
-        <div class="point"></div>
-      </div>
-
-      <div class="d-flex justify-center mt-1">
-        <span v-for="(step, j) of trip.steps" :key="j" class="ml-1">{{
-          step.mode.name
-        }}</span>
-      </div>
-    </div> -->
 
     <v-expansion-panels class="rounded-xl" accordion>
       <v-expansion-panel v-for="(trip, i) of trips" :key="i">

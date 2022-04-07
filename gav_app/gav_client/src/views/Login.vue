@@ -95,16 +95,18 @@ export default {
   }),
   methods: {
     async login() {
+
       var loginData = {
         email: this.email,
         password: this.password,
       };
+
       await bus.$data.instance
         .post('/login', loginData)
         .then((response) => {
           bus.$data.userId = response.data;
-          bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
+          bus.$emit('loggedIn', true);
           bus.$data.loggedIn = true;
           VueCookies.set('loggedIn', true);
           this.$emit('loadUser');

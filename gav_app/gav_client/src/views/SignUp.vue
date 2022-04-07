@@ -68,6 +68,8 @@
             label="Passwort nochmal eingeben"
             required
           ></v-text-field>
+
+          
         </div>
 
         <v-btn
@@ -134,6 +136,7 @@ export default {
         });
     },
   },
+
   computed: {
     passwordConfirmationRule() {
       return (
@@ -142,6 +145,7 @@ export default {
       );
     },
   },
+
 };
 </script>
 
