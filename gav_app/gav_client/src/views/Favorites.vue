@@ -332,7 +332,11 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
 
-                  <v-btn color="green darken-1" text @click="delFav(t.id)">
+                  <v-btn
+                    color="green darken-1"
+                    text
+                    @click="delFav(currItem.favid)"
+                  >
                     Löschen
                   </v-btn>
 
@@ -380,6 +384,7 @@ export default {
   },
   data() {
     return {
+      currItem: {},
       dialogStop: false,
       favStops: [],
       favTrips: [],
@@ -404,7 +409,6 @@ export default {
       iconimagetrip: '',
       start: '',
       ziel: '',
-      currentId: undefined,
       nameRoute: '',
       //filter
       maxChanges: 9,
@@ -474,17 +478,6 @@ export default {
       }
     },
     favEventTrip(t) {
-      // route ausführung
-      console.log(t);
-      this.$router.push({
-        path: 'route',
-        query: {
-          orig_type: t.orig_type,
-          orig_ref: t.orig_ref,
-          dest_type: t.dest_type,
-          dest_ref: t.dest_ref,
-        },
-      });
       // mode
       switch (this.mode) {
         case 'edit':
@@ -492,13 +485,24 @@ export default {
           this.iconcolortrip = t.color;
           this.iconimagetrip = t.icon;
           this.nameRoute = t.title;
-          this.currentId = t.id;
-          console.log(t);
+          this.currItem = t;
           break;
         case 'delete':
+          console.log(t);
+          this.currItem = t;
+          console.log(this.currItem);
           this.dialogDelete = true;
           break;
         default:
+          this.$router.push({
+            path: 'route',
+            query: {
+              orig_type: t.orig_type,
+              orig_ref: t.orig_ref,
+              dest_type: t.dest_type,
+              dest_ref: t.dest_ref,
+            },
+          });
           break;
       }
     },
