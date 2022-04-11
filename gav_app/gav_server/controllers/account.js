@@ -49,4 +49,7 @@ module.exports = {
       res.status(200).json(user);
     } else res.status(403).send('No user logged in.');
   }),
+  loggedIn: asyncHandler(async (req, res) => {
+    res.status(200).json(Boolean(req.session.userid));
+  }),
 };
