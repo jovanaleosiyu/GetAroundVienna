@@ -415,7 +415,6 @@ export default {
       // this.excludedMeans = this.query.exclmeans;
       this.getTrip();
     }
-    bus.$emit('title', 'Route');
     // bus.$on('callTrip', async (trip) => {
     //   console.log('TESTTTT');
     //   // const params = {

@@ -669,7 +669,6 @@ export default {
   created() {
     this.getFavStops();
     this.getFavTrips();
-    bus.$emit('title', 'Favoriten');
     // Init icon and color
     this.newStop.icon = this.icons[0];
     this.newStop.color = this.colors[0];

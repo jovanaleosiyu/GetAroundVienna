@@ -1,10 +1,11 @@
 <template>
   <v-app>
     <v-main>
-      <v-app-bar color="white" v-if="loggedIn" class="pr-9">
+      <!-- <v-app-bar color="white" v-if="loggedIn" class="pr-9"> -->
+      <v-app-bar color="white" v-if="showappbar" class="pr-9">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
-        <v-toolbar-title>{{ title }} </v-toolbar-title>
+        <v-toolbar-title>{{ $route.name }} </v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
 
@@ -53,7 +54,7 @@
 
             <v-divider class="my-5"></v-divider>
 
-            <v-list-item to="/home">
+            <v-list-item to="/settings">
               <v-list-item-icon>
                 <v-icon>mdi-cog-outline</v-icon>
               </v-list-item-icon>
@@ -110,29 +111,39 @@ export default {
         VueCookies.remove('userId');
         VueCookies.remove('sid');
         this.$router.push({ name: 'Welcome' });
-        window.location.reload();
+        // window.location.reload();
       }
     },
     loadUser() {
       this.$router.push({ name: 'Route' });
-      window.location.reload();
+      // window.location.reload();
     },
   },
   created() {
     bus.$on('loggedIn', (data) => {
       this.loggedIn = data;
+      this.userId = VueCookies.get('userId');
     });
 
     bus.$on('title', (data) => {
       this.title = data;
     });
 
-    this.loggedIn = VueCookies.get('loggedIn');
+    // this.loggedIn = VueCookies.get('loggedIn');
     bus.$data.userId = VueCookies.get('userId');
     bus.$data.loggedIn = VueCookies.get('loggedIn');
 
     this.userId = VueCookies.get('userId');
     this.getUser();
+  },
+  computed: {
+    showappbar() {
+      return !(
+        this.$route.path == '/' ||
+        this.$route.path == '/sign-up' ||
+        this.$route.path == '/login'
+      );
+    },
   },
 };
 </script>
