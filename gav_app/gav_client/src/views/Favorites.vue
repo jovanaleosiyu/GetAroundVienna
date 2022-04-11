@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-sheet elevation="4" class="rounded-lg pa-3">
-      <h2 class="mb-3">Favoriten</h2>
+      <h2 class="mb-3 font-weight-medium">Favoriten</h2>
       <!-- Stops list -->
-      <h3 class="mb-3">Haltestellen</h3>
+      <h4 class="mb-3 font-weight-medium">Haltestellen</h4>
       <v-slide-group>
         <!-- Stop loop  -->
         <v-slide-item v-for="s in favStops" :key="s.favid" class="favspace">
@@ -665,6 +665,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
+  font-size: 0.9em;
 }
 .favrow {
   width: 100%;
