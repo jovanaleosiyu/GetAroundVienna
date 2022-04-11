@@ -47,207 +47,49 @@
         </v-slide-item>
       </v-slide-group>
       <!-- Routes list -->
-      <h3 class="mb-3 mt-4">Routen</h3>
-      <v-sheet class="mx-auto" max-width="700">
-        <v-slide-group show-arrows>
-          <v-slide-item
-            v-for="t in favTrips"
-            :key="t.favid"
-            v-slot="{ active }"
-            class="favspace"
-          >
-            <div class="d-flex flex-column align-center mx-3">
+      <h4 class="mb-3 font-weight-medium">Routen</h4>
+      <v-slide-group>
+        <!-- Route loop  -->
+        <v-slide-item v-for="t in favTrips" :key="t.favid" class="favspace">
+          <div class="d-flex flex-column align-center mx-3">
+            <v-badge
+              bordered
+              offset-x="16"
+              offset-y="16"
+              :value="mode"
+              :color="mode == 'edit' ? edicol : delcol"
+              :icon="`mdi-${mode == 'edit' ? 'pencil' : 'close'}`"
+              overlap
+            >
               <v-btn
-                icon
+                dark
+                fab
                 elevation="3"
-                x-large
                 :class="t.color"
-                :input-value="active"
                 @click="favEventTrip(t)"
               >
-                <v-icon color="white">mdi-{{ t.icon }}</v-icon>
+                <v-icon>mdi-{{ t.icon }}</v-icon>
               </v-btn>
-              <span class="my-2 favtitle">{{ t.title }}</span>
-            </div>
-          </v-slide-item>
-          <v-slide-item>
-            <div class="mx-3">
-              <!-- Dialog route  -->
-              <v-dialog v-model="dialogRoute" width="500">
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                    icon
-                    x-large
-                    elevation="3"
-                    v-bind="attrs"
-                    v-on="on"
-                    class="my-1"
-                  >
-                    <v-icon>mdi-plus</v-icon>
-                  </v-btn>
-                </template>
-                <!-- Routes dialog  -->
-                <v-form>
-                  <v-card>
-                    <v-card-title class="text-h6" v-if="mode == ''">
-                      Favorit erstellen
-                    </v-card-title>
-                    <v-card-title class="text-h6" v-if="mode == 'edit'">
-                      Favorit bearbeiten
-                    </v-card-title>
-                    <v-container class="justify-center" width="50">
-                      <v-row align="center" justify="center">
-                        <v-col cols="12" align="center">
-                          <v-menu
-                            offset-y
-                            transition="slide-y-transition"
-                            :nudge-left="112"
-                          >
-                            <template v-slot:activator="{ attrs, on }">
-                              <v-btn
-                                x-large
-                                icon
-                                :class="iconcolortrip"
-                                v-model="iconcolor"
-                                v-bind="attrs"
-                                v-on="on"
-                              >
-                                <v-icon color="white"
-                                  >mdi-{{ iconimagetrip }}</v-icon
-                                >
-                              </v-btn>
-                            </template>
-                            <div
-                              class="
-                                white
-                                d-flex
-                                flex-column
-                                align-center
-                                px-2
-                                py-3
-                              "
-                            >
-                              <div class="my-3">
-                                <v-btn
-                                  class="mx-1"
-                                  icon
-                                  v-for="col in colors"
-                                  :class="col"
-                                  :key="col"
-                                  @click="iconcolortrip = col"
-                                ></v-btn>
-                              </div>
-                              <div class="my-3">
-                                <v-btn
-                                  v-for="icon in icons"
-                                  :class="icon"
-                                  class="mx-1"
-                                  icon
-                                  :key="icon"
-                                  @click="iconimagetrip = icon"
-                                >
-                                  <v-icon large color="black"
-                                    >mdi-{{ icon }}</v-icon
-                                  >
-                                </v-btn>
-                              </div>
-                            </div>
-                          </v-menu>
-                        </v-col>
-                        <v-col cols="10">
-                          <v-text-field
-                            v-model="nameRoute"
-                            counter
-                            maxlength="10"
-                            label="Name"
-                            required
-                          ></v-text-field>
-
-                          <RouteInput
-                            title="Start"
-                            @setStop="setStopRoute"
-                            required
-                          ></RouteInput>
-
-                          <RouteInput
-                            title="Ziel"
-                            @setStop="setStopRoute"
-                            required
-                          ></RouteInput>
-                        </v-col>
-                        <v-col cols="11">
-                          <v-expansion-panels flat>
-                            <v-expansion-panel>
-                              <v-expansion-panel-header
-                                >Filtern</v-expansion-panel-header
-                              >
-                              <v-expansion-panel-content>
-                                <v-select
-                                  v-model="maxChanges"
-                                  :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
-                                  hint="Anzahl der Umstiege"
-                                  persistent-hint
-                                ></v-select>
-                                <v-select
-                                  v-model="routeType"
-                                  :items="routeTypes"
-                                  hint="Art der Route"
-                                  item-text="text"
-                                  item-value="type"
-                                  persistent-hint
-                                ></v-select>
-                                <v-select
-                                  v-model="changeSpeed"
-                                  :items="changeSpeeds"
-                                  hint="Umsteige Zeit"
-                                  item-text="text"
-                                  item-value="speed"
-                                  persistent-hint
-                                ></v-select>
-                                <v-select
-                                  v-model="excludedMeans"
-                                  :items="ids"
-                                  hint="Verkehrmittel"
-                                  item-text="text"
-                                  item-value="id"
-                                  persistent-hint
-                                  multiple
-                                ></v-select>
-                              </v-expansion-panel-content>
-                            </v-expansion-panel>
-                          </v-expansion-panels>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-
-                    <v-card-actions class="justify-center">
-                      <v-spacer></v-spacer>
-                      <v-btn
-                        icon
-                        large
-                        class="grey darken-3"
-                        v-if="mode == ''"
-                        @click="addRoute"
-                      >
-                        <v-icon color="white">mdi-check</v-icon>
-                      </v-btn>
-                      <v-btn
-                        icon
-                        large
-                        class="grey darken-3"
-                        v-if="mode == 'edit'"
-                        @click="updateRoute(t)"
-                      >
-                        <v-icon color="white">mdi-check</v-icon>
-                      </v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-form>
-              </v-dialog>
-            </div>
-          </v-slide-item>
-        </v-slide-group>
-      </v-sheet>
+            </v-badge>
+            <span class="my-2 favtitle">{{ t.title }}</span>
+          </div>
+        </v-slide-item>
+        <!-- Add Trip -->
+        <v-slide-item class="favspace">
+          <div class="d-flex flex-column align-center mx-3">
+            <v-btn
+              fab
+              elevation="3"
+              @click="
+                mode = '';
+                dialogTrip = true;
+              "
+            >
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </div>
+        </v-slide-item>
+      </v-slide-group>
       <!-- Modes -->
       <div class="d-flex justify-end">
         <v-btn
@@ -378,6 +220,7 @@
               icon
               large
               class="grey darken-3 mb-3"
+              dark
               @click="mode ? editStop() : addStop()"
             >
               <v-icon color="white">mdi-check</v-icon>
@@ -385,7 +228,206 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-      <!-- Delete dialog  -->
+      <!-- Dialog trip  -->
+      <v-dialog v-model="dialogTrip" width="450">
+        <v-card>
+          <v-card-title class="text-h6">
+            Favorit {{ mode == 'edit' ? 'bearbeiten' : 'erstellen' }}
+          </v-card-title>
+          <v-card-text class="d-flex flex-column align-center pb-0">
+            <!-- Icon and color selection -->
+            <v-menu offset-y :nudge-left="112">
+              <!-- Selection button -->
+              <template v-slot:activator="{ attrs, on }">
+                <v-badge
+                  class="my-3"
+                  bordered
+                  offset-x="16"
+                  offset-y="16"
+                  color="grey darken-3"
+                  icon="mdi-swap-horizontal"
+                  overlap
+                >
+                  <v-btn
+                    v-if="mode"
+                    fab
+                    :class="editedTrip.color"
+                    v-model="editedTrip.color"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon color="white">mdi-{{ editedTrip.icon }}</v-icon>
+                  </v-btn>
+                  <v-btn
+                    v-else
+                    icon
+                    x-large
+                    :class="newTrip.color"
+                    v-model="newTrip.color"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon color="white">mdi-{{ newTrip.icon }}</v-icon>
+                  </v-btn>
+                </v-badge>
+              </template>
+              <!-- Selection menu -->
+              <div class="white d-flex flex-column align-center px-2 py-3">
+                <div class="my-3">
+                  <v-btn
+                    icon
+                    v-for="col in colors"
+                    :class="col"
+                    class="mx-1"
+                    :key="col"
+                    @click="
+                      mode ? (editedTrip.color = col) : (newTrip.color = col)
+                    "
+                  ></v-btn>
+                </div>
+                <div class="my-3">
+                  <v-btn
+                    icon
+                    v-for="icon in icons"
+                    :class="icon"
+                    :key="icon"
+                    @click="
+                      mode ? (editedTrip.icon = icon) : (newTrip.icon = icon)
+                    "
+                    class="mx-1"
+                  >
+                    <v-icon large color="black">mdi-{{ icon }}</v-icon>
+                  </v-btn>
+                </div>
+              </div>
+            </v-menu>
+            <!-- Form -->
+            <v-form
+              ref="tripForm"
+              lazy-validation
+              v-model="tripValid"
+              style="width: 90%"
+            >
+              <!-- Edit Trip -->
+              <div v-if="mode">
+                <v-text-field
+                  v-model="editedTrip.title"
+                  label="Name"
+                  :counter="10"
+                  :rules="nameRules"
+                  required
+                />
+                <!-- <RouteInput title="Start" @setStop="setStopTrip" required />
+                <RouteInput title="Ziel" @setStop="setStopTrip" required /> -->
+                <v-expansion-panels flat>
+                  <v-expansion-panel>
+                    <v-expansion-panel-header>Filtern</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      <v-select
+                        v-model="editedTrip.maxchanges"
+                        :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+                        hint="Anzahl der Umstiege"
+                        persistent-hint
+                      ></v-select>
+                      <v-select
+                        v-model="editedTrip.routetype"
+                        :items="routeTypes"
+                        hint="Art der Route"
+                        item-text="text"
+                        item-value="type"
+                        persistent-hint
+                      ></v-select>
+                      <v-select
+                        v-model="editedTrip.changespeed"
+                        :items="changeSpeeds"
+                        hint="Umsteige Zeit"
+                        item-text="text"
+                        item-value="speed"
+                        persistent-hint
+                      ></v-select>
+                      <v-select
+                        v-model="editedTrip.exclmeans"
+                        :items="ids"
+                        hint="Verkehrmittel"
+                        item-text="text"
+                        item-value="id"
+                        persistent-hint
+                        multiple
+                      ></v-select>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+                <span class="error--text">{{ invTripMsg }}</span>
+              </div>
+              <!-- New Trip -->
+              <div v-else>
+                <v-text-field
+                  v-model="newTrip.title"
+                  label="Name"
+                  :counter="10"
+                  :rules="nameRules"
+                  required
+                />
+                <RouteInput title="Start" @setStop="setStopTrip" required />
+                <RouteInput title="Ziel" @setStop="setStopTrip" required />
+                <v-expansion-panels flat>
+                  <v-expansion-panel>
+                    <v-expansion-panel-header>Filtern</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      <v-select
+                        v-model="newTrip.maxChanges"
+                        :items="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+                        hint="Anzahl der Umstiege"
+                        persistent-hint
+                      ></v-select>
+                      <v-select
+                        v-model="newTrip.routeType"
+                        :items="routeTypes"
+                        hint="Art der Route"
+                        item-text="text"
+                        item-value="type"
+                        persistent-hint
+                      ></v-select>
+                      <v-select
+                        v-model="newTrip.changeSpeed"
+                        :items="changeSpeeds"
+                        hint="Umsteige Zeit"
+                        item-text="text"
+                        item-value="speed"
+                        persistent-hint
+                      ></v-select>
+                      <v-select
+                        v-model="newTrip.excludedMeans"
+                        :items="ids"
+                        hint="Verkehrmittel"
+                        item-text="text"
+                        item-value="id"
+                        persistent-hint
+                        multiple
+                      ></v-select>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+                <span class="error--text">{{ invTripMsg }}</span>
+              </div>
+            </v-form>
+          </v-card-text>
+          <!-- Action -->
+          <v-card-actions class="justify-center">
+            <v-spacer></v-spacer>
+            <v-btn
+              :disabled="!tripValid"
+              icon
+              large
+              class="mb-3 grey darken-3"
+              dark
+              @click="mode ? editTrip() : addTrip()"
+            >
+              <v-icon>mdi-check</v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
       <v-dialog v-model="dialogDelete" max-width="350">
         <v-card>
           <v-card-title class="font-weight-bold">
@@ -425,23 +467,29 @@ export default {
       delcol: 'red',
       // dialog
       dialogStop: false,
+      dialogTrip: false,
+      dialogDelete: false,
       // stop
       newStop: {},
       editedStop: {},
-      // delete
-      deleteId: undefined,
       // stopform
       stopValid: true,
       invStopMsg: '',
-      currItem: {},
+      // trip
+      newTrip: {},
+      editedTrip: {},
+      // tripform
+      tripValid: true,
+      invTripMsg: '',
+      // delete
+      deleteId: undefined,
       // form rules
       nameRules: [
         (v) => !!v || 'Name ist verpflichtend.',
         (v) =>
           (v && v.length <= 10) || 'Name darf maximal 10 Zeichen lang sein.',
       ],
-      //stops
-      dialogRoute: false,
+      // icon/color selections
       colors: [
         'red darken-1',
         'purple darken-1',
@@ -451,34 +499,18 @@ export default {
         'deep-orange darken-3',
       ],
       icons: ['home', 'school', 'tree', 'food', 'account', 'briefcase'],
-      iconcolor: '',
-      iconimage: '',
-      haltestelle: '',
-      nameStop: '',
-      //trips
-      iconcolortrip: '',
-      iconimagetrip: '',
-      start: '',
-      ziel: '',
-      nameRoute: '',
-      //filter
-      maxChanges: 9,
-
+      // filter options
       routeType: 'leasttime',
       routeTypes: [
         { text: 'Kürzeste Route', type: 'leasttime' },
         { text: 'Wenigste Umstiege', type: 'leastinterchange' },
         { text: 'Wenigstes Gehen', type: 'leastwalking' },
       ],
-
-      changeSpeed: 'normal',
       changeSpeeds: [
         { text: 'Lang', speed: 'slow' },
         { text: 'Mittel', speed: 'normal' },
         { text: 'Kurz', speed: 'fast' },
       ],
-
-      excludedMeans: undefined,
       ids: [
         { text: 'Zug', id: '0' },
         { text: 'S-Bahn', id: '1' },
@@ -493,7 +525,6 @@ export default {
         { text: 'AST/Rufbus', id: '10' },
         { text: 'Sonstiges', id: '11' },
       ],
-      dialogDelete: false,
     };
   },
   methods: {
@@ -534,6 +565,13 @@ export default {
           break;
       }
     },
+    setStop(stop) {
+      if (stop.stopType === 'Haltestelle') {
+        this.newStop.stop = stop;
+        this.stopValid = true;
+        this.invStopMsg = '';
+      } else console.log('error setStop');
+    },
     async addStop() {
       if (!this.$refs.stopForm.validate()) return;
       if (this.newStop.stop) {
@@ -558,101 +596,85 @@ export default {
       // ... to be implemented
     },
     // trip methods
-    favEventTrip(t) {
-      // mode
+    favEventTrip(trip) {
       switch (this.mode) {
         case 'edit':
-          this.dialogRoute = true;
-          this.iconcolortrip = t.color;
-          this.iconimagetrip = t.icon;
-          this.nameRoute = t.title;
-          this.currItem = t;
+          this.editedTrip = { ...trip };
+          this.dialogTrip = true;
           break;
         case 'delete':
-          console.log(t);
-          this.currItem = t;
-          console.log(this.currItem);
+          this.deleteId = trip.favid;
           this.dialogDelete = true;
           break;
         default:
+          // redirect to /route
           this.$router.push({
             path: 'route',
             query: {
-              orig_type: t.orig_type,
-              orig_ref: t.orig_ref,
-              dest_type: t.dest_type,
-              dest_ref: t.dest_ref,
+              orig_type: trip.orig_type,
+              orig_ref: trip.orig_ref,
+              dest_type: trip.dest_type,
+              dest_ref: trip.dest_ref,
             },
           });
           break;
       }
     },
-    // For route input field
-    setStop(stop) {
-      if (stop.stopType === 'Haltestelle') {
-        this.newStop.stop = stop;
-        this.stopValid = true;
-        this.invStopMsg = '';
-      } else console.log('error setStop');
+    setStopTrip(stop) {
+      if (stop.stopType === 'Start') {
+        this.newTrip.orig = stop;
+        this.tripValid = true;
+        this.invTripMsg = '';
+      } else if (stop.stopType === 'Ziel') {
+        this.newTrip.dest = stop;
+        this.tripValid = true;
+        this.invTripMsg = '';
+      } else console.log('error');
     },
-    // trip methods
-    async addRoute() {
-      if (this.start && this.ziel) {
-        let routeData = {
-          color: this.iconcolortrip,
-          icon: this.iconimagetrip,
-          origRef: this.start.ref,
-          origType: this.start.type,
-          destRef: this.ziel.ref,
-          destType: this.ziel.type,
-          title: this.nameRoute,
-          options: {
-            changeSpeed: this.changeSpeed,
-            routeType: this.routeType,
-          },
-        };
-        console.log(routeData);
-        await bus.$data.instance.post('/favorites/trips', routeData);
-        this.dialogRoute = false;
-        this.getFavTrips();
-      } else {
-        // Fehlermeldung
-        console.log('error addRoute');
+    async addTrip() {
+      if (!this.$refs.tripForm.validate()) return;
+      if (!this.newTrip.orig) {
+        this.invTripMsg = 'Ungültiger Startpunkt. ';
+        this.tripValid = false;
+        return;
+      } else if (!this.newTrip.dest) {
+        this.invTripMsg = 'Ungültiger Zielpunkt. ';
+        this.tripValid = false;
+        return;
       }
+      this.invTripMsg = '';
+      let tripData = {
+        title: this.newTrip.title,
+        icon: this.newTrip.icon,
+        color: this.newTrip.color,
+        origType: this.newTrip.orig.type,
+        destType: this.newTrip.dest.type,
+        origRef: this.newTrip.orig.ref,
+        destRef: this.newTrip.dest.ref,
+        options: {
+          changeSpeed: this.newTrip.changeSpeed,
+          routeType: this.newTrip.routeType,
+          maxChanges: this.newTrip.maxChanges,
+          excludedMeans: this.newTrip.excludedMeans,
+        },
+      };
+      await bus.$data.instance.post('/favorites/trips', tripData);
+      this.dialogTrip = false;
+      this.getFavTrips();
     },
-    setStopRoute(stop) {
-      console.log(stop);
-      if (stop.stopType === 'Start') this.start = stop;
-      else if (stop.stopType === 'Ziel') this.ziel = stop;
-      else console.log('error');
-    },
-    async updateRoute() {
-      // await bus.$data.instance.patch(`/favorites/trips/${this.id}`, {
-      //   color: this.iconcolortrip,
-      //   // title: 'Bla',
-      //   // icon: 'school',
-      //   // color: 'red',
-      //   // origRef: '16.32019:48.15985:WGS84',
-      //   // origType: 'coord',
-      //   // destRef: '60200844',
-      //   // destType: 'stop',
-      //   // exclMeans: '1;5',
-      //   // changeSpeed: 'slow',
-      //   // routeType: 'leasttime',
-      //   // maxChanges: '5',
-      // });
+    async editTrip() {
+      console.log(this.editedTrip);
     },
   },
   created() {
     this.getFavStops();
     this.getFavTrips();
     bus.$emit('title', 'Favoriten');
-    // this.iconcolor = this.colors[0];
-    // this.iconimage = this.icons[0];
+    // Init icon and color
     this.newStop.icon = this.icons[0];
     this.newStop.color = this.colors[0];
-    this.iconcolortrip = this.colors[0];
-    this.iconimagetrip = this.icons[0];
+    this.newTrip.icon = this.icons[0];
+    this.newTrip.color = this.colors[0];
   },
 };
 </script>
