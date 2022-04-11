@@ -403,7 +403,7 @@ export default {
   },
   created() {
     const { orig_ref, orig_type, dest_ref, dest_type } = this.query;
-    if ((orig_ref, orig_type, dest_ref, dest_type)) {
+    if (orig_ref && orig_type && dest_ref && dest_type) {
       this.dep.type = orig_type;
       this.dep.ref = orig_ref;
       this.des.type = dest_type;
