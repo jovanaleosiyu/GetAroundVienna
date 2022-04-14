@@ -87,8 +87,8 @@
         </g>
       </svg>
       <div style="width: 100%">
-        <RouteInputField title="Start" @setStop="setStop"></RouteInputField>
-        <RouteInputField title="Ziel" @setStop="setStop"></RouteInputField>
+        <RouteInputField ref="origin" title="Start" @setStop="setStop" />
+        <RouteInputField ref="destination" title="Ziel" @setStop="setStop" />
       </div>
 
       <v-icon large class="my-auto ml-3 darkgrey--text" @click="swap()">
@@ -401,7 +401,7 @@ export default {
       console.log(this.depInput);
     },
   },
-  created() {
+  mounted() {
     const { orig_ref, orig_type, dest_ref, dest_type } = this.query;
     if (orig_ref && orig_type && dest_ref && dest_type) {
       this.dep.type = orig_type;
@@ -409,11 +409,17 @@ export default {
       this.des.type = dest_type;
       this.des.ref = dest_ref;
       this.depArr = 'dep';
+      const { origin, destination } = this.$refs;
+      const promises = [];
+      promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
+      promises.push(destination.setStopByRef(this.des.ref, this.des.type));
+      Promise.all(promises).then(() => {
+        this.getTrip();
+      });
       // this.maxChanges = this.query.maxchanges;
       // this.routeType = this.query.routetype;
       // this.changeSpeed = this.query.changespeed;
       // this.excludedMeans = this.query.exclmeans;
-      this.getTrip();
     }
     // bus.$on('callTrip', async (trip) => {
     //   console.log('TESTTTT');
