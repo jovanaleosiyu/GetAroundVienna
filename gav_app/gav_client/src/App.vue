@@ -115,7 +115,8 @@ export default {
       }
     },
     loadUser() {
-      this.$router.push({ name: 'Route' });
+      this.getUser();
+      // this.$router.push({ name: 'Route' });
       // window.location.reload();
     },
   },

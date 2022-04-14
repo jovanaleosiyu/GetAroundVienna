@@ -556,7 +556,7 @@ export default {
         default:
           // redirect to /route
           this.$router.push({
-            path: 'route',
+            path: '/route',
             query: {
               dest_type: stop.type,
               dest_ref: stop.ref,
@@ -609,7 +609,7 @@ export default {
         default:
           // redirect to /route
           this.$router.push({
-            path: 'route',
+            path: '/route',
             query: {
               orig_type: trip.orig_type,
               orig_ref: trip.orig_ref,
