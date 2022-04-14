@@ -9,12 +9,18 @@ const baseUrl =
   'coordOutputFormat=WGS84[DD.ddddd]&' +
   'anyObjFilter_origin=10&';
 
-const structurePoint = (p) => ({
-  name: p.name,
-  type: p.anyType === 'stop' ? 'stop' : 'coord',
-  ref:
-    p.anyType === 'stop' ? p.ref.id : `${p.ref.coords.replace(',', ':')}:WGS84`,
-});
+const structurePoint = (p) => {
+  const res = {
+    name: p.name,
+    ref:
+      p.anyType === 'stop'
+        ? p.ref.id
+        : `${p.ref.coords.replace(',', ':')}:WGS84`,
+  };
+  if (p.anyType) res.type = p.anyType === 'stop' ? 'stop' : 'coord';
+  else res.type = p.type === 'stop' ? 'stop' : 'coord';
+  return res;
+};
 
 const getPointsFromApi = async (req, res, queryString) => {
   const url = baseUrl + queryString;
