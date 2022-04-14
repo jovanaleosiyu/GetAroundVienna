@@ -6,3 +6,9 @@ GET http://localhost:3000/points/Am Schöpfwerk
 GET http://localhost:3000/points/Thaliastraße 125
 ### Not Points found
 GET http://localhost:3000/points/_
+### Pointname by ref stop
+GET http://localhost:3000/points/stop/60200520
+### Pointsname by ref coord
+GET http://localhost:3000/points/coord/16.31318:48.21196:WGS84
+### Pointname not found
+GET http://localhost:3000/points/stop/_

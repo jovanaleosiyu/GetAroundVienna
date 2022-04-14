@@ -1,7 +1,8 @@
 const express = require('express');
-const { getPoints } = require('../controllers/points');
+const points = require('../controllers/points');
 
 const router = express.Router();
 
-router.get('/:searchname', getPoints);
+router.get('/:searchname', points.getPoints);
+router.get('/:type/:ref', points.getPointsName);
 module.exports = router;
