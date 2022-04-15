@@ -20,7 +20,7 @@ const structurePoint = (point) => {
   };
 };
 
-const getPointsFromApi = async (req, res, queryString) => {
+const getPointsFromApi = async (res, queryString) => {
   const url = baseUrl + queryString;
   dbUrl(url);
   const { data } = await axios.get(baseUrl + queryString);
@@ -35,14 +35,14 @@ const getPointsFromApi = async (req, res, queryString) => {
 };
 
 module.exports = {
-  getPoints: asyncHandler((req, res) => {
+  getPoints: asyncHandler(async (req, res) => {
     const { searchname } = req.params;
     const queryString = encodeURI(`type_origin=any&name_origin=${searchname}`);
-    getPointsFromApi(req, res, queryString);
+    await getPointsFromApi(res, queryString);
   }),
-  getPointsName: asyncHandler((req, res) => {
+  getPointsName: asyncHandler(async (req, res) => {
     const { type, ref } = req.params;
     const queryString = encodeURI(`type_origin=${type}&name_origin=${ref}`);
-    getPointsFromApi(req, res, queryString);
+    await getPointsFromApi(res, queryString);
   }),
 };
