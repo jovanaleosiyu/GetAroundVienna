@@ -2,7 +2,7 @@
   <div class="google-map" ref="googleMap"></div>
 </template>
 <script>
-import { Loader } from '@googlemaps/js-api-loader';
+// import { Loader } from '@googlemaps/js-api-loader';
 
 export default {
   data() {
@@ -14,12 +14,12 @@ export default {
     };
   },
   async mounted() {
-    const loader = new Loader({
-      apiKey: this.apiKey,
-    });
-    this.google = await loader.load();
-    const mapContainer = this.$refs.googleMap;
-    this.map = new this.google.maps.Map(mapContainer, this.mapOptions);
+    // const loader = new Loader({
+    //   apiKey: this.apiKey,
+    // });
+    // this.google = await loader.load();
+    // const mapContainer = this.$refs.googleMap;
+    // this.map = new this.google.maps.Map(mapContainer, this.mapOptions);
     // geolocation
     // if (navigator.geolocation) {
     //   navigator.geolocation.getCurrentPosition(
