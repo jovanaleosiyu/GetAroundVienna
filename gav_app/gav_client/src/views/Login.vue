@@ -55,6 +55,7 @@
             :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show ? 'text' : 'password'"
             @click:append="show = !show"
+            @keyup.enter="login"
             label="Passwort"
             required
           ></v-text-field>
@@ -62,7 +63,7 @@
 
         <v-btn
           elevation="5"
-          @click="login()"
+          @click="login"
           :disabled="!valid"
           fab
           class="align-self-end grey darken-3 white--text mt-16"
@@ -95,7 +96,6 @@ export default {
   }),
   methods: {
     async login() {
-
       var loginData = {
         email: this.email,
         password: this.password,

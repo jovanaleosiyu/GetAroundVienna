@@ -87,8 +87,8 @@
         </g>
       </svg>
       <div style="width: 100%">
-        <RouteInputField title="Start" @setStop="setStop"></RouteInputField>
-        <RouteInputField title="Ziel" @setStop="setStop"></RouteInputField>
+        <RouteInputField ref="origin" title="Start" @setStop="setStop" />
+        <RouteInputField ref="destination" title="Ziel" @setStop="setStop" />
       </div>
 
       <v-icon large class="my-auto ml-3 darkgrey--text" @click="swap()">
@@ -353,6 +353,7 @@ export default {
     ],
 
     trips: [],
+    currpos: undefined,
   }),
   methods: {
     async getTrip() {
@@ -374,7 +375,6 @@ export default {
         changeSpeed: this.changeSpeed,
         excludedMeans: this.excludedMeans,
       };
-      // console.log(params);
       const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
@@ -398,50 +398,65 @@ export default {
       } else console.log('Error!');
     },
     swap() {
-      console.log(this.depInput);
+      const { origin, destination } = this.$refs;
+      if (!destination.model || !origin.model) return;
+      const temp = origin.model;
+      origin.setStopByRef(destination.model.ref, destination.model.type);
+      destination.setStopByRef(temp.ref, temp.type);
+    },
+    getGeolocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            console.log(pos);
+            this.currpos = pos;
+          },
+          (err) => console.log(err),
+          { maximumAge: 10000, timeout: 5000, enableHighAccuracy: true }
+        );
+      } else {
+        alert('Geolocation API is not supported in your browser.');
+      }
     },
   },
-  created() {
+  mounted() {
     const { orig_ref, orig_type, dest_ref, dest_type } = this.query;
-    if ((orig_ref, orig_type, dest_ref, dest_type)) {
+    if (orig_ref && orig_type && dest_ref && dest_type) {
       this.dep.type = orig_type;
       this.dep.ref = orig_ref;
       this.des.type = dest_type;
       this.des.ref = dest_ref;
       this.depArr = 'dep';
+      const { origin, destination } = this.$refs;
+      const promises = [];
+      promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
+      promises.push(destination.setStopByRef(this.des.ref, this.des.type));
+      Promise.all(promises).then(() => {
+        this.getTrip();
+      });
       // this.maxChanges = this.query.maxchanges;
       // this.routeType = this.query.routetype;
       // this.changeSpeed = this.query.changespeed;
       // this.excludedMeans = this.query.exclmeans;
-      this.getTrip();
+    } else if (dest_ref && dest_type) {
+      this.getGeolocation();
+      const currref = `
+      ${this.currpos.longitude.toFixed(5)}:
+      ${this.currpos.latitude.toFixed(5)}:WGS84
+      `;
+      this.des.type = dest_type;
+      this.des.ref = dest_ref;
+      this.dep.type = 'coord';
+      this.dep.ref = currref;
+      this.depArr = 'dep';
+      const { origin, destination } = this.$refs;
+      const promises = [];
+      promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
+      promises.push(destination.setStopByRef(this.des.ref, this.des.type));
+      Promise.all(promises).then(() => {
+        this.getTrip();
+      });
     }
-    bus.$emit('title', 'Route');
-    // bus.$on('callTrip', async (trip) => {
-    //   console.log('TESTTTT');
-    //   // const params = {
-    //   //   typeOrigin: this.dep.type,
-    //   //   nameOrigin: this.dep.ref,
-    //   //   typeDestination: this.des.type,
-    //   //   nameDestination: this.des.ref,
-    //   //   time: time,
-    //   //   date: date,
-    //   //   depArr: this.depArr ? 'dep' : 'arr',
-    //   //   maxChanges: this.maxChanges,
-    //   //   routeType: this.routeType,
-    //   //   changeSpeed: this.changeSpeed,
-    //   //   excludedMeans: this.excludedMeans,
-    //   // };
-    //   this.dep.type = trip.orig_type;
-    //   this.dep.ref = trip.orig_ref;
-    //   this.des.type = trip.dest_type;
-    //   this.des.ref = trip.dest_ref;
-    //   this.depArr = 'dep';
-    //   this.maxChanges = trip.maxchanges;
-    //   this.routeType = trip.routetype;
-    //   this.changeSpeed = trip.changespeed;
-    //   this.excludedMeans = trip.exclmeans;
-    //   this.getTrip();
-    // });
   },
 };
 </script>

@@ -42,7 +42,7 @@ DELETE http://localhost:3000/favorites/2
 ### * delete favorite success
 DELETE http://localhost:3000/favorites/1
 ### update favorite point
-PATCH http://localhost:3000/favorites/points/1
+PUT http://localhost:3000/favorites/points/41
 content-type: application/json
 
 {
@@ -53,7 +53,7 @@ content-type: application/json
   "type": "coord"
 }
 ### update favorite trip
-PATCH http://localhost:3000/favorites/trips/13
+PUT http://localhost:3000/favorites/trips/13
 content-type: application/json
 
 {

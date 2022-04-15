@@ -65,16 +65,15 @@
             :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show2 ? 'text' : 'password'"
             @click:append="show2 = !show2"
+            @keyup.enter="register"
             label="Passwort nochmal eingeben"
             required
           ></v-text-field>
-
-          
         </div>
 
         <v-btn
           elevation="5"
-          @click="register()"
+          @click="register"
           :disabled="!valid"
           fab
           class="align-self-end grey darken-3 white--text mt-16"
@@ -145,7 +144,6 @@ export default {
       );
     },
   },
-
 };
 </script>
 

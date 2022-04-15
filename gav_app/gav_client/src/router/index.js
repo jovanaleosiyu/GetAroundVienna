@@ -40,7 +40,7 @@ const routes = [
     props: (route) => ({ query: route.query }),
   },
   {
-    name: 'Favorites',
+    name: 'Favoriten',
     component: Favorites,
     path: '/favoriten',
   },
@@ -55,7 +55,7 @@ const routes = [
     path: '/planer',
   },
   {
-    name: 'Settings',
+    name: 'Einstellungen',
     component: Settings,
     path: '/settings',
   },
