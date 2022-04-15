@@ -374,7 +374,6 @@ export default {
         changeSpeed: this.changeSpeed,
         excludedMeans: this.excludedMeans,
       };
-      // console.log(params);
       const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
@@ -398,7 +397,10 @@ export default {
       } else console.log('Error!');
     },
     swap() {
-      console.log(this.depInput);
+      const { origin, destination } = this.$refs;
+      const temp = origin.model;
+      origin.setStopByRef(destination.model.ref, destination.model.type);
+      destination.setStopByRef(temp.ref, temp.type);
     },
   },
   mounted() {

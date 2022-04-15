@@ -36,21 +36,14 @@ export default {
   methods: {
     async setStopByRef(ref, type) {
       if (!ref || !type) return;
-      await bus.$data.instance
-        .get(`/points/${type}/${ref}`)
-        .then((res) => {
-          let point;
-          if (res.data instanceof Array) point = res.data[0];
-          point = res.data;
-          this.items.push(point);
-          this.model = point;
-        })
-        .catch((e) => {
-          if (e.response.status == 404) this.items = [];
-          else console.log(e);
-        });
+      await bus.$data.instance.get(`/points/${type}/${ref}`).then((res) => {
+        let point;
+        if (res.data instanceof Array) point = res.data[0];
+        point = res.data;
+        this.items.push(point);
+        this.model = point;
+      });
     },
-    async getStopList() {},
     setStop(stop) {
       if (!stop) return;
       this.$emit('setStop', { ...stop, stopType: this.title });
