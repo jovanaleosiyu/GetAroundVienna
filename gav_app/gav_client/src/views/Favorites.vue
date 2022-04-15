@@ -197,6 +197,11 @@
                   :rules="nameRules"
                   required
                 />
+                <RouteInput
+                  ref="stopInp"
+                  title="Haltestelle"
+                  @setStop="setEditStop"
+                />
               </div>
               <!-- New stop -->
               <div v-else>
@@ -228,8 +233,8 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-      <!-- Dialog trip  -->
-      <v-dialog v-model="dialogTrip" width="450">
+      <!-- Trip dialog  -->
+      <v-dialog eager v-model="dialogTrip" width="450">
         <v-card>
           <v-card-title class="text-h6">
             Favorit {{ mode == 'edit' ? 'bearbeiten' : 'erstellen' }}
@@ -428,7 +433,7 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-      <v-dialog v-model="dialogDelete" max-width="350">
+      <v-dialog eager v-model="dialogDelete" max-width="350">
         <v-card>
           <v-card-title class="font-weight-bold">
             Bist du dir sicher?
@@ -543,10 +548,17 @@ export default {
       this.getFavTrips();
     },
     // stop methods
-    favEventStop(stop) {
+    async favEventStop(stop) {
       switch (this.mode) {
         case 'edit':
           this.editedStop = { ...stop };
+          // Set Inp field
+
+          console.log(this.$refs.stopInp);
+          await this.$refs.stopInp.setStopByRef(
+            this.editedStop.ref,
+            this.editedStop.type
+          );
           this.dialogStop = true;
           break;
         case 'delete':
@@ -572,6 +584,13 @@ export default {
         this.invStopMsg = '';
       } else console.log('error setStop');
     },
+    setEditStop(stop) {
+      if (stop.stopType === 'Haltestelle') {
+        this.editedStop.stop = stop;
+        this.stopValid = true;
+        this.invStopMsg = '';
+      } else console.log('error setStop');
+    },
     async addStop() {
       if (!this.$refs.stopForm.validate()) return;
       if (this.newStop.stop) {
@@ -593,7 +612,6 @@ export default {
     },
     async editStop() {
       console.log(this.editedStop);
-      // ... to be implemented
     },
     // trip methods
     favEventTrip(trip) {

@@ -53,16 +53,19 @@ export default {
   created() {
     this.getStopList = debounce(500, async (searchname) => {
       bus.$data.instance
-        .get(`/points/${searchname}`)
+        .get(`/points/${searchname.replace('/', ',')}`)
         .then((res) => {
-          if (res.data instanceof Array) this.items = res.data;
-          else this.items = [res.data];
+          if (this.items.lengh > 1) this.items = []; // ... bc if 1 then its this.model
+          if (res.data instanceof Array) this.items.concat(res.data);
+          else this.items.push(res.data);
         })
         .catch((e) => {
           if (e.response.status == 404) this.items = [];
           else console.log(e);
         })
         .finally(() => {
+          console.log(this.items);
+          console.log(this.model);
           this.isLoading = false;
         });
     });
