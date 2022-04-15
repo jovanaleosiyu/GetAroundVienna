@@ -287,8 +287,17 @@
 
           <v-divider class="my-4"></v-divider>
 
-          <div>
+          <div class="d-flex justify-space-between align-center">
             <h2>Wiederholungen</h2>
+            <v-select
+            v-modle="repeat"
+            :items="repeatOptions"
+            hint="Periode Wählen"
+            item-text="text"
+            item-value="repeat"
+            persistent-hint
+            style="width: 100px"
+            ></v-select>
           </div>
 
           <v-divider class="my-4"></v-divider>
@@ -441,6 +450,12 @@ import { bus } from '../main';
     ],
 
     trips: [],
+
+    repeat: "",
+    repeatOptions: [
+      { text: 'Wöchentlich', repeat: '1' },
+      { text: 'Monatlich', repeat: '2' }
+    ],
     }),
     methods: {
     //   async getTrip() {
