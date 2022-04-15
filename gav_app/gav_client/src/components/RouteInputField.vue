@@ -47,7 +47,6 @@ export default {
     setStop(stop) {
       if (!stop) return;
       this.$emit('setStop', { ...stop, stopType: this.title });
-      this.list = [];
     },
   },
   created() {
@@ -55,8 +54,9 @@ export default {
       bus.$data.instance
         .get(`/points/${searchname.replace('/', ',')}`)
         .then((res) => {
-          if (this.items.lengh > 1) this.items = []; // ... bc if 1 then its this.model
-          if (res.data instanceof Array) this.items.concat(res.data);
+          if (this.items.length > 1) this.items = []; // ... bc if 1 then its this.model
+          if (res.data instanceof Array)
+            this.items = this.items.concat(res.data);
           else this.items.push(res.data);
         })
         .catch((e) => {
@@ -64,6 +64,7 @@ export default {
           else console.log(e);
         })
         .finally(() => {
+          console.log('bla');
           console.log(this.items);
           console.log(this.model);
           this.isLoading = false;
