@@ -113,14 +113,12 @@ export default {
         password: this.password,
       };
       await bus.$data.instance
-        .post('/register', data, {
-          withCredentials: true,
-        })
+        .post('/register', data)
         .then((response) => {
           bus.$data.userId = response.data;
-          bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
           VueCookies.set('loggedIn', true);
+          bus.$emit('loggedIn', true);
           this.$emit('loadUser');
           this.$router.push({ name: 'Home' });
         })
