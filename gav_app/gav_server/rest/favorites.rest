@@ -42,7 +42,7 @@ DELETE http://localhost:3000/favorites/2
 ### * delete favorite success
 DELETE http://localhost:3000/favorites/1
 ### update favorite point
-PUT http://localhost:3000/favorites/points/1
+PUT http://localhost:3000/favorites/points/41
 content-type: application/json
 
 {

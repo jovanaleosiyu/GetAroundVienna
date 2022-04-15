@@ -109,7 +109,7 @@
       </div>
       <!-- Dialogs -->
       <!-- Stop dialog  -->
-      <v-dialog v-model="dialogStop" width="450">
+      <v-dialog eager v-model="dialogStop" width="450">
         <v-card>
           <v-card-title class="text-h6">
             Favorit {{ mode == 'edit' ? 'bearbeiten' : 'erstellen' }}
@@ -202,6 +202,7 @@
                   title="Haltestelle"
                   @setStop="setEditStop"
                 />
+                <span class="error--text">{{ invStopMsg }}</span>
               </div>
               <!-- New stop -->
               <div v-else>
@@ -433,6 +434,7 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
+      <!-- Delete dialog -->
       <v-dialog eager v-model="dialogDelete" max-width="350">
         <v-card>
           <v-card-title class="font-weight-bold">
@@ -551,10 +553,9 @@ export default {
     async favEventStop(stop) {
       switch (this.mode) {
         case 'edit':
+          console.log(stop);
           this.editedStop = { ...stop };
           // Set Inp field
-
-          console.log(this.$refs.stopInp);
           await this.$refs.stopInp.setStopByRef(
             this.editedStop.ref,
             this.editedStop.type
@@ -611,7 +612,26 @@ export default {
       }
     },
     async editStop() {
-      console.log(this.editedStop);
+      if (!this.$refs.stopForm.validate()) return;
+      if (this.editedStop.ref && this.editedStop.type) {
+        this.invStopMsg = '';
+        let stopData = {
+          title: this.editedStop.title,
+          icon: this.editedStop.icon,
+          color: this.editedStop.color,
+          ref: this.editedStop.ref,
+          type: this.editedStop.type,
+        };
+        await bus.$data.instance.put(
+          '/favorites/points/' + this.editedStop.favid,
+          stopData
+        );
+        this.getFavStops();
+        this.dialogStop = false;
+      } else {
+        this.invStopMsg = 'Ungültige Haltestelle. ';
+        this.stopValid = false;
+      }
     },
     // trip methods
     favEventTrip(trip) {
