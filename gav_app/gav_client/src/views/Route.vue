@@ -157,7 +157,7 @@
         small
         :loading="loading"
         :disabled="loading"
-        class="grey darken-3 white--text ml-3"
+        class="accent ml-3"
       >
         <v-icon> mdi-magnify </v-icon>
       </v-btn>
