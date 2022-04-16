@@ -2,8 +2,19 @@ const { query } = require('../db/index');
 
 module.exports = {
   getUsers: async () => (await query('SELECT * FROM users')).rows,
-  getUser: async (userid) => (await query('SELECT userid, email FROM users WHERE userid = $1', [userid])).rows[0],
-  getUserEmail: async (email) => (await query('SELECT * FROM users WHERE email = $1', [email])).rows[0],
+  getUser: async (userid) => {
+    const { rows } = await query(
+      'SELECT userid, email FROM users WHERE userid = $1',
+      [userid]
+    );
+    return rows[0];
+  },
+  getUserEmail: async (email) => {
+    const { rows } = await query('SELECT * FROM users WHERE email = $1', [
+      email,
+    ]);
+    return rows[0];
+  },
   getUserSettings: async (userid) => {
     const res = await query(
       `
@@ -14,6 +25,19 @@ module.exports = {
       [userid]
     );
     return res.rows[0];
+  },
+  getUserWidgets: async (userid) => {
+    const { rows } = await query('SELECT widgets FROM users WHERE userid=$1', [
+      userid,
+    ]);
+    return rows[0];
+  },
+  updUserWidgets: async (userid, widget) => {
+    const { rows } = await query(
+      'UPDATE users SET widgets=$2 WHERE userid=$1',
+      [userid, widget]
+    );
+    return rows[0];
   },
   addUser: async (email, password) => {
     const res = await query(

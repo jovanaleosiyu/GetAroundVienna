@@ -42,13 +42,6 @@ module.exports = {
       res.status(200).send('User successfully logged out');
     } else res.status(400).send('Already logged out');
   }),
-  getUser: asyncHandler(async (req, res) => {
-    const { userid } = req.session;
-    if (userid) {
-      const user = await users.getUser(userid);
-      res.status(200).json(user);
-    } else res.status(403).send('No user logged in.');
-  }),
   loggedIn: asyncHandler(async (req, res) => {
     res.status(200).json(Boolean(req.session.userid));
   }),
