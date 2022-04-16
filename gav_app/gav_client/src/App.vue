@@ -1,15 +1,18 @@
 <template>
   <v-app>
     <v-main>
-      <!-- <v-app-bar color="white" v-if="loggedIn" class="pr-9"> -->
-      <v-app-bar v-if="showappbar" class="pr-9 test">
-        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <v-app-bar app color="white" v-if="showappbar">
+        <v-app-bar-nav-icon
+          absolute
+          @click="drawer = true"
+          class="d-lg-none"
+        ></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <v-toolbar-title>{{ $route.name }} </v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
 
-      <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-navigation-drawer v-model="drawer" app>
         <v-img
           src="./assets/GAV-logo.svg"
           max-height="40"

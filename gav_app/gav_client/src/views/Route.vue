@@ -249,7 +249,7 @@
                 "
                 class="mx-4"
               ></div>
-              <div style="width: 100%">
+              <div v-if=!step.isChange style="width: 100%">
                 {{ step.mode.direction }} <br />
                 {{ step.start.time }} {{ step.start.name }} <br />
                 <div class="d-flex">
@@ -274,9 +274,14 @@
                 </div>
                 {{ step.end.time }} {{ step.end.name }} <br />
               </div>
+
+              <div v-if=step.isChange style="width: 100%">
+                Umstieg <br />
+                Dauer: {{ step.duration }}min<br />
+              </div>
+
             </div>
           </div>
-
           {{ trip.steps[trip.steps.length - 1].end.time }}
           {{ trip.steps[trip.steps.length - 1].end.name }}
         </v-expansion-panel-content>
@@ -353,6 +358,7 @@ export default {
     ],
 
     trips: [],
+    currpos: undefined,
   }),
   methods: {
     async getTrip() {
@@ -377,11 +383,46 @@ export default {
       const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
-      console.log(data);
+
+      let newSteps = [];
+      const newTrips = { ...data };
+      for(let t = 0; t < data.length ; t++ ){
+        newSteps = [];
+        const newStep = {
+          ...data[t].steps[0],
+          isChange: false,
+        };
+        newSteps.push(newStep);
+        for (let s = 1; s < data[t].steps.length; s++){
+          if (this.checkChange(data[t].steps[s-1].end.time, data[t].steps[s].start.time)) {
+            const newStep = {
+              isChange: true,
+              duration: (this.getChangeTime(data[t].steps[s-1].end.time, data[t].steps[s].start.time)).toString(),
+              mode: {
+                type: "Fussweg",
+                name: "",
+              },
+            };
+            newSteps.push(newStep);
+            const step = {
+              ...data[t].steps[s],
+              isChange: false,
+            };
+            newSteps.push(step);
+          }
+          else if (!this.checkChange(data[t].steps[s-1].end.time, data[t].steps[s].start.time)){
+            const newStep = {
+              ...data[t].steps[s],
+              isChange: false,
+            };
+            newSteps.push(newStep);
+          }
+        }
+        newTrips[t].steps = newSteps;
+      }
+
       this.trips = [];
-      this.trips = data.map((d) => ({
-        ...d,
-      }));
+      this.trips = newTrips;
 
       this.$forceUpdate();
       this.loading = false;
@@ -398,9 +439,40 @@ export default {
     },
     swap() {
       const { origin, destination } = this.$refs;
+      if (!destination.model || !origin.model) return;
       const temp = origin.model;
       origin.setStopByRef(destination.model.ref, destination.model.type);
       destination.setStopByRef(temp.ref, temp.type);
+    },
+    getGeolocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            console.log(pos);
+            this.currpos = pos;
+          },
+          (err) => console.log(err),
+          { maximumAge: 10000, timeout: 5000, enableHighAccuracy: true }
+        );
+      } else {
+        alert('Geolocation API is not supported in your browser.');
+      }
+    },
+
+    checkChange(stepEnd, stepStart){
+        return this.getChangeTime(stepEnd, stepStart) > 1;
+    },
+    getChangeTime(stepEnd, stepStart){
+      let changeTime = this.translateTripDuration(stepStart) - this.translateTripDuration(stepEnd);
+      console.log("ChangeTime: " + changeTime);
+      return changeTime;
+    },
+    translateTripDuration(tripDuration){
+      let splitDuration = tripDuration.split(':');
+      if (parseInt(splitDuration[0]) == 0){
+        return 24*60 + parseInt(splitDuration[1]);
+      }
+      else return parseInt(splitDuration[0])*60 + parseInt(splitDuration[1]);
     },
   },
   mounted() {
@@ -422,33 +494,25 @@ export default {
       // this.routeType = this.query.routetype;
       // this.changeSpeed = this.query.changespeed;
       // this.excludedMeans = this.query.exclmeans;
+    } else if (dest_ref && dest_type) {
+      this.getGeolocation();
+      const currref = `
+      ${this.currpos.longitude.toFixed(5)}:
+      ${this.currpos.latitude.toFixed(5)}:WGS84
+      `;
+      this.des.type = dest_type;
+      this.des.ref = dest_ref;
+      this.dep.type = 'coord';
+      this.dep.ref = currref;
+      this.depArr = 'dep';
+      const { origin, destination } = this.$refs;
+      const promises = [];
+      promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
+      promises.push(destination.setStopByRef(this.des.ref, this.des.type));
+      Promise.all(promises).then(() => {
+        this.getTrip();
+      });
     }
-    // bus.$on('callTrip', async (trip) => {
-    //   console.log('TESTTTT');
-    //   // const params = {
-    //   //   typeOrigin: this.dep.type,
-    //   //   nameOrigin: this.dep.ref,
-    //   //   typeDestination: this.des.type,
-    //   //   nameDestination: this.des.ref,
-    //   //   time: time,
-    //   //   date: date,
-    //   //   depArr: this.depArr ? 'dep' : 'arr',
-    //   //   maxChanges: this.maxChanges,
-    //   //   routeType: this.routeType,
-    //   //   changeSpeed: this.changeSpeed,
-    //   //   excludedMeans: this.excludedMeans,
-    //   // };
-    //   this.dep.type = trip.orig_type;
-    //   this.dep.ref = trip.orig_ref;
-    //   this.des.type = trip.dest_type;
-    //   this.des.ref = trip.dest_ref;
-    //   this.depArr = 'dep';
-    //   this.maxChanges = trip.maxchanges;
-    //   this.routeType = trip.routetype;
-    //   this.changeSpeed = trip.changespeed;
-    //   this.excludedMeans = trip.exclmeans;
-    //   this.getTrip();
-    // });
   },
 };
 </script>
