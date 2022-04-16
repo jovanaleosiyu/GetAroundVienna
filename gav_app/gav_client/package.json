@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.14.0",
+    "@shopify/draggable": "^1.0.0-beta.8",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "debounce": "^1.2.1",
