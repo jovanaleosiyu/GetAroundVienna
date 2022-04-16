@@ -249,7 +249,7 @@
                 "
                 class="mx-4"
               ></div>
-              <div style="width: 100%">
+              <div v-if=!step.isChange style="width: 100%">
                 {{ step.mode.direction }} <br />
                 {{ step.start.time }} {{ step.start.name }} <br />
                 <div class="d-flex">
@@ -274,9 +274,14 @@
                 </div>
                 {{ step.end.time }} {{ step.end.name }} <br />
               </div>
+
+              <div v-if=step.isChange style="width: 100%">
+                Umstieg <br />
+                Dauer: {{ step.duration }}min<br />
+              </div>
+
             </div>
           </div>
-
           {{ trip.steps[trip.steps.length - 1].end.time }}
           {{ trip.steps[trip.steps.length - 1].end.name }}
         </v-expansion-panel-content>
@@ -378,11 +383,46 @@ export default {
       const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
-      console.log(data);
+
+      let newSteps = [];
+      const newTrips = { ...data };
+      for(let t = 0; t < data.length ; t++ ){
+        newSteps = [];
+        const newStep = {
+          ...data[t].steps[0],
+          isChange: false,
+        };
+        newSteps.push(newStep);
+        for (let s = 1; s < data[t].steps.length; s++){
+          if (this.checkChange(data[t].steps[s-1].end.time, data[t].steps[s].start.time)) {
+            const newStep = {
+              isChange: true,
+              duration: (this.getChangeTime(data[t].steps[s-1].end.time, data[t].steps[s].start.time)).toString(),
+              mode: {
+                type: "Fussweg",
+                name: "",
+              },
+            };
+            newSteps.push(newStep);
+            const step = {
+              ...data[t].steps[s],
+              isChange: false,
+            };
+            newSteps.push(step);
+          }
+          else if (!this.checkChange(data[t].steps[s-1].end.time, data[t].steps[s].start.time)){
+            const newStep = {
+              ...data[t].steps[s],
+              isChange: false,
+            };
+            newSteps.push(newStep);
+          }
+        }
+        newTrips[t].steps = newSteps;
+      }
+
       this.trips = [];
-      this.trips = data.map((d) => ({
-        ...d,
-      }));
+      this.trips = newTrips;
 
       this.$forceUpdate();
       this.loading = false;
@@ -417,6 +457,22 @@ export default {
       } else {
         alert('Geolocation API is not supported in your browser.');
       }
+    },
+
+    checkChange(stepEnd, stepStart){
+        return this.getChangeTime(stepEnd, stepStart) > 1;
+    },
+    getChangeTime(stepEnd, stepStart){
+      let changeTime = this.translateTripDuration(stepStart) - this.translateTripDuration(stepEnd);
+      console.log("ChangeTime: " + changeTime);
+      return changeTime;
+    },
+    translateTripDuration(tripDuration){
+      let splitDuration = tripDuration.split(':');
+      if (parseInt(splitDuration[0]) == 0){
+        return 24*60 + parseInt(splitDuration[1]);
+      }
+      else return parseInt(splitDuration[0])*60 + parseInt(splitDuration[1]);
     },
   },
   mounted() {
