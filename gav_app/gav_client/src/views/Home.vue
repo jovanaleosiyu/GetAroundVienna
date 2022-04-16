@@ -132,13 +132,25 @@ export default {
       },
     ],
     sortable: undefined,
+    newOrder: [],
     editDialog: true,
   }),
   methods: {
     startEdit() {
       this.editDialog = true;
     },
-    save() {},
+    save() {
+      for (let i in this.widgets) this.widgets[i].order = this.newOrder[i];
+      this.editDialog = false;
+    },
+  },
+  created() {
+    // TODO fetch order from database
+    for (let i in this.widgets) {
+      this.widgets[i].order = Number(i);
+      this.newOrder.push(Number(i));
+      // hidden
+    }
   },
   mounted() {
     this.sortable = new Sortable(document.querySelectorAll('.list'), {
@@ -156,6 +168,20 @@ export default {
         easingFunction: 'ease-in-out',
       },
       plugins: [SwapAnimation],
+    });
+    // Change new order
+    this.sortable.on('sortable:stop', (ev) => {
+      const oldIx = ev.oldIndex;
+      const newIx = ev.newIndex;
+      let el; // this.newOrder[i]
+      for (let i in this.newOrder) {
+        el = this.newOrder[i];
+        if (el === oldIx) this.newOrder[i] = newIx;
+        else if ((el < oldIx && newIx > el) || (oldIx < el && newIx < el)) {
+          continue;
+        } else if (el <= newIx && el > oldIx) this.newOrder[i]--;
+        else this.newOrder[i]++;
+      }
     });
   },
 };
