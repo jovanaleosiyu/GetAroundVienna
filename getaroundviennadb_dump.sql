@@ -237,10 +237,15 @@ ALTER TABLE ONLY public.users ALTER COLUMN userid SET DEFAULT nextval('public.us
 --
 
 COPY public.favorites (favid, color, icon, title, userid) FROM stdin;
-33	red	food	Weg 123	1
-34	orange	food	Restaurant	1
 35	orange	food	Restaurant	1
-36	red	food	Weg 123	1
+38	red darken-1	home	Haus	1
+39	cyan darken-1	school	Schule	1
+43	red darken-1	home	New	1
+46	purple darken-1	school	Test	1
+41	green darken-1	account	test 123	1
+47	cyan darken-1	account	Teste Lang	1
+48	orange darken-1	tree	Teste Lang	1
+49	red darken-1	home	asdf	1
 \.
 
 
@@ -249,8 +254,12 @@ COPY public.favorites (favid, color, icon, title, userid) FROM stdin;
 --
 
 COPY public.favpoints (ref, type, favid) FROM stdin;
-16.32019:48.15985:WGS84	coord	34
 16.32019:48.15985:WGS84	coord	35
+60201015	stop	43
+60201015	stop	41
+60201468	stop	47
+60201468	stop	48
+60200844	stop	49
 \.
 
 
@@ -259,8 +268,9 @@ COPY public.favpoints (ref, type, favid) FROM stdin;
 --
 
 COPY public.favtrips (orig_ref, orig_type, dest_ref, dest_type, exclmeans, changespeed, routetype, maxchanges, favid) FROM stdin;
-16.31933:48.16815:WGS84	coord	60201468	stop	\N	slow	leastinterchange	\N	33
-16.31933:48.16815:WGS84	coord	60201468	stop	\N	slow	leastinterchange	\N	36
+60201468	stop	60201015	stop	\N	normal	leasttime	\N	38
+60201468	stop	60201015	stop	\N	normal	leasttime	\N	39
+60201015	stop	60200048	stop	\N	slow	leastwalking	6	46
 \.
 
 
@@ -279,6 +289,9 @@ COPY public.plannerentries (planid, title, notification, repeat, "time", dep, or
 COPY public.users (userid, email, password, colortheme, darkmode, exclmeans, changespeed, routetype, maxchanges) FROM stdin;
 10	new@email.com	$2b$10$XTAjCz.BUnpe26qwlwp1COfLgozIwi2qOsQ6g6be1311GK2JYjNQG	blue	f	\N	\N	\N	\N
 1	max.muster@email.com	$2b$10$TjUDuru4UPr9WyUAHgtcquJRrKCE2fyjmp4ZYXTCRMQbxbmvHakPm	blue	f	\N	\N	\N	\N
+12	test.test@email.com	$2b$10$SUbOx.i6xN0ZEJgHsCA55.DEff5n.Gfd7zRgNA77ncCjTehCzJ4ve	blue	f	\N	\N	\N	\N
+13	test@email.com	$2b$10$mGHt4XuzvZzjMWWqZbGr9.SChQ98HL3ezIRRETPS5a26u/PaTvFJS	blue	f	\N	\N	\N	\N
+14	n@email.com	$2b$10$PUkUwkLMB/5oLiaV7wVe2uyZYfzaDga4JyFupkPekdLcBOwtaFQAS	blue	f	\N	\N	\N	\N
 \.
 
 
@@ -286,7 +299,7 @@ COPY public.users (userid, email, password, colortheme, darkmode, exclmeans, cha
 -- Name: favorites_favid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.favorites_favid_seq', 36, true);
+SELECT pg_catalog.setval('public.favorites_favid_seq', 57, true);
 
 
 --
@@ -300,7 +313,7 @@ SELECT pg_catalog.setval('public.plannerentries_planid_seq', 7, true);
 -- Name: users_userid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.users_userid_seq', 11, true);
+SELECT pg_catalog.setval('public.users_userid_seq', 14, true);
 
 
 --
