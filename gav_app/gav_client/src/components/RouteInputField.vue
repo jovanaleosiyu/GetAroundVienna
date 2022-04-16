@@ -64,7 +64,6 @@ export default {
           else console.log(e);
         })
         .finally(() => {
-          console.log('bla');
           console.log(this.items);
           console.log(this.model);
           this.isLoading = false;

@@ -1,6 +1,7 @@
 const errorHandler = (err, req, res, next) => {
   if (err) {
     console.log(`ERROR ===> ${err.message}`.red.inverse);
+    console.log(err);
   } else {
     next();
   }
