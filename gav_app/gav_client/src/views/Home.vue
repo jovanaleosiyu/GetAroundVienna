@@ -7,7 +7,7 @@
       <div class="scroll-wrapper">
         <v-expansion-panels flat multiple v-model="panels">
           <v-expansion-panel
-            v-for="w of widgets"
+            v-for="w of visible"
             :key="w.compName"
             class="rounded-xl"
             :class="`order-${w.order}`"
@@ -62,8 +62,13 @@
         <!-- Widgets -->
         <!-- <v-divider></v-divider> -->
         <v-list class="list" dense>
-          <v-list-item class="list-item" v-for="w of widgets" :key="w.compName">
-            <v-btn x-small icon color="error" class="mr-3">
+          <v-list-item
+            class="list-item"
+            :class="`order-${w.order}`"
+            v-for="w of visibleEdit"
+            :key="w.name"
+          >
+            <v-btn @click="hide(w)" x-small icon color="error" class="mr-3">
               <v-icon>mdi-minus</v-icon>
             </v-btn>
             <v-list-item-title>{{ w.name }}</v-list-item-title>
@@ -75,8 +80,8 @@
         <v-divider></v-divider>
         <v-subheader>Ausgeblendete Elemente</v-subheader>
         <v-list dense>
-          <v-list-item v-for="w of widgets" :key="w.compName">
-            <v-btn x-small icon color="success" class="mr-3">
+          <v-list-item v-for="w of hiddenEdit" :key="w.name">
+            <v-btn @click="show(w)" x-small icon color="success" class="mr-3">
               <v-icon>mdi-plus</v-icon>
             </v-btn>
             <v-list-item-title>{{ w.name }}</v-list-item-title>
@@ -140,17 +145,33 @@ export default {
       this.editDialog = true;
     },
     save() {
-      for (let i in this.widgets) this.widgets[i].order = this.newOrder[i];
+      for (let i in this.widgets)
+        this.widgets[i].order = this.newOrder[i].order;
       this.editDialog = false;
+    },
+    hide(w) {
+      const roi = w.order; // order index of removed item
+      let el; // this.newOrder[i].order
+      for (let i in this.newOrder) {
+        el = this.newOrder[i].order;
+        if (el === -1) continue;
+        else if (el === roi) this.newOrder[i].order = -1;
+        else if (el > roi) this.newOrder[i].order--;
+      }
+    },
+    show(w) {
+      w.order = Math.max(...this.newOrder.map((m) => m.order)) + 1;
     },
   },
   created() {
     // TODO fetch order from database
     for (let i in this.widgets) {
       this.widgets[i].order = Number(i);
-      this.newOrder.push(Number(i));
-      // hidden
     }
+    this.newOrder = this.widgets.map((w) => ({
+      name: w.name,
+      order: w.order,
+    }));
   },
   mounted() {
     this.sortable = new Sortable(document.querySelectorAll('.list'), {
@@ -173,16 +194,34 @@ export default {
     this.sortable.on('sortable:stop', (ev) => {
       const oldIx = ev.oldIndex;
       const newIx = ev.newIndex;
-      let el; // this.newOrder[i]
+      let el; // this.newOrder[i].order
       for (let i in this.newOrder) {
-        el = this.newOrder[i];
-        if (el === oldIx) this.newOrder[i] = newIx;
-        else if ((el < oldIx && newIx > el) || (oldIx < el && newIx < el)) {
+        el = this.newOrder[i].order;
+        if (el === oldIx) this.newOrder[i].order = newIx;
+        else if (
+          el === -1 ||
+          (el < oldIx && newIx > el) ||
+          (oldIx < el && newIx < el)
+        ) {
           continue;
-        } else if (el <= newIx && el > oldIx) this.newOrder[i]--;
-        else this.newOrder[i]++;
+        } else if (el <= newIx && el > oldIx) this.newOrder[i].order--;
+        else this.newOrder[i].order++;
       }
     });
+  },
+  computed: {
+    visible() {
+      this.editDialog; // to force update
+      return this.widgets.filter((w) => w.order > -1);
+    },
+    hiddenEdit() {
+      return this.newOrder.filter((no) => no.order <= -1);
+    },
+    visibleEdit() {
+      return this.newOrder
+        .filter((no) => no.order > -1)
+        .sort((a, b) => a.order - b.order);
+    },
   },
 };
 </script>
