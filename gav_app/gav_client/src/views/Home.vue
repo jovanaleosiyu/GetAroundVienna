@@ -1,41 +1,90 @@
 <template>
-  <v-container class="d-flex flex-column align-center">
-    <Map />
-  </v-container>
+  <div class="home-wrapper">
+    <!-- Map -->
+    <Map class="home-map" />
+    <!-- Widgets -->
+    <v-container fluid class="rounded-t-xl bg widget-wrapper">
+      <div class="scroll-wrapper">
+        <v-expansion-panels flat multiple v-model="panels" style="border: none">
+          <!-- Routes -->
+          <v-expansion-panel class="rounded-xl">
+            <v-expansion-panel-header class="text-h5">
+              Routen
+            </v-expansion-panel-header>
+            <v-expansion-panel-content> TODO </v-expansion-panel-content>
+          </v-expansion-panel>
+          <!-- Favorites -->
+          <v-expansion-panel class="rounded-xl">
+            <v-expansion-panel-header class="text-h5">
+              Favoriten
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <FavWidget :actions="false" />
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+          <!-- Planer -->
+          <v-expansion-panel class="rounded-xl">
+            <v-expansion-panel-header class="text-h5">
+              Planer
+            </v-expansion-panel-header>
+            <v-expansion-panel-content> TODO </v-expansion-panel-content>
+          </v-expansion-panel>
+          <!-- Monitor -->
+          <v-expansion-panel class="rounded-xl">
+            <v-expansion-panel-header class="text-h5">
+              Monitor
+            </v-expansion-panel-header>
+            <v-expansion-panel-content> TODO </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </div>
+    </v-container>
+  </div>
 </template>
 
 <script>
-import { bus } from '../main';
+// import { bus } from '../main';
+import FavWidget from '../components/FavWidget.vue';
 import Map from '../components/Map';
 export default {
   name: 'Home',
   components: {
     Map,
+    FavWidget,
   },
-  data: () => ({}),
+  data: () => ({
+    panels: [0, 1, 2, 3],
+  }),
   methods: {},
-  created() {
-    // const bla1 =
-    //   '16.33050,48.15687 16.33104,48.15672 16.33132,48.15717 16.33158,48.15759 16.33191,48.15808 16.33238,48.15877 16.33161,48.15903 16.33167,48.15910 16.33177,48.15919 16.33183,48.15930 16.33077,48.15964 16.33065,48.15968 16.33073,48.15978 16.33073,48.15979 16.33064,48.15985 16.33063,48.15986 16.33055,48.15989 16.33080,48.16024 16.33082,48.16030 16.33000,48.16052 16.32968,48.16060';
-    const bla =
-      '16.33167,48.16345 16.33154,48.16336 16.33135,48.16348 16.33095,48.16374 16.33067,48.16390 16.33064,48.16392 16.33059,48.16395 16.33056,48.16396 16.33042,48.16405 16.33027,48.16414 16.33015,48.16420 16.32996,48.16431 16.32982,48.16436 16.32979,48.16438 16.32964,48.16444 16.32958,48.16446 16.32950,48.16450 16.32928,48.16459 16.32894,48.16472 16.32882,48.16477 16.32868,48.16484 16.32858,48.16489 16.32855,48.16490 16.32846,48.16496 16.32834,48.16503 16.32829,48.16507 16.32816,48.16501 16.32794,48.16492 16.32785,48.16475 16.32773,48.16478 16.32759,48.16472';
-    const x = bla.split(' ');
-    const res = [];
-    console.log(x);
-    let n;
-    for (let coords of x) {
-      console.log(coords);
-      n = coords.split(',');
-      console.log(n);
-      res.push({
-        lat: Number(n[1]),
-        lng: Number(n[0]),
-      });
-    }
-    console.log(JSON.stringify(res));
-    console.log('User eingeloggt mit der ID: ' + bus.$data.userId);
-  },
+  created() {},
 };
 </script>
 
-<style scoped></style>
+<style>
+.home-map {
+  width: 100vw;
+  height: 33%;
+  z-index: 1;
+}
+
+.widget-wrapper {
+  z-index: 5;
+  margin-top: -7%;
+  height: 74%;
+}
+
+.scroll-wrapper {
+  height: 100%;
+  overflow: auto;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.bg {
+  background-color: #fcfcfc;
+  /* background-color: #efefef; */
+}
+</style>

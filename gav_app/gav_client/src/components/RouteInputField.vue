@@ -12,6 +12,7 @@
       item-value="ref"
       :label="title"
       return-object
+      cache-items
       @change="setStop"
     ></v-autocomplete>
   </div>
@@ -50,22 +51,23 @@ export default {
     },
   },
   created() {
-    this.getStopList = debounce(500, async (searchname) => {
+    this.getStopList = debounce(1000, async (searchname) => {
       bus.$data.instance
         .get(`/points/${searchname.replace('/', ',')}`)
         .then((res) => {
           if (this.items.length > 1) this.items = []; // ... bc if 1 then its this.model
           if (res.data instanceof Array)
             this.items = this.items.concat(res.data);
-          else this.items.push(res.data);
+          else {
+            res.data.name = res.data.name.replace(/\s{2,}/g, ' '); // remove 2 Whitespaces
+            this.items.push(res.data);
+          }
         })
         .catch((e) => {
           if (e.response.status == 404) this.items = [];
           else console.log(e);
         })
         .finally(() => {
-          console.log(this.items);
-          console.log(this.model);
           this.isLoading = false;
         });
     });

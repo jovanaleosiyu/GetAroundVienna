@@ -106,9 +106,9 @@ export default {
         .then((response) => {
           bus.$data.userId = response.data;
           VueCookies.set('userId', response.data);
-          bus.$emit('loggedIn', true);
           bus.$data.loggedIn = true;
           VueCookies.set('loggedIn', true);
+          bus.$emit('loggedIn', true);
           this.$emit('loadUser');
           this.$router.push({ name: 'Route' });
         })
