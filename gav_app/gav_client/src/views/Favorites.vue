@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-sheet elevation="4" class="rounded-lg pa-3">
+    <v-sheet elevation="4" class="rounded-lg pa-3 elevation1">
       <h2 class="mb-3 font-weight-medium">Favoriten</h2>
       <!-- Stops list -->
       <h4 class="mb-3 font-weight-medium">Haltestellen</h4>

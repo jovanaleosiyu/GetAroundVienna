@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
       <!-- <v-app-bar color="white" v-if="loggedIn" class="pr-9"> -->
-      <v-app-bar color="white" v-if="showappbar" class="pr-9">
+      <v-app-bar v-if="showappbar" class="pr-9 test">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <v-toolbar-title>{{ $route.name }} </v-toolbar-title>
