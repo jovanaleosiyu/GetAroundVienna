@@ -2,7 +2,7 @@
   <div class="google-map" ref="googleMap"></div>
 </template>
 <script>
-// import { Loader } from '@googlemaps/js-api-loader';
+import { Loader } from '@googlemaps/js-api-loader';
 
 export default {
   data() {
@@ -10,16 +10,29 @@ export default {
       apiKey: process.env.VUE_APP_GOOGLE_API_KEY,
       google: null,
       map: null,
-      mapOptions: { zoom: 18, center: { lat: 0, lng: -180 } },
+      mapOptions: {
+        zoom: 18,
+        center: { lat: 48.20889357826833, lng: 16.373446912056732 }, // Stephansplatz
+        minZoom: 15,
+        maxZoom: 21,
+        restriction: {
+          latLngBounds: {
+            north: -10,
+            south: -40,
+            east: 160,
+            west: 100,
+          },
+        },
+      },
     };
   },
   async mounted() {
-    // const loader = new Loader({
-    //   apiKey: this.apiKey,
-    // });
-    // this.google = await loader.load();
-    // const mapContainer = this.$refs.googleMap;
-    // this.map = new this.google.maps.Map(mapContainer, this.mapOptions);
+    const loader = new Loader({
+      apiKey: this.apiKey,
+    });
+    this.google = await loader.load();
+    const mapContainer = this.$refs.googleMap;
+    this.map = new this.google.maps.Map(mapContainer, this.mapOptions);
     // geolocation
     // if (navigator.geolocation) {
     //   navigator.geolocation.getCurrentPosition(

@@ -1,7 +1,10 @@
 <template>
   <div class="home-wrapper">
     <!-- Map -->
-    <Map class="home-map" />
+    <Map
+      class="home-map"
+      :class="{ 'home-map--fullscreen': widgetState === -1 }"
+    />
     <!-- Wrapper -->
     <v-container
       fluid
@@ -337,6 +340,10 @@ export default {
   width: 100vw;
   height: 33%;
   z-index: 1;
+  transition: height 0.5s linear;
+}
+.home-map--fullscreen {
+  height: 100%;
 }
 .widget-handle {
   position: absolute;
