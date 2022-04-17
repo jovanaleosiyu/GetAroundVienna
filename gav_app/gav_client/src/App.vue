@@ -50,48 +50,48 @@
               <v-list-item-title>Home</v-list-item-title>
             </v-list-item>
 
-            <v-list-item to="/route">
-              <v-list-item-icon>
-                <v-icon>mdi-compass-outline</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Route</v-list-item-title>
-            </v-list-item>
+          <v-list-item to="/route">
+            <v-list-item-icon>
+              <v-icon>mdi-compass-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Route</v-list-item-title>
+          </v-list-item>
 
-            <v-list-item v-if="userId != null" to="/favoriten">
-              <v-list-item-icon>
-                <v-icon>mdi-star-outline</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Favoriten</v-list-item-title>
-            </v-list-item>
+          <v-list-item v-if="userId != null" to="/favoriten">
+            <v-list-item-icon>
+              <v-icon>mdi-star-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Favoriten</v-list-item-title>
+          </v-list-item>
 
-            <v-list-item v-if="userId != null" to="/planer">
-              <v-list-item-icon>
-                <v-icon>mdi-calendar-blank-outline</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Planer</v-list-item-title>
-            </v-list-item>
+          <v-list-item v-if="userId != null" to="/planer">
+            <v-list-item-icon>
+              <v-icon>mdi-calendar-blank-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Planer</v-list-item-title>
+          </v-list-item>
 
-            <v-divider class="my-5"></v-divider>
+          <v-divider class="my-5"></v-divider>
 
-            <v-list-item to="/settings">
-              <v-list-item-icon>
-                <v-icon>mdi-cog-outline</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Einstellungen</v-list-item-title>
-            </v-list-item>
-            <v-list-item @click="logout">
-              <v-list-item-icon>
-                <v-icon>mdi-logout</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>
-                {{ userId ? 'Abmelden' : 'Anmelden' }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-        <!-- <v-btn @click="logout" class="ml-1 pr-16" text><v-icon class="mr-7">mdi-logout</v-icon>Abmelden</v-btn> -->
-      </v-navigation-drawer>
-
+          <v-list-item to="/settings">
+            <v-list-item-icon>
+              <v-icon>mdi-cog-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Einstellungen</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="logout">
+            <v-list-item-icon>
+              <v-icon>mdi-logout</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>
+              {{ userId ? 'Abmelden' : 'Anmelden' }}
+            </v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+      <!-- <v-btn @click="logout" class="ml-1 pr-16" text><v-icon class="mr-7">mdi-logout</v-icon>Abmelden</v-btn> -->
+    </v-navigation-drawer>
+    <v-main>
       <router-view @loadUser="loadUser" />
     </v-main>
   </v-app>
@@ -104,7 +104,7 @@ export default {
   name: 'App',
 
   data: () => ({
-    drawer: false,
+    drawer: null,
     loggedIn: false,
     title: '',
     email: '',

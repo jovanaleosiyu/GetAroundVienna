@@ -12,8 +12,8 @@
             class="rounded-xl"
             :class="`order-${w.order}`"
           >
-            <v-expansion-panel-header class="text-h6">
-              {{ w.compName }}
+            <v-expansion-panel-header class="text-h6 font-weight-regular">
+              {{ w.name }}
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <component :is="w.compName" v-bind="{ ...w.props }"></component>
@@ -38,27 +38,17 @@
           <v-btn icon @click="editDialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>Home Personaliseren</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-title>Widgets</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn text color="primary" @click="save"> Speichern </v-btn>
+            <v-btn icon @click="save">
+              <v-icon>mdi-check</v-icon>
+            </v-btn>
           </v-toolbar-items>
         </v-toolbar>
-        <!-- Information -->
-        <v-card class="ma-3" outlined>
-          <v-subheader>Reihenfolge verändern</v-subheader>
-          <v-card-text>
-            Ändere die Reihenfolge der verschiedenen Komponente auf der
-            Startseite per Drag and Drop.
-          </v-card-text>
-          <v-subheader>Ein- und Ausblenden</v-subheader>
-          <v-card-text>
-            Klicke auf den Button links, um Komponenten auszublenden. Unter
-            <span class="font-italic"> Ausgeblendete Elemente </span>
-            können sie wieder eingeblendet werden.
-          </v-card-text>
-        </v-card>
-
+        <!-- Heading -->
+        <v-card-title> Reihenfolge verändern </v-card-title>
         <!-- Widgets -->
         <!-- <v-divider></v-divider> -->
         <v-list class="list" dense>
@@ -72,8 +62,7 @@
               <v-icon>mdi-minus</v-icon>
             </v-btn>
             <v-list-item-title>{{ w.name }}</v-list-item-title>
-            <v-icon>mdi-drag</v-icon>
-            <!-- <v-icon>mdi-drag-horizontal-variant</v-icon> -->
+            <v-icon>mdi-drag-horizontal-variant</v-icon>
           </v-list-item>
         </v-list>
         <!-- Hidden widgets -->
@@ -93,7 +82,7 @@
 </template>
 
 <script>
-// import { bus } from '../main';
+import { bus } from '../main';
 import FavWidget from '../components/FavWidget.vue';
 import RouteWidget from '../components/RouteWidget.vue';
 import PlanerWidget from '../components/PlanerWidget.vue';
@@ -138,7 +127,8 @@ export default {
     ],
     sortable: undefined,
     newOrder: [],
-    editDialog: true,
+    editDialog: false,
+    forceUpd: false,
   }),
   methods: {
     startEdit() {
@@ -147,6 +137,8 @@ export default {
     save() {
       for (let i in this.widgets)
         this.widgets[i].order = this.newOrder[i].order;
+      this.forceUpd = !this.forceUpd;
+      this.updWidgets(); // Save in database
       this.editDialog = false;
     },
     hide(w) {
@@ -162,16 +154,24 @@ export default {
     show(w) {
       w.order = Math.max(...this.newOrder.map((m) => m.order)) + 1;
     },
+    async getWidgets() {
+      const { data } = await bus.$data.instance.get('/user/widgets');
+      for (let i in data) {
+        this.widgets[i].order = data[i];
+      }
+      this.newOrder = this.widgets.map((w) => ({
+        name: w.name,
+        order: w.order,
+      }));
+      this.forceUpd = !this.forceUpd;
+    },
+    updWidgets() {
+      const orderlist = this.widgets.map((w) => w.order);
+      bus.$data.instance.patch('/user/widgets', orderlist);
+    },
   },
   created() {
-    // TODO fetch order from database
-    for (let i in this.widgets) {
-      this.widgets[i].order = Number(i);
-    }
-    this.newOrder = this.widgets.map((w) => ({
-      name: w.name,
-      order: w.order,
-    }));
+    this.getWidgets();
   },
   mounted() {
     this.sortable = new Sortable(document.querySelectorAll('.list'), {
@@ -211,7 +211,7 @@ export default {
   },
   computed: {
     visible() {
-      this.editDialog; // to force update
+      this.forceUpd;
       return this.widgets.filter((w) => w.order > -1);
     },
     hiddenEdit() {

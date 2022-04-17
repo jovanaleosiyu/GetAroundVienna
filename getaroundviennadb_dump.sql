@@ -183,7 +183,8 @@ CREATE TABLE public.users (
     exclmeans text,
     changespeed public.d_speed,
     routetype public.d_route_type,
-    maxchanges integer
+    maxchanges integer,
+    widgets text DEFAULT '0;1;2;3'::text NOT NULL
 );
 
 
@@ -286,12 +287,12 @@ COPY public.plannerentries (planid, title, notification, repeat, "time", dep, or
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.users (userid, email, password, colortheme, darkmode, exclmeans, changespeed, routetype, maxchanges) FROM stdin;
-10	new@email.com	$2b$10$XTAjCz.BUnpe26qwlwp1COfLgozIwi2qOsQ6g6be1311GK2JYjNQG	blue	f	\N	\N	\N	\N
-1	max.muster@email.com	$2b$10$TjUDuru4UPr9WyUAHgtcquJRrKCE2fyjmp4ZYXTCRMQbxbmvHakPm	blue	f	\N	\N	\N	\N
-12	test.test@email.com	$2b$10$SUbOx.i6xN0ZEJgHsCA55.DEff5n.Gfd7zRgNA77ncCjTehCzJ4ve	blue	f	\N	\N	\N	\N
-13	test@email.com	$2b$10$mGHt4XuzvZzjMWWqZbGr9.SChQ98HL3ezIRRETPS5a26u/PaTvFJS	blue	f	\N	\N	\N	\N
-14	n@email.com	$2b$10$PUkUwkLMB/5oLiaV7wVe2uyZYfzaDga4JyFupkPekdLcBOwtaFQAS	blue	f	\N	\N	\N	\N
+COPY public.users (userid, email, password, colortheme, darkmode, exclmeans, changespeed, routetype, maxchanges, widgets) FROM stdin;
+10	new@email.com	$2b$10$XTAjCz.BUnpe26qwlwp1COfLgozIwi2qOsQ6g6be1311GK2JYjNQG	blue	f	\N	\N	\N	\N	0;1;2;3
+12	test.test@email.com	$2b$10$SUbOx.i6xN0ZEJgHsCA55.DEff5n.Gfd7zRgNA77ncCjTehCzJ4ve	blue	f	\N	\N	\N	\N	0;1;2;3
+13	test@email.com	$2b$10$mGHt4XuzvZzjMWWqZbGr9.SChQ98HL3ezIRRETPS5a26u/PaTvFJS	blue	f	\N	\N	\N	\N	0;1;2;3
+14	n@email.com	$2b$10$PUkUwkLMB/5oLiaV7wVe2uyZYfzaDga4JyFupkPekdLcBOwtaFQAS	blue	f	\N	\N	\N	\N	0;1;2;3
+1	max.muster@email.com	$2b$10$TjUDuru4UPr9WyUAHgtcquJRrKCE2fyjmp4ZYXTCRMQbxbmvHakPm	blue	f	\N	\N	\N	\N	1;0;-1;-1
 \.
 
 

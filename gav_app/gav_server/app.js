@@ -13,6 +13,7 @@ const tripRouter = require('./routes/trip');
 const pointsRouter = require('./routes/points');
 const favoritesRouter = require('./routes/favorites');
 const plannerRouter = require('./routes/planner');
+const userRouter = require('./routes/user');
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
 const { restrict } = require('./middleware/restrict');
 
@@ -50,6 +51,7 @@ app.use('/', accountRouter);
 app.use('/trip', tripRouter);
 app.use('/points', pointsRouter);
 app.use(restrict);
+app.use('/user', userRouter);
 app.use('/favorites', favoritesRouter);
 app.use('/plannerentry', plannerRouter);
 
