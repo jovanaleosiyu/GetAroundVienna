@@ -1,10 +1,10 @@
 <template>
   <v-container>
-    <v-sheet class="mb-3 rounded-lg pa-3" width="300" height="100">
-      E-Mail Adresse
+    <v-sheet class="mb-3 rounded-lg pa-3 elevation1" width="300" height="100">
+      <h3 class="mb-3 font-weight-medium">E-Mail Adresse</h3>
     </v-sheet>
-    <v-sheet class="mb-3 pa-3 rounded-lg">
-      <h2 class="mb-3 font-weight-medium">Farbschema</h2>
+    <v-sheet class="mb-3 pa-3 rounded-lg elevation1">
+      <h3 class="mb-3 font-weight-medium">Farbschema</h3>
       <v-switch
         v-model="$vuetify.theme.dark"
         inset
@@ -19,7 +19,7 @@
         @click="selectTheme(c)"
       ></v-btn>
       <v-divider class="my-3"></v-divider>
-      <h2 class="mb-3 font-weight-medium">Benachrichtigungen</h2>
+      <h3 class="mb-3 font-weight-medium">Benachrichtigungen</h3>
     </v-sheet>
     Passwort zurücksetzen
   </v-container>
@@ -33,7 +33,7 @@ export default {
       colors: [
         {
           class: 'grey darken-1',
-          hex: '#757575',
+          hex: '#393939',
         },
         {
           class: 'red darken-1',

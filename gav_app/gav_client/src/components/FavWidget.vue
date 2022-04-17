@@ -39,7 +39,7 @@
               dialogStop = true;
             "
           >
-            <v-icon>mdi-plus</v-icon>
+            <v-icon color="accent">mdi-plus</v-icon>
           </v-btn>
         </div>
       </v-slide-item>
@@ -78,6 +78,7 @@
           <v-btn
             fab
             elevation="3"
+            color="accent"
             @click="
               mode = '';
               dialogTrip = true;
@@ -109,7 +110,7 @@
     <!-- Stop dialog  -->
     <v-dialog eager v-model="dialogStop" width="450">
       <v-card>
-        <v-card-title class="text-h6">
+        <v-card-title>
           Favorit {{ mode == 'edit' ? 'bearbeiten' : 'erstellen' }}
         </v-card-title>
         <v-card-text class="d-flex flex-column align-center pb-0">
@@ -235,7 +236,7 @@
     <!-- Trip dialog  -->
     <v-dialog eager v-model="dialogTrip" width="450">
       <v-card>
-        <v-card-title class="text-h6">
+        <v-card-title>
           Favorit {{ mode == 'edit' ? 'bearbeiten' : 'erstellen' }}
         </v-card-title>
         <v-card-text class="d-flex flex-column align-center pb-0">
