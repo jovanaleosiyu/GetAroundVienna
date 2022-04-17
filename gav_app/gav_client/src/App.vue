@@ -10,7 +10,7 @@
       <v-toolbar-title>{{ $route.name }} </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-if="showappbar" v-model="drawer" app>
       <v-img
         src="./assets/GAV-logo.svg"
         max-height="40"
