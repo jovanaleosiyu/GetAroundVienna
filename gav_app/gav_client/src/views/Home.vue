@@ -2,9 +2,18 @@
   <div class="home-wrapper">
     <!-- Map -->
     <Map class="home-map" />
-    <!-- Widgets -->
-    <v-container fluid class="rounded-t-xl bg widget-wrapper">
+    <!-- Wrapper -->
+    <v-container
+      fluid
+      class="rounded-t-xl bg widget-wrapper pt-8"
+      :class="widgetStateClass"
+    >
       <div class="scroll-wrapper">
+        <!-- Draggable handle -->
+        <div class="widget-handle mt-n7">
+          <v-icon> mdi-drag-horizontal-variant </v-icon>
+        </div>
+        <!-- Widgets -->
         <v-expansion-panels flat multiple v-model="panels">
           <v-expansion-panel
             v-for="w of visible"
@@ -48,34 +57,36 @@
           </v-toolbar-items>
         </v-toolbar>
         <!-- Heading -->
-        <v-card-title> Reihenfolge verändern </v-card-title>
-        <!-- Widgets -->
-        <!-- <v-divider></v-divider> -->
-        <v-list class="list" dense>
-          <v-list-item
-            class="list-item"
-            :class="`order-${w.order}`"
-            v-for="w of visibleEdit"
-            :key="w.name"
-          >
-            <v-btn @click="hide(w)" x-small icon color="error" class="mr-3">
-              <v-icon>mdi-minus</v-icon>
-            </v-btn>
-            <v-list-item-title>{{ w.name }}</v-list-item-title>
-            <v-icon>mdi-drag-horizontal-variant</v-icon>
-          </v-list-item>
-        </v-list>
-        <!-- Hidden widgets -->
-        <v-divider></v-divider>
-        <v-subheader>Ausgeblendete Elemente</v-subheader>
-        <v-list dense>
-          <v-list-item v-for="w of hiddenEdit" :key="w.name">
-            <v-btn @click="show(w)" x-small icon color="success" class="mr-3">
-              <v-icon>mdi-plus</v-icon>
-            </v-btn>
-            <v-list-item-title>{{ w.name }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
+        <v-container>
+          <!-- For padding -->
+          <v-card-title> Reihenfolge verändern </v-card-title>
+          <!-- Widgets -->
+          <v-list class="list" dense>
+            <v-list-item
+              class="list-item"
+              :class="`order-${w.order}`"
+              v-for="w of visibleEdit"
+              :key="w.name"
+            >
+              <v-btn @click="hide(w)" x-small icon color="error" class="mr-3">
+                <v-icon>mdi-minus</v-icon>
+              </v-btn>
+              <v-list-item-title>{{ w.name }}</v-list-item-title>
+              <v-icon>mdi-drag-horizontal-variant</v-icon>
+            </v-list-item>
+          </v-list>
+          <!-- Hidden widgets -->
+          <v-divider></v-divider>
+          <v-subheader>Ausgeblendete Elemente</v-subheader>
+          <v-list dense>
+            <v-list-item v-for="w of hiddenEdit" :key="w.name">
+              <v-btn @click="show(w)" x-small icon color="success" class="mr-3">
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+              <v-list-item-title>{{ w.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-container>
       </v-card>
     </v-dialog>
   </div>
@@ -88,7 +99,7 @@ import RouteWidget from '../components/RouteWidget.vue';
 import PlanerWidget from '../components/PlanerWidget.vue';
 import MonitorWidget from '../components/MonitorWidget.vue';
 import Map from '../components/Map';
-import { Sortable } from '@shopify/draggable';
+import { Sortable, Draggable } from '@shopify/draggable';
 
 import SwapAnimation from '@shopify/draggable/lib/plugins/swap-animation';
 
@@ -129,6 +140,8 @@ export default {
     newOrder: [],
     editDialog: false,
     forceUpd: false,
+    // Draggable widgets
+    widgetState: 0, // -1 closed, 0 open, 1 fully opened
   }),
   methods: {
     startEdit() {
@@ -169,12 +182,24 @@ export default {
       const orderlist = this.widgets.map((w) => w.order);
       bus.$data.instance.patch('/user/widgets', orderlist);
     },
-  },
-  created() {
-    this.getWidgets();
+    calcOffset(offset) {
+      return offset * 2 * 0.5;
+    },
+    translateMirror(mirror, mirrorCoords, containerRect) {
+      if (
+        mirrorCoords.top < containerRect.top ||
+        mirrorCoords.left < containerRect.left
+      ) {
+        return;
+      }
+      requestAnimationFrame(() => {
+        mirror.style.transform = `translate3d(${mirrorCoords.left}px, ${mirrorCoords.top}px, 0)`;
+      });
+    },
   },
   mounted() {
-    this.sortable = new Sortable(document.querySelectorAll('.list'), {
+    // Sortable
+    this.sortable = new Sortable(document.querySelector('.list'), {
       draggable: '.list-item',
       mirror: {
         constrainDimensions: true,
@@ -190,8 +215,8 @@ export default {
       },
       plugins: [SwapAnimation],
     });
-    // Change new order
     this.sortable.on('sortable:stop', (ev) => {
+      // Change new Order
       const oldIx = ev.oldIndex;
       const newIx = ev.newIndex;
       let el; // this.newOrder[i].order
@@ -208,6 +233,57 @@ export default {
         else this.newOrder[i].order++;
       }
     });
+    // Draggable
+    const draggable = new Draggable(document.querySelector('.home-wrapper'), {
+      draggable: '.widget-wrapper',
+      handle: '.widget-handle',
+      delay: 0,
+      mirror: {
+        constrainDimensions: true,
+        xAxis: false,
+        cursorOffsetY: 0,
+      },
+      classes: {
+        'source:dragging': ['d-none'],
+      },
+    });
+    let dragRect;
+    let initialMouseY;
+    let initialWidgetState;
+    let dragThreshold;
+    // --- Draggable events --- //
+    // Get initial mouse Y pos
+    draggable.on('drag:start', (evt) => {
+      initialMouseY = evt.sensorEvent.clientY;
+      initialWidgetState = this.widgetState;
+    });
+    // Get threshold
+    draggable.on('mirror:created', (evt) => {
+      dragRect = evt.source.getBoundingClientRect(); // .widget-wrapper
+      dragThreshold = dragRect.height / 4;
+    });
+    // Check if over threshold and change state
+    draggable.on('mirror:move', (evt) => {
+      const offsetValue = initialMouseY - evt.sensorEvent.clientY;
+      // console.log({
+      //   dragThreshold,
+      //   offsetValue,
+      //   initialMouseY,
+      // });
+
+      if (Math.abs(offsetValue) > dragThreshold) {
+        if (Math.abs(offsetValue) > dragThreshold * 4) {
+          console.log('OMG');
+        }
+        if (initialWidgetState === 0) {
+          this.widgetState = offsetValue < 0 ? -1 : 1;
+          console.log('BLA', this.widgetState);
+        } else {
+          this.widgetState = 0;
+          console.log('BLA', this.widgetState);
+        }
+      }
+    });
   },
   computed: {
     visible() {
@@ -222,6 +298,19 @@ export default {
         .filter((no) => no.order > -1)
         .sort((a, b) => a.order - b.order);
     },
+    widgetStateClass() {
+      switch (this.widgetState) {
+        case 1:
+          return 'widget-wrapper--opened';
+        case -1:
+          return 'widget-wrapper--closed';
+        default:
+          return '';
+      }
+    },
+  },
+  created() {
+    this.getWidgets();
   },
 };
 </script>
@@ -244,17 +333,30 @@ export default {
 }
 /* Other */
 .home-map {
+  position: absolute;
   width: 100vw;
   height: 33%;
   z-index: 1;
 }
-
+.widget-handle {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
 .widget-wrapper {
+  position: absolute;
+  top: 24.5%;
   z-index: 5;
-  margin-top: -7%;
   height: 74%;
 }
-
+.widget-wrapper--closed {
+  top: 95%;
+}
+.widget-wrapper--opened {
+  top: 0%;
+  height: 100%;
+}
 .scroll-wrapper {
   height: 100%;
   overflow: auto;
@@ -262,14 +364,18 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-
+.drag-track {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+}
 .home-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
 }
 .bg {
   background-color: #fcfcfc;
-  /* background-color: #efefef; */
 }
 </style>

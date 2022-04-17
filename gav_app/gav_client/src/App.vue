@@ -162,6 +162,10 @@ export default {
 };
 </script>
 <style>
+.v-application {
+  overflow: hidden; /* overflow issues by home view */
+}
+
 .logo {
   max-width: 40px;
   max-height: 40px;
