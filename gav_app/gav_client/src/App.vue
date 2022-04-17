@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="white" v-if="showappbar">
+    <v-app-bar app class="elevation0" height="70" v-if="showappbar">
       <v-app-bar-nav-icon
         absolute
         @click="drawer = true"
@@ -10,20 +10,36 @@
       <v-toolbar-title>{{ $route.name }} </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-    <v-navigation-drawer v-if="showappbar" v-model="drawer" app>
-      <v-img
-        src="./assets/GAV-logo.svg"
-        max-height="40"
-        max-width="40"
-        class="ma-5"
-      ></v-img>
+
+    <v-navigation-drawer
+      v-if="showappbar"
+      class="elevation1"
+      v-model="drawer"
+      app
+    >
+      <svg
+        class="logo ma-5"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 500 500"
+        xml:space="preserve"
+      >
+        <path
+          d="M500,0C463.7,123.6,280.1,233,0,239.2V500C280.1,471.7,475.4,297,500,0z M342.1,239.8c-58.4,99.6-163.3,148.7-270,161.9
+	v-81.4C174.6,317.5,302.5,273.2,342.1,239.8z"
+          :fill="'#FFF'"
+        />
+      </svg>
       <div class="pl-4">
         <v-icon class="mr-7">mdi-account-outline</v-icon>
         <span v-if="userId != null">{{ email }}</span>
         <span v-else>Gast</span>
       </div>
       <v-divider class="mt-5 mb-1"></v-divider>
-      <v-list nav dense>
+      <v-list nav>
         <v-list-item-group active-class="gray--text text--accent-4">
           <v-list-item v-if="userId != null" to="/home">
             <v-list-item-icon>
@@ -127,10 +143,6 @@ export default {
       this.userId = VueCookies.get('userId');
     });
 
-    bus.$on('title', (data) => {
-      this.title = data;
-    });
-
     // this.loggedIn = VueCookies.get('loggedIn');
     bus.$data.userId = VueCookies.get('userId');
     bus.$data.loggedIn = VueCookies.get('loggedIn');
@@ -149,3 +161,9 @@ export default {
   },
 };
 </script>
+<style>
+.logo {
+  max-width: 40px;
+  max-height: 40px;
+}
+</style>

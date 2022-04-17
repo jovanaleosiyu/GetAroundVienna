@@ -1,7 +1,7 @@
 <template>
   <v-container class="d-flex flex-column align-center mt-16">
     <v-card
-      class="d-flex flex-column align-center"
+      class="d-flex flex-column align-center transparent"
       :min-width="$vuetify.breakpoint.mdAndUp ? 450 : '100%'"
       :outlined="true"
       style="border: none"

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-sheet elevation="4" class="rounded-lg pa-3">
+    <v-sheet elevation="4" class="elevation1 rounded-lg pa-3">
       <div class="mb-3 text-h5">Favoriten</div>
       <FavWidget></FavWidget>
     </v-sheet>
