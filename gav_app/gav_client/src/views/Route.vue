@@ -126,7 +126,7 @@
           <v-time-picker
             v-if="menu1"
             v-model="time"
-            format="24h"
+            format="24hr"
             full-width
             @click:minute="$refs.menu.save(time)"
           ></v-time-picker>
@@ -327,10 +327,8 @@ export default {
     menu2: false,
 
     depArr: '',
-    time: new Date().toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    }),
+    time: new Date(),
+    
     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
       .toISOString()
       .substr(0, 10),
@@ -371,6 +369,8 @@ export default {
   methods: {
     async getTrip() {
       this.loading = true;
+      this.trips = [];
+
       if (!this.dep || !this.des) return;
       let time, date;
       if (this.time) time = this.time.replaceAll(':', '');
@@ -402,7 +402,6 @@ export default {
           isChange: false,
         };
         newSteps.push(newStep);
-        console.log(t);
         for (let s = 1; s < data[t].steps.length; s++) {
           if (this.checkChange(data[t].steps[s - 1].end.time, data[t].steps[s].start.time)) {
             const newStep = {
@@ -420,7 +419,6 @@ export default {
             };
             newSteps.push(step);
           }
-
           else if (!this.checkChange(data[t].steps[s - 1].end.time, data[t].steps[s].start.time)) {
             const newStep = {
               ...data[t].steps[s],
@@ -432,8 +430,8 @@ export default {
         newTrips[t].steps = newSteps;
       }
 
-      this.trips = [];
       this.trips = newTrips;
+      console.log(this.trips);
 
       this.$forceUpdate();
       this.loading = false;
