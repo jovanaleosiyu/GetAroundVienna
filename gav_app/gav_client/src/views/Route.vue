@@ -126,7 +126,7 @@
           <v-time-picker
             v-if="menu1"
             v-model="time"
-            format="24h"
+            format="24hr"
             full-width
             @click:minute="$refs.menu.save(time)"
           ></v-time-picker>
@@ -251,17 +251,19 @@
                 "
                 class="mx-4"
               ></div>
-              <div v-if="!step.isChange" style="width: 100%">
+
+              <div v-if="!step.isChange && step.mode.type != 'Fussweg'" style="width: 100%">
                 {{ step.mode.direction }} <br />
                 {{ step.start.time }} {{ step.start.name }} <br />
                 <div class="d-flex">
                   <v-expansion-panels flat v-if="step.stopSeq.length - 2 > 0">
                     <v-expansion-panel>
                       <v-expansion-panel-header
-                        expand-icon=""
-                        class="pa-0 ma-0"
+                        expand-icon="mdi-chevron-down"
+                        class="pa-0 pl-3 ma-0"
                       >
-                        <v-divider></v-divider>
+                        {{ step.stopSeq.length - 2 }}
+                        <v-divider class="mx-3"></v-divider>
                       </v-expansion-panel-header>
                       <v-expansion-panel-content>
                         <div class="flex-column">
@@ -277,10 +279,16 @@
                 {{ step.end.time }} {{ step.end.name }} <br />
               </div>
 
-              <div v-if="step.isChange" style="width: 100%">
+              <div v-else-if="step.isChange" style="width: 100%">
                 Umstieg <br />
                 Dauer: {{ step.duration }}min<br />
               </div>
+
+              <div v-else-if="step.mode.type == 'Fussweg'" style="width: 100%">
+                Fussweg <br />
+                Dauer: {{ step.duration }}min<br />
+              </div>
+
             </div>
           </div>
           {{ trip.steps[trip.steps.length - 1].end.time }}
@@ -319,10 +327,8 @@ export default {
     menu2: false,
 
     depArr: '',
-    time: new Date().toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    }),
+    time: new Date(),
+    
     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
       .toISOString()
       .substr(0, 10),
@@ -363,6 +369,8 @@ export default {
   methods: {
     async getTrip() {
       this.loading = true;
+      this.trips = [];
+
       if (!this.dep || !this.des) return;
       let time, date;
       if (this.time) time = this.time.replaceAll(':', '');
@@ -384,6 +392,7 @@ export default {
         params,
       });
 
+
       let newSteps = [];
       const newTrips = { ...data };
       for (let t = 0; t < data.length; t++) {
@@ -394,18 +403,10 @@ export default {
         };
         newSteps.push(newStep);
         for (let s = 1; s < data[t].steps.length; s++) {
-          if (
-            this.checkChange(
-              data[t].steps[s - 1].end.time,
-              data[t].steps[s].start.time
-            )
-          ) {
+          if (this.checkChange(data[t].steps[s - 1].end.time, data[t].steps[s].start.time)) {
             const newStep = {
               isChange: true,
-              duration: this.getChangeTime(
-                data[t].steps[s - 1].end.time,
-                data[t].steps[s].start.time
-              ).toString(),
+              duration: this.getChangeTime(data[t].steps[s - 1].end.time, data[t].steps[s].start.time).toString(),
               mode: {
                 type: 'Fussweg',
                 name: '',
@@ -417,12 +418,8 @@ export default {
               isChange: false,
             };
             newSteps.push(step);
-          } else if (
-            !this.checkChange(
-              data[t].steps[s - 1].end.time,
-              data[t].steps[s].start.time
-            )
-          ) {
+          }
+          else if (!this.checkChange(data[t].steps[s - 1].end.time, data[t].steps[s].start.time)) {
             const newStep = {
               ...data[t].steps[s],
               isChange: false,
@@ -433,8 +430,8 @@ export default {
         newTrips[t].steps = newSteps;
       }
 
-      this.trips = [];
       this.trips = newTrips;
+      console.log(this.trips);
 
       this.$forceUpdate();
       this.loading = false;
@@ -477,7 +474,6 @@ export default {
       let changeTime =
         this.translateTripDuration(stepStart) -
         this.translateTripDuration(stepEnd);
-      console.log('ChangeTime: ' + changeTime);
       return changeTime;
     },
     translateTripDuration(tripDuration) {
