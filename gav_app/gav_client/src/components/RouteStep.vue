@@ -61,14 +61,14 @@
             }
         },
         created () {
-            console.log("Name: " + this.stepName);
-            console.log("Type: " + this.stepType);
-            console.log("Step Duration: " + this.duration);
-            console.log("Duration: " + this.tripDuration);
-            console.log("Duration in Min: " + this.translateTripDuration(this.tripDuration));
-            console.log("Duration in %: " + this.width);
-            console.log("Länge der U-Bahnliste: " + this.transportTypes[1].colors.length);
-            console.log("---------------");
+            // console.log("Name: " + this.stepName);
+            // console.log("Type: " + this.stepType);
+            // console.log("Step Duration: " + this.duration);
+            // console.log("Duration: " + this.tripDuration);
+            // console.log("Duration in Min: " + this.translateTripDuration(this.tripDuration));
+            // console.log("Duration in %: " + this.width);
+            // console.log("Länge der U-Bahnliste: " + this.transportTypes[1].colors.length);
+            // console.log("---------------");
         },
     }
 </script>
