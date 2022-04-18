@@ -446,11 +446,9 @@ export default {
         alert('Geolocation nicht verfügbar...');
         return;
       }
-      console.log(pos);
-      const currref = `
-        ${pos.coords.longitude.toFixed(5)}:
-        ${pos.coords.latitude.toFixed(5)}:WGS84
-      `;
+      const lng = pos.coords.longitude.toFixed(5);
+      const lat = pos.coords.latitude.toFixed(5);
+      const currref = `${lng}:${lat}:WGS84`;
       this.dep.ref = currref;
       this.dep.type = 'coord';
       origin.setStopByRef(this.dep.ref, this.dep.type);
@@ -530,11 +528,9 @@ export default {
         alert('Geolocation nicht verfügbar...');
         return;
       }
-      console.log(pos);
-      const currref = `
-        ${pos.coords.longitude.toFixed(5)}:
-        ${pos.coords.latitude.toFixed(5)}:WGS84
-      `;
+      const lng = pos.coords.longitude.toFixed(5);
+      const lat = pos.coords.latitude.toFixed(5);
+      const currref = `${lng}:${lat}:WGS84`;
       this.dep.ref = currref;
       this.dep.type = 'coord';
       this.des.ref = dest_ref;
