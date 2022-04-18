@@ -1,14 +1,5 @@
 [
   {
-    "StopID": 3,
-    "DIVA": null,
-    "StopText": "Messe Prater",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4066719,
-    "Latitude": 48.2179891
-  },
-  {
     "StopID": 5,
     "DIVA": 60200195,
     "StopText": "Börse",
@@ -171,15 +162,6 @@
     "Latitude": 48.2112036
   },
   {
-    "StopID": 26,
-    "DIVA": null,
-    "StopText": "Praterstern S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 27,
     "DIVA": 60201421,
     "StopText": "Venediger Au",
@@ -196,15 +178,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4008075,
     "Latitude": 48.21785
-  },
-  {
-    "StopID": 29,
-    "DIVA": null,
-    "StopText": "Messe Prater",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4066669,
-    "Latitude": 48.2178338
   },
   {
     "StopID": 30,
@@ -450,15 +423,6 @@
     "Latitude": 48.2307655
   },
   {
-    "StopID": 61,
-    "DIVA": null,
-    "StopText": "Gänsehäufel",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 62,
     "DIVA": 60201204,
     "StopText": "Schüttauplatz",
@@ -495,15 +459,6 @@
     "Latitude": 48.2328188
   },
   {
-    "StopID": 66,
-    "DIVA": null,
-    "StopText": "Kaisermühlen VIC U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 67,
     "DIVA": 60201634,
     "StopText": "Seidelbastgasse",
@@ -529,15 +484,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4789227,
     "Latitude": 48.2126425
-  },
-  {
-    "StopID": 70,
-    "DIVA": null,
-    "StopText": "Neue Donau Mitte",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 71,
@@ -576,15 +522,6 @@
     "Latitude": 48.2284066
   },
   {
-    "StopID": 75,
-    "DIVA": null,
-    "StopText": "Schüttauplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 76,
     "DIVA": 60200883,
     "StopText": "Mauthausgasse",
@@ -592,24 +529,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3457333,
     "Latitude": 48.1879219
-  },
-  {
-    "StopID": 77,
-    "DIVA": null,
-    "StopText": "Haus des Meeres",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3547983,
-    "Latitude": 48.1979536
-  },
-  {
-    "StopID": 78,
-    "DIVA": null,
-    "StopText": "Siebenhirten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 79,
@@ -3420,24 +3339,6 @@
     "Latitude": 48.1739058
   },
   {
-    "StopID": 413,
-    "DIVA": null,
-    "StopText": "Abstellplatz Hlst. 69A (Umleitung)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 414,
-    "DIVA": null,
-    "StopText": "Abstellplatz 13A Südtiroler Platz (Umleitung)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 415,
     "DIVA": 60201263,
     "StopText": "Polkorabplatz",
@@ -4185,15 +4086,6 @@
     "Latitude": 48.2026475
   },
   {
-    "StopID": 534,
-    "DIVA": null,
-    "StopText": "Schweglerstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 535,
     "DIVA": 60201413,
     "StopText": "Urban-Loritz-Platz",
@@ -4761,24 +4653,6 @@
     "Latitude": null
   },
   {
-    "StopID": 602,
-    "DIVA": null,
-    "StopText": "Stella-Klein-Löw-Weg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 603,
-    "DIVA": null,
-    "StopText": "Meiereistraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 604,
     "DIVA": 60201894,
     "StopText": "Stadion",
@@ -4858,24 +4732,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4271438,
     "Latitude": 48.2085522
-  },
-  {
-    "StopID": 613,
-    "DIVA": null,
-    "StopText": "Stadion",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 614,
-    "DIVA": null,
-    "StopText": "Stadion",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4220536,
-    "Latitude": 48.2111388
   },
   {
     "StopID": 615,
@@ -5229,15 +5085,6 @@
     "Latitude": 48.2194963
   },
   {
-    "StopID": 658,
-    "DIVA": null,
-    "StopText": "Donaumarina",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4304308,
-    "Latitude": 48.2060702
-  },
-  {
     "StopID": 659,
     "DIVA": 60200282,
     "StopText": "Donaumarina >",
@@ -5490,15 +5337,6 @@
     "Latitude": 48.1664666
   },
   {
-    "StopID": 687,
-    "DIVA": null,
-    "StopText": "Pilgramgasse U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 688,
     "DIVA": 60200056,
     "StopText": "Neubaugasse U",
@@ -5634,15 +5472,6 @@
     "Latitude": null
   },
   {
-    "StopID": 703,
-    "DIVA": null,
-    "StopText": "Kirchengasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3529202,
-    "Latitude": 48.1996116
-  },
-  {
     "StopID": 704,
     "DIVA": 60201237,
     "StopText": "Siebensterngasse",
@@ -5749,15 +5578,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3726161,
     "Latitude": 48.1712844
-  },
-  {
-    "StopID": 716,
-    "DIVA": null,
-    "StopText": "Reumannplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 717,
@@ -5929,15 +5749,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4176819,
     "Latitude": 48.1617249
-  },
-  {
-    "StopID": 736,
-    "DIVA": null,
-    "StopText": "Schemmerlstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 737,
@@ -6669,15 +6480,6 @@
     "Latitude": 48.1579911
   },
   {
-    "StopID": 820,
-    "DIVA": null,
-    "StopText": "Lorystraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 821,
     "DIVA": 60201344,
     "StopText": "Swatoschgasse",
@@ -6831,15 +6633,6 @@
     "Latitude": 48.1940391
   },
   {
-    "StopID": 838,
-    "DIVA": null,
-    "StopText": "Donauzentrum",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 839,
     "DIVA": 60200168,
     "StopText": "Bretschneidergasse",
@@ -6847,15 +6640,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3491736,
     "Latitude": 48.2545936
-  },
-  {
-    "StopID": 841,
-    "DIVA": null,
-    "StopText": "Schlachthausgasse U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4078069,
-    "Latitude": 48.1940008
   },
   {
     "StopID": 842,
@@ -7020,15 +6804,6 @@
     "Latitude": 48.2640238
   },
   {
-    "StopID": 860,
-    "DIVA": null,
-    "StopText": "Johnstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 861,
     "DIVA": 60200713,
     "StopText": "Krapfenwaldgasse",
@@ -7090,15 +6865,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.324293,
     "Latitude": 48.2688094
-  },
-  {
-    "StopID": 868,
-    "DIVA": null,
-    "StopText": "Schemmelstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 869,
@@ -7173,15 +6939,6 @@
     "Latitude": null
   },
   {
-    "StopID": 877,
-    "DIVA": null,
-    "StopText": "Gitlbauergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 879,
     "DIVA": 60201158,
     "StopText": "Linzer Straße",
@@ -7245,15 +7002,6 @@
     "Latitude": 48.2501024
   },
   {
-    "StopID": 886,
-    "DIVA": null,
-    "StopText": "Kagraner Friedhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 887,
     "DIVA": 60200769,
     "StopText": "Leopoldau S U",
@@ -7263,27 +7011,9 @@
     "Latitude": null
   },
   {
-    "StopID": 888,
-    "DIVA": null,
-    "StopText": "Gitlbauergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 889,
     "DIVA": 60200617,
     "StopText": "Julius-Ficker-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 890,
-    "DIVA": null,
-    "StopText": "Kagraner Friedhof",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -7324,15 +7054,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4305925,
     "Latitude": 48.2395802
-  },
-  {
-    "StopID": 895,
-    "DIVA": null,
-    "StopText": "Akkonplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 897,
@@ -7677,15 +7398,6 @@
     "Latitude": null
   },
   {
-    "StopID": 935,
-    "DIVA": null,
-    "StopText": "Sommerweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 936,
     "DIVA": 60201254,
     "StopText": "Percostraße, Wagramer Straße",
@@ -7758,15 +7470,6 @@
     "Latitude": 48.2789877
   },
   {
-    "StopID": 944,
-    "DIVA": null,
-    "StopText": "Neuhaufenstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 945,
     "DIVA": 60200105,
     "StopText": "Badeteich Süßenbrunn",
@@ -7792,15 +7495,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4649405,
     "Latitude": 48.2687472
-  },
-  {
-    "StopID": 948,
-    "DIVA": null,
-    "StopText": "Sommerweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 949,
@@ -7884,27 +7578,9 @@
     "Latitude": 48.1942863
   },
   {
-    "StopID": 961,
-    "DIVA": null,
-    "StopText": "Praterbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 962,
     "DIVA": 60200904,
     "StopText": "Mühlwasserstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 963,
-    "DIVA": null,
-    "StopText": "Neuhaufenstraße",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -7954,15 +7630,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4687533,
     "Latitude": 48.224085
-  },
-  {
-    "StopID": 973,
-    "DIVA": null,
-    "StopText": "Deinleingasse, Schule",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 974,
@@ -8550,15 +8217,6 @@
     "Latitude": 48.2086111
   },
   {
-    "StopID": 1039,
-    "DIVA": null,
-    "StopText": "Heinrich-von-Buol-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4260127,
-    "Latitude": 48.2650655
-  },
-  {
     "StopID": 1040,
     "DIVA": 60201031,
     "StopText": "Polgarstraße",
@@ -8730,15 +8388,6 @@
     "Latitude": 48.2662513
   },
   {
-    "StopID": 1059,
-    "DIVA": null,
-    "StopText": "Heinrich-von-Buol-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.425583,
-    "Latitude": 48.2649355
-  },
-  {
     "StopID": 1060,
     "DIVA": 60200250,
     "StopText": "Dunantgasse",
@@ -8782,15 +8431,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4048163,
     "Latitude": 48.2769188
-  },
-  {
-    "StopID": 1065,
-    "DIVA": null,
-    "StopText": "Eugen-Bormann-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1067,
@@ -9045,15 +8685,6 @@
     "Latitude": 48.2630613
   },
   {
-    "StopID": 1096,
-    "DIVA": null,
-    "StopText": "Richard-Neutra-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4311319,
-    "Latitude": 48.2670041
-  },
-  {
     "StopID": 1097,
     "DIVA": 60201213,
     "StopText": "Hertha-Kräftner-Gasse",
@@ -9070,15 +8701,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4314644,
     "Latitude": 48.2697347
-  },
-  {
-    "StopID": 1099,
-    "DIVA": null,
-    "StopText": "Richard-Neutra-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.430903,
-    "Latitude": 48.2670269
   },
   {
     "StopID": 1100,
@@ -9268,15 +8890,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4006988,
     "Latitude": 48.2562352
-  },
-  {
-    "StopID": 1121,
-    "DIVA": null,
-    "StopText": "Pulkaugasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1122,
@@ -9619,33 +9232,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4498125,
     "Latitude": 48.2821966
-  },
-  {
-    "StopID": 1161,
-    "DIVA": null,
-    "StopText": "Lavantgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 1162,
-    "DIVA": null,
-    "StopText": "Iselgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 1163,
-    "DIVA": null,
-    "StopText": "Pulkaugasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1164,
@@ -10350,15 +9936,6 @@
     "Latitude": 48.2518169
   },
   {
-    "StopID": 1244,
-    "DIVA": null,
-    "StopText": "Salmansdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2933233,
-    "Latitude": 48.2521511
-  },
-  {
     "StopID": 1245,
     "DIVA": 60200648,
     "StopText": "Kammerergasse",
@@ -10555,15 +10132,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3312627,
     "Latitude": 48.2476586
-  },
-  {
-    "StopID": 1267,
-    "DIVA": null,
-    "StopText": "Stadlau, Sozialmedizinisches Zentrum Ost",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1268,
@@ -10899,15 +10467,6 @@
     "Latitude": 48.2668844
   },
   {
-    "StopID": 1307,
-    "DIVA": null,
-    "StopText": "Afritschgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 1308,
     "DIVA": 60200491,
     "StopText": "Bhf. Heiligenstadt S U",
@@ -11151,15 +10710,6 @@
     "Latitude": 48.2246155
   },
   {
-    "StopID": 1337,
-    "DIVA": null,
-    "StopText": "Hildebrandgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3387183,
-    "Latitude": 48.2231127
-  },
-  {
     "StopID": 1338,
     "DIVA": 60201426,
     "StopText": "Vinzenzgasse",
@@ -11185,15 +10735,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3315436,
     "Latitude": 48.2260516
-  },
-  {
-    "StopID": 1341,
-    "DIVA": null,
-    "StopText": "Hildebrandgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3384883,
-    "Latitude": 48.2231661
   },
   {
     "StopID": 1342,
@@ -11934,15 +11475,6 @@
     "Latitude": 48.2072844
   },
   {
-    "StopID": 1425,
-    "DIVA": null,
-    "StopText": "Joachimsthalerplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 1426,
     "DIVA": 60200792,
     "StopText": "Moeringgasse",
@@ -12157,15 +11689,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.311305,
     "Latitude": 48.1990369
-  },
-  {
-    "StopID": 1451,
-    "DIVA": null,
-    "StopText": "Hickelgasse - nur für Pe",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1452,
@@ -12762,15 +12285,6 @@
     "Latitude": 48.1329483
   },
   {
-    "StopID": 1524,
-    "DIVA": null,
-    "StopText": "Bahnhof Breitensee",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 1527,
     "DIVA": 60200981,
     "StopText": "Ottakring S U",
@@ -12787,15 +12301,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3099175,
     "Latitude": 48.2101833
-  },
-  {
-    "StopID": 1529,
-    "DIVA": null,
-    "StopText": "Wilhelminenspital",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1530,
@@ -14787,15 +14292,6 @@
     "Latitude": 48.2004358
   },
   {
-    "StopID": 1757,
-    "DIVA": null,
-    "StopText": "Siebertgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3457797,
-    "Latitude": 48.1808858
-  },
-  {
     "StopID": 1758,
     "DIVA": 60201354,
     "StopText": "Südwestfriedhof 3. und 7. Tor",
@@ -14812,15 +14308,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3009727,
     "Latitude": 48.1611075
-  },
-  {
-    "StopID": 1760,
-    "DIVA": null,
-    "StopText": "Hohenbergstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1761,
@@ -15154,15 +14641,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2975477,
     "Latitude": 48.1750872
-  },
-  {
-    "StopID": 1800,
-    "DIVA": null,
-    "StopText": "Meidling Hauptstraße U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1801,
@@ -15507,15 +14985,6 @@
     "Latitude": 48.1365041
   },
   {
-    "StopID": 1841,
-    "DIVA": null,
-    "StopText": "Fa. Perfekta",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 1842,
     "DIVA": 60201477,
     "StopText": "Wienerbergbrücke",
@@ -15651,15 +15120,6 @@
     "Latitude": 48.1367961
   },
   {
-    "StopID": 1864,
-    "DIVA": null,
-    "StopText": "Bobiesgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 1865,
     "DIVA": 60200923,
     "StopText": "Erlaaer Spitz",
@@ -15712,15 +15172,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3471147,
     "Latitude": 48.1678972
-  },
-  {
-    "StopID": 1871,
-    "DIVA": null,
-    "StopText": "Fa. Perfekta",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 1872,
@@ -16569,15 +16020,6 @@
     "Latitude": 48.1497238
   },
   {
-    "StopID": 1980,
-    "DIVA": null,
-    "StopText": "Rothneusiedl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.382775,
-    "Latitude": 48.146718
-  },
-  {
     "StopID": 1981,
     "DIVA": 60200524,
     "StopText": "Himberger Straße",
@@ -16756,24 +16198,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3833027,
     "Latitude": 48.1401352
-  },
-  {
-    "StopID": 2001,
-    "DIVA": null,
-    "StopText": "Berlepschgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3828063,
-    "Latitude": 48.1428547
-  },
-  {
-    "StopID": 2002,
-    "DIVA": null,
-    "StopText": "Rothneusiedl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3828,
-    "Latitude": 48.1465988
   },
   {
     "StopID": 2003,
@@ -17073,15 +16497,6 @@
     "Latitude": 48.174005
   },
   {
-    "StopID": 2037,
-    "DIVA": null,
-    "StopText": "Zentralfriedhof 3.Tor",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2038,
     "DIVA": 60200702,
     "StopText": "Hauffgasse",
@@ -17116,15 +16531,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.404648,
     "Latitude": 48.1846022
-  },
-  {
-    "StopID": 2042,
-    "DIVA": null,
-    "StopText": "Trappweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3615797,
-    "Latitude": 48.1442733
   },
   {
     "StopID": 2043,
@@ -17170,24 +16576,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3813238,
     "Latitude": 48.1966397
-  },
-  {
-    "StopID": 2048,
-    "DIVA": null,
-    "StopText": "Heizwerkstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3625177,
-    "Latitude": 48.1391297
-  },
-  {
-    "StopID": 2049,
-    "DIVA": null,
-    "StopText": "Heizwerkstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3628158,
-    "Latitude": 48.1392311
   },
   {
     "StopID": 2050,
@@ -17298,24 +16686,6 @@
     "Latitude": 48.1518441
   },
   {
-    "StopID": 2062,
-    "DIVA": null,
-    "StopText": "Südrandstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3640252,
-    "Latitude": 48.1415036
-  },
-  {
-    "StopID": 2063,
-    "DIVA": null,
-    "StopText": "Südrandstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3643227,
-    "Latitude": 48.1416294
-  },
-  {
     "StopID": 2064,
     "DIVA": 60200708,
     "StopText": "Kornauthgasse",
@@ -17422,15 +16792,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4570652,
     "Latitude": 48.1602338
-  },
-  {
-    "StopID": 2076,
-    "DIVA": null,
-    "StopText": "Trappweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3615441,
-    "Latitude": 48.1441791
   },
   {
     "StopID": 2077,
@@ -17685,15 +17046,6 @@
     "Latitude": 48.202818
   },
   {
-    "StopID": 2107,
-    "DIVA": null,
-    "StopText": "Stadionallee",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2108,
     "DIVA": 60201206,
     "StopText": "Schüttelstraße",
@@ -17811,24 +17163,6 @@
     "Latitude": 48.1971969
   },
   {
-    "StopID": 2133,
-    "DIVA": null,
-    "StopText": "Wasserwiese",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2134,
-    "DIVA": null,
-    "StopText": "Hauptallee, Lusthausstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2135,
     "DIVA": 60200818,
     "StopText": "Lusthaus, Aspernallee",
@@ -17872,24 +17206,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4401136,
     "Latitude": 48.1934097
-  },
-  {
-    "StopID": 2140,
-    "DIVA": null,
-    "StopText": "Hauptallee, Lusthausstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2141,
-    "DIVA": null,
-    "StopText": "Wasserwiese",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2142,
@@ -18585,24 +17901,6 @@
     "Latitude": 48.2556475
   },
   {
-    "StopID": 2229,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung-Ost",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2230,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung-Ost",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2231,
     "DIVA": 60201371,
     "StopText": "Tesarekplatz",
@@ -18621,15 +17919,6 @@
     "Latitude": null
   },
   {
-    "StopID": 2233,
-    "DIVA": null,
-    "StopText": "Schleiergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3814105,
-    "Latitude": 48.1664819
-  },
-  {
     "StopID": 2234,
     "DIVA": 60200033,
     "StopText": "Altes Landgut",
@@ -18637,15 +17926,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3832447,
     "Latitude": 48.1614505
-  },
-  {
-    "StopID": 2235,
-    "DIVA": null,
-    "StopText": "Alaudagasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3820625,
-    "Latitude": 48.1535994
   },
   {
     "StopID": 2236,
@@ -18657,33 +17937,6 @@
     "Latitude": 48.1497238
   },
   {
-    "StopID": 2237,
-    "DIVA": null,
-    "StopText": "Rothneusiedl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3844625,
-    "Latitude": 48.1467591
-  },
-  {
-    "StopID": 2238,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung-Ost",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3919905,
-    "Latitude": 48.1454616
-  },
-  {
-    "StopID": 2239,
-    "DIVA": null,
-    "StopText": "Laaer-Berg-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3958916,
-    "Latitude": 48.1448955
-  },
-  {
     "StopID": 2240,
     "DIVA": 60200949,
     "StopText": "Oberlaa >",
@@ -18691,15 +17944,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.398833,
     "Latitude": 48.1429861
-  },
-  {
-    "StopID": 2241,
-    "DIVA": null,
-    "StopText": "Laaer-Berg-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3958566,
-    "Latitude": 48.1450116
   },
   {
     "StopID": 2242,
@@ -18729,42 +17973,6 @@
     "Latitude": 48.1538247
   },
   {
-    "StopID": 2245,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung-Ost",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3920299,
-    "Latitude": 48.1455922
-  },
-  {
-    "StopID": 2246,
-    "DIVA": null,
-    "StopText": "Rothneusiedl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2247,
-    "DIVA": null,
-    "StopText": "Stockholmer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2248,
-    "DIVA": null,
-    "StopText": "Alaudagasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3820619,
-    "Latitude": 48.1540944
-  },
-  {
     "StopID": 2249,
     "DIVA": 60200033,
     "StopText": "Altes Landgut",
@@ -18772,15 +17980,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.38331,
     "Latitude": 48.1611711
-  },
-  {
-    "StopID": 2250,
-    "DIVA": null,
-    "StopText": "Schleiergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.381533,
-    "Latitude": 48.1662858
   },
   {
     "StopID": 2251,
@@ -19033,24 +18232,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4418411,
     "Latitude": 48.1787938
-  },
-  {
-    "StopID": 2279,
-    "DIVA": null,
-    "StopText": "Tenschertstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2280,
-    "DIVA": null,
-    "StopText": "Tenschertstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2281,
@@ -19332,15 +18513,6 @@
     "Latitude": 48.1747974
   },
   {
-    "StopID": 2332,
-    "DIVA": null,
-    "StopText": "Mehrzweckhalle Oberlaa",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2333,
     "DIVA": 60201656,
     "StopText": "Willergasse, Liesingbrücke",
@@ -19357,15 +18529,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2570113,
     "Latitude": 48.1339316
-  },
-  {
-    "StopID": 2335,
-    "DIVA": null,
-    "StopText": "Mehrzweckhalle Oberlaa",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2336,
@@ -19665,15 +18828,6 @@
     "Latitude": 48.1559513
   },
   {
-    "StopID": 2369,
-    "DIVA": null,
-    "StopText": "Freytaggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2370,
     "DIVA": 60200551,
     "StopText": "Hoßplatz",
@@ -19771,15 +18925,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4070575,
     "Latitude": 48.2550911
-  },
-  {
-    "StopID": 2381,
-    "DIVA": null,
-    "StopText": "Freytaggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2382,
@@ -20145,15 +19290,6 @@
     "StopID": 2427,
     "DIVA": 60201537,
     "StopText": "Zschokkegasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2428,
-    "DIVA": null,
-    "StopText": "Leberstraße - St.Marx",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -20997,15 +20133,6 @@
     "Latitude": 48.2026158
   },
   {
-    "StopID": 2527,
-    "DIVA": null,
-    "StopText": "Rochusgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2528,
     "DIVA": 60200993,
     "StopText": "Kundmanngasse",
@@ -21022,24 +20149,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4260922,
     "Latitude": 48.1762297
-  },
-  {
-    "StopID": 2532,
-    "DIVA": null,
-    "StopText": "Jägerstraße U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2533,
-    "DIVA": null,
-    "StopText": "Pappenheimgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2534,
@@ -21121,15 +20230,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4595616,
     "Latitude": 48.2647033
-  },
-  {
-    "StopID": 2543,
-    "DIVA": null,
-    "StopText": "Lichtblaustraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2544,
@@ -21249,15 +20349,6 @@
     "Latitude": 48.2466588
   },
   {
-    "StopID": 2557,
-    "DIVA": null,
-    "StopText": "Arakawastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2558,
     "DIVA": 60200607,
     "StopText": "Josef-Baumann-Gasse",
@@ -21319,15 +20410,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4303119,
     "Latitude": 48.2515166
-  },
-  {
-    "StopID": 2565,
-    "DIVA": null,
-    "StopText": "Arakawastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2566,
@@ -21501,24 +20583,6 @@
     "Latitude": 48.1747375
   },
   {
-    "StopID": 2585,
-    "DIVA": null,
-    "StopText": "Simmering S U, Simmeringer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2586,
-    "DIVA": null,
-    "StopText": "Grillgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2587,
     "DIVA": 60200814,
     "StopText": "Lorystraße",
@@ -21670,15 +20734,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4141922,
     "Latitude": 48.1879027
-  },
-  {
-    "StopID": 2605,
-    "DIVA": null,
-    "StopText": "OE3 Haus",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2606,
@@ -21996,15 +21051,6 @@
     "Latitude": 48.1986563
   },
   {
-    "StopID": 2642,
-    "DIVA": null,
-    "StopText": "Praterstern (blw)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2643,
     "DIVA": 60201799,
     "StopText": "Stachegasse",
@@ -22089,15 +21135,6 @@
     "StopID": 2661,
     "DIVA": 60201816,
     "StopText": "Maria-Kuhn-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2662,
-    "DIVA": null,
-    "StopText": "Fröhlichgasse",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -22194,15 +21231,6 @@
     "Latitude": 48.1941697
   },
   {
-    "StopID": 2673,
-    "DIVA": null,
-    "StopText": "Katharina-Scheiter-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2674,
     "DIVA": 60201349,
     "StopText": "Südtiroler Platz S U",
@@ -22228,24 +21256,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4182491,
     "Latitude": 48.2064886
-  },
-  {
-    "StopID": 2677,
-    "DIVA": null,
-    "StopText": "Ernst-Happel-Stadion (Bedarfshaltestelle)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4190213,
-    "Latitude": 48.2088197
-  },
-  {
-    "StopID": 2678,
-    "DIVA": null,
-    "StopText": "Stadion U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4216363,
-    "Latitude": 48.2108041
   },
   {
     "StopID": 2679,
@@ -22383,15 +21393,6 @@
     "Latitude": 48.2014758
   },
   {
-    "StopID": 2695,
-    "DIVA": null,
-    "StopText": "Praterkai S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2696,
     "DIVA": 60200934,
     "StopText": "Neustifter Friedhof 3. Tor",
@@ -22426,15 +21427,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4408761,
     "Latitude": 48.1997655
-  },
-  {
-    "StopID": 2700,
-    "DIVA": null,
-    "StopText": "Krieau U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2701,
@@ -22509,15 +21501,6 @@
     "Latitude": 48.2181702
   },
   {
-    "StopID": 2710,
-    "DIVA": null,
-    "StopText": "Messe Prater U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2711,
     "DIVA": 60200274,
     "StopText": "Elderschplatz",
@@ -22534,15 +21517,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4131174,
     "Latitude": 48.2156058
-  },
-  {
-    "StopID": 2713,
-    "DIVA": null,
-    "StopText": "Kafkastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2714,
@@ -22593,15 +21567,6 @@
     "StopID": 2720,
     "DIVA": 60201320,
     "StopText": "Stephansplatz U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2721,
-    "DIVA": null,
-    "StopText": "Michaelerplatz",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -22885,15 +21850,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3705288,
     "Latitude": 48.232435
-  },
-  {
-    "StopID": 2756,
-    "DIVA": null,
-    "StopText": "Mooslackengasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2757,
@@ -23193,24 +22149,6 @@
     "Latitude": 48.1411116
   },
   {
-    "StopID": 2790,
-    "DIVA": null,
-    "StopText": "Schwechat, Hauptplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4771058,
-    "Latitude": 48.1401641
-  },
-  {
-    "StopID": 2791,
-    "DIVA": null,
-    "StopText": "Schwechat, Ehrenbrunngasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4790238,
-    "Latitude": 48.1391819
-  },
-  {
     "StopID": 2792,
     "DIVA": 60205671,
     "StopText": "Schwechat, Hauptplatz",
@@ -23227,15 +22165,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.474778,
     "Latitude": 48.1419366
-  },
-  {
-    "StopID": 2794,
-    "DIVA": null,
-    "StopText": "Ziegelhofstraße, Oberfeldgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2795,
@@ -23283,42 +22212,6 @@
     "Latitude": 48.1408119
   },
   {
-    "StopID": 2801,
-    "DIVA": null,
-    "StopText": "Friedensbrücke U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3649505,
-    "Latitude": 48.2266647
-  },
-  {
-    "StopID": 2802,
-    "DIVA": null,
-    "StopText": "Roßauer Lände U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3671691,
-    "Latitude": 48.2219138
-  },
-  {
-    "StopID": 2805,
-    "DIVA": null,
-    "StopText": "Roßauer Lände U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2806,
-    "DIVA": null,
-    "StopText": "Friedensbrücke U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3649977,
-    "Latitude": 48.2272069
-  },
-  {
     "StopID": 2808,
     "DIVA": 60200161,
     "StopText": "Braunschweiggasse",
@@ -23364,15 +22257,6 @@
     "Latitude": 48.1906655
   },
   {
-    "StopID": 2813,
-    "DIVA": null,
-    "StopText": "Braunschweiggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2951611,
-    "Latitude": 48.1893661
-  },
-  {
     "StopID": 2814,
     "DIVA": 60200520,
     "StopText": "Hietzing",
@@ -23380,42 +22264,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.301523,
     "Latitude": 48.1880622
-  },
-  {
-    "StopID": 2815,
-    "DIVA": null,
-    "StopText": "Am Schöpfwerk",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2816,
-    "DIVA": null,
-    "StopText": "Erlaaer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3137013,
-    "Latitude": 48.1419347
-  },
-  {
-    "StopID": 2817,
-    "DIVA": null,
-    "StopText": "Perfektastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3124722,
-    "Latitude": 48.1364055
-  },
-  {
-    "StopID": 2818,
-    "DIVA": null,
-    "StopText": "Erlaaer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3139208,
-    "Latitude": 48.1418402
   },
   {
     "StopID": 2819,
@@ -23427,33 +22275,6 @@
     "Latitude": 48.1614094
   },
   {
-    "StopID": 2820,
-    "DIVA": null,
-    "StopText": "Stadtpark",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3784488,
-    "Latitude": 48.2020572
-  },
-  {
-    "StopID": 2821,
-    "DIVA": null,
-    "StopText": "Stadtpark",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3793836,
-    "Latitude": 48.2022069
-  },
-  {
-    "StopID": 2822,
-    "DIVA": null,
-    "StopText": "Stadlau",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4495341,
-    "Latitude": 48.2198261
-  },
-  {
     "StopID": 2823,
     "DIVA": 60200299,
     "StopText": "Aspernstraße U",
@@ -23463,15 +22284,6 @@
     "Latitude": 48.223278
   },
   {
-    "StopID": 2852,
-    "DIVA": null,
-    "StopText": "Umleitung N6 Gudrunstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 2854,
     "DIVA": 60201850,
     "StopText": "Umleitung N64 über Hohenbergstraße",
@@ -23479,24 +22291,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3146238,
     "Latitude": 48.1747688
-  },
-  {
-    "StopID": 2855,
-    "DIVA": null,
-    "StopText": "Dummy für U4",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2856,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 2876,
@@ -23610,60 +22404,6 @@
     "StopID": 2889,
     "DIVA": 60201430,
     "StopText": "KUNST HAUS WIEN",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2890,
-    "DIVA": null,
-    "StopText": "Museumsplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2891,
-    "DIVA": null,
-    "StopText": "Mariahilfer Straße / Stiftgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2892,
-    "DIVA": null,
-    "StopText": "Königsklostergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2895,
-    "DIVA": null,
-    "StopText": "HEERESGESCHICHTLICHES MUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 2896,
-    "DIVA": null,
-    "StopText": "Mariahilfer Straße / Stiftgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3544638,
-    "Latitude": 48.1999663
-  },
-  {
-    "StopID": 2897,
-    "DIVA": null,
-    "StopText": "Heldenplatz",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -24615,27 +23355,9 @@
     "Latitude": 48.2400488
   },
   {
-    "StopID": 3006,
-    "DIVA": null,
-    "StopText": "Hasibederstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3007,
     "DIVA": 60200487,
     "StopText": "Hausfeldstraße S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3008,
-    "DIVA": null,
-    "StopText": "Hasibederstraße",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -24849,15 +23571,6 @@
     "Latitude": 48.2261136
   },
   {
-    "StopID": 3052,
-    "DIVA": null,
-    "StopText": "Kagran U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3053,
     "DIVA": 60201241,
     "StopText": "Siedlung Einigkeit",
@@ -25032,15 +23745,6 @@
     "StopID": 3085,
     "DIVA": 60200627,
     "StopText": "Kagran U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3086,
-    "DIVA": null,
-    "StopText": "Kagran, U-Bahn",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -25398,15 +24102,6 @@
     "Latitude": 48.2713361
   },
   {
-    "StopID": 3128,
-    "DIVA": null,
-    "StopText": "Prandaugasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3129,
     "DIVA": 60200767,
     "StopText": "Himmelteich",
@@ -25452,15 +24147,6 @@
     "Latitude": 48.188648
   },
   {
-    "StopID": 3134,
-    "DIVA": 60200137,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3540783,
-    "Latitude": 48.1911136
-  },
-  {
     "StopID": 3135,
     "DIVA": 60201018,
     "StopText": "Pilgramgasse U",
@@ -25470,15 +24156,6 @@
     "Latitude": 48.1925919
   },
   {
-    "StopID": 3136,
-    "DIVA": null,
-    "StopText": "Castelligasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3583052,
-    "Latitude": 48.1886308
-  },
-  {
     "StopID": 3137,
     "DIVA": 60201233,
     "StopText": "Siebenbrunnengasse",
@@ -25486,15 +24163,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3594211,
     "Latitude": 48.187473
-  },
-  {
-    "StopID": 3138,
-    "DIVA": null,
-    "StopText": "Zentaplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3603697,
-    "Latitude": 48.186255
   },
   {
     "StopID": 3139,
@@ -25974,15 +24642,6 @@
     "Latitude": null
   },
   {
-    "StopID": 3195,
-    "DIVA": null,
-    "StopText": "Kaisermühlenstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3196,
     "DIVA": 60200966,
     "StopText": "Spargelfeldstraße",
@@ -26271,15 +24930,6 @@
     "Latitude": 48.2006375
   },
   {
-    "StopID": 3233,
-    "DIVA": null,
-    "StopText": "Stockholmer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3234,
     "DIVA": 60201614,
     "StopText": "Wahlberggasse",
@@ -26361,15 +25011,6 @@
     "Latitude": 48.1979572
   },
   {
-    "StopID": 3243,
-    "DIVA": null,
-    "StopText": "Albert-Schweitzer-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3244,
     "DIVA": 60200323,
     "StopText": "Auhof",
@@ -26440,15 +25081,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.214668,
     "Latitude": 48.2095919
-  },
-  {
-    "StopID": 3252,
-    "DIVA": null,
-    "StopText": "Autobahnraststation Auhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 3253,
@@ -26703,15 +25335,6 @@
     "Latitude": 48.2092238
   },
   {
-    "StopID": 3281,
-    "DIVA": null,
-    "StopText": "Hadersdorf, Bahnhof S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3282,
     "DIVA": 60200560,
     "StopText": "Hütteldorf S U",
@@ -26721,222 +25344,6 @@
     "Latitude": 48.19786
   },
   {
-    "StopID": 3283,
-    "DIVA": null,
-    "StopText": "Hütteldorf S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2609669,
-    "Latitude": 48.1979819
-  },
-  {
-    "StopID": 3284,
-    "DIVA": null,
-    "StopText": "Karl-Bekehrty-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2485938,
-    "Latitude": 48.2189719
-  },
-  {
-    "StopID": 3285,
-    "DIVA": null,
-    "StopText": "Eichbachgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2473772,
-    "Latitude": 48.2219333
-  },
-  {
-    "StopID": 3286,
-    "DIVA": null,
-    "StopText": "Jägerwaldsiedlung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2463872,
-    "Latitude": 48.2239402
-  },
-  {
-    "StopID": 3287,
-    "DIVA": null,
-    "StopText": "Haidersberggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2435894,
-    "Latitude": 48.2246069
-  },
-  {
-    "StopID": 3288,
-    "DIVA": null,
-    "StopText": "Nikolaus-Pytty-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2416272,
-    "Latitude": 48.2224294
-  },
-  {
-    "StopID": 3289,
-    "DIVA": null,
-    "StopText": "Knödelhüttenstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2390933,
-    "Latitude": 48.2208936
-  },
-  {
-    "StopID": 3290,
-    "DIVA": null,
-    "StopText": "Moschingergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2411122,
-    "Latitude": 48.2192194
-  },
-  {
-    "StopID": 3291,
-    "DIVA": null,
-    "StopText": "Haspelmeistergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.244418,
-    "Latitude": 48.2174125
-  },
-  {
-    "StopID": 3292,
-    "DIVA": null,
-    "StopText": "Edenstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2461938,
-    "Latitude": 48.2149827
-  },
-  {
-    "StopID": 3293,
-    "DIVA": null,
-    "StopText": "Dostgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2528666,
-    "Latitude": 48.2200063
-  },
-  {
-    "StopID": 3294,
-    "DIVA": null,
-    "StopText": "Elsbeergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2544197,
-    "Latitude": 48.2184216
-  },
-  {
-    "StopID": 3295,
-    "DIVA": null,
-    "StopText": "Günselgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2551094,
-    "Latitude": 48.2167516
-  },
-  {
-    "StopID": 3296,
-    "DIVA": null,
-    "StopText": "Hänflingweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2574108,
-    "Latitude": 48.218255
-  },
-  {
-    "StopID": 3297,
-    "DIVA": null,
-    "StopText": "Ammerweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2599775,
-    "Latitude": 48.2183425
-  },
-  {
-    "StopID": 3298,
-    "DIVA": null,
-    "StopText": "Siedlung Kordon",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2618213,
-    "Latitude": 48.2180194
-  },
-  {
-    "StopID": 3299,
-    "DIVA": null,
-    "StopText": "Feuerwache Am Steinhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2781805,
-    "Latitude": 48.2151163
-  },
-  {
-    "StopID": 3300,
-    "DIVA": null,
-    "StopText": "Siedlung Kordon",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.261498,
-    "Latitude": 48.2179447
-  },
-  {
-    "StopID": 3301,
-    "DIVA": null,
-    "StopText": "Ammerweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2606102,
-    "Latitude": 48.2185302
-  },
-  {
-    "StopID": 3302,
-    "DIVA": null,
-    "StopText": "Hänflingweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2576958,
-    "Latitude": 48.2183063
-  },
-  {
-    "StopID": 3303,
-    "DIVA": null,
-    "StopText": "Günselgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2550772,
-    "Latitude": 48.2168394
-  },
-  {
-    "StopID": 3304,
-    "DIVA": null,
-    "StopText": "Elsbeergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2543497,
-    "Latitude": 48.218558
-  },
-  {
-    "StopID": 3305,
-    "DIVA": null,
-    "StopText": "Dostgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2529338,
-    "Latitude": 48.2201105
-  },
-  {
-    "StopID": 3306,
-    "DIVA": null,
-    "StopText": "Kerbelgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2496641,
-    "Latitude": 48.2173463
-  },
-  {
     "StopID": 3307,
     "DIVA": 60201821,
     "StopText": "Ulmenstraße",
@@ -26944,24 +25351,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2489919,
     "Latitude": 48.2164561
-  },
-  {
-    "StopID": 3308,
-    "DIVA": null,
-    "StopText": "Jubiläumswarte",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2656125,
-    "Latitude": 48.221103
-  },
-  {
-    "StopID": 3309,
-    "DIVA": null,
-    "StopText": "Jubiläumswarte",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.26531,
-    "Latitude": 48.2211455
   },
   {
     "StopID": 3310,
@@ -27360,24 +25749,6 @@
     "Latitude": 48.2120597
   },
   {
-    "StopID": 3354,
-    "DIVA": null,
-    "StopText": "Sieveringer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3355,
-    "DIVA": null,
-    "StopText": "Sieveringer Friedhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3356,
     "DIVA": 60201289,
     "StopText": "Vernholzgasse",
@@ -27747,15 +26118,6 @@
     "Latitude": 48.2357238
   },
   {
-    "StopID": 3406,
-    "DIVA": null,
-    "StopText": "Neueßling",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3407,
     "DIVA": 60200572,
     "StopText": "Senekowitschgasse",
@@ -27918,15 +26280,6 @@
     "Latitude": 48.1488719
   },
   {
-    "StopID": 3425,
-    "DIVA": null,
-    "StopText": "Oberlaa U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
-  },
-  {
     "StopID": 3426,
     "DIVA": 60200350,
     "StopText": "Forchheimergasse",
@@ -27943,15 +26296,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3572125,
     "Latitude": 48.1340455
-  },
-  {
-    "StopID": 3428,
-    "DIVA": null,
-    "StopText": "Pa Siebenhirten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2908761,
-    "Latitude": 48.131663
   },
   {
     "StopID": 3429,
@@ -28116,15 +26460,6 @@
     "Latitude": 48.1750066
   },
   {
-    "StopID": 3447,
-    "DIVA": null,
-    "StopText": "Bruno-Marek-Allee",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.399858,
-    "Latitude": 48.1750066
-  },
-  {
     "StopID": 3448,
     "DIVA": 60201918,
     "StopText": "Krakauer Straße",
@@ -28188,96 +26523,6 @@
     "Latitude": 48.206295
   },
   {
-    "StopID": 3455,
-    "DIVA": null,
-    "StopText": "Schattenfrohgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3456,
-    "DIVA": null,
-    "StopText": "Gerasdorf, Bhf S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3457,
-    "DIVA": null,
-    "StopText": "Josef-Böck-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3458,
-    "DIVA": null,
-    "StopText": "Gerasdorf, Neue Mittelschule",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3459,
-    "DIVA": null,
-    "StopText": "Gerasdorf, Postamt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3460,
-    "DIVA": null,
-    "StopText": "Gerasdorf, Neue Mittelschule",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3461,
-    "DIVA": null,
-    "StopText": "Josef-Böck-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3462,
-    "DIVA": null,
-    "StopText": "Gerasdorf, Bhf. S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3463,
-    "DIVA": null,
-    "StopText": "Schattenfrohgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3464,
-    "DIVA": null,
-    "StopText": "Gerasdorf, Postamt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3465,
     "DIVA": 60201248,
     "StopText": "Siemensstraße <",
@@ -28294,15 +26539,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.378988,
     "Latitude": 48.1873786
-  },
-  {
-    "StopID": 3504,
-    "DIVA": null,
-    "StopText": "Glatzgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 3516,
@@ -28350,60 +26586,6 @@
     "Latitude": 48.130425
   },
   {
-    "StopID": 3521,
-    "DIVA": null,
-    "StopText": "Dummy Einschub Leopoldau",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3522,
-    "DIVA": null,
-    "StopText": "Dummy Einzieher Leopoldau",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3523,
-    "DIVA": null,
-    "StopText": "Sahulkastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3524,
-    "DIVA": null,
-    "StopText": "Wienerfeldgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3525,
-    "DIVA": null,
-    "StopText": "Erlaaer Straße U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3526,
-    "DIVA": null,
-    "StopText": "Erlaaer Straße U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3527,
     "DIVA": 60200056,
     "StopText": "Neubaugasse >",
@@ -28431,60 +26613,6 @@
     "Latitude": null
   },
   {
-    "StopID": 3561,
-    "DIVA": null,
-    "StopText": "Floridsdorf S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3562,
-    "DIVA": null,
-    "StopText": "Siebenhirten, Brunner Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2986669,
-    "Latitude": 48.1292338
-  },
-  {
-    "StopID": 3563,
-    "DIVA": null,
-    "StopText": "Industriegelände Liesing Süd",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3019661,
-    "Latitude": 48.128418
-  },
-  {
-    "StopID": 3564,
-    "DIVA": null,
-    "StopText": "Lemböckgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3069469,
-    "Latitude": 48.1277211
-  },
-  {
-    "StopID": 3565,
-    "DIVA": null,
-    "StopText": "Siebenhirten U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.309765,
-    "Latitude": 48.1293019
-  },
-  {
-    "StopID": 3566,
-    "DIVA": null,
-    "StopText": "Nowakgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3139761,
-    "Latitude": 48.12662
-  },
-  {
     "StopID": 3621,
     "DIVA": 60200180,
     "StopText": "Großfeldsiedlung-Bubergasse",
@@ -28492,42 +26620,6 @@
     "MunicipalityID": 90001,
     "Longitude": null,
     "Latitude": null
-  },
-  {
-    "StopID": 3622,
-    "DIVA": null,
-    "StopText": "Nowakgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.314448,
-    "Latitude": 48.1265811
-  },
-  {
-    "StopID": 3623,
-    "DIVA": null,
-    "StopText": "Siebenhirten U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.309765,
-    "Latitude": 48.1293019
-  },
-  {
-    "StopID": 3624,
-    "DIVA": null,
-    "StopText": "Lemböckgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3075238,
-    "Latitude": 48.1278219
-  },
-  {
-    "StopID": 3625,
-    "DIVA": null,
-    "StopText": "Industriegelände Liesing Süd",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3017461,
-    "Latitude": 48.1285919
   },
   {
     "StopID": 3677,
@@ -28584,24 +26676,6 @@
     "Latitude": 48.1697144
   },
   {
-    "StopID": 3706,
-    "DIVA": null,
-    "StopText": "Kagran U - Bedarf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3707,
-    "DIVA": null,
-    "StopText": "Marsanogasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3708,
     "DIVA": 60201570,
     "StopText": "Marsanogasse",
@@ -28618,15 +26692,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3540347,
     "Latitude": 48.2322575
-  },
-  {
-    "StopID": 3710,
-    "DIVA": null,
-    "StopText": "Nußdorfer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 3711,
@@ -28656,15 +26721,6 @@
     "Latitude": 48.1760947
   },
   {
-    "StopID": 3714,
-    "DIVA": null,
-    "StopText": "Gräßlplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3974363,
-    "Latitude": 48.1753772
-  },
-  {
     "StopID": 3715,
     "DIVA": 60201095,
     "StopText": "Reumannplatz U",
@@ -28681,15 +26737,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4347708,
     "Latitude": 48.2448541
-  },
-  {
-    "StopID": 3720,
-    "DIVA": null,
-    "StopText": "Maurer-Lange-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2682513,
-    "Latitude": 48.1466638
   },
   {
     "StopID": 3721,
@@ -28971,15 +27018,6 @@
     "Latitude": 48.150675
   },
   {
-    "StopID": 3756,
-    "DIVA": null,
-    "StopText": "Endemanngasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2909008,
-    "Latitude": 48.1529819
-  },
-  {
     "StopID": 3757,
     "DIVA": 60201395,
     "StopText": "Tullnertalgasse",
@@ -29160,15 +27198,6 @@
     "Latitude": 48.1725491
   },
   {
-    "StopID": 3777,
-    "DIVA": null,
-    "StopText": "Stranzenberggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2968319,
-    "Latitude": 48.17197
-  },
-  {
     "StopID": 3778,
     "DIVA": 60200096,
     "StopText": "Atzgersdorfer Straße",
@@ -29268,15 +27297,6 @@
     "Latitude": 48.1693513
   },
   {
-    "StopID": 3791,
-    "DIVA": null,
-    "StopText": "Stranzenberggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2960708,
-    "Latitude": 48.172288
-  },
-  {
     "StopID": 3792,
     "DIVA": 60200038,
     "StopText": "Zanggasse",
@@ -29284,15 +27304,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4847461,
     "Latitude": 48.2389808
-  },
-  {
-    "StopID": 3793,
-    "DIVA": null,
-    "StopText": "Zanggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.485115,
-    "Latitude": 48.238943
   },
   {
     "StopID": 3794,
@@ -29365,15 +27376,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.28424,
     "Latitude": 48.1524005
-  },
-  {
-    "StopID": 3811,
-    "DIVA": null,
-    "StopText": "Lainzer Tor",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 3812,
@@ -29583,24 +27585,6 @@
     "Latitude": 48.1946775
   },
   {
-    "StopID": 3835,
-    "DIVA": null,
-    "StopText": "Südtiroler Platz, Hauptbahnhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3836,
-    "DIVA": null,
-    "StopText": "Südtiroler Platz, Hauptbahnhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3837,
     "DIVA": 60201457,
     "StopText": "Paul-Wagner-Gasse",
@@ -29635,15 +27619,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.469648,
     "Latitude": 48.1671288
-  },
-  {
-    "StopID": 3841,
-    "DIVA": null,
-    "StopText": "Reumannplatz U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
   },
   {
     "StopID": 3842,
@@ -29754,69 +27729,6 @@
     "Latitude": null
   },
   {
-    "StopID": 3855,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3856,
-    "DIVA": null,
-    "StopText": "U-Bahnfahrt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3857,
-    "DIVA": null,
-    "StopText": "Zentralfriedhof, 2.Tor",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3858,
-    "DIVA": null,
-    "StopText": "Campus Wiener Netze",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3859,
-    "DIVA": null,
-    "StopText": "U-Bahnfahrt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3860,
-    "DIVA": null,
-    "StopText": "Lechnerstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3861,
-    "DIVA": null,
-    "StopText": "Dietrichgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 3862,
     "DIVA": 60200855,
     "StopText": "Maurer-Lange-Gasse",
@@ -29829,15 +27741,6 @@
     "StopID": 3863,
     "DIVA": 60200855,
     "StopText": "Maurer-Lange-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3864,
-    "DIVA": null,
-    "StopText": "Maurer-Berg",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -29889,42 +27792,6 @@
     "Latitude": 48.198088
   },
   {
-    "StopID": 3871,
-    "DIVA": null,
-    "StopText": "Gersthof S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4173305,
-    "Latitude": 48.2308858
-  },
-  {
-    "StopID": 3872,
-    "DIVA": null,
-    "StopText": "Schindlergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4173305,
-    "Latitude": 48.2308858
-  },
-  {
-    "StopID": 3873,
-    "DIVA": null,
-    "StopText": "Schindlergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4173305,
-    "Latitude": 48.2308858
-  },
-  {
-    "StopID": 3874,
-    "DIVA": null,
-    "StopText": "Gersthof S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4173305,
-    "Latitude": 48.2308858
-  },
-  {
     "StopID": 3875,
     "DIVA": 60201920,
     "StopText": "Eduardgasse",
@@ -29959,33 +27826,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3345958,
     "Latitude": 48.2249413
-  },
-  {
-    "StopID": 3879,
-    "DIVA": null,
-    "StopText": "Nussdorf, Beethovengang",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3880,
-    "DIVA": null,
-    "StopText": "Nussdorfer Friedhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3881,
-    "DIVA": null,
-    "StopText": "Heiligenstädter Friedhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 3882,
@@ -30103,240 +27943,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4930549,
     "Latitude": 48.225833
-  },
-  {
-    "StopID": 3895,
-    "DIVA": null,
-    "StopText": "Atzgersdorf, Schulcampus",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3896,
-    "DIVA": null,
-    "StopText": "Gregorygasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3897,
-    "DIVA": null,
-    "StopText": "Auer-Welsbach-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3898,
-    "DIVA": null,
-    "StopText": "Seybelgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3899,
-    "DIVA": null,
-    "StopText": "Seybelgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3900,
-    "DIVA": null,
-    "StopText": "Schloss Alterlaa",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3901,
-    "DIVA": null,
-    "StopText": "Auer-Welsbach-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3902,
-    "DIVA": null,
-    "StopText": "Atzgersdorf, Schulcampus",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3903,
-    "DIVA": null,
-    "StopText": "Liesing S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3904,
-    "DIVA": null,
-    "StopText": "Käthe-Recheis-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.5123011,
-    "Latitude": 48.2285169
-  },
-  {
-    "StopID": 3905,
-    "DIVA": null,
-    "StopText": "Ilse-Buck-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.511645,
-    "Latitude": 48.231468
-  },
-  {
-    "StopID": 3906,
-    "DIVA": null,
-    "StopText": "Käthe-Recheis-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.5122969,
-    "Latitude": 48.228653
-  },
-  {
-    "StopID": 3907,
-    "DIVA": null,
-    "StopText": "Ilse-Buck-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.512108,
-    "Latitude": 48.2311011
-  },
-  {
-    "StopID": 3908,
-    "DIVA": null,
-    "StopText": "Neubaugasse, Burggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.34895,
-    "Latitude": 48.2043988
-  },
-  {
-    "StopID": 3909,
-    "DIVA": null,
-    "StopText": "Donaustadtbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.441058,
-    "Latitude": 48.2125861
-  },
-  {
-    "StopID": 3910,
-    "DIVA": null,
-    "StopText": "Donaustadtbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.440985,
-    "Latitude": 48.2124711
-  },
-  {
-    "StopID": 3911,
-    "DIVA": null,
-    "StopText": "Aspern Nord SU",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.505305,
-    "Latitude": 48.2337988
-  },
-  {
-    "StopID": 3912,
-    "DIVA": null,
-    "StopText": "Atzgersdorf, Hödlgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.295635,
-    "Latitude": 48.14949
-  },
-  {
-    "StopID": 3913,
-    "DIVA": null,
-    "StopText": "Marietta-Blau-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.459255,
-    "Latitude": 48.2418888
-  },
-  {
-    "StopID": 3914,
-    "DIVA": null,
-    "StopText": "An der Kuhtrift",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3969619,
-    "Latitude": 48.145248
-  },
-  {
-    "StopID": 3915,
-    "DIVA": null,
-    "StopText": "Dückegasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3916,
-    "DIVA": null,
-    "StopText": "Hans-Czermak-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3917,
-    "DIVA": null,
-    "StopText": "Erna-Musik-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3918,
-    "DIVA": null,
-    "StopText": "Satzingerweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3919,
-    "DIVA": null,
-    "StopText": "Erna-Musik-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 3920,
-    "DIVA": null,
-    "StopText": "Hans-Czermak-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 4101,
@@ -30771,15 +28377,6 @@
     "Latitude": 48.277555
   },
   {
-    "StopID": 4191,
-    "DIVA": null,
-    "StopText": "Leopoldau Abstellbahnhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 4201,
     "DIVA": 60201182,
     "StopText": "Schottenring",
@@ -31086,15 +28683,6 @@
     "Latitude": 48.2225769
   },
   {
-    "StopID": 4273,
-    "DIVA": null,
-    "StopText": "An den alten Schanzen",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 4274,
     "DIVA": 60200487,
     "StopText": "Hausfeldstraße",
@@ -31147,24 +28735,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.485675,
     "Latitude": 48.2335111
-  },
-  {
-    "StopID": 4280,
-    "DIVA": null,
-    "StopText": "An den alten Schanzen",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 4282,
-    "DIVA": null,
-    "StopText": "Stadion",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 4401,
@@ -31959,15 +29529,6 @@
     "Latitude": 48.235665
   },
   {
-    "StopID": 4700,
-    "DIVA": null,
-    "StopText": "Praterstern (blw)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 4701,
     "DIVA": 60200246,
     "StopText": "Ring, Volkstheater U (Bedarfs-Hst.)",
@@ -31984,15 +29545,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3723997,
     "Latitude": 48.2304924
-  },
-  {
-    "StopID": 4704,
-    "DIVA": null,
-    "StopText": "Gräßlplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3984091,
-    "Latitude": 48.1755488
   },
   {
     "StopID": 4708,
@@ -32020,24 +29572,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3263147,
     "Latitude": 48.2189913
-  },
-  {
-    "StopID": 4711,
-    "DIVA": null,
-    "StopText": "Lorenz-Bayer-Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.325695,
-    "Latitude": 48.2143394
-  },
-  {
-    "StopID": 4716,
-    "DIVA": null,
-    "StopText": "ehemalige Schleife - nicht mehr vorhanden",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 4717,
@@ -32085,15 +29619,6 @@
     "Latitude": null
   },
   {
-    "StopID": 4730,
-    "DIVA": null,
-    "StopText": "Radetzkystraße, Matthäusgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3883111,
-    "Latitude": 48.2109288
-  },
-  {
     "StopID": 4732,
     "DIVA": 60201522,
     "StopText": "Zentralfriedhof 3.Tor",
@@ -32130,15 +29655,6 @@
     "Latitude": 48.1499983
   },
   {
-    "StopID": 4736,
-    "DIVA": null,
-    "StopText": "Kagraner Friedhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 4737,
     "DIVA": 60200935,
     "StopText": "Neuwaldegg",
@@ -32146,69 +29662,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2915911,
     "Latitude": 48.2330394
-  },
-  {
-    "StopID": 4739,
-    "DIVA": null,
-    "StopText": "Prater Messegelände",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 4740,
-    "DIVA": null,
-    "StopText": "Messestraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 4795,
-    "DIVA": null,
-    "StopText": "Hauptwerkstätte 1",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4593211,
-    "Latitude": 48.1474419
-  },
-  {
-    "StopID": 4796,
-    "DIVA": null,
-    "StopText": "Hauptwerkstätte 2",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4586233,
-    "Latitude": 48.1445433
-  },
-  {
-    "StopID": 4797,
-    "DIVA": null,
-    "StopText": "Hauptwerkstätte 3",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4555533,
-    "Latitude": 48.1446491
-  },
-  {
-    "StopID": 4798,
-    "DIVA": null,
-    "StopText": "Hauptwerkstätte 4",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.455988,
-    "Latitude": 48.1464444
-  },
-  {
-    "StopID": 4799,
-    "DIVA": null,
-    "StopText": "Hauptwerkstätte 5",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4563988,
-    "Latitude": 48.1481402
   },
   {
     "StopID": 4802,
@@ -32364,15 +29817,6 @@
     "Latitude": 48.1909261
   },
   {
-    "StopID": 4826,
-    "DIVA": null,
-    "StopText": "Obkirchergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 4827,
     "DIVA": 60200336,
     "StopText": "Friedlgasse",
@@ -32389,15 +29833,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.378848,
     "Latitude": 48.1728561
-  },
-  {
-    "StopID": 4834,
-    "DIVA": null,
-    "StopText": "Ottakrinker Bad",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2890488,
-    "Latitude": 48.2113338
   },
   {
     "StopID": 4836,
@@ -33228,15 +30663,6 @@
     "Latitude": 48.16907
   },
   {
-    "StopID": 5062,
-    "DIVA": null,
-    "StopText": "Stadion (für Langwende)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5063,
     "DIVA": 60201785,
     "StopText": "Ober St. Veit >, Franz-Boos-Gasse",
@@ -33244,24 +30670,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2751122,
     "Latitude": 48.1920144
-  },
-  {
-    "StopID": 5065,
-    "DIVA": null,
-    "StopText": "Oberlaa U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
-  },
-  {
-    "StopID": 5066,
-    "DIVA": null,
-    "StopText": "Oberlaa U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
   },
   {
     "StopID": 5067,
@@ -33282,15 +30690,6 @@
     "Latitude": 48.1794361
   },
   {
-    "StopID": 5069,
-    "DIVA": null,
-    "StopText": "Atzgersdorf, Wiegelestraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5070,
     "DIVA": 60200334,
     "StopText": "Floridsdorf <>",
@@ -33309,24 +30708,6 @@
     "Latitude": 48.1704411
   },
   {
-    "StopID": 5196,
-    "DIVA": null,
-    "StopText": "Simonygasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.328305,
-    "Latitude": 48.227588
-  },
-  {
-    "StopID": 5197,
-    "DIVA": null,
-    "StopText": "Czartoryskigasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3277366,
-    "Latitude": 48.2279272
-  },
-  {
     "StopID": 5198,
     "DIVA": 60200580,
     "StopText": "Inzersdorf, Friedhof",
@@ -33334,15 +30715,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3529611,
     "Latitude": 48.1467338
-  },
-  {
-    "StopID": 5199,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3816736,
-    "Latitude": 48.1526313
   },
   {
     "StopID": 5200,
@@ -33388,24 +30760,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.256778,
     "Latitude": 48.2011899
-  },
-  {
-    "StopID": 5205,
-    "DIVA": null,
-    "StopText": "Bahnhof Heiligenstadt S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5206,
-    "DIVA": null,
-    "StopText": "Bahnhof Heiligenstadt S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5207,
@@ -33462,114 +30816,6 @@
     "Latitude": 48.1583205
   },
   {
-    "StopID": 5213,
-    "DIVA": null,
-    "StopText": "Mannswörther Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5214,
-    "DIVA": null,
-    "StopText": "Sendnergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5215,
-    "DIVA": null,
-    "StopText": "Dampfkraftwerk-Donaustadt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5216,
-    "DIVA": null,
-    "StopText": "Primavesigasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5217,
-    "DIVA": null,
-    "StopText": "Mayredergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5218,
-    "DIVA": null,
-    "StopText": "Fuchsenzeile",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5219,
-    "DIVA": null,
-    "StopText": "Podhagskygasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5220,
-    "DIVA": null,
-    "StopText": "Schukowitzgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5221,
-    "DIVA": null,
-    "StopText": "Pfalzgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5222,
-    "DIVA": null,
-    "StopText": "Breitenlee, Schule",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5223,
-    "DIVA": null,
-    "StopText": "Asperner Heldenplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5224,
-    "DIVA": null,
-    "StopText": "Oberdorfstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5225,
     "DIVA": 60200758,
     "StopText": "Lavantgasse, Schule",
@@ -33577,24 +30823,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4498125,
     "Latitude": 48.2821966
-  },
-  {
-    "StopID": 5226,
-    "DIVA": null,
-    "StopText": "Zentralfriedhof, 3. Tor",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5227,
-    "DIVA": null,
-    "StopText": "Erzherzog-Karl-Straße S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5228,
@@ -33615,15 +30843,6 @@
     "Latitude": 48.2558569
   },
   {
-    "StopID": 5230,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3816936,
-    "Latitude": 48.1527911
-  },
-  {
     "StopID": 5231,
     "DIVA": 60200953,
     "StopText": "Küniglberg, ORF-Zentrum",
@@ -33633,33 +30852,6 @@
     "Latitude": 48.175603
   },
   {
-    "StopID": 5232,
-    "DIVA": null,
-    "StopText": "Schukowitzgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5233,
-    "DIVA": null,
-    "StopText": "Kieslerweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5234,
-    "DIVA": null,
-    "StopText": "Hausfeldstraße  U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5235,
     "DIVA": 60201668,
     "StopText": "Neue Donau U",
@@ -33667,15 +30859,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3953727,
     "Latitude": 48.2464455
-  },
-  {
-    "StopID": 5236,
-    "DIVA": null,
-    "StopText": "Pensionistenwohnhaus Laaer Berg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5237,
@@ -33696,15 +30879,6 @@
     "Latitude": 48.135598
   },
   {
-    "StopID": 5239,
-    "DIVA": null,
-    "StopText": "Laxenburger Straße, Richard-Tauber-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.356215,
-    "Latitude": 48.1345669
-  },
-  {
     "StopID": 5240,
     "DIVA": 60201000,
     "StopText": "Pensionistenwohnhaus Atzgersdorf",
@@ -33712,15 +30886,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2896761,
     "Latitude": 48.1504788
-  },
-  {
-    "StopID": 5241,
-    "DIVA": null,
-    "StopText": "Aspern Nord  U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.5044016,
-    "Latitude": 48.2338533
   },
   {
     "StopID": 5400,
@@ -33849,42 +31014,6 @@
     "Latitude": null
   },
   {
-    "StopID": 5414,
-    "DIVA": null,
-    "StopText": "Donaustadtbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5415,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5416,
-    "DIVA": null,
-    "StopText": "Karlsplatz >",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5417,
-    "DIVA": null,
-    "StopText": "Landstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5418,
     "DIVA": 60200014,
     "StopText": "Alaudagasse",
@@ -33903,15 +31032,6 @@
     "Latitude": 48.1537269
   },
   {
-    "StopID": 5420,
-    "DIVA": null,
-    "StopText": "Otto-Höltzl-Weg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5421,
     "DIVA": 60200827,
     "StopText": "Margaretengürtel",
@@ -33921,27 +31041,9 @@
     "Latitude": 48.1874288
   },
   {
-    "StopID": 5422,
-    "DIVA": null,
-    "StopText": "Altmannsdorfer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5423,
     "DIVA": 60200920,
     "StopText": "Neubaugasse, Burggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5424,
-    "DIVA": null,
-    "StopText": "Breitenfurter Straße",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -33957,42 +31059,6 @@
     "Latitude": null
   },
   {
-    "StopID": 5426,
-    "DIVA": null,
-    "StopText": "Zentralfriedhof, 2. Tor",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5427,
-    "DIVA": null,
-    "StopText": "Schlachthausgasse U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5428,
-    "DIVA": null,
-    "StopText": "Dampfkraftwerk",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5429,
-    "DIVA": null,
-    "StopText": "provisorische Haltestelle",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5430,
     "DIVA": 60200056,
     "StopText": "Neubaugasse >",
@@ -34002,15 +31068,6 @@
     "Latitude": null
   },
   {
-    "StopID": 5431,
-    "DIVA": null,
-    "StopText": "Hintere Zollamsstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3868961,
-    "Latitude": 48.2102288
-  },
-  {
     "StopID": 5432,
     "DIVA": 60201040,
     "StopText": "Praterstern SU",
@@ -34018,16 +31075,7 @@
     "MunicipalityID": 90001,
     "Longitude": null,
     "Latitude": null
-  },
-  {
-    "StopID": 5433,
-    "DIVA": 60201040,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
+  }, 
   {
     "StopID": 5434,
     "DIVA": 60200437,
@@ -34036,132 +31084,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.32908,
     "Latitude": 48.193498
-  },
-  {
-    "StopID": 5435,
-    "DIVA": null,
-    "StopText": "Keplerplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5436,
-    "DIVA": null,
-    "StopText": "Absberggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5437,
-    "DIVA": null,
-    "StopText": "Absberggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5439,
-    "DIVA": null,
-    "StopText": "Sahulkastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
-  },
-  {
-    "StopID": 5440,
-    "DIVA": null,
-    "StopText": "Wienerfeldgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
-  },
-  {
-    "StopID": 5441,
-    "DIVA": null,
-    "StopText": "Migerkastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
-  },
-  {
-    "StopID": 5442,
-    "DIVA": null,
-    "StopText": "Strebersdorf, Edmund-Hawranek-Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3861819,
-    "Latitude": 48.2907219
-  },
-  {
-    "StopID": 5443,
-    "DIVA": null,
-    "StopText": "Floridsdorfer Markt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5444,
-    "DIVA": null,
-    "StopText": "Bahnsteggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5445,
-    "DIVA": null,
-    "StopText": "Bahnsteggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5446,
-    "DIVA": null,
-    "StopText": "Hütteldorfer Straße >",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5447,
-    "DIVA": null,
-    "StopText": "Breitensee S",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5448,
-    "DIVA": null,
-    "StopText": "Neusteinhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5449,
-    "DIVA": null,
-    "StopText": "Gutheil-Schoder-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5484,
@@ -34641,15 +31563,6 @@
     "Latitude": 48.152943
   },
   {
-    "StopID": 5588,
-    "DIVA": null,
-    "StopText": "Adelheid-Popp-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5589,
     "DIVA": 60200580,
     "StopText": "Jochen-Rindt-Straße",
@@ -34702,15 +31615,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3633375,
     "Latitude": 48.1860361
-  },
-  {
-    "StopID": 5598,
-    "DIVA": null,
-    "StopText": "Miriam-Makeba-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5599,
@@ -35323,15 +32227,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.311955,
     "Latitude": 48.1360494
-  },
-  {
-    "StopID": 5680,
-    "DIVA": null,
-    "StopText": "Talpagasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3095677,
-    "Latitude": 48.132248
   },
   {
     "StopID": 5681,
@@ -35964,15 +32859,6 @@
     "Latitude": 48.2199786
   },
   {
-    "StopID": 5758,
-    "DIVA": null,
-    "StopText": "Siebenhirten, Baslergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5759,
     "DIVA": 60200234,
     "StopText": "Donauinsel",
@@ -35998,15 +32884,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.338198,
     "Latitude": 48.1888238
-  },
-  {
-    "StopID": 5762,
-    "DIVA": null,
-    "StopText": "Margaretengürtel",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5763,
@@ -36036,27 +32913,9 @@
     "Latitude": 48.1954763
   },
   {
-    "StopID": 5768,
-    "DIVA": null,
-    "StopText": "Mariahilfer Straße / Stiftgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5769,
     "DIVA": 60200520,
     "StopText": "Kennedybrücke, Hietzing",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5771,
-    "DIVA": null,
-    "StopText": "Messegelände, Südportal",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -36189,15 +33048,6 @@
     "Latitude": 48.2632472
   },
   {
-    "StopID": 5789,
-    "DIVA": null,
-    "StopText": "Stadion",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4221519,
-    "Latitude": 48.2109363
-  },
-  {
     "StopID": 5790,
     "DIVA": 60200282,
     "StopText": "Donaumarina U",
@@ -36268,15 +33118,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2248727,
     "Latitude": 48.2088452
-  },
-  {
-    "StopID": 5798,
-    "DIVA": null,
-    "StopText": "Mariabrunn Kirche",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5799,
@@ -36610,42 +33451,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.28114,
     "Latitude": 48.2048086
-  },
-  {
-    "StopID": 5847,
-    "DIVA": null,
-    "StopText": "Berresgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.48568,
-    "Latitude": 48.24122
-  },
-  {
-    "StopID": 5848,
-    "DIVA": null,
-    "StopText": "Grete-Zimmer-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4893661,
-    "Latitude": 48.24198
-  },
-  {
-    "StopID": 5849,
-    "DIVA": null,
-    "StopText": "Grete-Zimmer-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4893238,
-    "Latitude": 48.242005
-  },
-  {
-    "StopID": 5850,
-    "DIVA": null,
-    "StopText": "Berresgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4856511,
-    "Latitude": 48.241293
   },
   {
     "StopID": 5851,
@@ -37062,24 +33867,6 @@
     "Latitude": 48.2020769
   },
   {
-    "StopID": 5944,
-    "DIVA": null,
-    "StopText": "Wolfganggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5945,
-    "DIVA": null,
-    "StopText": "Wolfganggasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5946,
     "DIVA": 60206055,
     "StopText": "Baden Landesklinikum",
@@ -37098,15 +33885,6 @@
     "Latitude": null
   },
   {
-    "StopID": 5950,
-    "DIVA": null,
-    "StopText": "Kagraner Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5951,
     "DIVA": 60201860,
     "StopText": "Rennbahnweg",
@@ -37114,24 +33892,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.449048,
     "Latitude": 48.25706
-  },
-  {
-    "StopID": 5952,
-    "DIVA": null,
-    "StopText": "Aderklaaer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5953,
-    "DIVA": null,
-    "StopText": "Aderklaaer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 5954,
@@ -37143,60 +33903,6 @@
     "Latitude": 48.257078
   },
   {
-    "StopID": 5955,
-    "DIVA": null,
-    "StopText": "Kagraner Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5956,
-    "DIVA": null,
-    "StopText": "Kliebergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5957,
-    "DIVA": null,
-    "StopText": "Blechturmgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5958,
-    "DIVA": null,
-    "StopText": "Südtiroler Platz S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5959,
-    "DIVA": null,
-    "StopText": "Blechturmgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5960,
-    "DIVA": null,
-    "StopText": "Kliebergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 5961,
     "DIVA": 60200633,
     "StopText": "Kagraner Platz U",
@@ -37204,15 +33910,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4435638,
     "Latitude": 48.2511088
-  },
-  {
-    "StopID": 5962,
-    "DIVA": null,
-    "StopText": "Reumannplatz U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.28114,
-    "Latitude": 48.2048086
   },
   {
     "StopID": 5971,
@@ -37224,24 +33921,6 @@
     "Latitude": 48.211378
   },
   {
-    "StopID": 5998,
-    "DIVA": null,
-    "StopText": "Mehrzweckhalle Oberlaa (Bedarfshaltestelle)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 5999,
-    "DIVA": null,
-    "StopText": "Mehrzweckhalle Oberlaa (Bedarfshaltestelle)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 6000,
     "DIVA": 60200033,
     "StopText": "Altes Landgut",
@@ -37249,33 +33928,6 @@
     "MunicipalityID": 90001,
     "Longitude": null,
     "Latitude": null
-  },
-  {
-    "StopID": 6001,
-    "DIVA": null,
-    "StopText": "Bahnhof Kagran",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4349161,
-    "Latitude": 48.24715
-  },
-  {
-    "StopID": 6002,
-    "DIVA": null,
-    "StopText": "Bahnhof Floridsdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3993669,
-    "Latitude": 48.2634411
-  },
-  {
-    "StopID": 6003,
-    "DIVA": null,
-    "StopText": "Bahnhof Brigittenau",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3669611,
-    "Latitude": 48.2362669
   },
   {
     "StopID": 6004,
@@ -37287,159 +33939,6 @@
     "Latitude": 48.2300447
   },
   {
-    "StopID": 6005,
-    "DIVA": null,
-    "StopText": "Bahnhof Hernals",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3213819,
-    "Latitude": 48.2218261
-  },
-  {
-    "StopID": 6006,
-    "DIVA": null,
-    "StopText": "Bahnhof Ottakring",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.304055,
-    "Latitude": 48.2090699
-  },
-  {
-    "StopID": 6007,
-    "DIVA": null,
-    "StopText": "Bahnhof Breitensee",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6008,
-    "DIVA": null,
-    "StopText": "Bahnhof Rudolfsheim",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3223569,
-    "Latitude": 48.189863
-  },
-  {
-    "StopID": 6009,
-    "DIVA": null,
-    "StopText": "Bahnhof Speising",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.289588,
-    "Latitude": 48.1712599
-  },
-  {
-    "StopID": 6010,
-    "DIVA": null,
-    "StopText": "Bahnhof Favoriten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.372288,
-    "Latitude": 48.1781969
-  },
-  {
-    "StopID": 6011,
-    "DIVA": null,
-    "StopText": "Bahnhof Simmering",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.423805,
-    "Latitude": 48.1664838
-  },
-  {
-    "StopID": 6012,
-    "DIVA": null,
-    "StopText": "Garage Vorgartenstraße A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6013,
-    "DIVA": null,
-    "StopText": "Garage Grinzing Ausfahrt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6014,
-    "DIVA": null,
-    "StopText": "Garage Spetterbrücke Aus",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3103761,
-    "Latitude": 48.207443
-  },
-  {
-    "StopID": 6015,
-    "DIVA": null,
-    "StopText": "Garage Raxstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.366833,
-    "Latitude": 48.16334
-  },
-  {
-    "StopID": 6016,
-    "DIVA": null,
-    "StopText": "Gar. Leopoldau Ausfahrt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4306311,
-    "Latitude": 48.2801561
-  },
-  {
-    "StopID": 6018,
-    "DIVA": null,
-    "StopText": "Bhf. WLW",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6019,
-    "DIVA": null,
-    "StopText": "SR Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6021,
-    "DIVA": null,
-    "StopText": "ZK Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6022,
-    "DIVA": null,
-    "StopText": "RP Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6023,
-    "DIVA": null,
-    "StopText": "Praterstern Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 6024,
     "DIVA": 60200067,
     "StopText": "Bahnhof Rudolfsheim (Bedarf)",
@@ -37447,240 +33946,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3222538,
     "Latitude": 48.1901561
-  },
-  {
-    "StopID": 6025,
-    "DIVA": null,
-    "StopText": "Abstellplatz Stefan-Fadi",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3541861,
-    "Latitude": 48.1683211
-  },
-  {
-    "StopID": 6026,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 38",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3646069,
-    "Latitude": 48.2492769
-  },
-  {
-    "StopID": 6027,
-    "DIVA": null,
-    "StopText": "Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3774619,
-    "Latitude": 48.173735
-  },
-  {
-    "StopID": 6028,
-    "DIVA": null,
-    "StopText": "Rösslergasse Wagenhalle",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6029,
-    "DIVA": null,
-    "StopText": "OK Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6030,
-    "DIVA": null,
-    "StopText": "Bhf. Michelbeuern",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6031,
-    "DIVA": null,
-    "StopText": "Abstellplatz Kagran 93A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6032,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 7",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6033,
-    "DIVA": null,
-    "StopText": "SR Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6034,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 13A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.38269,
-    "Latitude": 48.1869619
-  },
-  {
-    "StopID": 6035,
-    "DIVA": null,
-    "StopText": "Abstellplatz Schleife Südbahnhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3827888,
-    "Latitude": 48.18704
-  },
-  {
-    "StopID": 6036,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 1",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3722119,
-    "Latitude": 48.1781869
-  },
-  {
-    "StopID": 6037,
-    "DIVA": null,
-    "StopText": "Abstellplatz Kagran Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.443868,
-    "Latitude": 48.2507869
-  },
-  {
-    "StopID": 6038,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 24A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.443868,
-    "Latitude": 48.2507869
-  },
-  {
-    "StopID": 6039,
-    "DIVA": null,
-    "StopText": "Abstellplatz Linie 25A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.443868,
-    "Latitude": 48.2507869
-  },
-  {
-    "StopID": 6040,
-    "DIVA": null,
-    "StopText": "Abstellplatz Kagran",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4348649,
-    "Latitude": 48.244478
-  },
-  {
-    "StopID": 6041,
-    "DIVA": null,
-    "StopText": "Abstellplatz Kagran 93A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4348649,
-    "Latitude": 48.244478
-  },
-  {
-    "StopID": 6042,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 31A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.443868,
-    "Latitude": 48.2507869
-  },
-  {
-    "StopID": 6043,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 40A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6044,
-    "DIVA": null,
-    "StopText": "Abstellplatz 57A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.322228,
-    "Latitude": 48.189863
-  },
-  {
-    "StopID": 6045,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 59A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.332713,
-    "Latitude": 48.17492
-  },
-  {
-    "StopID": 6046,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 63A (Lobkowitzbrücke)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.327755,
-    "Latitude": 48.1838238
-  },
-  {
-    "StopID": 6047,
-    "DIVA": null,
-    "StopText": "KP Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6048,
-    "DIVA": null,
-    "StopText": "HF Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6049,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 64",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.327755,
-    "Latitude": 48.1838238
-  },
-  {
-    "StopID": 6050,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 6",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 6051,
@@ -37692,564 +33957,6 @@
     "Latitude": 48.1874258
   },
   {
-    "StopID": 6052,
-    "DIVA": null,
-    "StopText": "Abstellplatz 39A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3646569,
-    "Latitude": 48.2494011
-  },
-  {
-    "StopID": 6053,
-    "DIVA": null,
-    "StopText": "Abstellplatz Bhf. Heiligenstadt S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3646569,
-    "Latitude": 49.2494011
-  },
-  {
-    "StopID": 6054,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 67A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6056,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie N25",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4348649,
-    "Latitude": 48.244478
-  },
-  {
-    "StopID": 6059,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie N75",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.417253,
-    "Latitude": 48.185285
-  },
-  {
-    "StopID": 6060,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 32A Großjedlersdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4079611,
-    "Latitude": 48.2772288
-  },
-  {
-    "StopID": 6061,
-    "DIVA": null,
-    "StopText": "FL Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6062,
-    "DIVA": null,
-    "StopText": "Wagenhalle Erd.",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6063,
-    "DIVA": null,
-    "StopText": "JO abgestellt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6064,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 5A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6065,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 28A Floridsdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4007238,
-    "Latitude": 48.2562
-  },
-  {
-    "StopID": 6066,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 29A Floridsdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4007238,
-    "Latitude": 48.2562
-  },
-  {
-    "StopID": 6067,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 83A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4073111,
-    "Latitude": 48.194103
-  },
-  {
-    "StopID": 6069,
-    "DIVA": null,
-    "StopText": "Abstellplatz Breitensee",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6070,
-    "DIVA": null,
-    "StopText": "Abstellplatz Rudolfsheim",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6071,
-    "DIVA": null,
-    "StopText": "Abstellplatz D Augasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6072,
-    "DIVA": null,
-    "StopText": "HI Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6073,
-    "DIVA": null,
-    "StopText": "MH Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.327755,
-    "Latitude": 48.1838238
-  },
-  {
-    "StopID": 6074,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 1",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.327755,
-    "Latitude": 48.1838238
-  },
-  {
-    "StopID": 6075,
-    "DIVA": null,
-    "StopText": "PH Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6076,
-    "DIVA": null,
-    "StopText": "SA Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6077,
-    "DIVA": null,
-    "StopText": "Abstellplatz Alterlaa U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6078,
-    "DIVA": null,
-    "StopText": "Abstellplatz Alterlaa U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.317158,
-    "Latitude": 48.1508811
-  },
-  {
-    "StopID": 6079,
-    "DIVA": null,
-    "StopText": "Abstellpl. 14A Reumannpl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6080,
-    "DIVA": null,
-    "StopText": "favexp",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6081,
-    "DIVA": null,
-    "StopText": "Abstpl.  30A und 32A GJ",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4079611,
-    "Latitude": 48.2772288
-  },
-  {
-    "StopID": 6083,
-    "DIVA": null,
-    "StopText": "Abstellplatz für RBL HASTUS (IDENT mit Abstellplatz 74A)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.40001,
-    "Latitude": 48.1875888
-  },
-  {
-    "StopID": 6084,
-    "DIVA": null,
-    "StopText": "Abstellplatz (N)35(A) RBL",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6085,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 7 Eichenstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6086,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. 70A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6087,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 65A Garage Rax",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.367023,
-    "Latitude": 48.163483
-  },
-  {
-    "StopID": 6091,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. N31",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6092,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. N46",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6094,
-    "DIVA": null,
-    "StopText": "Abstellplatz Heiligenstadt S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3642838,
-    "Latitude": 48.2482761
-  },
-  {
-    "StopID": 6097,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. N41",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3110169,
-    "Latitude": 48.2410811
-  },
-  {
-    "StopID": 6098,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. N31 Schottenring",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.371098,
-    "Latitude": 48.216718
-  },
-  {
-    "StopID": 6099,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. N62",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2866111,
-    "Latitude": 48.170135
-  },
-  {
-    "StopID": 6100,
-    "DIVA": null,
-    "StopText": "Abstellplatz d. L. N58",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6101,
-    "DIVA": null,
-    "StopText": "Kaisermühlen Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6102,
-    "DIVA": null,
-    "StopText": "Alte Donau Abstellgleis",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6103,
-    "DIVA": null,
-    "StopText": "Abstellplatz 34A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3651388,
-    "Latitude": 48.2499338
-  },
-  {
-    "StopID": 6104,
-    "DIVA": null,
-    "StopText": "Abstellplatz 11A Elderschplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6105,
-    "DIVA": null,
-    "StopText": "Schlachthausgasse U (Abstellplatz)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4083261,
-    "Latitude": 48.1942925
-  },
-  {
-    "StopID": 6106,
-    "DIVA": null,
-    "StopText": "Gar. Leopoldau Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4305188,
-    "Latitude": 48.2797869
-  },
-  {
-    "StopID": 6108,
-    "DIVA": null,
-    "StopText": "Bf Erdberg Halle 3",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6109,
-    "DIVA": null,
-    "StopText": "Bahnhof Ottakring",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.304055,
-    "Latitude": 48.2090699
-  },
-  {
-    "StopID": 6110,
-    "DIVA": null,
-    "StopText": "Bahnhof Favoriten Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.37229,
-    "Latitude": 48.1782469
-  },
-  {
-    "StopID": 6111,
-    "DIVA": null,
-    "StopText": "Abstellplatz Oberlaa",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6114,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 65A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3545011,
-    "Latitude": 48.1679511
-  },
-  {
-    "StopID": 6115,
-    "DIVA": null,
-    "StopText": "Garage Spetterbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3108788,
-    "Latitude": 48.208318
-  },
-  {
-    "StopID": 6120,
-    "DIVA": null,
-    "StopText": "Abstellplatz Groß-Enzersdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.549173,
-    "Latitude": 48.200085
-  },
-  {
-    "StopID": 6122,
-    "DIVA": null,
-    "StopText": "Aspernstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6123,
-    "DIVA": null,
-    "StopText": "Abstellplatz Simmeringer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6125,
-    "DIVA": null,
-    "StopText": "Abstellplatz Hauptbahnhof 13A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3764488,
-    "Latitude": 48.186455
-  },
-  {
-    "StopID": 6126,
-    "DIVA": null,
-    "StopText": "Abstellplatz Bahnhof Simmering",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4240188,
-    "Latitude": 48.166068
-  },
-  {
-    "StopID": 6127,
-    "DIVA": null,
-    "StopText": "Abstellplatz Schottenring 3A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3703938,
-    "Latitude": 48.2166788
-  },
-  {
-    "StopID": 6132,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 13A Hauptbahnhof ab 2015",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3764488,
-    "Latitude": 48.186455
-  },
-  {
-    "StopID": 6133,
-    "DIVA": null,
-    "StopText": "Abstellplatz der Linie 84A am Bushof Stadlau S U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4485861,
-    "Latitude": 48.21853
-  },
-  {
-    "StopID": 6134,
-    "DIVA": null,
-    "StopText": "Bahnhof Rudolfsheim Abstellplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3226419,
-    "Latitude": 48.191048
-  },
-  {
-    "StopID": 6135,
-    "DIVA": null,
-    "StopText": "Abstellplatz Siebenhirten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2908361,
-    "Latitude": 48.1316288
-  },
-  {
-    "StopID": 6137,
-    "DIVA": null,
-    "StopText": "Abstellplatz Brünnerstr., Hanreiterg.",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6138,
-    "DIVA": null,
-    "StopText": "Abstellplatz Siebenhirten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2908361,
-    "Latitude": 48.1316288
-  },
-  {
     "StopID": 6401,
     "DIVA": 60200627,
     "StopText": "Bahnhof Kagran Kurzführung",
@@ -38257,33 +33964,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4350438,
     "Latitude": 48.2471511
-  },
-  {
-    "StopID": 6402,
-    "DIVA": null,
-    "StopText": "Bahnhof Floridsdorf Kurzführung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3993611,
-    "Latitude": 48.2634488
-  },
-  {
-    "StopID": 6403,
-    "DIVA": null,
-    "StopText": "Bahnhof Brigittenau Kurzführung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.36634,
-    "Latitude": 48.2362019
-  },
-  {
-    "StopID": 6405,
-    "DIVA": null,
-    "StopText": "Bhf Hernals Kurzführung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.321395,
-    "Latitude": 48.2218138
   },
   {
     "StopID": 6406,
@@ -38304,15 +33984,6 @@
     "Latitude": 48.1906369
   },
   {
-    "StopID": 6408,
-    "DIVA": null,
-    "StopText": "Bahnhof Speising Kurzführung",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2916669,
-    "Latitude": 48.1713588
-  },
-  {
     "StopID": 6409,
     "DIVA": 60202500,
     "StopText": "Bahnhof Favoriten Kurzführung",
@@ -38320,42 +33991,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3723311,
     "Latitude": 48.1782311
-  },
-  {
-    "StopID": 6410,
-    "DIVA": null,
-    "StopText": "Bhf.Simmering",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.423843,
-    "Latitude": 48.1664388
-  },
-  {
-    "StopID": 6501,
-    "DIVA": null,
-    "StopText": "Bahnhof Kagran",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4347902,
-    "Latitude": 48.2448541
-  },
-  {
-    "StopID": 6502,
-    "DIVA": null,
-    "StopText": "Bahnhof Floridsdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3993669,
-    "Latitude": 48.2634411
-  },
-  {
-    "StopID": 6503,
-    "DIVA": null,
-    "StopText": "Bahnhof Brigittenau",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3669611,
-    "Latitude": 48.2362669
   },
   {
     "StopID": 6504,
@@ -38367,96 +34002,6 @@
     "Latitude": 48.2309269
   },
   {
-    "StopID": 6505,
-    "DIVA": null,
-    "StopText": "Bahnhof Hernals",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3213819,
-    "Latitude": 48.2218261
-  },
-  {
-    "StopID": 6506,
-    "DIVA": null,
-    "StopText": "Bahnhof Ottakring",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.304055,
-    "Latitude": 48.2090699
-  },
-  {
-    "StopID": 6507,
-    "DIVA": null,
-    "StopText": "Bahnhof Breitensee",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6508,
-    "DIVA": null,
-    "StopText": "Bahnhof Rudolfsheim",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3223569,
-    "Latitude": 48.189863
-  },
-  {
-    "StopID": 6509,
-    "DIVA": null,
-    "StopText": "Bahnhof Speising",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.289588,
-    "Latitude": 48.1712599
-  },
-  {
-    "StopID": 6510,
-    "DIVA": null,
-    "StopText": "Bahnhof Favoriten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.37229,
-    "Latitude": 48.1782469
-  },
-  {
-    "StopID": 6511,
-    "DIVA": null,
-    "StopText": "Bahnhof Simmering",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.423843,
-    "Latitude": 48.1664388
-  },
-  {
-    "StopID": 6512,
-    "DIVA": null,
-    "StopText": "Garage Vorgartenstraße E",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6513,
-    "DIVA": null,
-    "StopText": "Garage Grinzing Einfahrt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6514,
-    "DIVA": null,
-    "StopText": "Garage Spetterbrücke Ein",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.310975,
-    "Latitude": 48.208335
-  },
-  {
     "StopID": 6515,
     "DIVA": 60200761,
     "StopText": "Garage Raxstraße Einfahr",
@@ -38464,96 +34009,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.36691,
     "Latitude": 48.163405
-  },
-  {
-    "StopID": 6516,
-    "DIVA": null,
-    "StopText": "Gar. Leopoldau Einfahrt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.430515,
-    "Latitude": 48.280125
-  },
-  {
-    "StopID": 6518,
-    "DIVA": null,
-    "StopText": "Bhf. Wasserleitungswiese",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6528,
-    "DIVA": null,
-    "StopText": "Rösslergasse Wagenhalle",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6530,
-    "DIVA": null,
-    "StopText": "Bhf. Michelbeuern",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 6595,
-    "DIVA": null,
-    "StopText": "Kagraner Platz Abstellanlage",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7001,
-    "DIVA": null,
-    "StopText": "A2",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.373425,
-    "Latitude": 48.178333
-  },
-  {
-    "StopID": 7003,
-    "DIVA": null,
-    "StopText": "Behelf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7004,
-    "DIVA": null,
-    "StopText": "Behelf Otg III",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7005,
-    "DIVA": null,
-    "StopText": "AEW Wendeanlage",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7006,
-    "DIVA": null,
-    "StopText": "Signal 255 MB",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 7008,
@@ -38565,42 +34020,6 @@
     "Latitude": 48.1906144
   },
   {
-    "StopID": 7009,
-    "DIVA": null,
-    "StopText": "Gleis 11 U3",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7300,
-    "DIVA": null,
-    "StopText": "Bahnhof Rudolfsheim Kurzführung Halle 3 Gleis 7",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.322715,
-    "Latitude": 48.1906369
-  },
-  {
-    "StopID": 7301,
-    "DIVA": null,
-    "StopText": "Linzer Straße, Lützowgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7302,
-    "DIVA": null,
-    "StopText": "Hütteldorfer Straße, Lützowgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 7303,
     "DIVA": 60200491,
     "StopText": "Bhf. Heiligenstadt <>",
@@ -38608,69 +34027,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3644066,
     "Latitude": 48.2484469
-  },
-  {
-    "StopID": 7304,
-    "DIVA": null,
-    "StopText": "Paulanergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7305,
-    "DIVA": null,
-    "StopText": "Laurenzgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7306,
-    "DIVA": null,
-    "StopText": "Kiebergasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7307,
-    "DIVA": null,
-    "StopText": "Matzleinsdorfer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7308,
-    "DIVA": null,
-    "StopText": "Knöllgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3573261,
-    "Latitude": 48.177005
-  },
-  {
-    "StopID": 7309,
-    "DIVA": null,
-    "StopText": "Eichenstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.348395,
-    "Latitude": 48.1815819
-  },
-  {
-    "StopID": 7310,
-    "DIVA": null,
-    "StopText": "Schwedenplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 7311,
@@ -38709,117 +34065,9 @@
     "Latitude": null
   },
   {
-    "StopID": 7315,
-    "DIVA": null,
-    "StopText": "Leopoldau",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7316,
-    "DIVA": null,
-    "StopText": "Karlsplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7317,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7318,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7319,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7320,
-    "DIVA": 60201352,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7321,
-    "DIVA": null,
-    "StopText": "Rosensteingasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7322,
-    "DIVA": null,
-    "StopText": "Elterleinplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7323,
-    "DIVA": null,
-    "StopText": "Palffygasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7324,
-    "DIVA": null,
-    "StopText": "Alser Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7325,
-    "DIVA": null,
-    "StopText": "Hernalser Gürtel",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 7326,
     "DIVA": 60201374,
     "StopText": "Feßtgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7327,
-    "DIVA": null,
-    "StopText": "Thaliastraße",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -38844,180 +34092,9 @@
     "Latitude": null
   },
   {
-    "StopID": 7340,
-    "DIVA": null,
-    "StopText": "Anschützgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7341,
-    "DIVA": null,
-    "StopText": "Westbahnhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7342,
-    "DIVA": null,
-    "StopText": "Laudongasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 7343,
     "DIVA": 60200306,
     "StopText": "Fendigasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7344,
-    "DIVA": null,
-    "StopText": "Ober St Veit",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7345,
-    "DIVA": null,
-    "StopText": "Weinhauser Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7346,
-    "DIVA": null,
-    "StopText": "Aumannplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7347,
-    "DIVA": null,
-    "StopText": "Aspern Nord",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7348,
-    "DIVA": null,
-    "StopText": "Johann-Nepomuk-Berger-Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7349,
-    "DIVA": null,
-    "StopText": "Schuhmeierplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7350,
-    "DIVA": null,
-    "StopText": "Altmannsdorfer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7351,
-    "DIVA": null,
-    "StopText": "Rothenburgstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7352,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7353,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7354,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7355,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7356,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7500,
-    "DIVA": null,
-    "StopText": "Behelf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7503,
-    "DIVA": null,
-    "StopText": "Behelf Eßling",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7504,
-    "DIVA": null,
-    "StopText": "Behelf Siegesplatz",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
@@ -39051,15 +34128,6 @@
     "Latitude": 48.2360011
   },
   {
-    "StopID": 7537,
-    "DIVA": null,
-    "StopText": "Beethovengang (Sprsp.)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 7540,
     "DIVA": 60201470,
     "StopText": "Wexstraße (Bedarf)",
@@ -39087,24 +34155,6 @@
     "Latitude": 48.2088769
   },
   {
-    "StopID": 7548,
-    "DIVA": null,
-    "StopText": "Karlsplatz U  ( Museeu",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3697861,
-    "Latitude": 48.2002769
-  },
-  {
-    "StopID": 7549,
-    "DIVA": null,
-    "StopText": "Oberdorfstraße (Sprsp.)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 7550,
     "DIVA": 60200358,
     "StopText": "Baumgarten (Sprsp.)",
@@ -39123,24 +34173,6 @@
     "Latitude": 48.208635
   },
   {
-    "StopID": 7552,
-    "DIVA": null,
-    "StopText": "Josefstädter Straße U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7553,
-    "DIVA": null,
-    "StopText": "Dummy",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 7556,
     "DIVA": 60200763,
     "StopText": "Leberschleife",
@@ -39148,60 +34180,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3999019,
     "Latitude": 48.1874711
-  },
-  {
-    "StopID": 7599,
-    "DIVA": null,
-    "StopText": "Baumgarten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7681,
-    "DIVA": null,
-    "StopText": "Am Schöpfwerk",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7682,
-    "DIVA": null,
-    "StopText": "Am Schöpfwerk",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7683,
-    "DIVA": null,
-    "StopText": "Erlaaer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7684,
-    "DIVA": null,
-    "StopText": "Erlaaer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 7685,
-    "DIVA": null,
-    "StopText": "Perfektastraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 7701,
@@ -39220,33 +34198,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3776072,
     "Latitude": 48.211793
-  },
-  {
-    "StopID": 7703,
-    "DIVA": null,
-    "StopText": "Gredlerstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3795286,
-    "Latitude": 48.213945
-  },
-  {
-    "StopID": 7704,
-    "DIVA": null,
-    "StopText": "Winckelmannstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.3208261,
-    "Latitude": 48.1900963
-  },
-  {
-    "StopID": 8000,
-    "DIVA": null,
-    "StopText": "Glatzgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 8004,
@@ -39355,15 +34306,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.5316386,
     "Latitude": 48.2248827
-  },
-  {
-    "StopID": 8016,
-    "DIVA": null,
-    "StopText": "Michelbeuern U AKH",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 8017,
@@ -39492,24 +34434,6 @@
     "Latitude": 48.2061452
   },
   {
-    "StopID": 8044,
-    "DIVA": null,
-    "StopText": "Donaustadtbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 8045,
-    "DIVA": null,
-    "StopText": "Donaustadtbrücke",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 8046,
     "DIVA": 60200770,
     "StopText": "Wehrbrücklstraße, Gernotgasse",
@@ -39607,24 +34531,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4807844,
     "Latitude": 48.220353
-  },
-  {
-    "StopID": 8057,
-    "DIVA": null,
-    "StopText": "Dampfkraftwerk-Donaustadt",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 8058,
-    "DIVA": null,
-    "StopText": "Primavesigasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 8059,
@@ -39823,24 +34729,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4632963,
     "Latitude": 48.235213
-  },
-  {
-    "StopID": 8081,
-    "DIVA": null,
-    "StopText": "Oberfeldgasse, Spargelfeldstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 8082,
-    "DIVA": null,
-    "StopText": "Eibischweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 8083,
@@ -40374,24 +35262,6 @@
     "Latitude": 48.2333333
   },
   {
-    "StopID": 8143,
-    "DIVA": null,
-    "StopText": "Hietzing U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 8144,
-    "DIVA": null,
-    "StopText": "Ennsgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4037188,
-    "Latitude": 48.223008
-  },
-  {
     "StopID": 8480,
     "DIVA": 60201885,
     "StopText": "Rosannagasse",
@@ -40525,15 +35395,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4462811,
     "Latitude": 48.2770569
-  },
-  {
-    "StopID": 8495,
-    "DIVA": null,
-    "StopText": "Großjedlersdorf",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 8501,
@@ -41004,15 +35865,6 @@
     "Latitude": 48.2074466
   },
   {
-    "StopID": 8556,
-    "DIVA": null,
-    "StopText": "Mühlhäufelweg",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4778036,
-    "Latitude": 48.2089972
-  },
-  {
     "StopID": 8557,
     "DIVA": 60201024,
     "StopText": "Plattensteinergasse",
@@ -41227,15 +36079,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.4831724,
     "Latitude": 48.2166169
-  },
-  {
-    "StopID": 8591,
-    "DIVA": null,
-    "StopText": "Oberdorfstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
   },
   {
     "StopID": 8592,
@@ -42021,15 +36864,6 @@
     "Latitude": 48.2432125
   },
   {
-    "StopID": 8696,
-    "DIVA": null,
-    "StopText": "Breitenlee, Ort",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.4976825,
-    "Latitude": 48.2505111
-  },
-  {
     "StopID": 8697,
     "DIVA": 60201814,
     "StopText": "Im Gestockert",
@@ -42075,15 +36909,6 @@
     "Latitude": 48.2216891
   },
   {
-    "StopID": 8732,
-    "DIVA": null,
-    "StopText": "Angelibad",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.403005,
-    "Latitude": 48.2472011
-  },
-  {
     "StopID": 8733,
     "DIVA": 60201299,
     "StopText": "Stadlau < >",
@@ -42091,15 +36916,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.44834,
     "Latitude": 48.2184452
-  },
-  {
-    "StopID": 8734,
-    "DIVA": null,
-    "StopText": "Angelibad",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.403215,
-    "Latitude": 48.2470888
   },
   {
     "StopID": 8735,
@@ -42957,15 +37773,6 @@
     "Latitude": 48.23787
   },
   {
-    "StopID": 8845,
-    "DIVA": null,
-    "StopText": "Schafberghöhe",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2974455,
-    "Latitude": 48.237858
-  },
-  {
     "StopID": 8846,
     "DIVA": 60201467,
     "StopText": "Schafberg, Werfelstraße",
@@ -43081,42 +37888,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.2738188,
     "Latitude": 48.2532669
-  },
-  {
-    "StopID": 8859,
-    "DIVA": null,
-    "StopText": "Dreimarkstein",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.288153,
-    "Latitude": 48.258315
-  },
-  {
-    "StopID": 8860,
-    "DIVA": null,
-    "StopText": "Höhenstraße, Rohrerwiese",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2963069,
-    "Latitude": 48.266723
-  },
-  {
-    "StopID": 8861,
-    "DIVA": null,
-    "StopText": "Höhenstraße, Rohrerwiese",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2966261,
-    "Latitude": 48.2669711
-  },
-  {
-    "StopID": 8862,
-    "DIVA": null,
-    "StopText": "Dreimarkstein",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.2868369,
-    "Latitude": 48.2583869
   },
   {
     "StopID": 8863,
@@ -43396,15 +38167,6 @@
     "MunicipalityID": 90001,
     "Longitude": 16.3010869,
     "Latitude": 48.228165
-  },
-  {
-    "StopID": 8896,
-    "DIVA": null,
-    "StopText": "Dornbach, Güpferlingstraße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": 16.30802,
-    "Latitude": 48.2261761
   },
   {
     "StopID": 8897,
@@ -44109,87 +38871,6 @@
     "Latitude": 48.2060658
   },
   {
-    "StopID": 9003,
-    "DIVA": null,
-    "StopText": "Dummy 4",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9004,
-    "DIVA": null,
-    "StopText": "Dummy 5",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9005,
-    "DIVA": null,
-    "StopText": "Dummy 6",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9006,
-    "DIVA": null,
-    "StopText": "Dummy 6",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9007,
-    "DIVA": null,
-    "StopText": "Floridsdorf S U, Franz-Jonas-Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9008,
-    "DIVA": null,
-    "StopText": "Matthäus-Jiszda-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9009,
-    "DIVA": null,
-    "StopText": "Hubertusdamm",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9010,
-    "DIVA": null,
-    "StopText": "Dummy 10",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9011,
-    "DIVA": null,
-    "StopText": "Friedrich-Engels-Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 9012,
     "DIVA": 60200839,
     "StopText": "Dummy 12",
@@ -44199,1017 +38880,9 @@
     "Latitude": null
   },
   {
-    "StopID": 9013,
-    "DIVA": null,
-    "StopText": "Dummy 13",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9016,
-    "DIVA": null,
-    "StopText": "Dummy 14A Reumannplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9100,
-    "DIVA": null,
-    "StopText": "Praterstern",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9101,
-    "DIVA": null,
-    "StopText": "Traisengasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9102,
-    "DIVA": null,
-    "StopText": "Traisengasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9103,
-    "DIVA": null,
-    "StopText": "KUNSTHAUS WIEN , SAMMLUNG HORKY",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9104,
-    "DIVA": null,
-    "StopText": "STUBENTOR (U3),",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9105,
-    "DIVA": null,
-    "StopText": "KARLSPLATZ / OPER (U1/U4)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9106,
-    "DIVA": null,
-    "StopText": "21er Haus",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9107,
-    "DIVA": null,
-    "StopText": "GEMÄLDEGALERIE,  SECESSION",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9108,
-    "DIVA": null,
-    "StopText": "ALBERTINA MODERN",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9109,
-    "DIVA": null,
-    "StopText": "A.SCHÖNBERG CENTER, SCHACH IM HAUS D. SPORTS",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9110,
-    "DIVA": null,
-    "StopText": "HEERESGESCHICHTLICHES MUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9111,
-    "DIVA": null,
-    "StopText": "OBERES BELVEDERE",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9112,
-    "DIVA": null,
-    "StopText": "OBERES BELVEDERE",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9113,
-    "DIVA": null,
-    "StopText": "SCHACH IM HAUS D. SPORTS",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9114,
-    "DIVA": null,
-    "StopText": "ROCHUSGASSE (U3), BEZIRKSMUS. LANDSTRASSE",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9115,
-    "DIVA": null,
-    "StopText": "WIEN MITTE (U3/U4)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9116,
-    "DIVA": null,
-    "StopText": "HERNALS ( S45 ) LINIE 43",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9117,
-    "DIVA": null,
-    "StopText": "GARTENPALAIS LIECHTENSTEIN",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9118,
-    "DIVA": null,
-    "StopText": "VOLKSTHEATER (U2/U3)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9119,
-    "DIVA": null,
-    "StopText": "BM JOSEFSTADT, WEIN- SCHATZKAMMER, HUTMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9120,
-    "DIVA": null,
-    "StopText": "VOLKSKUNDEMUSEUM WIEN",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9121,
-    "DIVA": null,
-    "StopText": "WIENER SCHUHMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9122,
-    "DIVA": null,
-    "StopText": "JOSEFSTÄDTER STRASSE (U6)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9123,
-    "DIVA": null,
-    "StopText": "SCHOTTENTOR ( U2 )",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9124,
-    "DIVA": null,
-    "StopText": "PATHOL.-ANATOM. SAMMLUNG ZAHNMUSEUM WIEN",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9125,
-    "DIVA": null,
-    "StopText": "GELDMUSEUM DER OENB Ö. PHARMA-/DROGISTENMUS",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9126,
-    "DIVA": null,
-    "StopText": "GELDMUSEUM,SIGMUND FREUD MUSEUM, Ö. PHARMAMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9127,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9128,
-    "DIVA": null,
-    "StopText": "WÄHRINGER STRASSE, VOLKSOPER (U6)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9129,
-    "DIVA": null,
-    "StopText": "BEZIRKSMUSEUM WÄHRING",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9130,
-    "DIVA": null,
-    "StopText": "ALSER STRASSE U",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9131,
-    "DIVA": null,
-    "StopText": "A.SCHÖNBERG C, EXIL.ARTE",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9132,
-    "DIVA": null,
-    "StopText": "PATHOLOGISCH- ANATOMISCHE SAMMLUNG",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9133,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9134,
-    "DIVA": null,
-    "StopText": "ALTERLAA (U6)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9135,
-    "DIVA": null,
-    "StopText": "SCHOKOMUSEUM ( HEINDL )",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9136,
-    "DIVA": null,
-    "StopText": "SCHÖNBRUNN  ( U4 )",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9137,
-    "DIVA": null,
-    "StopText": "TECHNISCHES MUSEUM WIEN",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9138,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9139,
-    "DIVA": null,
-    "StopText": "SIGMUND FREUD MUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9140,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9141,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9142,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9143,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9144,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9145,
-    "DIVA": null,
-    "StopText": "RENNBAHNWEG (U1)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9146,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9147,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9148,
-    "DIVA": null,
-    "StopText": "BEZIRKSM. JOSEFSTADT WEINSCHATZK., HUTMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9149,
-    "DIVA": null,
-    "StopText": "BELVEDERE 21,, FLIP",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9150,
-    "DIVA": null,
-    "StopText": "BEZIRKSM. JOSEFSTADT WEINSCHATZK., HUTMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9151,
-    "DIVA": null,
-    "StopText": "ALBERTINA MODERN, KÜNSTLERHAUS VEREINIGUNG",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9152,
-    "DIVA": null,
-    "StopText": "BEZIRKSM. JOSEFSTADT WEINSCHATZK., HUTMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9153,
-    "DIVA": null,
-    "StopText": "SCHWEDENPLATZ ( U1, U4 )",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9154,
-    "DIVA": null,
-    "StopText": "48-ER  MUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9155,
-    "DIVA": null,
-    "StopText": "SCHACH IM HAUS D. SPORTS",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9156,
-    "DIVA": null,
-    "StopText": "SCHOTTENTOR ( U2 )",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9157,
-    "DIVA": null,
-    "StopText": "SECESSION, 3D PICART MUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9158,
-    "DIVA": null,
-    "StopText": "Lemböckgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9159,
-    "DIVA": null,
-    "StopText": "Lemböckgasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9160,
-    "DIVA": null,
-    "StopText": "Alaudagasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9161,
-    "DIVA": null,
-    "StopText": "Rothneusiedl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9162,
-    "DIVA": null,
-    "StopText": "Stockholmer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9163,
-    "DIVA": null,
-    "StopText": "Per-Albin-Hansson-Siedlung-Ost",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9164,
-    "DIVA": null,
-    "StopText": "Rothneusiedl",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9165,
-    "DIVA": null,
-    "StopText": "Stockholmer Platz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9166,
-    "DIVA": null,
-    "StopText": "Ada-Christen-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9167,
-    "DIVA": null,
-    "StopText": "Alaudagasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9168,
-    "DIVA": null,
-    "StopText": "ALSER STRASSE ( U6 )",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9169,
-    "DIVA": null,
-    "StopText": "ERSTES WIENER SCHULMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9170,
-    "DIVA": null,
-    "StopText": "48-ER  MUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
     "StopID": 9171,
     "DIVA": 60201850,
     "StopText": "Altmannsdorfer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9172,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9173,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9174,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9175,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9176,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9177,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9178,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9179,
-    "DIVA": null,
-    "StopText": "ARTEUM, WIENER RETTUNGSMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9180,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9181,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9182,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9183,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9184,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9185,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9186,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9187,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9188,
-    "DIVA": null,
-    "StopText": null,
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9189,
-    "DIVA": null,
-    "StopText": "ORIGINAL WIENER SCHNEEKUGELMUSEUM",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9200,
-    "DIVA": null,
-    "StopText": "Prov. Bhf. Rax",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9201,
-    "DIVA": null,
-    "StopText": "Prov. Bhf. Rax",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9202,
-    "DIVA": null,
-    "StopText": "Prov. Bhf. Rax 14A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9203,
-    "DIVA": null,
-    "StopText": "Prov. Bhf. Rax 14A",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9300,
-    "DIVA": null,
-    "StopText": "Freiheitsplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9301,
-    "DIVA": null,
-    "StopText": "Stammersdorfer Straße, Pfarrhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9302,
-    "DIVA": null,
-    "StopText": "Pfarrer-Matz-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9303,
-    "DIVA": null,
-    "StopText": "Dr.-Nekowitsch-Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9304,
-    "DIVA": null,
-    "StopText": "Strebersdorfer Straße",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9305,
-    "DIVA": null,
-    "StopText": "Pfarrer-Matz-Gasse",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9306,
-    "DIVA": null,
-    "StopText": "Stammersdorfer Straße, Pfarrhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9400,
-    "DIVA": null,
-    "StopText": "Hbf/Busbahnhof",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9401,
-    "DIVA": null,
-    "StopText": "Herzog Leopol-Str.",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9402,
-    "DIVA": null,
-    "StopText": "Domplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9403,
-    "DIVA": null,
-    "StopText": "Hauptplatz",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9404,
-    "DIVA": null,
-    "StopText": "Bahngasse/Leiner",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9405,
-    "DIVA": null,
-    "StopText": "Bahngasse/Kasematten",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9500,
-    "DIVA": null,
-    "StopText": "Rochusgasse (DUMMY Marathon)",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9900,
-    "DIVA": null,
-    "StopText": "Salmannsdorf Dummy",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9989,
-    "DIVA": null,
-    "StopText": "Bhf. Hetzendorf, Altmann",
-    "Municipality": "Wien",
-    "MunicipalityID": 90001,
-    "Longitude": null,
-    "Latitude": null
-  },
-  {
-    "StopID": 9999,
-    "DIVA": null,
-    "StopText": "Test Bahnhof Simmering Schleife",
     "Municipality": "Wien",
     "MunicipalityID": 90001,
     "Longitude": null,
