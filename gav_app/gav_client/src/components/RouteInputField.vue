@@ -49,9 +49,7 @@ export default {
       if (!stop) return;
       this.$emit('setStop', { ...stop, stopType: this.title });
     },
-  },
-  created() {
-    this.getStopList = debounce(1000, async (searchname) => {
+    getStopList: debounce(1000, function (searchname) {
       bus.$data.instance
         .get(`/points/${searchname.replace('/', ',')}`)
         .then((res) => {
@@ -70,11 +68,17 @@ export default {
         .finally(() => {
           this.isLoading = false;
         });
-    });
+    }),
   },
   watch: {
     search(val) {
-      if (!val) return;
+      if (!val || this.isLoading || val.length < 3) return;
+      if (this.model) {
+        if (this.model.name === val) {
+          console.log(this.model);
+          return;
+        }
+      }
       this.isLoading = true;
       this.getStopList(val);
     },
