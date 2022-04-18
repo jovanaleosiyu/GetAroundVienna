@@ -1,0 +1,2 @@
+### Get stops
+GET http://localhost:3000/stops
