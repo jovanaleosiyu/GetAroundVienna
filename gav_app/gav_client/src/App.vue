@@ -32,7 +32,7 @@
         <path
           d="M500,0C463.7,123.6,280.1,233,0,239.2V500C280.1,471.7,475.4,297,500,0z M342.1,239.8c-58.4,99.6-163.3,148.7-270,161.9
 	v-81.4C174.6,317.5,302.5,273.2,342.1,239.8z"
-          :fill="'#FFF'"
+          :fill="logoColor"
         />
       </svg>
       <!-- Account info -->
@@ -69,7 +69,7 @@
           <!-- Monitor -->
           <v-list-item to="/monitor">
             <v-list-item-icon>
-              <v-icon>mdi-monitor</v-icon>
+              <v-icon>mdi-map-clock-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Monitor</v-list-item-title>
           </v-list-item>
@@ -169,6 +169,9 @@ export default {
         this.$route.path == '/sign-up' ||
         this.$route.path == '/login'
       );
+    },
+    logoColor() {
+      return this.$vuetify.theme.dark ? '#FFFFFF' : '#181818';
     },
   },
 };
