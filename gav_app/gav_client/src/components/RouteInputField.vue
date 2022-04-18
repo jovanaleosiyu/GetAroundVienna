@@ -49,9 +49,10 @@ export default {
       if (!stop) return;
       this.$emit('setStop', { ...stop, stopType: this.title });
     },
-    getStopList: debounce(1000, function (searchname) {
+    getStopList: debounce(1000, false, function (searchname) {
+      // console.log(searchname);
       bus.$data.instance
-        .get(`/points/${searchname.replace('/', ',')}`)
+        .get(`/points/${searchname.replace('/', ',')}`, {}, { timeout: 1000 })
         .then((res) => {
           if (this.items.length > 1) this.items = []; // ... bc if 1 then its this.model
           if (res.data instanceof Array)
@@ -67,12 +68,13 @@ export default {
         })
         .finally(() => {
           this.isLoading = false;
+          this.begin = false;
         });
     }),
   },
   watch: {
     search(val) {
-      if (!val || this.isLoading || val.length < 3) return;
+      if (!val || val.length < 3) return;
       if (this.model) {
         if (this.model.name === val) {
           console.log(this.model);
