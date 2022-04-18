@@ -1,8 +1,5 @@
 <template>
   <v-container>
-    <v-sheet class="mb-3 rounded-lg pa-3 elevation1" width="300" height="100">
-      <h3 class="mb-3 font-weight-medium">E-Mail Adresse</h3>
-    </v-sheet>
     <v-sheet class="mb-3 pa-3 rounded-lg elevation1">
       <h3 class="mb-3 font-weight-medium">Farbschema</h3>
       <v-switch
@@ -26,6 +23,8 @@
 </template>
 
 <script>
+import { bus } from '../main';
+
 export default {
   data() {
     return {
@@ -60,13 +59,29 @@ export default {
           hex: '#00ACC1',
         },
       ],
+      settings: [],
     };
   },
   methods: {
-    selectTheme(color) {
+    async getSettings() {
+      const { data } = await bus.$data.instance.get('/user/settings');
+      this.settings = data;
+      console.log(this.settings);
+    },
+    async selectTheme(color) {
       this.$vuetify.theme.themes.light.accent = color.hex;
       this.$vuetify.theme.themes.dark.accent = color.hex;
+      // await bus.$data.instance.get('/favorites?type=trip');
     },
+    // async setTheme(c) {
+    //   let theme = {
+    //     color: c.class,
+    //   };
+    //   await bus.$data.instance.get('/user/colortheme');
+    // },
+  },
+  created() {
+    this.getSettings();
   },
 };
 </script>
