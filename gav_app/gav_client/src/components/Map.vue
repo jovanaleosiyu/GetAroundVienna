@@ -49,7 +49,8 @@ export default {
     if (!bus.$data.google) {
       console.log('loading...');
       const loader = new Loader({
-        apiKey: process.env.VUE_APP_GOOGLE_API_KEY,
+        // apiKey: process.env.VUE_APP_GOOGLE_API_KEY,
+        apiKey: undefined,
       });
       bus.$data.google = await loader.load();
     }
