@@ -359,7 +359,6 @@ export default {
     ],
 
     trips: [],
-    currpos: undefined,
   }),
   methods: {
     async getTrip() {
@@ -440,6 +439,22 @@ export default {
       this.$forceUpdate();
       this.loading = false;
     },
+    async setOriginToCurrPos() {
+      // TODO Button for current pos
+      const pos = await this.getCurrPos();
+      if (!pos) {
+        alert('Geolocation nicht verfügbar...');
+        return;
+      }
+      console.log(pos);
+      const currref = `
+        ${pos.coords.longitude.toFixed(5)}:
+        ${pos.coords.latitude.toFixed(5)}:WGS84
+      `;
+      this.dep.ref = currref;
+      this.dep.type = 'coord';
+      origin.setStopByRef(this.dep.ref, this.dep.type);
+    },
     setStop(stop) {
       console.log(stop);
       if (stop.stopType == 'Start') {
@@ -457,21 +472,6 @@ export default {
       origin.setStopByRef(destination.model.ref, destination.model.type);
       destination.setStopByRef(temp.ref, temp.type);
     },
-    getGeolocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            console.log(pos);
-            this.currpos = pos;
-          },
-          (err) => console.log(err),
-          { maximumAge: 10000, timeout: 5000, enableHighAccuracy: true }
-        );
-      } else {
-        alert('Geolocation API is not supported in your browser.');
-      }
-    },
-
     checkChange(stepEnd, stepStart) {
       return this.getChangeTime(stepEnd, stepStart) > 1;
     },
@@ -489,10 +489,27 @@ export default {
       } else
         return parseInt(splitDuration[0]) * 60 + parseInt(splitDuration[1]);
     },
+    getCurrPos() {
+      const options = {
+        maximumAge: 10000,
+        timeout: 5000,
+        enableHighAccuracy: true,
+      };
+      return new Promise((resolve, reject) =>
+        navigator.geolocation.getCurrentPosition(resolve, reject, options)
+      );
+    },
   },
-  mounted() {
+  async mounted() {
+    // Query Routes
     const { orig_ref, orig_type, dest_ref, dest_type } = this.query;
+    // If both, set destination and origin
     if (orig_ref && orig_type && dest_ref && dest_type) {
+      // TODO tripoptions
+      // this.maxChanges = this.query.maxchanges;
+      // this.routeType = this.query.routetype;
+      // this.changeSpeed = this.query.changespeed;
+      // this.excludedMeans = this.query.exclmeans;
       this.dep.type = orig_type;
       this.dep.ref = orig_ref;
       this.des.type = dest_type;
@@ -505,20 +522,23 @@ export default {
       Promise.all(promises).then(() => {
         this.getTrip();
       });
-      // this.maxChanges = this.query.maxchanges;
-      // this.routeType = this.query.routetype;
-      // this.changeSpeed = this.query.changespeed;
-      // this.excludedMeans = this.query.exclmeans;
-    } else if (dest_ref && dest_type) {
-      this.getGeolocation();
+    }
+    // If only destination, set origin to current location
+    else if (dest_ref && dest_type) {
+      const pos = await this.getCurrPos();
+      if (!pos) {
+        alert('Geolocation nicht verfügbar...');
+        return;
+      }
+      console.log(pos);
       const currref = `
-      ${this.currpos.longitude.toFixed(5)}:
-      ${this.currpos.latitude.toFixed(5)}:WGS84
+        ${pos.coords.longitude.toFixed(5)}:
+        ${pos.coords.latitude.toFixed(5)}:WGS84
       `;
-      this.des.type = dest_type;
-      this.des.ref = dest_ref;
-      this.dep.type = 'coord';
       this.dep.ref = currref;
+      this.dep.type = 'coord';
+      this.des.ref = dest_ref;
+      this.des.type = dest_type;
       this.depArr = 'dep';
       const { origin, destination } = this.$refs;
       const promises = [];

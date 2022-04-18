@@ -43,9 +43,9 @@ export default {
     };
   },
   async mounted() {
-    console.log(this.center);
-    console.log(this.markers);
-    console.log(this.paths);
+    // console.log(this.center);
+    // console.log(this.markers);
+    // console.log(this.paths);
     if (!bus.$data.google) {
       console.log('loading...');
       const loader = new Loader({
