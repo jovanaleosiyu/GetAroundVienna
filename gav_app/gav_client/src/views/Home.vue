@@ -3,17 +3,25 @@
     <!-- Map -->
     <Map
       class="home-map"
-      :class="{ 'home-map--fullscreen': widgetState === -1 }"
+      :centerCurrPos="true"
+      :class="{
+        'home-map--fullscreen': widgetState === -1,
+        'home-map--desktop': $vuetify.breakpoint.lgAndUp,
+      }"
     />
     <!-- Wrapper -->
     <v-container
       fluid
       class="rounded-t-xl bg widget-wrapper pt-8"
-      :class="widgetStateClass"
+      :class="
+        $vuetify.breakpoint.lgAndUp
+          ? 'widget-wrapper--desktop'
+          : widgetStateClass
+      "
     >
       <div class="scroll-wrapper">
         <!-- Draggable handle -->
-        <div class="widget-handle mt-n7">
+        <div v-if="!$vuetify.breakpoint.lgAndUp" class="widget-handle mt-n7">
           <v-icon> mdi-drag-horizontal-variant </v-icon>
         </div>
         <!-- Widgets -->
@@ -116,6 +124,7 @@ export default {
     MonitorWidget,
   },
   data: () => ({
+    curPos: undefined,
     panels: [0, 1, 2, 3],
     widgets: [
       {
@@ -200,6 +209,30 @@ export default {
       });
     },
   },
+  computed: {
+    visible() {
+      this.forceUpd;
+      return this.widgets.filter((w) => w.order > -1);
+    },
+    hiddenEdit() {
+      return this.newOrder.filter((no) => no.order <= -1);
+    },
+    visibleEdit() {
+      return this.newOrder
+        .filter((no) => no.order > -1)
+        .sort((a, b) => a.order - b.order);
+    },
+    widgetStateClass() {
+      switch (this.widgetState) {
+        case 1:
+          return 'widget-wrapper--opened';
+        case -1:
+          return 'widget-wrapper--closed';
+        default:
+          return '';
+      }
+    },
+  },
   mounted() {
     // Sortable
     this.sortable = new Sortable(document.querySelector('.list'), {
@@ -273,44 +306,17 @@ export default {
       //   offsetValue,
       //   initialMouseY,
       // });
-
       if (Math.abs(offsetValue) > dragThreshold) {
         if (Math.abs(offsetValue) > dragThreshold * 4) {
-          console.log('OMG');
+          console.log();
         }
         if (initialWidgetState === 0) {
           this.widgetState = offsetValue < 0 ? -1 : 1;
-          console.log('BLA', this.widgetState);
         } else {
           this.widgetState = 0;
-          console.log('BLA', this.widgetState);
         }
       }
     });
-  },
-  computed: {
-    visible() {
-      this.forceUpd;
-      return this.widgets.filter((w) => w.order > -1);
-    },
-    hiddenEdit() {
-      return this.newOrder.filter((no) => no.order <= -1);
-    },
-    visibleEdit() {
-      return this.newOrder
-        .filter((no) => no.order > -1)
-        .sort((a, b) => a.order - b.order);
-    },
-    widgetStateClass() {
-      switch (this.widgetState) {
-        case 1:
-          return 'widget-wrapper--opened';
-        case -1:
-          return 'widget-wrapper--closed';
-        default:
-          return '';
-      }
-    },
   },
   created() {
     this.getWidgets();
@@ -345,6 +351,12 @@ export default {
 .home-map--fullscreen {
   height: 100%;
 }
+.home-map--desktop {
+  height: 100%;
+  width: 60%;
+  order: 1;
+  position: relative;
+}
 .widget-handle {
   position: absolute;
   z-index: 10;
@@ -354,11 +366,20 @@ export default {
 .widget-wrapper {
   position: absolute;
   top: 24.5%;
-  z-index: 5;
+  z-index: 2;
   height: 74%;
 }
+.widget-wrapper--desktop {
+  height: 100%;
+  width: 40%;
+  top: 0;
+  order: 0;
+  position: relative;
+}
 .widget-wrapper--closed {
-  top: 95%;
+  /* top: 95%; */
+  top: 100%;
+  margin-top: -32px;
 }
 .widget-wrapper--opened {
   top: 0%;
@@ -378,7 +399,6 @@ export default {
 }
 .home-wrapper {
   display: flex;
-  flex-direction: column;
   height: 100%;
   overflow: hidden;
 }
