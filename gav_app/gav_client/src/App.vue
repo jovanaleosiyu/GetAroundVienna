@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!-- App bar -->
     <v-app-bar app class="elevation0" height="70" v-if="showappbar">
       <v-app-bar-nav-icon
         absolute
@@ -10,13 +11,14 @@
       <v-toolbar-title>{{ $route.name }} </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-
+    <!-- Navigation drawer -->
     <v-navigation-drawer
       v-if="showappbar"
       class="elevation1"
       v-model="drawer"
       app
     >
+      <!-- Logo -->
       <svg
         class="logo ma-5"
         version="1.1"
@@ -33,50 +35,60 @@
           :fill="'#FFF'"
         />
       </svg>
+      <!-- Account info -->
       <div class="pl-4">
         <v-icon class="mr-7">mdi-account-outline</v-icon>
         <span v-if="userId != null">{{ email }}</span>
         <span v-else>Gast</span>
       </div>
       <v-divider class="mt-5 mb-1"></v-divider>
+      <!-- Nav links -->
       <v-list nav>
         <v-list-item-group active-class="gray--text text--accent-4">
-          <v-list-item v-if="userId != null" to="/home">
+          <!-- Home -->
+          <v-list-item v-if="userId" to="/home">
             <v-list-item-icon>
               <v-icon>mdi-home-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
-
+          <!-- Route -->
           <v-list-item to="/route">
             <v-list-item-icon>
               <v-icon>mdi-compass-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Route</v-list-item-title>
           </v-list-item>
-
-          <v-list-item v-if="userId != null" to="/favoriten">
+          <!-- Favorites -->
+          <v-list-item v-if="userId" to="/favoriten">
             <v-list-item-icon>
               <v-icon>mdi-star-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Favoriten</v-list-item-title>
           </v-list-item>
-
-          <v-list-item v-if="userId != null" to="/planer">
+          <!-- Monitor -->
+          <v-list-item to="/monitor">
+            <v-list-item-icon>
+              <v-icon>mdi-monitor</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Monitor</v-list-item-title>
+          </v-list-item>
+          <!-- Planer -->
+          <v-list-item v-if="userId" to="/planer">
             <v-list-item-icon>
               <v-icon>mdi-calendar-blank-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Planer</v-list-item-title>
           </v-list-item>
-
           <v-divider class="my-5"></v-divider>
-
+          <!-- Settings -->
           <v-list-item to="/settings">
             <v-list-item-icon>
               <v-icon>mdi-cog-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Einstellungen</v-list-item-title>
           </v-list-item>
+          <!-- Logout -->
           <v-list-item @click="logout">
             <v-list-item-icon>
               <v-icon>mdi-logout</v-icon>
@@ -87,8 +99,8 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-      <!-- <v-btn @click="logout" class="ml-1 pr-16" text><v-icon class="mr-7">mdi-logout</v-icon>Abmelden</v-btn> -->
     </v-navigation-drawer>
+    <!-- Main -->
     <v-main>
       <router-view @loadUser="loadUser" />
     </v-main>
