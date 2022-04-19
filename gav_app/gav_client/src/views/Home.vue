@@ -27,12 +27,9 @@
         <!-- Widgets -->
         <v-expansion-panels flat multiple v-model="panels">
           <v-expansion-panel
-            v-for="(w, i) of visible"
+            v-for="w of visible"
             :key="w.compName"
-            class="rounded-xl"
-            :class="`order-${w.order} ${
-              i === 0 && panels.includes(0) ? 'mt-4' : '' // if first and open
-            }`"
+            class="rounded-xl mt-4"
           >
             <v-expansion-panel-header class="font-weight-regular">
               <h2>{{ w.name }}</h2>
@@ -247,8 +244,8 @@ export default {
         xAxis: false,
       },
       classes: {
-        mirror: ['d-m'],
-        'source:dragging': ['d-sd'],
+        mirror: ['d-m' + this.$vuetify.theme.dark ? '--dark' : ''],
+        'source:dragging': ['d-sd' + this.$vuetify.theme.dark ? '--dark' : ''],
       },
       swapAnimation: {
         duration: 200,
@@ -339,6 +336,17 @@ export default {
   /* background-color: #ff0 !important; */
   /* opacity: 0.5; */
   background-color: #fff;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+.d-sd--dark {
+  background-color: #222 !important;
+  opacity: 0.5;
+}
+.d-m--dark {
+  /* background-color: #ff0 !important; */
+  /* opacity: 0.5; */
+  background-color: #000;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
