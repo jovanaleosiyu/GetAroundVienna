@@ -73,6 +73,13 @@
             </v-list-item-icon>
             <v-list-item-title>Monitor</v-list-item-title>
           </v-list-item>
+          <!-- Map -->
+          <v-list-item to="/map">
+            <v-list-item-icon>
+              <v-icon>mdi-map-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Map</v-list-item-title>
+          </v-list-item>
           <!-- Planer -->
           <v-list-item v-if="userId" to="/planer">
             <v-list-item-icon>
