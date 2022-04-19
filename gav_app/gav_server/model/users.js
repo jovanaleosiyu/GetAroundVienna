@@ -33,11 +33,22 @@ module.exports = {
     return rows[0];
   },
   updUserWidgets: async (userid, widget) => {
-    const { rows } = await query(
-      'UPDATE users SET widgets=$2 WHERE userid=$1',
-      [userid, widget]
-    );
-    return rows[0];
+    await query('UPDATE users SET widgets=$2 WHERE userid=$1', [
+      userid,
+      widget,
+    ]);
+  },
+  updUserDarkMode: async (userid, darkmode) => {
+    await query('UPDATE users SET darkmode=$2 WHERE userid=$1', [
+      userid,
+      darkmode,
+    ]);
+  },
+  updUserColorTheme: async (userid, color) => {
+    await query('UPDATE users SET colortheme=$2 WHERE userid=$1', [
+      userid,
+      color,
+    ]);
   },
   addUser: async (email, password) => {
     const res = await query(

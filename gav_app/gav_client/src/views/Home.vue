@@ -12,7 +12,7 @@
     <!-- Wrapper -->
     <v-container
       fluid
-      class="rounded-t-xl bg widget-wrapper pt-8"
+      class="rounded-t-xl widget-wrapper pt-8"
       :class="
         $vuetify.breakpoint.lgAndUp
           ? 'widget-wrapper--desktop'
@@ -32,8 +32,8 @@
             class="rounded-xl"
             :class="`order-${w.order}`"
           >
-            <v-expansion-panel-header class="text-h6 font-weight-regular">
-              {{ w.name }}
+            <v-expansion-panel-header class="font-weight-regular">
+              <h2>{{ w.name }}</h2>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <component :is="w.compName" v-bind="{ ...w.props }"></component>
@@ -401,8 +401,5 @@ export default {
   display: flex;
   height: 100%;
   overflow: hidden;
-}
-.bg {
-  background-color: #fcfcfc;
 }
 </style>

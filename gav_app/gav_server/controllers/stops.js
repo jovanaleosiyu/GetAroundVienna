@@ -32,7 +32,9 @@ module.exports = {
         lineName: m.lines[0].name, // eg 13A
         towards: m.lines[0].towards,
         barrierFree: m.lines[0].barrierFree,
-        mepartures: m.lines[0].departures,
+        departures: m.lines[0].departures.departure.map((d) => ({
+          ...d.departureTime,
+        })),
         type: m.lines[0].type,
       };
       const { refTrafficInfoNames } = m;

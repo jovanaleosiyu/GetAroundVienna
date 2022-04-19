@@ -1,6 +1,6 @@
 <template>
   <v-container class="mx-auto pa-6" rounded="xl" max-width="600" elevation="10">
-    <v-sheet elevation="4" class="rounded-lg px-3 my-3">
+    <v-sheet elevation="4" class="rounded-lg px-3">
       <v-form class="d-flex align-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
