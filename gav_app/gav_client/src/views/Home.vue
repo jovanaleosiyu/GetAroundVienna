@@ -27,10 +27,12 @@
         <!-- Widgets -->
         <v-expansion-panels flat multiple v-model="panels">
           <v-expansion-panel
-            v-for="w of visible"
+            v-for="(w, i) of visible"
             :key="w.compName"
             class="rounded-xl"
-            :class="`order-${w.order}`"
+            :class="`order-${w.order} ${
+              i === 0 && panels.includes(0) ? 'mt-4' : '' // if first and open
+            }`"
           >
             <v-expansion-panel-header class="font-weight-regular">
               <h2>{{ w.name }}</h2>
