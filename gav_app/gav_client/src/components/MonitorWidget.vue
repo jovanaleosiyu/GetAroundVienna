@@ -1,5 +1,8 @@
 <template>
   <div class="monitor-wrapper">
+    <h4 class="font-weight-medium">
+      <v-icon>mdi-crosshairs-gps</v-icon> {{ name }}
+    </h4>
     <MonitorList :monitors="monitors" />
   </div>
 </template>
@@ -16,6 +19,7 @@ export default {
     return {
       monitors: [],
       diva: undefined,
+      name: '',
     };
   },
   methods: {
@@ -24,6 +28,8 @@ export default {
         `/stops/monitor/${this.diva}`
       );
       console.log('call');
+      console.log(data);
+      if (!this.name) this.name = data[0].stopName;
       this.monitors = data;
     },
   },
