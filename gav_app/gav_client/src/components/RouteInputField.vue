@@ -14,13 +14,14 @@
       return-object
       cache-items
       @change="setStop"
+      color="accent"
     ></v-autocomplete>
   </div>
 </template>
 
 <script>
-import { bus } from '../main';
-import { debounce } from 'throttle-debounce';
+import { bus } from "../main";
+import { debounce } from "throttle-debounce";
 
 export default {
   data() {
@@ -47,18 +48,18 @@ export default {
     },
     setStop(stop) {
       if (!stop) return;
-      this.$emit('setStop', { ...stop, stopType: this.title });
+      this.$emit("setStop", { ...stop, stopType: this.title });
     },
     getStopList: debounce(1000, false, function (searchname) {
       // console.log(searchname);
       bus.$data.instance
-        .get(`/points/${searchname.replace('/', ',')}`, {}, { timeout: 1000 })
+        .get(`/points/${searchname.replace("/", ",")}`, {}, { timeout: 1000 })
         .then((res) => {
           if (this.items.length > 1) this.items = []; // ... bc if 1 then its this.model
           if (res.data instanceof Array)
             this.items = this.items.concat(res.data);
           else {
-            res.data.name = res.data.name.replace(/\s{2,}/g, ' '); // remove 2 Whitespaces
+            res.data.name = res.data.name.replace(/\s{2,}/g, " "); // remove 2 Whitespaces
             this.items.push(res.data);
           }
         })

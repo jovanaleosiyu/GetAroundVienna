@@ -97,75 +97,88 @@
         </v-icon>
       </v-form>
 
-      <div class="d-flex align-center">
-        <v-btn-toggle v-model="depArr" mandatory>
-          <v-btn small :value="true">Ab</v-btn>
-          <v-btn small :value="false">An</v-btn>
-        </v-btn-toggle>
-        <v-menu
-          ref="menu"
-          v-model="menu1"
-          :close-on-content-click="false"
-          :nudge-right="40"
-          :return-value.sync="time"
-          transition="scale-transition"
-          offset-y
-          max-width="290px"
-          min-width="290px"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-text-field
-              v-model="time"
-              label="Zeit Wählen"
-              readonly
-              v-bind="attrs"
-              v-on="on"
-              class="mx-3"
-            ></v-text-field>
-          </template>
-          <v-time-picker
-            v-if="menu1"
-            v-model="time"
-            format="24hr"
-            full-width
-            @click:minute="$refs.menu.save(time)"
-          ></v-time-picker>
-        </v-menu>
+      <div class="d-flex align-center justify-center ma-3">
+        <div class="flex-column align-center">
+          <div class="d-flex justify-center">
+            <div class="mr-4">
+              <p class="text-caption ma-0">Zeit Wählen</p>
+              <v-menu
+                ref="menu"
+                v-model="menu1"
+                :close-on-content-click="false"
+                :return-value.sync="time"
+                transition="scale-transition"
+                offset-y
+                max-width="290px"
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <p class="accent--text text-body-1" v-bind="attrs" v-on="on">
+                    {{ time }}
+                  </p>
+                </template>
+                <v-time-picker
+                  v-if="menu1"
+                  v-model="time"
+                  format="24hr"
+                  full-width
+                  @click:minute="$refs.menu.save(time)"
+                  color="accent"
+                ></v-time-picker>
+              </v-menu>
+            </div>
 
-        <v-menu
-          v-model="menu2"
-          :close-on-content-click="false"
-          :nudge-left="170"
-          transition="scale-transition"
-          offset-y
-          min-width="auto"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-text-field
-              v-model="date"
-              label="Datum Wählen"
-              readonly
-              v-bind="attrs"
-              v-on="on"
-            ></v-text-field>
-          </template>
-          <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
-        </v-menu>
+            <div>
+              <p class="text-caption ma-0">Datum Wählen</p>
+              <v-menu
+                v-model="menu2"
+                :close-on-content-click="false"
+                :nudge-left="80"
+                transition="scale-transition"
+                offset-y
+                min-width="auto"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <p class="accent--text text-body-1" v-bind="attrs" v-on="on">
+                    {{ date }}
+                  </p>
+                </template>
+                <v-date-picker
+                  v-model="date"
+                  @input="menu2 = false"
+                  color="accent"
+                ></v-date-picker>
+              </v-menu>
+            </div>
+          </div>
+          <v-btn-toggle
+            active-class="accent--text"
+            text
+            dense
+            rounded
+            v-model="depArr"
+            mandatory
+          >
+            <v-btn class="pl-3" :value="true">Abfahrt</v-btn>
+            <v-btn class="pr-3" :value="false">Ankunft</v-btn>
+          </v-btn-toggle>
+        </div>
         <v-btn
           elevation="5"
           @click="getTrip()"
           fab
-          small
           :loading="loading"
           :disabled="loading"
-          class="accent ml-3"
+          class="accent mx-6"
         >
-          <v-icon> mdi-magnify </v-icon>
+          <v-icon large> mdi-magnify </v-icon>
         </v-btn>
       </div>
       <v-expansion-panels flat>
         <v-expansion-panel>
-          <v-expansion-panel-header> Filtern </v-expansion-panel-header>
+          <v-expansion-panel-header class="mt-3">
+            Filtern
+          </v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-select
               v-model="maxChanges"
@@ -184,7 +197,7 @@
             <v-select
               v-model="changeSpeed"
               :items="changeSpeeds"
-              hint="Umsteige Zeit"
+              hint="Umsteigedauer "
               item-text="text"
               item-value="speed"
               persistent-hint
@@ -192,7 +205,7 @@
             <v-select
               v-model="excludedMeans"
               :items="ids"
-              hint="Verkehrmittel"
+              hint="Verkehrmittelausschluss"
               item-text="text"
               item-value="id"
               persistent-hint
@@ -252,7 +265,10 @@
                 class="mx-4"
               ></div>
 
-              <div v-if="!step.isChange && step.mode.type != 'Fussweg'" style="width: 100%">
+              <div
+                v-if="!step.isChange && step.mode.type != 'Fussweg'"
+                style="width: 100%"
+              >
                 {{ step.mode.direction }} <br />
                 {{ step.start.time }} {{ step.start.name }} <br />
                 <div class="d-flex">
@@ -268,7 +284,7 @@
                       <v-expansion-panel-content>
                         <div class="flex-column">
                           <p v-for="x in step.stopSeq.length - 2" :key="x">
-                            {{ step.stopSeq[x].datetime.split(' ')[1] }}
+                            {{ step.stopSeq[x].datetime.split(" ")[1] }}
                             {{ step.stopSeq[x].name }}
                           </p>
                         </div>
@@ -288,7 +304,6 @@
                 Fussweg <br />
                 Dauer: {{ step.duration }}min<br />
               </div>
-
             </div>
           </div>
           {{ trip.steps[trip.steps.length - 1].end.time }}
@@ -300,12 +315,12 @@
 </template>
 
 <script>
-import RouteInputField from '../components/RouteInputField.vue';
-import RouteStep from '../components/RouteStep.vue';
-import { bus } from '../main';
+import RouteInputField from "../components/RouteInputField.vue";
+import RouteStep from "../components/RouteStep.vue";
+import { bus } from "../main";
 
 export default {
-  name: 'Route',
+  name: "Route",
   components: {
     RouteInputField,
     RouteStep,
@@ -314,11 +329,11 @@ export default {
     query: Object,
   },
   data: () => ({
-    Testcolor: 'black',
+    Testcolor: "black",
     loading: false,
 
-    depInput: '',
-    desInput: '',
+    depInput: "",
+    desInput: "",
 
     dep: {},
     des: {},
@@ -326,42 +341,45 @@ export default {
     menu1: false,
     menu2: false,
 
-    depArr: '',
-    time: new Date(),
-    
+    depArr: "",
+    time: new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
+
     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
       .toISOString()
       .substr(0, 10),
     maxChanges: 9,
 
-    routeType: 'leasttime',
+    routeType: "leasttime",
     routeTypes: [
-      { text: 'Kürzeste Route', type: 'leasttime' },
-      { text: 'Wenigste Umstiege', type: 'leastinterchange' },
-      { text: 'Wenigstes Gehen', type: 'leastwalking' },
+      { text: "Kürzeste Route", type: "leasttime" },
+      { text: "Wenigste Umstiege", type: "leastinterchange" },
+      { text: "Wenigstes Gehen", type: "leastwalking" },
     ],
 
-    changeSpeed: 'normal',
+    changeSpeed: "normal",
     changeSpeeds: [
-      { text: 'Lang', speed: 'slow' },
-      { text: 'Mittel', speed: 'normal' },
-      { text: 'Kurz', speed: 'fast' },
+      { text: "Lang", speed: "slow" },
+      { text: "Mittel", speed: "normal" },
+      { text: "Kurz", speed: "fast" },
     ],
 
     excludedMeans: undefined,
     ids: [
-      { text: 'Zug', id: '0' },
-      { text: 'S-Bahn', id: '1' },
-      { text: 'U-Bahn', id: '2' },
-      { text: 'Stadtbahn', id: '3' },
-      { text: 'Straßen-/Trambahn', id: '4' },
-      { text: 'Stadtbus', id: '5' },
-      { text: 'Regionalbus', id: '6' },
-      { text: 'Schnellbus', id: '7' },
-      { text: 'Seil-/Zahnradbahn', id: '8' },
-      { text: 'Schiff', id: '9' },
-      { text: 'AST/Rufbus', id: '10' },
-      { text: 'Sonstiges', id: '11' },
+      { text: "Zug", id: "0" },
+      { text: "S-Bahn", id: "1" },
+      { text: "U-Bahn", id: "2" },
+      { text: "Stadtbahn", id: "3" },
+      { text: "Straßen-/Trambahn", id: "4" },
+      { text: "Stadtbus", id: "5" },
+      { text: "Regionalbus", id: "6" },
+      { text: "Schnellbus", id: "7" },
+      { text: "Seil-/Zahnradbahn", id: "8" },
+      { text: "Schiff", id: "9" },
+      { text: "AST/Rufbus", id: "10" },
+      { text: "Sonstiges", id: "11" },
     ],
 
     trips: [],
@@ -373,8 +391,8 @@ export default {
 
       if (!this.dep || !this.des) return;
       let time, date;
-      if (this.time) time = this.time.replaceAll(':', '');
-      if (this.date) date = this.date.replaceAll('-', '');
+      if (this.time) time = this.time.replaceAll(":", "");
+      if (this.date) date = this.date.replaceAll("-", "");
       const params = {
         typeOrigin: this.dep.type,
         nameOrigin: this.dep.ref,
@@ -382,16 +400,15 @@ export default {
         nameDestination: this.des.ref,
         time: time,
         date: date,
-        depArr: this.depArr ? 'dep' : 'arr',
+        depArr: this.depArr ? "dep" : "arr",
         maxChanges: this.maxChanges,
         routeType: this.routeType,
         changeSpeed: this.changeSpeed,
         excludedMeans: this.excludedMeans,
       };
-      const { data } = await bus.$data.instance.get('/trip', {
+      const { data } = await bus.$data.instance.get("/trip", {
         params,
       });
-
 
       let newSteps = [];
       const newTrips = { ...data };
@@ -403,13 +420,21 @@ export default {
         };
         newSteps.push(newStep);
         for (let s = 1; s < data[t].steps.length; s++) {
-          if (this.checkChange(data[t].steps[s - 1].end.time, data[t].steps[s].start.time)) {
+          if (
+            this.checkChange(
+              data[t].steps[s - 1].end.time,
+              data[t].steps[s].start.time
+            )
+          ) {
             const newStep = {
               isChange: true,
-              duration: this.getChangeTime(data[t].steps[s - 1].end.time, data[t].steps[s].start.time).toString(),
+              duration: this.getChangeTime(
+                data[t].steps[s - 1].end.time,
+                data[t].steps[s].start.time
+              ).toString(),
               mode: {
-                type: 'Fussweg',
-                name: '',
+                type: "Fussweg",
+                name: "",
               },
             };
             newSteps.push(newStep);
@@ -418,8 +443,12 @@ export default {
               isChange: false,
             };
             newSteps.push(step);
-          }
-          else if (!this.checkChange(data[t].steps[s - 1].end.time, data[t].steps[s].start.time)) {
+          } else if (
+            !this.checkChange(
+              data[t].steps[s - 1].end.time,
+              data[t].steps[s].start.time
+            )
+          ) {
             const newStep = {
               ...data[t].steps[s],
               isChange: false,
@@ -440,25 +469,25 @@ export default {
       // TODO Button for current pos
       const pos = await this.getCurrPos();
       if (!pos) {
-        alert('Geolocation nicht verfügbar...');
+        alert("Geolocation nicht verfügbar...");
         return;
       }
       const lng = pos.coords.longitude.toFixed(5);
       const lat = pos.coords.latitude.toFixed(5);
       const currref = `${lng}:${lat}:WGS84`;
       this.dep.ref = currref;
-      this.dep.type = 'coord';
+      this.dep.type = "coord";
       origin.setStopByRef(this.dep.ref, this.dep.type);
     },
     setStop(stop) {
       console.log(stop);
-      if (stop.stopType == 'Start') {
+      if (stop.stopType == "Start") {
         this.dep.ref = stop.ref;
         this.dep.type = stop.type;
-      } else if (stop.stopType == 'Ziel') {
+      } else if (stop.stopType == "Ziel") {
         this.des.ref = stop.ref;
         this.des.type = stop.type;
-      } else console.log('Error!');
+      } else console.log("Error!");
     },
     swap() {
       const { origin, destination } = this.$refs;
@@ -468,7 +497,7 @@ export default {
       destination.setStopByRef(temp.ref, temp.type);
     },
     checkChange(stepEnd, stepStart) {
-      return this.getChangeTime(stepEnd, stepStart) > 1;
+      return this.getChangeTime(stepEnd, stepStart) > 0;
     },
     getChangeTime(stepEnd, stepStart) {
       let changeTime =
@@ -477,7 +506,7 @@ export default {
       return changeTime;
     },
     translateTripDuration(tripDuration) {
-      let splitDuration = tripDuration.split(':');
+      let splitDuration = tripDuration.split(":");
       if (parseInt(splitDuration[0]) == 0) {
         return 24 * 60 + parseInt(splitDuration[1]);
       } else
@@ -508,7 +537,7 @@ export default {
       this.dep.ref = orig_ref;
       this.des.type = dest_type;
       this.des.ref = dest_ref;
-      this.depArr = 'dep';
+      this.depArr = "dep";
       const { origin, destination } = this.$refs;
       const promises = [];
       promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
@@ -521,17 +550,17 @@ export default {
     else if (dest_ref && dest_type) {
       const pos = await this.getCurrPos();
       if (!pos) {
-        alert('Geolocation nicht verfügbar...');
+        alert("Geolocation nicht verfügbar...");
         return;
       }
       const lng = pos.coords.longitude.toFixed(5);
       const lat = pos.coords.latitude.toFixed(5);
       const currref = `${lng}:${lat}:WGS84`;
       this.dep.ref = currref;
-      this.dep.type = 'coord';
+      this.dep.type = "coord";
       this.des.ref = dest_ref;
       this.des.type = dest_type;
-      this.depArr = 'dep';
+      this.depArr = "dep";
       const { origin, destination } = this.$refs;
       const promises = [];
       promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
