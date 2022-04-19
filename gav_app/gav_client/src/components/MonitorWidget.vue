@@ -1,7 +1,7 @@
 <template>
   <div class="monitor-wrapper">
     <h4 class="font-weight-medium">
-      <v-icon>mdi-crosshairs-gps</v-icon> {{ name }}
+      <v-icon class="mr-1" color="accent">mdi-crosshairs-gps</v-icon> {{ name }}
     </h4>
     <MonitorList :monitors="monitors" />
   </div>

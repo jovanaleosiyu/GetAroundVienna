@@ -16,7 +16,7 @@
       :class="
         $vuetify.breakpoint.lgAndUp
           ? 'widget-wrapper--desktop'
-          : widgetStateClass
+          : widgetStateClass + ' ' + darkmodebg
       "
     >
       <div class="scroll-wrapper">
@@ -233,6 +233,9 @@ export default {
         default:
           return '';
       }
+    },
+    darkmodebg() {
+      return this.$vuetify.theme.dark ? 'black' : 'white';
     },
   },
   mounted() {
