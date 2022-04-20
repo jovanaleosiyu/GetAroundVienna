@@ -1,9 +1,12 @@
 <template>
   <v-container class="d-flex flex-column align-center mt-16">
+    <!-- Logo -->
     <v-img height="140" width="140" src="../assets/GAV-logo.svg"></v-img>
 
+    <!-- Titel -->
     <h1 class="text-center mt-8 mb-16">Get Around<br />Vienna</h1>
 
+    <!-- Login -->
     <v-btn
       to="/login"
       width="257"
@@ -12,6 +15,7 @@
       Anmelden
     </v-btn>
 
+    <!-- Sign Up -->
     <v-btn
       to="/sign-up"
       width="257"
@@ -21,6 +25,7 @@
       Registrieren
     </v-btn>
 
+    <!-- Guest Login -->
     <v-btn
       @click="guestLogin()"
       text

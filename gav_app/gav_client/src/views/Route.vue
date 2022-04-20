@@ -199,30 +199,6 @@
       </v-expansion-panel>
     </v-expansion-panels>
 
-    <!-- <div v-for="(trip, i) of trips" :key="i" class="flex-column">
-      <div class="d-flex mb-1">
-        {{ trip.steps[0].start.time }} <v-spacer></v-spacer>
-        {{ trip.duration }} <v-spacer></v-spacer>
-        {{ trip.steps[trip.steps.length - 1].end.time }}
-      </div>
-
-      <div class="d-flex align-center">
-        <div :class="`point ${testcolor}`"></div>
-        <div class="d-flex" style="width: 100%">
-          <template v-for="(step, j) of trip.steps">
-            <RouteStep :key="j" :stepName=step.mode.name :stepType=step.mode.type :duration=step.duration :tripDuration=trip.duration ></RouteStep>
-          </template>
-        </div>
-        <div class="point"></div>
-      </div>
-
-      <div class="d-flex justify-center mt-1">
-        <span v-for="(step, j) of trip.steps" :key="j" class="ml-1">{{
-          step.mode.name
-        }}</span>
-      </div>
-    </div> -->
-
     <v-expansion-panels class="rounded-xl" accordion>
       <v-expansion-panel v-for="(trip, i) of trips" :key="i">
         <v-expansion-panel-header expand-icon="" class="px-2">
@@ -331,10 +307,7 @@ export default {
     menu2: false,
 
     depArr: '',
-    time: new Date().toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    }),
+    time: new Date(),
     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
       .toISOString()
       .substr(0, 10),
@@ -378,6 +351,7 @@ export default {
       let time, date;
       if (this.time) time = this.time.replaceAll(':', '');
       if (this.date) date = this.date.replaceAll('-', '');
+
       const params = {
         typeOrigin: this.dep.type,
         nameOrigin: this.dep.ref,
@@ -391,7 +365,7 @@ export default {
         changeSpeed: this.changeSpeed,
         excludedMeans: this.excludedMeans,
       };
-      // console.log(params);
+      
       const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
@@ -421,20 +395,6 @@ export default {
   created() {
     bus.$emit('title', 'Route');
     bus.$on('callTrip', async (trip) => {
-      console.log('TESTTTT');
-      // const params = {
-      //   typeOrigin: this.dep.type,
-      //   nameOrigin: this.dep.ref,
-      //   typeDestination: this.des.type,
-      //   nameDestination: this.des.ref,
-      //   time: time,
-      //   date: date,
-      //   depArr: this.depArr ? 'dep' : 'arr',
-      //   maxChanges: this.maxChanges,
-      //   routeType: this.routeType,
-      //   changeSpeed: this.changeSpeed,
-      //   excludedMeans: this.excludedMeans,
-      // };
       this.dep.type = trip.orig_type;
       this.dep.ref = trip.orig_ref;
       this.des.type = trip.dest_type;

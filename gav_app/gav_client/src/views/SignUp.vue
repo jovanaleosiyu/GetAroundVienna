@@ -6,13 +6,16 @@
       :outlined="true"
       style="border: none"
     >
+      <!-- Sign Up -->
       <div class="d-flex justify-start" style="width: 100%">
+        <!-- Backbutton -->
         <v-btn to="/" icon class="my-auto">
           <v-icon class="black--text" large> mdi-chevron-left </v-icon>
         </v-btn>
 
         <v-spacer></v-spacer>
 
+        <!-- Logo -->
         <v-img
           max-height="46"
           max-width="46"
@@ -23,8 +26,10 @@
         <v-spacer></v-spacer>
       </div>
 
+      <!-- Title -->
       <h1 class="text-center mt-8 mb-16">Erstelle einen<br />Account</h1>
 
+      <!-- Error -->
       <v-alert
         class="mb-12"
         color="red"
@@ -36,12 +41,14 @@
         >{{ errorMessage }}</v-alert
       >
 
+      <!-- Anmelde Formular -->
       <v-form
         class="d-flex flex-column align-center"
         v-model="valid"
         style="width: 100%"
       >
         <div style="width: 80%">
+          <!-- E-Mail Eingabefeld -->
           <v-text-field
             v-model="email"
             :rules="emailRules"
@@ -49,6 +56,7 @@
             required
           ></v-text-field>
 
+          <!-- Passwort Eingabefeld -->
           <v-text-field
             v-model="password"
             :rules="passwordRules"
@@ -59,6 +67,7 @@
             required
           ></v-text-field>
 
+          <!-- Passwort Bestätigen -->
           <v-text-field
             v-model="confirmePassword"
             :rules="[passwordConfirmationRule]"
@@ -70,6 +79,7 @@
           ></v-text-field>
         </div>
 
+        <!-- Sign Up Button -->
         <v-btn
           elevation="5"
           @click="register()"

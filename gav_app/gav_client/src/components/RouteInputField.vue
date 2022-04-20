@@ -2,6 +2,7 @@
   <div>
     <v-menu offset-y bottom>
       <template v-slot:activator="{ on, attrs }">
+        <!-- Routen Eingabefeld -->
         <v-text-field
           v-bind="attrs"
           v-on="on"
@@ -11,6 +12,8 @@
           required
         ></v-text-field>
       </template>
+
+      <!-- Haltestellen Liste -->
       <v-list v-if="list" max-height="350" style="overflow-y: auto">
         <v-list-item v-for="el of list" :key="el.name" @click="setStop(el)">
           <v-list-item-content>{{ el.name }}</v-list-item-content>
