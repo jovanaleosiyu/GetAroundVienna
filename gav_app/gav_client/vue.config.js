@@ -1,10 +1,13 @@
+const path = require('path');
+
 module.exports = {
+  outputDir: path.resolve(__dirname, '../gav_server/public'),
   transpileDependencies: ['vuetify'],
   pwa: {
-    // workboxPluginMode: 'InjectManifest',
-    // workboxOptions: {
-    //   swSrc: 'public/service-worker.js',
-    // },
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: 'public/service-worker.js',
+    },
     manifestOptions: {
       name: 'Get Around Vienna',
       short_name: 'GAV',

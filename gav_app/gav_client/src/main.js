@@ -11,7 +11,7 @@ export const bus = new Vue();
 
 bus.$data.instance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:3000',
+  baseURL: process.env.VUE_APP_SERVER,
 });
 
 new Vue({
