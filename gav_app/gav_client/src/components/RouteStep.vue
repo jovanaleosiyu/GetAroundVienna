@@ -1,15 +1,19 @@
 <template>
-        <svg v-if="this.stepName != ''" :width="width" height="10" class="mx-1">
-            <rect rx="5" ry="5" width="100%" height="10" :fill="getColor(stepType)"/>
-        </svg>
-        <div class="dottedLine mx-1" :style="`width: ${width}`" v-else></div>
+  <!-- Routenteil -->
+  <svg v-if="this.stepName != ''" :width="width" height="10" class="mx-1">
+    <rect rx="5" ry="5" width="100%" height="10" :fill="getColor(stepType)" />
+  </svg>
+  <!-- Gehteil -->
+  <div class="dottedLine mx-1" :style="`width: ${width}`" v-else></div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                width: this.duration*100/this.translateTripDuration(this.tripDuration) + "%",
+export default {
+  data() {
+    return {
+      width:
+        (this.duration * 100) / this.translateTripDuration(this.tripDuration) +
+        '%',
 
                 transportTypes: [
                     {type: "S-Bahn", color: "#0189c5"},
@@ -84,7 +88,7 @@
 </script>
 
 <style lang="scss" scoped>
-.dottedLine{
+.dottedLine {
   border-top: 7px grey dotted;
 }
 </style>
