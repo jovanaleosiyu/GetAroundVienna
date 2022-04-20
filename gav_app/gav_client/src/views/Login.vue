@@ -1,7 +1,7 @@
 <template>
   <v-container class="d-flex flex-column align-center mt-16">
     <v-card
-      class="d-flex flex-column align-center"
+      class="d-flex flex-column align-center transparent"
       :outlined="true"
       :min-width="$vuetify.breakpoint.mdAndUp ? 450 : '100%'"
       style="border: none"
@@ -55,6 +55,7 @@
             :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show ? 'text' : 'password'"
             @click:append="show = !show"
+            @keyup.enter="login"
             label="Passwort"
             required
           ></v-text-field>
@@ -62,7 +63,7 @@
 
         <v-btn
           elevation="5"
-          @click="login()"
+          @click="login"
           :disabled="!valid"
           fab
           class="align-self-end grey darken-3 white--text mt-16"
@@ -99,16 +100,17 @@ export default {
         email: this.email,
         password: this.password,
       };
+
       await bus.$data.instance
         .post('/login', loginData)
         .then((response) => {
           bus.$data.userId = response.data;
-          bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
           bus.$data.loggedIn = true;
           VueCookies.set('loggedIn', true);
+          bus.$emit('loggedIn', true);
           this.$emit('loadUser');
-          this.$router.push({ name: 'Home' });
+          this.$router.push({ name: 'Route' });
         })
         .catch((error) => {
           if (error.response.status != 200) {

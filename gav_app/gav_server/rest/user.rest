@@ -1,0 +1,32 @@
+### get user
+GET http://localhost:3000/user
+### get widgets
+GET http://localhost:3000/user/widgets
+### patch widgets
+PATCH  http://localhost:3000/user/widgets
+content-type: application/json
+
+[1,2,3,0]
+### patch widgets ERR
+PATCH  http://localhost:3000/user/widgets
+### patch widgets ERR
+PATCH  http://localhost:3000/user/widgets
+content-type: application/json
+
+[1,2,3,1,1]
+### get user settings
+GET http://localhost:3000/user/settings
+### patch darkmode
+PATCH http://localhost:3000/user/darkmode
+content-type: application/json
+
+{
+  "darkMode": false
+}
+### patch darkmode
+PATCH http://localhost:3000/user/colortheme
+content-type: application/json
+
+{
+  "color": "red lighten-3"
+}

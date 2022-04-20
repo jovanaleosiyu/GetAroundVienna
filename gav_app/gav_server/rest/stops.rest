@@ -1,0 +1,4 @@
+### Get stops
+GET http://localhost:3000/stops
+### Get stop monitors
+GET http://localhost:3000/stops/monitor/60201040

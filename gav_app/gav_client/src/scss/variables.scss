@@ -1,1 +1,18 @@
+@import '~vuetify/src/styles/styles.sass';
+
 $body-font-family: 'Nunito';
+
+$material-dark: map-merge(
+  $material-dark,
+  (
+    'background': #040404,
+    // '#0a0a0a'
+  )
+);
+
+$material-light: map-merge(
+  $material-light,
+  (
+    'background': #f8f8f8,
+  )
+);

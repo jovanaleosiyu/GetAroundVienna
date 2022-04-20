@@ -1,7 +1,7 @@
 <template>
   <v-container class="d-flex flex-column align-center mt-16">
     <v-card
-      class="d-flex flex-column align-center"
+      class="d-flex flex-column align-center transparent"
       :min-width="$vuetify.breakpoint.mdAndUp ? 450 : '100%'"
       :outlined="true"
       style="border: none"
@@ -74,6 +74,7 @@
             :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show2 ? 'text' : 'password'"
             @click:append="show2 = !show2"
+            @keyup.enter="register"
             label="Passwort nochmal eingeben"
             required
           ></v-text-field>
@@ -82,7 +83,7 @@
         <!-- Sign Up Button -->
         <v-btn
           elevation="5"
-          @click="register()"
+          @click="register"
           :disabled="!valid"
           fab
           class="align-self-end grey darken-3 white--text mt-16"
@@ -122,14 +123,13 @@ export default {
         password: this.password,
       };
       await bus.$data.instance
-        .post('/register', data, {
-          withCredentials: true,
-        })
+        .post('/register', data)
         .then((response) => {
           bus.$data.userId = response.data;
-          bus.$emit('loggedIn', true);
           VueCookies.set('userId', response.data);
           VueCookies.set('loggedIn', true);
+          bus.$emit('loggedIn', true);
+          this.$emit('loadUser');
           this.$router.push({ name: 'Home' });
         })
         .catch((error) => {
@@ -143,6 +143,7 @@ export default {
         });
     },
   },
+
   computed: {
     passwordConfirmationRule() {
       return (

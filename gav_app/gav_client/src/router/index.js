@@ -7,7 +7,9 @@ import Home from '../views/Home.vue';
 import Route from '../views/Route.vue';
 import Favorites from '../views/Favorites.vue';
 import Monitor from '../views/Monitor.vue';
+import Map from '../views/Map.vue';
 import Planer from '../views/Planer.vue';
+import Settings from '../views/Settings.vue';
 
 Vue.use(VueRouter);
 
@@ -36,9 +38,10 @@ const routes = [
     name: 'Route',
     component: Route,
     path: '/route',
+    props: (route) => ({ query: route.query }),
   },
   {
-    name: 'Favorites',
+    name: 'Favoriten',
     component: Favorites,
     path: '/favoriten',
   },
@@ -48,9 +51,19 @@ const routes = [
     path: '/monitor',
   },
   {
+    name: 'Map',
+    component: Map,
+    path: '/map',
+  },
+  {
     name: 'Planer',
     component: Planer,
     path: '/planer',
+  },
+  {
+    name: 'Einstellungen',
+    component: Settings,
+    path: '/settings',
   },
 ];
 

@@ -11,9 +11,12 @@ require('colors');
 const accountRouter = require('./routes/account');
 const tripRouter = require('./routes/trip');
 const pointsRouter = require('./routes/points');
+const stopsRouter = require('./routes/stops');
 const favoritesRouter = require('./routes/favorites');
 const plannerRouter = require('./routes/planner');
+const userRouter = require('./routes/user');
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
+const { restrict } = require('./middleware/restrict');
 
 const app = express();
 
@@ -48,6 +51,9 @@ app.use(express.json());
 app.use('/', accountRouter);
 app.use('/trip', tripRouter);
 app.use('/points', pointsRouter);
+app.use('/stops', stopsRouter);
+app.use(restrict);
+app.use('/user', userRouter);
 app.use('/favorites', favoritesRouter);
 app.use('/plannerentry', plannerRouter);
 
