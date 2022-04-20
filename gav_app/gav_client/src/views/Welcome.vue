@@ -18,8 +18,10 @@
       />
     </svg>
 
+    <!-- Titel -->
     <h1 class="text-center mt-8 mb-16">Get Around<br />Vienna</h1>
 
+    <!-- Login -->
     <v-btn
       to="/login"
       width="257"
@@ -28,6 +30,7 @@
       Anmelden
     </v-btn>
 
+    <!-- Sign Up -->
     <v-btn
       to="/sign-up"
       width="257"
@@ -37,6 +40,7 @@
       Registrieren
     </v-btn>
 
+    <!-- Guest Login -->
     <v-btn
       @click="guestLogin()"
       text
