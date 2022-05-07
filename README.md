@@ -4,7 +4,7 @@ Diplomarbeit der HTL Wien West Informationstechnologie.
 - **Webseite:** [https://getaroundvienna.at/](https://getaroundvienna.at/)
 - **Mitwirkende:** Jovana Stevic, Si Yu Sun, Leopold Urteil
 - **Zeitraum:** 2021/22
-- **Nützt folgende externe APIs**: 
+- **Nützt folgende externe APIs**: [Wiener Linien Echtzeitdaten via Datendrehscheibe](https://www.data.gv.at/katalog/dataset/522d3045-0b37-48d0-b868-57c99726b1c4), [Wiener Linien Routingservice](https://www.data.gv.at/katalog/dataset/stadt-wien_wienerlinienroutingservice)
 ### Beschreibung
 Get Around - Vienna ist eine Öffi-App (als PWA), bei der zunehmend auf Personalisierung gesetzt wird. Die Hauptfunktionen sind:
 - Routenberechnung
