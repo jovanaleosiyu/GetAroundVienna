@@ -30,6 +30,7 @@
             v-for="w of visible"
             :key="w.compName"
             class="rounded-xl mt-4"
+            :class="`order-${w.order}`"
           >
             <v-expansion-panel-header class="font-weight-regular">
               <h2>{{ w.name }}</h2>
@@ -191,6 +192,7 @@ export default {
     },
     updWidgets() {
       const orderlist = this.widgets.map((w) => w.order);
+      console.log(orderlist);
       bus.$data.instance.patch('/user/widgets', orderlist);
     },
     calcOffset(offset) {

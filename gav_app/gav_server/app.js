@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const history = require('connect-history-api-fallback');
 const path = require('path');
 const session = require('express-session');
-// const cors = require('cors');
+const cors = require('cors');
 
 require('dotenv').config();
 require('colors');
@@ -21,15 +21,15 @@ const { restrict } = require('./middleware/restrict');
 
 const app = express();
 
-// const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET, CLIENT } = process.env;
-const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
+const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET, CLIENT } = process.env;
+// const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
 
-// app.use(
-//   cors({
-//     origin: CLIENT,
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: CLIENT,
+    credentials: true,
+  })
+);
 app.use(history());
 
 app.use(morgan('dev'));
