@@ -4,22 +4,19 @@ const axios = require('axios');
 const dbUrl = require('debug')('API_CALL');
 const stops = require('../model/stops');
 
+const { REALTIME_API_URL } = require('../constants');
+
 module.exports = {
   getStopList: asyncHandler(async (req, res) => {
     res.status(200).json(stops.getStopList());
   }),
   getStopMonitors: asyncHandler(async (req, res) => {
     const { diva } = req.params;
-    const url =
-      'https://www.wienerlinien.at/ogd_realtime/monitor?' +
-      'activateTrafficInfo=stoerunglang&' +
-      'activateTrafficInfo=stoerungkurz&' +
-      'activateTrafficInfo=aufzugsinfo&' +
-      'activateTrafficInfo=fahrtreppeninfo&' +
-      'activateTrafficInfo=information&' +
-      'diva=';
-    dbUrl(url + diva);
-    const result = await axios.get(url + diva);
+    const params =
+      '/monitor?activateTrafficInfo=stoerunglang&activateTrafficInfo=stoerungkurz&activateTrafficInfo=aufzugsinfo&activateTrafficInfo=fahrtreppeninfo&activateTrafficInfo=information';
+    const url = `${REALTIME_API_URL}${params}&diva=${diva}`;
+    dbUrl(url);
+    const result = await axios.get(url);
     const monitors = [];
     const { data } = result.data;
     for (const m of data.monitors) {

@@ -6,7 +6,7 @@ module.exports = {
   getFavorites: asyncHandler(async (req, res) => {
     const { userid } = req.session;
     const { type } = req.query;
-    dbInfo(type);
+    dbInfo(`Get favorites: ${type || 'all'}`);
     let rows;
     switch (type) {
       case 'point':
@@ -20,11 +20,6 @@ module.exports = {
     }
     res.status(200).json(rows);
   }),
-  getFavTrips: asyncHandler(async (req, res) => {
-    const { userid } = req.session;
-    const rows = await favorites.getFavTrips(userid);
-    res.status(200).json(rows);
-  }),
   getFavorite: asyncHandler(async (req, res) => {
     const { userid } = req.session;
     const favid = Number(req.params.favid);
@@ -32,9 +27,7 @@ module.exports = {
     if (row) {
       res.status(200).json(row);
     } else {
-      res
-        .status(404)
-        .send(`Favorite with ID:${favid} not found or user not authorized.`);
+      res.status(404).send(`Favorite with ID:${favid} not found.`);
     }
   }),
   addFavPoint: asyncHandler(async (req, res) => {
@@ -87,7 +80,6 @@ module.exports = {
   }),
   updFavPoint: asyncHandler(async (req, res) => {
     const { userid } = req.session;
-
     const { favid } = req.params;
     if (favid) {
       const { color, icon, title, ref, type } = req.body;

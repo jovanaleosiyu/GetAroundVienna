@@ -16,13 +16,14 @@ const stopsRouter = require('./routes/stops');
 const favoritesRouter = require('./routes/favorites');
 const plannerRouter = require('./routes/planner');
 const userRouter = require('./routes/user');
+
 const { errorHandler, notFoundHandler } = require('./middleware/errorhandler');
-const { restrict } = require('./middleware/restrict');
+const { authorized } = require('./middleware/authorized');
 
 const app = express();
 
-const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET, CLIENT } = process.env;
-// const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
+const { PORT, NODE_ENV, SESSION_NAME, SESSION_SECRET } = process.env;
+const { CLIENT } = require('./constants');
 
 app.use(
   cors({
@@ -30,6 +31,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(history());
 
 app.use(morgan('dev'));
@@ -51,14 +53,15 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(helmet());
 
 app.use(express.json());
+
 app.use('/', accountRouter);
 app.use('/trip', tripRouter);
 app.use('/points', pointsRouter);
 app.use('/stops', stopsRouter);
-app.use(restrict);
-app.use('/user', userRouter);
-app.use('/favorites', favoritesRouter);
-app.use('/plannerentry', plannerRouter);
+
+app.use('/user', authorized, userRouter);
+app.use('/favorites', authorized, favoritesRouter);
+app.use('/plannerentry', authorized, plannerRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

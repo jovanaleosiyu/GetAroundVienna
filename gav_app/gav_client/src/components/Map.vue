@@ -12,9 +12,11 @@ export default {
     center: {
       type: Object,
       default: () => ({
-        lat: 48.20889357826833,
-        lng: 16.373446912056732,
-      }), // Stephansplatz
+        // lat: 48.20889357826833
+        // lng: 16.373446912056732, // Stephansplatz
+        lat: 48.211820348664084,
+        lng: 16.313045850714143, // ottakring
+      }),
     },
     centerCurrPos: {
       type: Boolean,
@@ -28,6 +30,7 @@ export default {
       mapOptions: {
         zoom: 18,
         zoomControl: false,
+        fullscreenControl: false,
         minZoom: 12,
         maxZoom: 21,
         center: this.center,
@@ -58,12 +61,13 @@ export default {
     const mapContainer = this.$refs.googleMap;
     this.map = new this.google.maps.Map(mapContainer, this.mapOptions);
     if (this.centerCurrPos) {
-      const position = await this.getCurrPos();
-      const pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      this.map.setCenter(pos);
+      // const position = await this.getCurrPos();
+      // const pos = {
+      //   lat: position.coords.latitude,
+      //   lng: position.coords.longitude,
+      // };
+      // this.map.setCenter(pos);
+      const pos = this.center;
       this.setMarker(pos.lat, pos.lng);
     }
   },

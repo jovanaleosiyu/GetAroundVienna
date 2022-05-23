@@ -216,7 +216,7 @@
       </v-expansion-panels>
     </v-sheet>
 
-    <v-expansion-panels class="rounded-lg" accordion>
+    <v-expansion-panels class="rounded-lg mt-7" accordion>
       <v-expansion-panel v-for="(trip, i) of trips" :key="i">
         <v-expansion-panel-header expand-icon="" class="px-2">
           <div class="flex-column my-1">
@@ -284,7 +284,7 @@
                       <v-expansion-panel-content>
                         <div class="flex-column">
                           <p v-for="x in step.stopSeq.length - 2" :key="x">
-                            {{ step.stopSeq[x].datetime.split(" ")[1] }}
+                            {{ step.stopSeq[x].datetime.split(' ')[1] }}
                             {{ step.stopSeq[x].name }}
                           </p>
                         </div>
@@ -315,12 +315,12 @@
 </template>
 
 <script>
-import RouteInputField from "../components/RouteInputField.vue";
-import RouteStep from "../components/RouteStep.vue";
-import { bus } from "../main";
+import RouteInputField from '../components/RouteInputField.vue';
+import RouteStep from '../components/RouteStep.vue';
+import { bus } from '../main';
 
 export default {
-  name: "Route",
+  name: 'Route',
   components: {
     RouteInputField,
     RouteStep,
@@ -329,11 +329,11 @@ export default {
     query: Object,
   },
   data: () => ({
-    Testcolor: "black",
+    Testcolor: 'black',
     loading: false,
 
-    depInput: "",
-    desInput: "",
+    depInput: '',
+    desInput: '',
 
     dep: {},
     des: {},
@@ -341,10 +341,10 @@ export default {
     menu1: false,
     menu2: false,
 
-    depArr: "",
+    depArr: '',
     time: new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
+      hour: '2-digit',
+      minute: '2-digit',
     }),
 
     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
@@ -352,34 +352,34 @@ export default {
       .substr(0, 10),
     maxChanges: 9,
 
-    routeType: "leasttime",
+    routeType: 'leasttime',
     routeTypes: [
-      { text: "Kürzeste Route", type: "leasttime" },
-      { text: "Wenigste Umstiege", type: "leastinterchange" },
-      { text: "Wenigstes Gehen", type: "leastwalking" },
+      { text: 'Kürzeste Route', type: 'leasttime' },
+      { text: 'Wenigste Umstiege', type: 'leastinterchange' },
+      { text: 'Wenigstes Gehen', type: 'leastwalking' },
     ],
 
-    changeSpeed: "normal",
+    changeSpeed: 'normal',
     changeSpeeds: [
-      { text: "Lang", speed: "slow" },
-      { text: "Mittel", speed: "normal" },
-      { text: "Kurz", speed: "fast" },
+      { text: 'Lang', speed: 'slow' },
+      { text: 'Mittel', speed: 'normal' },
+      { text: 'Kurz', speed: 'fast' },
     ],
 
     excludedMeans: undefined,
     ids: [
-      { text: "Zug", id: "0" },
-      { text: "S-Bahn", id: "1" },
-      { text: "U-Bahn", id: "2" },
-      { text: "Stadtbahn", id: "3" },
-      { text: "Straßen-/Trambahn", id: "4" },
-      { text: "Stadtbus", id: "5" },
-      { text: "Regionalbus", id: "6" },
-      { text: "Schnellbus", id: "7" },
-      { text: "Seil-/Zahnradbahn", id: "8" },
-      { text: "Schiff", id: "9" },
-      { text: "AST/Rufbus", id: "10" },
-      { text: "Sonstiges", id: "11" },
+      { text: 'Zug', id: '0' },
+      { text: 'S-Bahn', id: '1' },
+      { text: 'U-Bahn', id: '2' },
+      { text: 'Stadtbahn', id: '3' },
+      { text: 'Straßen-/Trambahn', id: '4' },
+      { text: 'Stadtbus', id: '5' },
+      { text: 'Regionalbus', id: '6' },
+      { text: 'Schnellbus', id: '7' },
+      { text: 'Seil-/Zahnradbahn', id: '8' },
+      { text: 'Schiff', id: '9' },
+      { text: 'AST/Rufbus', id: '10' },
+      { text: 'Sonstiges', id: '11' },
     ],
 
     trips: [],
@@ -391,8 +391,8 @@ export default {
 
       if (!this.dep || !this.des) return;
       let time, date;
-      if (this.time) time = this.time.replaceAll(":", "");
-      if (this.date) date = this.date.replaceAll("-", "");
+      if (this.time) time = this.time.replaceAll(':', '');
+      if (this.date) date = this.date.replaceAll('-', '');
       const params = {
         typeOrigin: this.dep.type,
         nameOrigin: this.dep.ref,
@@ -400,13 +400,13 @@ export default {
         nameDestination: this.des.ref,
         time: time,
         date: date,
-        depArr: this.depArr ? "dep" : "arr",
+        depArr: this.depArr ? 'dep' : 'arr',
         maxChanges: this.maxChanges,
         routeType: this.routeType,
         changeSpeed: this.changeSpeed,
         excludedMeans: this.excludedMeans,
       };
-      const { data } = await bus.$data.instance.get("/trip", {
+      const { data } = await bus.$data.instance.get('/trip', {
         params,
       });
 
@@ -433,8 +433,8 @@ export default {
                 data[t].steps[s].start.time
               ).toString(),
               mode: {
-                type: "Fussweg",
-                name: "",
+                type: 'Fussweg',
+                name: '',
               },
             };
             newSteps.push(newStep);
@@ -469,25 +469,25 @@ export default {
       // TODO Button for current pos
       const pos = await this.getCurrPos();
       if (!pos) {
-        alert("Geolocation nicht verfügbar...");
+        alert('Geolocation nicht verfügbar...');
         return;
       }
       const lng = pos.coords.longitude.toFixed(5);
       const lat = pos.coords.latitude.toFixed(5);
       const currref = `${lng}:${lat}:WGS84`;
       this.dep.ref = currref;
-      this.dep.type = "coord";
+      this.dep.type = 'coord';
       origin.setStopByRef(this.dep.ref, this.dep.type);
     },
     setStop(stop) {
       console.log(stop);
-      if (stop.stopType == "Start") {
+      if (stop.stopType == 'Start') {
         this.dep.ref = stop.ref;
         this.dep.type = stop.type;
-      } else if (stop.stopType == "Ziel") {
+      } else if (stop.stopType == 'Ziel') {
         this.des.ref = stop.ref;
         this.des.type = stop.type;
-      } else console.log("Error!");
+      } else console.log('Error!');
     },
     swap() {
       const { origin, destination } = this.$refs;
@@ -506,7 +506,7 @@ export default {
       return changeTime;
     },
     translateTripDuration(tripDuration) {
-      let splitDuration = tripDuration.split(":");
+      let splitDuration = tripDuration.split(':');
       if (parseInt(splitDuration[0]) == 0) {
         return 24 * 60 + parseInt(splitDuration[1]);
       } else
@@ -537,7 +537,7 @@ export default {
       this.dep.ref = orig_ref;
       this.des.type = dest_type;
       this.des.ref = dest_ref;
-      this.depArr = "dep";
+      this.depArr = 'dep';
       const { origin, destination } = this.$refs;
       const promises = [];
       promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));
@@ -550,17 +550,21 @@ export default {
     else if (dest_ref && dest_type) {
       const pos = await this.getCurrPos();
       if (!pos) {
-        alert("Geolocation nicht verfügbar...");
+        alert('Geolocation nicht verfügbar...');
         return;
       }
-      const lng = pos.coords.longitude.toFixed(5);
-      const lat = pos.coords.latitude.toFixed(5);
+      // Current Location
+      // const lng = pos.coords.longitude.toFixed(5);
+      // const lat = pos.coords.latitude.toFixed(5);
+      // Ottakring
+      const lng = '16.31318';
+      const lat = '48.21196';
       const currref = `${lng}:${lat}:WGS84`;
       this.dep.ref = currref;
-      this.dep.type = "coord";
+      this.dep.type = 'coord';
       this.des.ref = dest_ref;
       this.des.type = dest_type;
-      this.depArr = "dep";
+      this.depArr = 'dep';
       const { origin, destination } = this.$refs;
       const promises = [];
       promises.push(origin.setStopByRef(this.dep.ref, this.dep.type));

@@ -2,12 +2,9 @@ const asyncHandler = require('express-async-handler');
 const axios = require('axios');
 const dbUrl = require('debug')('API_CALL');
 
-const baseUrl =
-  'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?' +
-  'locationServerActive=1&' +
-  'outputFormat=JSON&' +
-  'coordOutputFormat=WGS84[DD.ddddd]&' +
-  'anyObjFilter_origin=10&';
+const { ROUTING_API_URL } = require('../constants');
+
+const baseUrl = `${ROUTING_API_URL}&locationServerActive=1&anyObjFilter_origin=10&`;
 
 const structurePoint = (point) => {
   const p = { ...point };

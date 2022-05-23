@@ -6,13 +6,9 @@ const dbVerify = require('debug')('VERIFY_CALL');
 const dbInfo = require('debug')('INFO');
 
 const users = require('../model/users');
+const { ROUTING_API_URL } = require('../constants');
 
-const baseUrl =
-  'https://www.wienerlinien.at/ogd_routing/XML_TRIP_REQUEST2?' +
-  'outputFormat=JSON&' +
-  'coordOutputFormat=WGS84[DD.ddddd]&' +
-  'ptOptionsActive=1&' +
-  'useProxFootSearch=1&';
+const baseUrl = `${ROUTING_API_URL}&ptOptionsActive=1&useProxFootSearch=1&`;
 
 module.exports = {
   getTrip: asyncHandler(async (req, res) => {

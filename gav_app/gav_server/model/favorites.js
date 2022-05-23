@@ -1,8 +1,8 @@
-const { pool } = require('../db/index');
+const { getClient, query } = require('../db/index');
 
 module.exports = {
   getFavorites: async (userid) => {
-    const res = await pool.query(
+    const res = await query(
       `SELECT *
       FROM favorites
               FULL JOIN favpoints USING (favid)
@@ -13,7 +13,7 @@ module.exports = {
     return res.rows;
   },
   getFavPoints: async (userid) => {
-    const res = await pool.query(
+    const res = await query(
       `SELECT *
       FROM favpoints
               JOIN favorites USING (favid)
@@ -23,7 +23,7 @@ module.exports = {
     return res.rows;
   },
   getFavTrips: async (userid) => {
-    const res = await pool.query(
+    const res = await query(
       `SELECT *
       FROM favtrips
               JOIN favorites USING (favid)
@@ -33,15 +33,15 @@ module.exports = {
     return res.rows;
   },
   getFavorite: async (favid, userid) => {
-    let res = await pool.query(
+    let res = await query(
       `SELECT *
       FROM favpoints
               JOIN favorites USING (favid)
       WHERE favid = $1 AND userid = $2;`,
       [favid, userid]
     );
-    if (!res.rows) {
-      res = await pool.query(
+    if (!res.rows.length) {
+      res = await query(
         `SELECT *
         FROM favtrips
                 JOIN favorites USING (favid)
@@ -52,12 +52,12 @@ module.exports = {
     return res.rows[0];
   },
   addFavPoint: async (title, icon, color, ref, type, userid) => {
-    const client = await pool.connect();
+    const client = await getClient();
     try {
       await client.query('BEGIN');
       const res = await client.query(
-        `INSERT INTO favorites (favid, title, icon, color, userid)
-        VALUES (default, $1, $2, $3, $4)
+        `INSERT INTO favorites (title, icon, color, userid)
+        VALUES ($1, $2, $3, $4)
         RETURNING favid`,
         [title, icon, color, userid]
       );
@@ -87,12 +87,12 @@ module.exports = {
     userid,
     options
   ) => {
-    const client = await pool.connect();
+    const client = await getClient();
     try {
       await client.query('BEGIN');
       const res = await client.query(
-        `INSERT INTO favorites (favid, title, icon, color, userid)
-        VALUES (default, $1, $2, $3, $4)
+        `INSERT INTO favorites (title, icon, color, userid)
+        VALUES ($1, $2, $3, $4)
         RETURNING favid;`,
         [title, icon, color, userid]
       );
@@ -123,7 +123,7 @@ module.exports = {
     }
   },
   delFavorite: async (userid, favid) => {
-    const res = await pool.query(
+    const res = await query(
       `DELETE
       FROM favorites
       WHERE favid = $1
@@ -134,7 +134,7 @@ module.exports = {
     return res.rows[0];
   },
   updFavPoint: async (userid, favid, data) => {
-    const client = await pool.connect();
+    const client = await getClient();
     try {
       await client.query('BEGIN');
       await client.query(
@@ -142,8 +142,7 @@ module.exports = {
           SET color=$1,
               icon=$2,
               title=$3
-          WHERE favid = $4
-            AND userid = $5;`,
+          WHERE favid = $4 AND userid = $5;`,
         [data.color, data.icon, data.title, favid, userid]
       );
       await client.query(
@@ -162,7 +161,7 @@ module.exports = {
     }
   },
   updFavTrip: async (userid, favid, data) => {
-    const client = await pool.connect();
+    const client = await getClient();
     try {
       await client.query('BEGIN');
       await client.query(
@@ -170,8 +169,7 @@ module.exports = {
           SET color=$1,
               icon=$2,
               title=$3
-          WHERE favid = $4
-            AND userid = $5;`,
+          WHERE favid = $4 AND userid = $5;`,
         [data.color, data.icon, data.title, favid, userid]
       );
       await client.query(
